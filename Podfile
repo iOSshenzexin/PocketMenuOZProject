@@ -7,4 +7,3 @@ pod "MJRefresh", “3.1.9”
 pod "SVProgressHUD", “2.0.3”
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.1'
-pod 'GoogleMaps'

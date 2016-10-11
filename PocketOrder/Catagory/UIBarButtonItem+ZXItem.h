@@ -17,7 +17,7 @@
 + (UIBarButtonItem *)itemWithimage:(UIImage *)image title:(NSString *)title target:(id)target action:(SEL)action;
 
 
-+(UIBarButtonItem *)itemWithFont:(CGFloat)fontsize btnWidth:(CGFloat)width btnHeight:(CGFloat)height image:(NSString *)image title:(NSString *)title target:( id)target action:(SEL)action leftEdgeInset:(CGFloat)left rightEdgeInset:(CGFloat)right;
++(UIBarButtonItem *)itemWithFont:(CGFloat)fontsize btnWidth:(CGFloat)width btnHeight:(CGFloat)height image:(NSString *)image highlightImage:(NSString *)hightlightImage title:(NSString *)title target:( id)target action:(SEL)action leftEdgeInset:(CGFloat)left rightEdgeInset:(CGFloat)right;
 
 
 @end

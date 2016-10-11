@@ -54,10 +54,12 @@
     return  [[UIBarButtonItem alloc] initWithCustomView:backButton];
 }
 
-+(UIBarButtonItem *)itemWithFont:(CGFloat)fontsize btnWidth:(CGFloat)width btnHeight:(CGFloat)height image:(NSString *)image title:(NSString *)title target:( id)target action:(SEL)action leftEdgeInset:(CGFloat)left rightEdgeInset:(CGFloat)right
++(UIBarButtonItem *)itemWithFont:(CGFloat)fontsize btnWidth:(CGFloat)width btnHeight:(CGFloat)height image:(NSString *)image highlightImage:(NSString *)hightlightImage title:(NSString *)title target:( id)target action:(SEL)action leftEdgeInset:(CGFloat)left rightEdgeInset:(CGFloat)right
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
+     [btn setImage:[UIImage imageNamed:hightlightImage] forState:UIControlStateHighlighted];
+
     btn.frame = CGRectMake(0, 0, width, height);
     btn.contentEdgeInsets = UIEdgeInsetsMake(0, left, 0, right);
     btn.titleLabel.font = [UIFont boldSystemFontOfSize:fontsize];

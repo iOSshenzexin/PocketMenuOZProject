@@ -15,42 +15,84 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VTO-SH-nSS">
-                    <frame key="frameInset" minY="64" width="375" height="140"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTO-SH-nSS">
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pissa" translatesAutoresizingMaskIntoConstraints="NO" id="U53-bO-9DJ">
-                            <frame key="frameInset" width="140" height="140"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic2" translatesAutoresizingMaskIntoConstraints="NO" id="U53-bO-9DJ">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="123" id="9mb-Cp-BWp"/>
+                                <constraint firstAttribute="width" constant="123" id="KqN-Ec-3Mm"/>
+                            </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ne-B2-7cg">
-                            <frame key="frameInset" minX="148" minY="-6" width="227" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <attributedString key="attributedText">
-                                <fragment content="商家地址:青岛市崂山区苗岭路19号裕龙大厦2号楼2单元1302室">
-                                    <attributes>
-                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="商家信息:青岛市崂山区苗岭路19号裕龙大厦2号楼2单元1302室" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqf-t7-OIF">
-                            <frame key="frameInset" minX="148" minY="52" width="227" height="38"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="必胜客披萨 (崂山店)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ne-B2-7cg">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="7lS-Cm-B1r"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="优惠信息:满100元立减30元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6v-6I-iJe">
-                            <frame key="frameInset" minX="148" minY="105" width="219" height="35"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="qPK-Ya-5Xc">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="82" id="AWQ-CB-RuQ"/>
+                                <constraint firstAttribute="height" constant="14" id="Krr-W3-FFr"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消费满$100立减$5" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKu-Ny-uQr">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="u5Q-XV-Yys"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="配送时间: 10:00 - 18:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyC-jj-Tcc">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="WhW-Om-axz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址: 青岛市崂山区苗岭路87号" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTb-Ud-mjw">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="UHt-6J-cdj"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="配送费: $5起 了崂山区 市北区可送" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqf-t7-OIF">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="Ttj-rh-ecN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="wKu-Ny-uQr" firstAttribute="top" secondItem="nqf-t7-OIF" secondAttribute="bottom" constant="-1" id="1Eh-UP-OyX"/>
+                        <constraint firstItem="U53-bO-9DJ" firstAttribute="top" secondItem="VTO-SH-nSS" secondAttribute="top" id="5hP-Ez-oW1"/>
+                        <constraint firstItem="0ne-B2-7cg" firstAttribute="leading" secondItem="U53-bO-9DJ" secondAttribute="trailing" constant="5" id="8tR-yr-HLx"/>
+                        <constraint firstAttribute="height" constant="123" id="9pN-VZ-XdN"/>
+                        <constraint firstItem="JyC-jj-Tcc" firstAttribute="leading" secondItem="U53-bO-9DJ" secondAttribute="trailing" constant="5" id="AWj-eS-Gng"/>
+                        <constraint firstItem="JyC-jj-Tcc" firstAttribute="top" secondItem="wKu-Ny-uQr" secondAttribute="bottom" constant="1" id="Dji-Zb-tm0"/>
+                        <constraint firstAttribute="trailing" secondItem="nqf-t7-OIF" secondAttribute="trailing" constant="5" id="O8A-2Z-1OY"/>
+                        <constraint firstAttribute="trailing" secondItem="hTb-Ud-mjw" secondAttribute="trailing" constant="5" id="PC5-fy-wdP"/>
+                        <constraint firstItem="hTb-Ud-mjw" firstAttribute="top" secondItem="JyC-jj-Tcc" secondAttribute="bottom" id="PVr-Oh-tOB"/>
+                        <constraint firstItem="qPK-Ya-5Xc" firstAttribute="top" secondItem="0ne-B2-7cg" secondAttribute="bottom" constant="2" id="UBy-ve-HmS"/>
+                        <constraint firstItem="wKu-Ny-uQr" firstAttribute="leading" secondItem="U53-bO-9DJ" secondAttribute="trailing" constant="5" id="ZrS-39-4i4"/>
+                        <constraint firstItem="qPK-Ya-5Xc" firstAttribute="leading" secondItem="U53-bO-9DJ" secondAttribute="trailing" constant="5" id="cGz-kj-Ss8"/>
+                        <constraint firstAttribute="trailing" secondItem="0ne-B2-7cg" secondAttribute="trailing" constant="5" id="cei-SC-aiQ"/>
+                        <constraint firstAttribute="trailing" secondItem="wKu-Ny-uQr" secondAttribute="trailing" constant="5" id="cgX-8K-i2K"/>
+                        <constraint firstItem="hTb-Ud-mjw" firstAttribute="leading" secondItem="U53-bO-9DJ" secondAttribute="trailing" constant="5" id="e4T-fu-oVQ"/>
+                        <constraint firstItem="U53-bO-9DJ" firstAttribute="leading" secondItem="VTO-SH-nSS" secondAttribute="leading" id="eWd-GK-8Eu"/>
+                        <constraint firstItem="nqf-t7-OIF" firstAttribute="leading" secondItem="U53-bO-9DJ" secondAttribute="trailing" constant="5" id="eZT-Tx-9SW"/>
+                        <constraint firstItem="nqf-t7-OIF" firstAttribute="top" secondItem="qPK-Ya-5Xc" secondAttribute="bottom" id="fzm-9x-baG"/>
+                        <constraint firstItem="0ne-B2-7cg" firstAttribute="top" secondItem="VTO-SH-nSS" secondAttribute="top" id="gFB-iq-D5V"/>
+                        <constraint firstAttribute="trailing" secondItem="JyC-jj-Tcc" secondAttribute="trailing" constant="5" id="iNC-To-pqo"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bmc-K0-ikl">
                     <frame key="frameInset" minY="618" width="375" height="49"/>
@@ -80,10 +122,16 @@
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="-148.5" y="337.5"/>
+            <constraints>
+                <constraint firstItem="VTO-SH-nSS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="5L3-hl-Rss"/>
+                <constraint firstItem="VTO-SH-nSS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SZj-oA-34e"/>
+                <constraint firstAttribute="trailing" secondItem="VTO-SH-nSS" secondAttribute="trailing" id="saj-Ni-0eE"/>
+            </constraints>
+            <point key="canvasLocation" x="-202.5" y="337.5"/>
         </view>
     </objects>
     <resources>
-        <image name="pissa" width="187" height="143"/>
+        <image name="pic2" width="75" height="75"/>
+        <image name="star" width="81" height="13"/>
     </resources>
 </document>

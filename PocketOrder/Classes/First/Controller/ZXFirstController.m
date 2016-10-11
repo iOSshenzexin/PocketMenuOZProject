@@ -65,7 +65,7 @@
 
 #pragma mark  设置NavigationBarButton
 - (void)setupNavigationBarBtn{
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:0 btnWidth:21 btnHeight:21 image:@"news" title:nil target:self action:@selector(didClickMessage) leftEdgeInset:0 rightEdgeInset:-8];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:0 btnWidth:21 btnHeight:21 image:@"news" highlightImage:nil title:nil target:self action:@selector(didClickMessage) leftEdgeInset:0 rightEdgeInset:-8];
     
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     leftBtn.frame = CGRectMake(0, 0, 50, 21);
