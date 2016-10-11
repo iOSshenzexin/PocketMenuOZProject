@@ -73,8 +73,6 @@
 		01D899501DAA2B550070FBDD /* ZXMovieBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D899361DAA2B550070FBDD /* ZXMovieBrowser.m */; };
 		01D899511DAA2B550070FBDD /* LSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D899391DAA2B550070FBDD /* LSButton.m */; };
 		01D899521DAA2B550070FBDD /* LSSelectMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8993B1DAA2B550070FBDD /* LSSelectMenuView.m */; };
-		01DC631C1DAC978200D26546 /* list-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DC631A1DAC978200D26546 /* list-on@2x.png */; };
-		01DC631D1DAC978200D26546 /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DC631B1DAC978200D26546 /* list@2x.png */; };
 		01DC63211DACCA4000D26546 /* ZXSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC631F1DACCA4000D26546 /* ZXSearchController.m */; };
 		01DC63221DACCA4000D26546 /* ZXSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DC63201DACCA4000D26546 /* ZXSearchController.xib */; };
 		01EED8DB1DAB3A2100003A37 /* ZXHomePictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EED8D91DAB3A2100003A37 /* ZXHomePictureController.m */; };
@@ -214,8 +212,6 @@
 		01D899391DAA2B550070FBDD /* LSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSButton.m; sourceTree = "<group>"; };
 		01D8993A1DAA2B550070FBDD /* LSSelectMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSSelectMenuView.h; sourceTree = "<group>"; };
 		01D8993B1DAA2B550070FBDD /* LSSelectMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSSelectMenuView.m; sourceTree = "<group>"; };
-		01DC631A1DAC978200D26546 /* list-on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-on@2x.png"; sourceTree = "<group>"; };
-		01DC631B1DAC978200D26546 /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
 		01DC631E1DACCA4000D26546 /* ZXSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXSearchController.h; sourceTree = "<group>"; };
 		01DC631F1DACCA4000D26546 /* ZXSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSearchController.m; sourceTree = "<group>"; };
 		01DC63201DACCA4000D26546 /* ZXSearchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXSearchController.xib; sourceTree = "<group>"; };
@@ -663,8 +659,6 @@
 				01D899391DAA2B550070FBDD /* LSButton.m */,
 				01D8993A1DAA2B550070FBDD /* LSSelectMenuView.h */,
 				01D8993B1DAA2B550070FBDD /* LSSelectMenuView.m */,
-				01DC631A1DAC978200D26546 /* list-on@2x.png */,
-				01DC631B1DAC978200D26546 /* list@2x.png */,
 			);
 			path = ZXSelectMenu;
 			sourceTree = "<group>";
@@ -804,9 +798,7 @@
 				01D898A31DAA2A2D0070FBDD /* ZXFirstController.xib in Resources */,
 				01D898581DAA29DC0070FBDD /* Assets.xcassets in Resources */,
 				01D898B41DAA2A2D0070FBDD /* ZXTodayCell.xib in Resources */,
-				01DC631C1DAC978200D26546 /* list-on@2x.png in Resources */,
 				01D898A11DAA2A2D0070FBDD /* DeliciousFoodController.xib in Resources */,
-				01DC631D1DAC978200D26546 /* list@2x.png in Resources */,
 				01D898AA1DAA2A2D0070FBDD /* ZXDishesCell.xib in Resources */,
 				01D898B81DAA2A2D0070FBDD /* ZXYouLikeCell.xib in Resources */,
 				01D8994C1DAA2B550070FBDD /* BGHeaderView.xib in Resources */,
