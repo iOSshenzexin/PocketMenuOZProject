@@ -49,7 +49,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+
     /* 注册自定制cell */
     [self registerTableViewCell];
     
@@ -80,6 +81,7 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
     //搜索框
     self.navigationItem.titleView = [ZXSearchBar searchBar];
+    
     
     
     self.homeTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewInfo)];
@@ -208,6 +210,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     DeliciousFoodController *vc = [[DeliciousFoodController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
     vc.title = @"美食";
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -254,4 +257,14 @@
     AdvertiseViewController *adVc = [[AdvertiseViewController alloc] init];
     [self.navigationController pushViewController:adVc animated:YES];
 }
+
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    self.view = nil;
+}
+
+
+
 @end

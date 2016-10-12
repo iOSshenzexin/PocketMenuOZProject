@@ -13,9 +13,14 @@
 
 
 #import "ZXAddAdressController.h"
+
+#import "OverlayView.h"
+#import "ShoppingCartView.h"
+#import "BadgeView.h"
+
 extern int btnH;
 
-@interface ZXProductListController ()<LeftSelectScrollDelegate,UITableViewDataSource,UITableViewDelegate>{
+@interface ZXProductListController ()<LeftSelectScrollDelegate,UITableViewDataSource,UITableViewDelegate,ZFReOrderTableViewDelegate>{
     LeftSelectScroll *leftScrollView;
     
     NSMutableArray *leftDataSource;
@@ -25,6 +30,10 @@ extern int btnH;
     
     UITableView *_tableViewList;
 }
+
+
+@property (nonatomic,strong) ShoppingCartView *ShopCartView;
+
 @end
 
 @implementation ZXProductListController
@@ -38,43 +47,59 @@ extern int btnH;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.navigationController.navigationBarHidden = YES;
-//    self.navigationController.navigationBar.alpha = 0.5;
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.translucent = YES;
+//    self.navigationController.navigationBar.shadowImage = [UIImage new];
+
     [self initObjects];
     
     [self creatLeftScrollView];
     
     [self createTableView];
     
-    
+    [self createShopCarView];
+
+
 }
+
+- (void)createShopCarView
+{
+    _ShopCartView = [[ShoppingCartView alloc] initWithFrame:CGRectMake(0, ScreenH - 46, ScreenW, 46) inView:self.view withObjects:nil];
+    _ShopCartView.parentView = self.view;
+    _ShopCartView.OrderList.delegate = self;
+    _ShopCartView.OrderList.tableView.delegate = self;
+    _ShopCartView.OrderList.tableView.dataSource = self;
+    _ShopCartView.backgroundColor = RGB(239, 239, 239);
+    [self.view addSubview:_ShopCartView];
+}
+
+
  //初始化数据源
 -(void)initObjects{
     leftDataSource = [[NSMutableArray alloc]initWithObjects:@"披萨",@"意大利面",@"饮料",@"水果",@"套餐",@"米线",@"小炒",@"汤,粥",@"小吃",@"意大利面",@"饮料",@"水果",@"披萨",@"意大利面",@"饮料",@"水果",@"套餐",@"米线",@"小炒",@"汤,粥",nil];
 }
 
-static NSString *cellID = @"cellId";
 -(void)createTableView{
-    _tableViewList = [[UITableView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(leftScrollView.frame), leftScrollY, kScreenWidth * 0.75, kScreenHeight-(kTabbar_H)-leftScrollY)];
+    _tableViewList = [[UITableView alloc]initWithFrame:CGRectMake(kScreenWidth * 0.25, leftScrollY+1, kScreenWidth * 0.75, ScreenH-leftScrollY-46)];
     _tableViewList.delegate = self;
     _tableViewList.dataSource = self;
+    _tableViewList.rowHeight = 105;
+    _tableViewList.backgroundColor = RGB(242, 242, 242);
+    _tableViewList.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableViewList.tag = 21;//标识tableView
     [self.view addSubview:_tableViewList];
     _tableViewList.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [_tableViewList registerNib:[UINib nibWithNibName:@"ZXDishesCell" bundle:nil] forCellReuseIdentifier:cellID];
 }
 
  //左侧列表
 -(void)creatLeftScrollView{
-    leftScrollView = [[LeftSelectScroll alloc]initWithFrame:CGRectMake(0, leftScrollY, kScreenWidth * 0.25, kScreenHeight-(kTabbar_H)-leftScrollY)];
+    leftScrollView = [[LeftSelectScroll alloc]initWithFrame:CGRectMake(0, leftScrollY+1, kScreenWidth * 0.25,ScreenH-leftScrollY-46)];
     NSInteger count = leftDataSource.count;
     leftScrollView.pagingEnabled = YES;
     leftScrollView.bounces = YES;
-    leftScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    //leftScrollView.con
     
     leftScrollView.contentSize = CGSizeMake(0, btnH * count);
-    
+    leftScrollView.autoresizesSubviews = NO;
     [leftScrollView setLeftSelectArray:leftDataSource];
     
     leftScrollView.leftSelectDelegate = self;
@@ -112,10 +137,16 @@ static NSString *cellID = @"cellId";
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 32;
+}
+
+
 //实际需要会修改
 -(UIView*)viewForHeaderView:(NSInteger)parama{
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 32)];
-    label.backgroundColor = [UIColor orangeColor];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, kScreenWidth*0.75, 32)];
+    label.backgroundColor = RGB(239, 239, 239);
     if (leftDataSource.count != 0) {
         label.text = leftDataSource[parama];
         label.font = [UIFont systemFontOfSize:14];
@@ -133,19 +164,11 @@ static NSString *cellID = @"cellId";
     return 5;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 25;
-}
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 110;
-}
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    ZXDishesCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    if (!cell) {
-        cell = [[ZXDishesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-    }
+    ZXDishesCell *cell = [ZXDishesCell cellWithTableView:tableView];
+    
     return cell;
 }
 

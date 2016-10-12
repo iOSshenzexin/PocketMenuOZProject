@@ -20,6 +20,7 @@ int const btnH = 40.0;
         self.userInteractionEnabled = YES;
         self.showsVerticalScrollIndicator = NO;
         tempSelectButton = [[UIButton alloc]init];
+        self.backgroundColor = RGB(240, 245, 249);
     }
     return self;
 }
@@ -27,14 +28,16 @@ int const btnH = 40.0;
 -(void)setLeftSelectArray:(NSArray *)leftSelectArray{
     _leftSelectArray = leftSelectArray;
     for (int i = 0; i<_leftSelectArray.count; i++) {
-        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, btnH * i, kScreenWidth * 0.25, btnH)];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(0, btnH * i, kScreenWidth * 0.25, btnH);
         [button setTitle:_leftSelectArray[i] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+        [button setBackgroundImage:[UIImage imageNamed:@"shop_choose"] forState:UIControlStateSelected];
+      
         button.titleLabel.font = [UIFont systemFontOfSize:16];
-        [button setBackgroundColor:RGB(245, 245, 245)];
+        button.backgroundColor = [UIColor clearColor];
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, button.frame.size.height - 0.5, button.frame.size.width, 0.5)];
-        label.backgroundColor = RGB(206, 206, 206);
+        label.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dash_line"]];
         [button addSubview:label];
         [self addSubview:button];
         
@@ -42,7 +45,6 @@ int const btnH = 40.0;
         button.tag = i+11;
         if (i == 0) {
             [button setSelected:YES];
-            [button setBackgroundColor:[UIColor orangeColor]];
             tempSelectButton = button;
         }
     }
@@ -50,9 +52,6 @@ int const btnH = 40.0;
 
 -(void)clickLeftSelectButton:(UIButton*)button{
     [tempSelectButton setSelected:NO];
-    [tempSelectButton setBackgroundColor:[UIColor whiteColor]];
-    
-    [button setBackgroundColor:[UIColor orangeColor]];
     [button setSelected:YES];
     
     tempSelectButton = button;
@@ -70,10 +69,8 @@ int const btnH = 40.0;
         if (btn.tag == indexPathSection + 11) {
             tempSelectButton = btn;
             [btn setSelected:YES];
-            btn.backgroundColor = [UIColor orangeColor];
         }else{
             [btn setSelected:NO];
-            btn.backgroundColor = [UIColor whiteColor];
         }
     }
     

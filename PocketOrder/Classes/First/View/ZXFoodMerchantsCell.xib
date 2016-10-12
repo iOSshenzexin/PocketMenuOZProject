@@ -150,6 +150,9 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="goodsTitle" destination="4qe-wy-Rld" id="XEU-Lb-yw7"/>
+            </connections>
             <point key="canvasLocation" x="157.5" y="167"/>
         </tableViewCell>
     </objects>

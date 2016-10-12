@@ -75,6 +75,12 @@
 		01D899521DAA2B550070FBDD /* LSSelectMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8993B1DAA2B550070FBDD /* LSSelectMenuView.m */; };
 		01DC63211DACCA4000D26546 /* ZXSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC631F1DACCA4000D26546 /* ZXSearchController.m */; };
 		01DC63221DACCA4000D26546 /* ZXSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DC63201DACCA4000D26546 /* ZXSearchController.xib */; };
+		01DE22791DAE20E300D2E5BA /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DE22741DAE20E300D2E5BA /* BadgeView.m */; };
+		01DE227A1DAE20E300D2E5BA /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DE22761DAE20E300D2E5BA /* OverlayView.m */; };
+		01DE227B1DAE20E300D2E5BA /* ShoppingCartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DE22781DAE20E300D2E5BA /* ShoppingCartView.m */; };
+		01DE227F1DAE221C00D2E5BA /* ZFReOrderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DE227E1DAE221C00D2E5BA /* ZFReOrderTableView.m */; };
+		01DE22831DAE229B00D2E5BA /* ShoppingCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DE22811DAE229B00D2E5BA /* ShoppingCartCell.m */; };
+		01DE22841DAE229B00D2E5BA /* ShoppingCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DE22821DAE229B00D2E5BA /* ShoppingCartCell.xib */; };
 		01EED8DB1DAB3A2100003A37 /* ZXHomePictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EED8D91DAB3A2100003A37 /* ZXHomePictureController.m */; };
 		01EED8DC1DAB3A2100003A37 /* ZXHomePictureController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01EED8DA1DAB3A2100003A37 /* ZXHomePictureController.xib */; };
 		07B749F1D272B5A32752A9DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CEF7018824121FE816920C /* libPods.a */; };
@@ -215,6 +221,17 @@
 		01DC631E1DACCA4000D26546 /* ZXSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXSearchController.h; sourceTree = "<group>"; };
 		01DC631F1DACCA4000D26546 /* ZXSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSearchController.m; sourceTree = "<group>"; };
 		01DC63201DACCA4000D26546 /* ZXSearchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXSearchController.xib; sourceTree = "<group>"; };
+		01DE22731DAE20E300D2E5BA /* BadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeView.h; sourceTree = "<group>"; };
+		01DE22741DAE20E300D2E5BA /* BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeView.m; sourceTree = "<group>"; };
+		01DE22751DAE20E300D2E5BA /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
+		01DE22761DAE20E300D2E5BA /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
+		01DE22771DAE20E300D2E5BA /* ShoppingCartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartView.h; sourceTree = "<group>"; };
+		01DE22781DAE20E300D2E5BA /* ShoppingCartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartView.m; sourceTree = "<group>"; };
+		01DE227D1DAE221C00D2E5BA /* ZFReOrderTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFReOrderTableView.h; sourceTree = "<group>"; };
+		01DE227E1DAE221C00D2E5BA /* ZFReOrderTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFReOrderTableView.m; sourceTree = "<group>"; };
+		01DE22801DAE229B00D2E5BA /* ShoppingCartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartCell.h; sourceTree = "<group>"; };
+		01DE22811DAE229B00D2E5BA /* ShoppingCartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartCell.m; sourceTree = "<group>"; };
+		01DE22821DAE229B00D2E5BA /* ShoppingCartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCartCell.xib; sourceTree = "<group>"; };
 		01EED8D81DAB3A2100003A37 /* ZXHomePictureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXHomePictureController.h; sourceTree = "<group>"; };
 		01EED8D91DAB3A2100003A37 /* ZXHomePictureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXHomePictureController.m; sourceTree = "<group>"; };
 		01EED8DA1DAB3A2100003A37 /* ZXHomePictureController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXHomePictureController.xib; sourceTree = "<group>"; };
@@ -427,6 +444,8 @@
 		01D8986D1DAA2A2D0070FBDD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				01DE227C1DAE221C00D2E5BA /* ZFReOrderTableView */,
+				01DE22721DAE20E300D2E5BA /* ShopCardView */,
 				01D8986E1DAA2A2D0070FBDD /* LeftSelectScroll.h */,
 				01D8986F1DAA2A2D0070FBDD /* LeftSelectScroll.m */,
 				01D898701DAA2A2D0070FBDD /* ZXDishesCell.h */,
@@ -663,6 +682,31 @@
 			path = ZXSelectMenu;
 			sourceTree = "<group>";
 		};
+		01DE22721DAE20E300D2E5BA /* ShopCardView */ = {
+			isa = PBXGroup;
+			children = (
+				01DE22731DAE20E300D2E5BA /* BadgeView.h */,
+				01DE22741DAE20E300D2E5BA /* BadgeView.m */,
+				01DE22751DAE20E300D2E5BA /* OverlayView.h */,
+				01DE22761DAE20E300D2E5BA /* OverlayView.m */,
+				01DE22771DAE20E300D2E5BA /* ShoppingCartView.h */,
+				01DE22781DAE20E300D2E5BA /* ShoppingCartView.m */,
+			);
+			path = ShopCardView;
+			sourceTree = "<group>";
+		};
+		01DE227C1DAE221C00D2E5BA /* ZFReOrderTableView */ = {
+			isa = PBXGroup;
+			children = (
+				01DE22801DAE229B00D2E5BA /* ShoppingCartCell.h */,
+				01DE22811DAE229B00D2E5BA /* ShoppingCartCell.m */,
+				01DE22821DAE229B00D2E5BA /* ShoppingCartCell.xib */,
+				01DE227D1DAE221C00D2E5BA /* ZFReOrderTableView.h */,
+				01DE227E1DAE221C00D2E5BA /* ZFReOrderTableView.m */,
+			);
+			path = ZFReOrderTableView;
+			sourceTree = "<group>";
+		};
 		01EED8D71DAB21FB00003A37 /* LoginRegister */ = {
 			isa = PBXGroup;
 			children = (
@@ -806,6 +850,7 @@
 				01D898BE1DAA2A2D0070FBDD /* ZXAddAdressController.xib in Resources */,
 				015A4FB41DAA2C670055B711 /* Info.plist in Resources */,
 				01D898B21DAA2A2D0070FBDD /* ZXThemeZoneCell.xib in Resources */,
+				01DE22841DAE229B00D2E5BA /* ShoppingCartCell.xib in Resources */,
 				01D898B61DAA2A2D0070FBDD /* ZXTodayRecommendedCell.xib in Resources */,
 				01D898BA1DAA2A2D0070FBDD /* ZXFourthController.xib in Resources */,
 				01D898C01DAA2A2D0070FBDD /* ZXThirdController.xib in Resources */,
@@ -891,6 +936,7 @@
 			files = (
 				01D8993E1DAA2B550070FBDD /* CoolNavi.m in Sources */,
 				01D898B51DAA2A2D0070FBDD /* ZXTodayRecommendedCell.m in Sources */,
+				01DE22831DAE229B00D2E5BA /* ShoppingCartCell.m in Sources */,
 				01D8994E1DAA2B550070FBDD /* XFSegementView.m in Sources */,
 				01D898A01DAA2A2D0070FBDD /* DeliciousFoodController.m in Sources */,
 				01D899521DAA2B550070FBDD /* LSSelectMenuView.m in Sources */,
@@ -906,8 +952,10 @@
 				01D898B91DAA2A2D0070FBDD /* ZXFourthController.m in Sources */,
 				01D898B31DAA2A2D0070FBDD /* ZXTodayCell.m in Sources */,
 				01D8985B1DAA29DC0070FBDD /* main.m in Sources */,
+				01DE227F1DAE221C00D2E5BA /* ZFReOrderTableView.m in Sources */,
 				01D898A41DAA2A2D0070FBDD /* ZXMessageController.m in Sources */,
 				01D8994B1DAA2B550070FBDD /* BGHeaderView.m in Sources */,
+				01DE22791DAE20E300D2E5BA /* BadgeView.m in Sources */,
 				01D899401DAA2B550070FBDD /* KNCollectionViewCell.m in Sources */,
 				01D898AF1DAA2A2D0070FBDD /* ZXSquareCell.m in Sources */,
 				01D8994F1DAA2B550070FBDD /* ZXMovie.m in Sources */,
@@ -925,12 +973,14 @@
 				01D899501DAA2B550070FBDD /* ZXMovieBrowser.m in Sources */,
 				01D8984D1DAA28900070FBDD /* ZXTabBarController.m in Sources */,
 				01D899491DAA2B550070FBDD /* AdvertiseViewController.m in Sources */,
+				01DE227A1DAE20E300D2E5BA /* OverlayView.m in Sources */,
 				01D898B11DAA2A2D0070FBDD /* ZXThemeZoneCell.m in Sources */,
 				01D899431DAA2B550070FBDD /* NSString+hash.m in Sources */,
 				01D8984B1DAA28900070FBDD /* AppDelegate.m in Sources */,
 				01BCD3901D87C2D500499EF2 /* ZXNetworkTool.m in Sources */,
 				01D1BAE21D8685E300971AF3 /* UIBarButtonItem+ZXItem.m in Sources */,
 				01BCD3931D87C31500499EF2 /* ZXSearchBar.m in Sources */,
+				01DE227B1DAE20E300D2E5BA /* ShoppingCartView.m in Sources */,
 				01D8984C1DAA28900070FBDD /* ZXNavgaitonController.m in Sources */,
 				01D899421DAA2B550070FBDD /* NSData+KNCache.m in Sources */,
 				01D898AD1DAA2A2D0070FBDD /* ZXLikeCell.m in Sources */,

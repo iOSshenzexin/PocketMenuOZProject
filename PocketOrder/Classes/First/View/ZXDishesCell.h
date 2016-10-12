@@ -9,5 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @interface ZXDishesCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *foodImageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *orderCount;
+
+@property (weak, nonatomic) IBOutlet UIButton *minus;
+
+@property (weak, nonatomic) IBOutlet UIButton *plus;
+
+@property (assign, nonatomic) NSUInteger amount;
+
+
+
++ (instancetype)cellWithTableView:(UITableView *)tableview;
 
 @end

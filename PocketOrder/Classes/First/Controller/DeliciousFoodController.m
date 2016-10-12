@@ -32,7 +32,8 @@ static NSString *cellID = @"cellID";
 }
 
 - (void)setupMenuView{
-    _mytableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, ScreenH)];
+    _mytableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, ScreenH )];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     _mytableview.backgroundColor = DefaultColor;
     _mytableview.delegate = self;
     _mytableview.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -44,7 +45,7 @@ static NSString *cellID = @"cellID";
    
     
     menuInfo = @[@"商家分类",@"智能排序"];
-    menuView = [[LSSelectMenuView alloc] initWithFrame:CGRectMake(0, 64, ScreenW, topTitleHeight)];
+    menuView = [[LSSelectMenuView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, topTitleHeight)];
     menuView.backgroundColor = [UIColor whiteColor];
     menuView.delegate = self;
     menuView.dataSource = self;
@@ -131,7 +132,6 @@ static NSString *cellID = @"cellID";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    self.hidesBottomBarWhenPushed = YES;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ZXFoodMerchantsCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     ZXProductListController *vc = [[ZXProductListController alloc] init];
