@@ -10,6 +10,8 @@
 #import "BadgeView.h"
 #import "OverlayView.h"
 
+#import "ZXMakeSureOrderController.h"
+#import "ZXProductListController.h"
 #define SECTION_HEIGHT 30.0
 #define ROW_HEIGHT 50.0
 
@@ -86,7 +88,7 @@
     [self addSubview:_shoppingCartBtn];
     
     if (!_badge) {
-        _badge = [[BadgeView alloc] initWithFrame:CGRectMake(_shoppingCartBtn.frame.size.width - 15 -3, 5, 15, 15) withString:nil];
+        _badge = [[BadgeView alloc] initWithFrame:CGRectMake(_shoppingCartBtn.frame.size.width - 15 , 1, 15, 15) withString:nil];
         [_shoppingCartBtn addSubview:_badge];
     }
     
@@ -104,8 +106,6 @@
     _OverlayView.alpha = 0.0;
 
     _up = NO;
-    
-
 }
 
 
@@ -113,7 +113,6 @@
 
 -(void)setCartImage:(NSString *)imageName
 {
-
     [_shoppingCartBtn setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
 
 }
@@ -209,14 +208,18 @@
     }];
 }
 
+#pragma mark 去支付
 -(void)pay:(UIButton *)sender
 {
-    UIAlertView *alertView =[[UIAlertView alloc] initWithTitle:@"结算"
-    message:[NSString stringWithFormat:@"总金额：￥%ld",(long)_nTotal]
-                                                      delegate:self
-                                             cancelButtonTitle:@"知道了"
-                                             otherButtonTitles:nil,nil];
-    [alertView show];
+    ZXMakeSureOrderController *VC = [[ZXMakeSureOrderController alloc] init];
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[ZXProductListController class]]) {
+            ZXProductListController *vc = (ZXProductListController *)nextResponder;
+            VC.title = @"确认订单";
+            [vc.navigationController pushViewController:VC animated:YES];
+        }
+    }
 }
 
 -(void)setTotalMoney:(NSInteger)nTotal
@@ -234,20 +237,20 @@
     if(nTotal > 0)
     {
         _money.font = [UIFont systemFontOfSize:20.0f];
-        _money.textColor = [UIColor redColor];
-        _money.text = [NSString stringWithFormat:@"共￥%@",amount];
+        _money.textColor = RGB(237, 87, 27);
+        _money.text = [NSString stringWithFormat:@"共$%@",amount];
         NSInteger value = _minFreeMoney - nTotal;
         if (value > 0) {
             
             _accountBtn.enabled = NO;
-            [_accountBtn setTitle:[NSString stringWithFormat:@"还差￥%ld",(long)value] forState:UIControlStateNormal];
+            [_accountBtn setTitle:[NSString stringWithFormat:@"还差$%ld",(long)value] forState:UIControlStateNormal];
             [_accountBtn setBackgroundColor:[UIColor grayColor]];
         }
         else
         {
             _accountBtn.enabled = YES;
-            [_accountBtn setTitle:@"选好了" forState:UIControlStateNormal];
-            [_accountBtn setBackgroundColor:[UIColor redColor]];
+            [_accountBtn setTitle:@"去结算" forState:UIControlStateNormal];
+            [_accountBtn setBackgroundColor:RGB(237, 87, 27)];
         }
         
         [_shoppingCartBtn setUserInteractionEnabled:YES];
@@ -259,7 +262,7 @@
         [_money setFont:[UIFont systemFontOfSize:13.0]];
         
         _accountBtn.enabled = NO;
-        [_accountBtn setTitle:[NSString stringWithFormat:@"还差￥%ld",_minFreeMoney] forState:UIControlStateNormal];
+        [_accountBtn setTitle:[NSString stringWithFormat:@"还差$%ld",_minFreeMoney] forState:UIControlStateNormal];
         [_accountBtn setBackgroundColor:[UIColor grayColor]];
         
         [_shoppingCartBtn setUserInteractionEnabled:NO];

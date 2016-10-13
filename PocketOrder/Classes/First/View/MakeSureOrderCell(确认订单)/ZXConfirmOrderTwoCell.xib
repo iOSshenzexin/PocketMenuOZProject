@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ZXConfirmOrderTwoCell" id="KGk-i7-Jjw" customClass="ZXConfirmOrderTwoCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="54"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4q-64-N2h">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="CEe-0h-lK2"/>
+                            <constraint firstAttribute="height" constant="20" id="eaa-8d-q8I"/>
+                        </constraints>
+                        <state key="normal" image="plus"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请填写您的配送地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1L-GU-ENy">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="HvK-6K-IuT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="iI5-s3-v7F">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="HqW-3Y-nag"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Vm7-um-1wJ">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="oVg-J6-D71"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="iI5-s3-v7F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8Gk-ng-VOm"/>
+                    <constraint firstItem="Vm7-um-1wJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8fh-JB-F64"/>
+                    <constraint firstAttribute="trailing" secondItem="s1L-GU-ENy" secondAttribute="trailing" constant="10" id="CmZ-Bz-jjx"/>
+                    <constraint firstItem="iI5-s3-v7F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="G2D-pI-rDc"/>
+                    <constraint firstItem="D4q-64-N2h" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12.5" id="L4z-ZH-Olf"/>
+                    <constraint firstItem="D4q-64-N2h" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12.5" id="PWO-Zz-FPq"/>
+                    <constraint firstAttribute="trailing" secondItem="Vm7-um-1wJ" secondAttribute="trailing" id="dyE-0j-c0t"/>
+                    <constraint firstItem="s1L-GU-ENy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="kLR-Gf-t4g"/>
+                    <constraint firstAttribute="trailing" secondItem="iI5-s3-v7F" secondAttribute="trailing" id="l0Z-0e-qfa"/>
+                    <constraint firstItem="s1L-GU-ENy" firstAttribute="leading" secondItem="D4q-64-N2h" secondAttribute="trailing" constant="10" id="oBu-ax-Mlh"/>
+                    <constraint firstAttribute="bottom" secondItem="Vm7-um-1wJ" secondAttribute="bottom" id="v3p-N8-sJb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="34" y="53.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="line" width="1" height="1"/>
+        <image name="plus" width="30" height="30"/>
+    </resources>
+</document>

@@ -25,24 +25,23 @@
 
 @implementation DeliciousFoodController
 
-static NSString *cellID = @"cellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupMenuView];
+  //  [_mytableview.mj_header beginRefreshing];
 }
 
 - (void)setupMenuView{
-    _mytableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, ScreenH )];
+
+    _mytableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, ScreenH-54)];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     _mytableview.backgroundColor = DefaultColor;
     _mytableview.delegate = self;
     _mytableview.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _mytableview.dataSource = self;
-    [self.view addSubview:_mytableview];
-    [_mytableview registerNib:[UINib nibWithNibName:@"ZXFoodMerchantsCell" bundle:nil] forCellReuseIdentifier:cellID];
     _mytableview.contentInset = UIEdgeInsetsMake(54, 0, 0, 0);
-    //
-   
+    _mytableview.dataSource = self;
+  
+    [self.view addSubview:_mytableview];
     
     menuInfo = @[@"商家分类",@"智能排序"];
     menuView = [[LSSelectMenuView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, topTitleHeight)];
@@ -51,20 +50,24 @@ static NSString *cellID = @"cellID";
     menuView.dataSource = self;
     [self.view addSubview:menuView];
     
+   // _mytableview.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewInfo)];
+    
     UIView* showView = [[UIView alloc] initWithFrame:CGRectMake(0, menuView.frame.origin.y+menuView.frame.size.height, self.view.bounds.size.width, self.view.bounds.size.height-64-44)];
     showView.backgroundColor = [UIColor colorWithRed:0.145 green:0.145 blue:0.145 alpha:0.65];
     [self.view addSubview:showView];
     menuView.showView = showView;
-//    _mytableview.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewInfo)];
+
 }
-//
-//-(void)loadNewInfo
-//{
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [_mytableview.mj_header endRefreshing];
-//    });
-//
-//}
+
+
+// 加载数据
+-(void)loadNewInfo
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_mytableview.mj_header endRefreshing];
+    });
+
+}
 
 - (void)setupNavigationBarBtn{
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:0 btnWidth:20 btnHeight:21 image:@"Search" highlightImage:@"Search-cilck" title:nil target:self action:@selector(didClickSearch:) leftEdgeInset:0 rightEdgeInset:-8];
@@ -124,10 +127,7 @@ static NSString *cellID = @"cellID";
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    ZXFoodMerchantsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
-    if (!cell) {
-        cell = [[ZXFoodMerchantsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-    }
+    ZXFoodMerchantsCell *cell = [ZXFoodMerchantsCell cellWithTableView:tableView];
     return cell;
 }
 

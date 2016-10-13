@@ -10,6 +10,8 @@
 
 @interface ZXFoodMerchantsCell : UITableViewCell
 
++ (instancetype)cellWithTableView:(UITableView *)tableView;
+
 @property (weak, nonatomic) IBOutlet UILabel *goodsTitle;
 
 @end
