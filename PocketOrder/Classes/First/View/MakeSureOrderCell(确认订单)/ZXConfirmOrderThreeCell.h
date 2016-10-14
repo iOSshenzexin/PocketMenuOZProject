@@ -11,4 +11,6 @@
 @interface ZXConfirmOrderThreeCell : UITableViewCell
 
 +(instancetype)cellWithTableView:(UITableView *)tableview;
+
+
 @end

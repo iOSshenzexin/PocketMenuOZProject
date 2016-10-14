@@ -8,6 +8,9 @@
 
 #import "LSSelectMenuView.h"
 
+@interface LSSelectMenuView()<UIGestureRecognizerDelegate>
+
+@end
 
 @implementation LSSelectMenuView{
     
@@ -77,13 +80,31 @@
     minShowRect = _showView.frame;
     
     _showView.backgroundColor = [UIColor colorWithRed:0.145 green:0.145 blue:0.145 alpha:0];
-
-    UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClose)];
+    
+    UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClose:)];
+    tap.delegate = self;
     [_showView addGestureRecognizer:tap];
 }
-- (void)tapClose{
-    [self closeCurrViewOnIndex:selectIndex isCloseShowView:YES];
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+
+{
+     CGPoint point = [gestureRecognizer locationInView:gestureRecognizer.view];
+    if(point.y <  [_dataSource menuView:self heightForCurrViewAtIndex:selectIndex]) {
+        
+        return NO;
+        
+    }
+    
+    return  YES;
+    
+}
+
+- (void)tapClose:(UITapGestureRecognizer *)tap{
+//    CGPoint point = [tap locationInView:tap.view];
+//    if (point.y > 200) {
+        [self closeCurrViewOnIndex:selectIndex isCloseShowView:YES];
+//    }
 }
 
 #pragma mark - item选择
@@ -157,16 +178,24 @@
     
     //展开当前视图
     UIView* nowView = [_dataSource menuView:self currViewAtIndex:selectIndex];
-    nowView.frame = CGRectMake(0, 0, _showView.frame.size.width, 0);
+    nowView.frame = CGRectMake(0, 0, ScreenW, 0);
     nowView.tag = 1000+selectIndex;
     [_showView addSubview:nowView];
     
     [UIView animateWithDuration:DurationTime animations:^{
         //
-        nowView.frame = CGRectMake(0, 0, nowView.frame.size.width, [_dataSource menuView:self heightForCurrViewAtIndex:selectIndex]);
+        nowView.frame = CGRectMake(0, 0, ScreenW, [_dataSource menuView:self heightForCurrViewAtIndex:selectIndex]);
+        for (UIView *sub in nowView.subviews) {
+            if ([sub isKindOfClass:[UITableView class]]) {
+                UITableView *table = (UITableView *)sub;
+                table.frame = nowView.frame;
+            }
+        }
+        
     }completion:^(BOOL finished) {
         //
     }];
+    
 }
 
 #pragma mark - 收起
@@ -180,7 +209,14 @@
     UIView* vv = (UIView*)[_showView viewWithTag:1000+selectIndex];
     [UIView animateWithDuration:DurationTime animations:^{
         //
-        vv.frame = CGRectMake(0, 0, vv.frame.size.width, 0);
+        vv.frame = CGRectMake(0, 0, ScreenW, 0);
+        for (UIView *sub in vv.subviews) {
+            if ([sub isKindOfClass:[UITableView class]]) {
+                UITableView *table = (UITableView *)sub;
+                table.frame = vv.frame;
+            }
+        }
+        
     }completion:^(BOOL finished) {
         //
         [vv removeFromSuperview];
@@ -225,15 +261,13 @@
 #pragma mark - //在当前视图的操作中如需关闭视图，执行此方法
 - (void)closeCurrViewWithIndex:(NSInteger)index{
     
-    
-    
     LSButton* btn = (LSButton*)[self viewWithTag:100+index];
     UIView* vv = (UIView*)[_showView viewWithTag:1000+index];
     
     //关闭当前视图
     //按钮样式变化
     [btn settitleColor:[UIColor darkGrayColor]];
-    [btn setMarkImg:[UIImage imageNamed:@"list-on"]];
+    [btn setMarkImg:[UIImage imageNamed:@"list"]];
     
     
     //动画过度
@@ -242,22 +276,26 @@
     } completion:^(BOOL ok){
         if (ok) {
             self.userInteractionEnabled = YES;
-            
         }
-        
     }];
     isShow = NO;
-    
+
     [UIView animateWithDuration:DurationTime animations:^{
         //
         _showView.backgroundColor = [UIColor colorWithRed:0.145 green:0.145 blue:0.145 alpha:0];
         vv.frame = CGRectMake(0, 0, vv.frame.size.width, 0);
+        for (UIView *sub in vv.subviews) {
+            if ([sub isKindOfClass:[UITableView class]]) {
+                UITableView *table = (UITableView *)sub;
+                table.frame = vv.frame;
+            }
+        }
     }completion:^(BOOL finished) {
-        //
         _showView.frame = minShowRect;
         _showView.accessibilityIdentifier = @"NO";
         [vv removeFromSuperview];
     }];
+
 }
 
 @end

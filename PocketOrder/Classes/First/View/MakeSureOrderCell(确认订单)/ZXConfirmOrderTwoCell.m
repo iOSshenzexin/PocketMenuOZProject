@@ -24,7 +24,7 @@ static NSString *confirmOrderTwoCell = @"ZXConfirmOrderTwoCell";
     ZXConfirmOrderTwoCell *cell = [tableview dequeueReusableCellWithIdentifier:confirmOrderTwoCell];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZXConfirmOrderTwoCell class]) owner:nil options:nil] lastObject];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+       // cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     return cell;
 }

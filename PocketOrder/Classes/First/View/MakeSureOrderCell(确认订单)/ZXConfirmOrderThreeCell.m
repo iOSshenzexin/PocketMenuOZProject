@@ -8,6 +8,15 @@
 
 #import "ZXConfirmOrderThreeCell.h"
 
+@interface ZXConfirmOrderThreeCell()
+
+@property (nonatomic,weak) UIButton *previousButton;
+@property (weak, nonatomic) IBOutlet UIButton *firstBtn;
+
+
+@end
+
+
 @implementation ZXConfirmOrderThreeCell
 
 -(void)setFrame:(CGRect)frame
@@ -19,10 +28,20 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    //self.previousButton = self.firstBtn;
+    self.previousButton = self.firstBtn;
     
     
 }
+
+- (IBAction)didClickSelectPayStyle:(UIButton *)sender {
+    if (sender != self.previousButton) {
+        sender.selected = self.previousButton.selected;
+        self.previousButton.selected = NO;
+        self.previousButton = sender;
+    }
+}
+
+
 
 static NSString *confirmOrderThreeCell = @"ZXConfirmOrderThreeCell";
 +(instancetype)cellWithTableView:(UITableView *)tableview

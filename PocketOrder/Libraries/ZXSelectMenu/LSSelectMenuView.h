@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年  tsou117. All rights reserved.
 //
 
-#define DurationTime 0.35
+#define DurationTime 0.25
 
 #import <UIKit/UIKit.h>
 #import "LSButton.h"

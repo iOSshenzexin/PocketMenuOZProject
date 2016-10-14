@@ -25,6 +25,11 @@
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujk-59-xG9">
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="HBg-gY-XF7">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="xt2-Uu-H2D"/>
+                            </constraints>
+                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNA-30-h4Z">
                             <color key="backgroundColor" red="0.92549019607843142" green="0.33725490196078434" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -50,13 +55,16 @@
                     </subviews>
                     <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="HBg-gY-XF7" secondAttribute="trailing" id="1Nj-dA-ZDu"/>
                         <constraint firstItem="EO8-UX-wvd" firstAttribute="top" secondItem="ujk-59-xG9" secondAttribute="top" id="D9G-h0-zY0"/>
                         <constraint firstItem="gNA-30-h4Z" firstAttribute="top" secondItem="ujk-59-xG9" secondAttribute="top" id="DAd-N1-Lwd"/>
+                        <constraint firstItem="HBg-gY-XF7" firstAttribute="top" secondItem="ujk-59-xG9" secondAttribute="top" id="F8U-vN-LcB"/>
                         <constraint firstItem="EO8-UX-wvd" firstAttribute="leading" secondItem="ujk-59-xG9" secondAttribute="leading" constant="15" id="TEg-pU-s9u"/>
                         <constraint firstAttribute="trailing" secondItem="gNA-30-h4Z" secondAttribute="trailing" id="VXE-HC-Boi"/>
                         <constraint firstAttribute="bottom" secondItem="gNA-30-h4Z" secondAttribute="bottom" id="afK-BM-OC0"/>
                         <constraint firstAttribute="bottom" secondItem="EO8-UX-wvd" secondAttribute="bottom" id="bY4-Sv-Hxb"/>
                         <constraint firstAttribute="height" constant="49" id="ky3-Or-QiO"/>
+                        <constraint firstItem="HBg-gY-XF7" firstAttribute="leading" secondItem="ujk-59-xG9" secondAttribute="leading" id="sPT-Gy-xqr"/>
                     </constraints>
                 </view>
             </subviews>
@@ -68,9 +76,12 @@
                 <constraint firstAttribute="trailing" secondItem="HVE-KI-mwe" secondAttribute="trailing" id="DdY-5K-Y6B"/>
                 <constraint firstItem="HVE-KI-mwe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ROi-MJ-BOj"/>
                 <constraint firstAttribute="trailing" secondItem="ujk-59-xG9" secondAttribute="trailing" id="b89-mQ-UHz"/>
-                <constraint firstAttribute="bottom" secondItem="HVE-KI-mwe" secondAttribute="bottom" id="q5z-j7-6OY"/>
+                <constraint firstAttribute="bottom" secondItem="HVE-KI-mwe" secondAttribute="bottom" constant="49" id="q5z-j7-6OY"/>
             </constraints>
             <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="line" width="1" height="1"/>
+    </resources>
 </document>

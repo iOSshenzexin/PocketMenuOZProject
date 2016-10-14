@@ -46,8 +46,10 @@
     // 2.无论沙盒中是否存在广告图片，都需要重新调用广告接口，判断广告是否更新
     [GetAdTool getAdvertisingImage];
      */
-    [[UINavigationBar appearance] setBarTintColor:RGB(242, 84, 41)];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+   // [[UINavigationBar appearance] setBarTintColor:AppThemeColor];
+//    [[UINavigationBar appearance]  setBackgroundImage:[UIImage imageNamed:@"navigationbar_background"] forBarMetrics:UIBarMetricsDefault];
+//    [UINavigationBar appearance].translucent = NO;
+//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     return YES;
 }
 

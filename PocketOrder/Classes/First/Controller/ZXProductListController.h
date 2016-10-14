@@ -12,7 +12,7 @@
 #define kScreenHeight [[UIScreen mainScreen] bounds].size.height//屏幕的高度
 #define kNav_H kScreenHeight > 668 ? 86 : 64//屏幕的高度
 #define kTabbar_H kScreenHeight > 668 ? 59 : 49//屏幕的高度
-#define leftScrollY 187
+#define leftScrollY 123
 
 
 

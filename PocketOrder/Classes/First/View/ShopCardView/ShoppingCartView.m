@@ -12,6 +12,8 @@
 
 #import "ZXMakeSureOrderController.h"
 #import "ZXProductListController.h"
+
+#import "ZXLoginController.h"
 #define SECTION_HEIGHT 30.0
 #define ROW_HEIGHT 50.0
 
@@ -211,13 +213,16 @@
 #pragma mark 去支付
 -(void)pay:(UIButton *)sender
 {
-    ZXMakeSureOrderController *VC = [[ZXMakeSureOrderController alloc] init];
+    //ZXMakeSureOrderController *VC = [[ZXMakeSureOrderController alloc] init];
     for (UIView* next = [self superview]; next; next = next.superview) {
         UIResponder* nextResponder = [next nextResponder];
         if ([nextResponder isKindOfClass:[ZXProductListController class]]) {
             ZXProductListController *vc = (ZXProductListController *)nextResponder;
-            VC.title = @"确认订单";
-            [vc.navigationController pushViewController:VC animated:YES];
+//            VC.title = @"确认订单";
+            ZXLoginController *loginVc = [[ZXLoginController alloc] init];
+            ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:loginVc];
+            [vc presentViewController:nav animated:YES completion:nil];
+           // [vc.navigationController pushViewController:VC animated:YES];
         }
     }
 }

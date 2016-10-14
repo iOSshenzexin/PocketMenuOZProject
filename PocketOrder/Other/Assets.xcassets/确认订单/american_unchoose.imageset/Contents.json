@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "american-unchoose.png",
+      "filename" : "american-choose.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "american-unchoose@2x.png",
+      "filename" : "american-choose@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "american-unchoose@3x.png",
+      "filename" : "american-choose@3x.png",
       "scale" : "3x"
     }
   ],

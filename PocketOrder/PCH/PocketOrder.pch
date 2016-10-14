@@ -8,15 +8,12 @@
 //RGB设置随机颜色
 #define RandomRGBColor RGB(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
 
+#define AppThemeColor RGB(242, 84, 0)
 
+//RGB(242, 84, 41)
 #define DefaultColor RGB(240,240,240)
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height
-
-
-
-
-
 
 
 
@@ -26,13 +23,7 @@
 #import "SVProgressHUD.h"
 #import "ZXConst.h"
 #import "UIBarButtonItem+ZXItem.h"
-
-
-
-
-
-
-
+#import "ZXNavgaitonController.h"
 
 
 

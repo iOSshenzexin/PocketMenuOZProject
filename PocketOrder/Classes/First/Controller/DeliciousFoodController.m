@@ -19,8 +19,11 @@
     NSArray *menuInfo;
     
     UITableView *_mytableview;
+    
+    UITableView *_listView;
 }
 
+@property (nonatomic,copy) NSMutableArray *listArray;
 @end
 
 @implementation DeliciousFoodController
@@ -28,11 +31,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupMenuView];
+    
+    self.listArray = [NSMutableArray arrayWithObjects:@"商家分类",@"火锅",@"自助餐",@"火锅",@"离我最近",@"最新入驻",nil];
+    
   //  [_mytableview.mj_header beginRefreshing];
 }
 
 - (void)setupMenuView{
-
     _mytableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, ScreenH-54)];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     _mytableview.backgroundColor = DefaultColor;
@@ -99,47 +104,81 @@
 - (NSString*)menuView:(LSSelectMenuView *)menuview titleForItemAtIndex:(NSInteger)index{
     return menuInfo[index];
 }
+
+
 - (CGFloat)menuView:(LSSelectMenuView *)menuview heightForCurrViewAtIndex:(NSInteger)index{
-    return 200 + index * 50;
+    return 200;
+    //return _listView.frame.size.height;
 }
 
 - (UIView*)menuView:(LSSelectMenuView *)menuview currViewAtIndex:(NSInteger)index{
-    UIView* vv = [[UIView alloc] initWithFrame:CGRectZero];
+    UIView* vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 0)];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:vv.frame];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.tag = index;
+    _listView = tableView;
+     
     vv.backgroundColor = [self randomColor];
+    [vv addSubview:tableView];
     return vv;
 }
 
 #pragma mark - LSSelectMenuViewDelegate
 
 - (void)selectMenuView:(LSSelectMenuView *)selectmenuview didSelectAtIndex:(NSInteger)index{
-   // NSLog(@"show row = %ld",index);
+    
+    NSLog(@"show row = %ld",index);
     
 }
 
 - (void)selectMenuView:(LSSelectMenuView *)selectmenuview didRemoveAtIndex:(NSInteger)index{
-  //  NSLog(@"remove row = %ld",index);
+    NSLog(@"remove row = %ld",index);
 }
 
 #pragma mark - UITableDataSource & UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (tableView == _listView) {
+        return self.listArray.count;
+    }
     return 10;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView == _listView) {
+        static NSString *cellId = @"cellId";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId];
+        }
+        cell.imageView.image = [UIImage imageNamed:@"mark1"];
+        cell.textLabel.text = self.listArray[indexPath.row];
+        cell.detailTextLabel.text = self.listArray[indexPath.row];
+        return cell;
+    }
     ZXFoodMerchantsCell *cell = [ZXFoodMerchantsCell cellWithTableView:tableView];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView == _listView) {
+        [menuView closeCurrViewWithIndex:_listView.tag];
+        ZXLog(@"indexPath.row %ld",indexPath.row);
+        
+    }else{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ZXFoodMerchantsCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     ZXProductListController *vc = [[ZXProductListController alloc] init];
     vc.title = cell.goodsTitle.text;
     [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView == _listView) {
+        return 46;
+    }
     return 180.0;
 }
 

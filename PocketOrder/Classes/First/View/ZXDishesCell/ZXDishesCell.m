@@ -71,6 +71,7 @@ static NSString *dishCell = @"ZXDishesCell";
     ZXDishesCell *cell = [tableview dequeueReusableCellWithIdentifier:dishCell];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZXDishesCell class]) owner:nil options:nil] lastObject];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }

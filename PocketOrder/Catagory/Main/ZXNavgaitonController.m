@@ -15,6 +15,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    self.navigationBar.translucent = NO;
+//    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbar_background"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBarTintColor:AppThemeColor];
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:18]}];
+    
+//    [[UINavigationBar appearance]  setBackgroundImage:[UIImage imageNamed:@"navigationbar_background"] forBarMetrics:UIBarMetricsDefault];
+//    [UINavigationBar appearance].translucent = NO;
+//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self.interactivePopGestureRecognizer.delegate action:@selector(handleNavigationTransition:)];
     [self.view addGestureRecognizer:pan];
     // 控制手势什么时候触发,只有非根控制器才需要触发手势

@@ -46,14 +46,23 @@
                         </constraints>
                         <state key="normal" image="VISA_unchoose"/>
                         <state key="selected" image="VISA_choose"/>
+                        <connections>
+                            <action selector="didClickSelectPayStyle:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="exM-3v-YaK"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXk-cT-F0S">
                         <state key="normal" image="mastercard_unchoose"/>
                         <state key="selected" image="mastercard_choose"/>
+                        <connections>
+                            <action selector="didClickSelectPayStyle:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fyV-xj-glI"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvD-zl-v0B">
                         <state key="normal" image="american_unchoose"/>
                         <state key="selected" image="american_choose"/>
+                        <connections>
+                            <action selector="didClickSelectPayStyle:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="FKK-wD-bVs"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -81,6 +90,9 @@
                     <constraint firstAttribute="trailing" secondItem="Uli-a0-PXB" secondAttribute="trailing" constant="10" id="x3l-ey-mkW"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="firstBtn" destination="fKm-Bf-IUp" id="m4q-M9-kxT"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

@@ -65,6 +65,8 @@ extern int btnH;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
 //    self.navigationController.navigationBar.translucent = YES;
 //    self.navigationController.navigationBar.shadowImage = [UIImage new];
@@ -82,7 +84,7 @@ extern int btnH;
 
 - (void)createShopCarView
 {
-    _ShopCartView = [[ShoppingCartView alloc] initWithFrame:CGRectMake(0, ScreenH - 46, ScreenW, 46) inView:self.view withObjects:nil];
+    _ShopCartView = [[ShoppingCartView alloc] initWithFrame:CGRectMake(0, ScreenH - 46 - 64, ScreenW, 46) inView:self.view withObjects:nil];
     _ShopCartView.parentView = self.view;
     _ShopCartView.OrderList.delegate = self;
     _ShopCartView.OrderList.tableView.delegate = self;
