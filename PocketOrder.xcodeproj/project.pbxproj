@@ -38,6 +38,10 @@
 		0173102A1DB0911B00D373E6 /* ZXSetUpPWDController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017310281DB0911B00D373E6 /* ZXSetUpPWDController.xib */; };
 		0173102E1DB0B12D00D373E6 /* ZXDisclaimerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173102C1DB0B12D00D373E6 /* ZXDisclaimerController.m */; };
 		0173102F1DB0B12D00D373E6 /* ZXDisclaimerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0173102D1DB0B12D00D373E6 /* ZXDisclaimerController.xib */; };
+		017310331DB0DD9400D373E6 /* ZXAddAdressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017310311DB0DD9400D373E6 /* ZXAddAdressController.m */; };
+		017310341DB0DD9400D373E6 /* ZXAddAdressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017310321DB0DD9400D373E6 /* ZXAddAdressController.xib */; };
+		017310381DB0DFF700D373E6 /* ZXAddressOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 017310361DB0DFF700D373E6 /* ZXAddressOneCell.m */; };
+		017310391DB0DFF700D373E6 /* ZXAddressOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017310371DB0DFF700D373E6 /* ZXAddressOneCell.xib */; };
 		01D1BAD11D86401800971AF3 /* ZXConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D1BAD01D86401800971AF3 /* ZXConst.m */; };
 		01D1BAE21D8685E300971AF3 /* UIBarButtonItem+ZXItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D1BAE11D8685E300971AF3 /* UIBarButtonItem+ZXItem.m */; };
 		01D8984B1DAA28900070FBDD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D898461DAA28900070FBDD /* AppDelegate.m */; };
@@ -74,8 +78,6 @@
 		01D898BA1DAA2A2D0070FBDD /* ZXFourthController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D8988C1DAA2A2D0070FBDD /* ZXFourthController.xib */; };
 		01D898BB1DAA2A2D0070FBDD /* ZXSecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D898921DAA2A2D0070FBDD /* ZXSecondController.m */; };
 		01D898BC1DAA2A2D0070FBDD /* ZXSecondController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D898931DAA2A2D0070FBDD /* ZXSecondController.xib */; };
-		01D898BD1DAA2A2D0070FBDD /* ZXAddAdressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D898991DAA2A2D0070FBDD /* ZXAddAdressController.m */; };
-		01D898BE1DAA2A2D0070FBDD /* ZXAddAdressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D8989A1DAA2A2D0070FBDD /* ZXAddAdressController.xib */; };
 		01D898BF1DAA2A2D0070FBDD /* ZXThirdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8989C1DAA2A2D0070FBDD /* ZXThirdController.m */; };
 		01D898C01DAA2A2D0070FBDD /* ZXThirdController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D8989D1DAA2A2D0070FBDD /* ZXThirdController.xib */; };
 		01D8993E1DAA2B550070FBDD /* CoolNavi.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8990E1DAA2B550070FBDD /* CoolNavi.m */; };
@@ -179,6 +181,12 @@
 		0173102B1DB0B12D00D373E6 /* ZXDisclaimerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXDisclaimerController.h; sourceTree = "<group>"; };
 		0173102C1DB0B12D00D373E6 /* ZXDisclaimerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXDisclaimerController.m; sourceTree = "<group>"; };
 		0173102D1DB0B12D00D373E6 /* ZXDisclaimerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXDisclaimerController.xib; sourceTree = "<group>"; };
+		017310301DB0DD9400D373E6 /* ZXAddAdressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAddAdressController.h; sourceTree = "<group>"; };
+		017310311DB0DD9400D373E6 /* ZXAddAdressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAddAdressController.m; sourceTree = "<group>"; };
+		017310321DB0DD9400D373E6 /* ZXAddAdressController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXAddAdressController.xib; sourceTree = "<group>"; };
+		017310351DB0DFF700D373E6 /* ZXAddressOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAddressOneCell.h; sourceTree = "<group>"; };
+		017310361DB0DFF700D373E6 /* ZXAddressOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAddressOneCell.m; sourceTree = "<group>"; };
+		017310371DB0DFF700D373E6 /* ZXAddressOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXAddressOneCell.xib; sourceTree = "<group>"; };
 		01D1BACF1D86401800971AF3 /* ZXConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXConst.h; sourceTree = "<group>"; };
 		01D1BAD01D86401800971AF3 /* ZXConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXConst.m; sourceTree = "<group>"; };
 		01D1BAE01D8685E300971AF3 /* UIBarButtonItem+ZXItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+ZXItem.h"; sourceTree = "<group>"; };
@@ -235,9 +243,6 @@
 		01D898911DAA2A2D0070FBDD /* ZXSecondController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXSecondController.h; sourceTree = "<group>"; };
 		01D898921DAA2A2D0070FBDD /* ZXSecondController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSecondController.m; sourceTree = "<group>"; };
 		01D898931DAA2A2D0070FBDD /* ZXSecondController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXSecondController.xib; sourceTree = "<group>"; };
-		01D898981DAA2A2D0070FBDD /* ZXAddAdressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAddAdressController.h; sourceTree = "<group>"; };
-		01D898991DAA2A2D0070FBDD /* ZXAddAdressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAddAdressController.m; sourceTree = "<group>"; };
-		01D8989A1DAA2A2D0070FBDD /* ZXAddAdressController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXAddAdressController.xib; sourceTree = "<group>"; };
 		01D8989B1DAA2A2D0070FBDD /* ZXThirdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXThirdController.h; sourceTree = "<group>"; };
 		01D8989C1DAA2A2D0070FBDD /* ZXThirdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXThirdController.m; sourceTree = "<group>"; };
 		01D8989D1DAA2A2D0070FBDD /* ZXThirdController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXThirdController.xib; sourceTree = "<group>"; };
@@ -619,6 +624,9 @@
 				01D8988A1DAA2A2D0070FBDD /* ZXFourthController.h */,
 				01D8988B1DAA2A2D0070FBDD /* ZXFourthController.m */,
 				01D8988C1DAA2A2D0070FBDD /* ZXFourthController.xib */,
+				017310301DB0DD9400D373E6 /* ZXAddAdressController.h */,
+				017310311DB0DD9400D373E6 /* ZXAddAdressController.m */,
+				017310321DB0DD9400D373E6 /* ZXAddAdressController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -633,6 +641,9 @@
 		01D8988E1DAA2A2D0070FBDD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				017310351DB0DFF700D373E6 /* ZXAddressOneCell.h */,
+				017310361DB0DFF700D373E6 /* ZXAddressOneCell.m */,
+				017310371DB0DFF700D373E6 /* ZXAddressOneCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -686,9 +697,6 @@
 		01D898971DAA2A2D0070FBDD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				01D898981DAA2A2D0070FBDD /* ZXAddAdressController.h */,
-				01D898991DAA2A2D0070FBDD /* ZXAddAdressController.m */,
-				01D8989A1DAA2A2D0070FBDD /* ZXAddAdressController.xib */,
 				01D8989B1DAA2A2D0070FBDD /* ZXThirdController.h */,
 				01D8989C1DAA2A2D0070FBDD /* ZXThirdController.m */,
 				01D8989D1DAA2A2D0070FBDD /* ZXThirdController.xib */,
@@ -980,6 +988,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				017310391DB0DFF700D373E6 /* ZXAddressOneCell.xib in Resources */,
 				0173102A1DB0911B00D373E6 /* ZXSetUpPWDController.xib in Resources */,
 				01D898A31DAA2A2D0070FBDD /* ZXFirstController.xib in Resources */,
 				01D898581DAA29DC0070FBDD /* Assets.xcassets in Resources */,
@@ -990,10 +999,10 @@
 				01D898B81DAA2A2D0070FBDD /* ZXYouLikeCell.xib in Resources */,
 				01D8994C1DAA2B550070FBDD /* BGHeaderView.xib in Resources */,
 				01D898A71DAA2A2D0070FBDD /* ZXProductListController.xib in Resources */,
-				01D898BE1DAA2A2D0070FBDD /* ZXAddAdressController.xib in Resources */,
 				015A4FB41DAA2C670055B711 /* Info.plist in Resources */,
 				017310061DB06E9B00D373E6 /* ZXConfirmOrderFourCell.xib in Resources */,
 				01D898B21DAA2A2D0070FBDD /* ZXThemeZoneCell.xib in Resources */,
+				017310341DB0DD9400D373E6 /* ZXAddAdressController.xib in Resources */,
 				017310151DB08A6500D373E6 /* ZXResetPWDController.xib in Resources */,
 				01607A891DAF6856002F692E /* ZXConfirmOrderOneCell.xib in Resources */,
 				01607A931DAF6C89002F692E /* ZXConfirmOrderTwoCell.xib in Resources */,
@@ -1093,6 +1102,7 @@
 				0173102E1DB0B12D00D373E6 /* ZXDisclaimerController.m in Sources */,
 				01D898A01DAA2A2D0070FBDD /* DeliciousFoodController.m in Sources */,
 				017310251DB08E6800D373E6 /* ZXSearchBar.m in Sources */,
+				017310381DB0DFF700D373E6 /* ZXAddressOneCell.m in Sources */,
 				01D899521DAA2B550070FBDD /* LSSelectMenuView.m in Sources */,
 				0173100F1DB07F1800D373E6 /* ZXRegisterController.m in Sources */,
 				01D898AB1DAA2A2D0070FBDD /* ZXFoodMerchantsCell.m in Sources */,
@@ -1120,12 +1130,12 @@
 				01D898AF1DAA2A2D0070FBDD /* ZXSquareCell.m in Sources */,
 				01D8994F1DAA2B550070FBDD /* ZXMovie.m in Sources */,
 				01D898BF1DAA2A2D0070FBDD /* ZXThirdController.m in Sources */,
+				017310331DB0DD9400D373E6 /* ZXAddAdressController.m in Sources */,
 				01D899511DAA2B550070FBDD /* LSButton.m in Sources */,
 				017310051DB06E9B00D373E6 /* ZXConfirmOrderFourCell.m in Sources */,
 				017310191DB08E2100D373E6 /* ZXGetCheckCode.m in Sources */,
 				01D8985C1DAA29DC0070FBDD /* PocketOrder.xcdatamodeld in Sources */,
 				01D898B71DAA2A2D0070FBDD /* ZXYouLikeCell.m in Sources */,
-				01D898BD1DAA2A2D0070FBDD /* ZXAddAdressController.m in Sources */,
 				01D898A81DAA2A2D0070FBDD /* LeftSelectScroll.m in Sources */,
 				01607A921DAF6C89002F692E /* ZXConfirmOrderTwoCell.m in Sources */,
 				01D899411DAA2B550070FBDD /* KNJudgementTool.m in Sources */,

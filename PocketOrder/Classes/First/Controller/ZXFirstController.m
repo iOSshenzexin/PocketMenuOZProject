@@ -29,6 +29,9 @@
 
 #import "ZXMessageController.h"
 #import "ZXHomePictureController.h"
+
+// 搭界面用
+#import "ZXAddAdressController.h"
 @interface ZXFirstController ()<KNBannerViewDelegate,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong, readwrite) UILabel *titileLabel;
@@ -105,6 +108,9 @@
    /*选择地点*/
 - (void)didClickAddress
 {
+    ZXAddAdressController *vc = [[ZXAddAdressController alloc] init];
+    vc.title = @"添加收货地址";
+    [self.navigationController pushViewController:vc animated:YES];
     ZXFunction
 }
 
