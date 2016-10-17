@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXThirdController">
@@ -12,9 +12,83 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CuM-VN-eZ4">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrL-Uz-svV" userLabel="bottom">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="OfE-pH-rb4">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="Vjx-nF-Ryh"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ro9-TP-YXI">
+                            <color key="backgroundColor" red="0.94901960780000005" green="0.3294117647" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="zIO-Ql-j0h"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="去结算"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0A-vN-4kd">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="全选" image="box">
+                                <color key="titleColor" red="0.4823529412" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" image="box_choose">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="didClickAllChoosed:" destination="-1" eventType="touchUpInside" id="NHG-Vp-PUV"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$29" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkk-zk-GPb">
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <color key="textColor" red="0.94901960780000005" green="0.3294117647" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="配送费以订单为准" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2t-pR-EkY">
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                            <color key="textColor" red="0.6588235294117647" green="0.6588235294117647" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="fkk-zk-GPb" firstAttribute="top" secondItem="MrL-Uz-svV" secondAttribute="top" constant="4" id="1tq-Fj-TeQ"/>
+                        <constraint firstItem="Ro9-TP-YXI" firstAttribute="top" secondItem="MrL-Uz-svV" secondAttribute="top" id="4ix-xQ-q5J"/>
+                        <constraint firstItem="C0A-vN-4kd" firstAttribute="top" secondItem="MrL-Uz-svV" secondAttribute="top" constant="14" id="544-4L-hPV"/>
+                        <constraint firstAttribute="trailing" secondItem="Ro9-TP-YXI" secondAttribute="trailing" id="6nc-fg-uxq"/>
+                        <constraint firstItem="OfE-pH-rb4" firstAttribute="top" secondItem="MrL-Uz-svV" secondAttribute="top" id="JFv-fI-PlO"/>
+                        <constraint firstAttribute="bottom" secondItem="o2t-pR-EkY" secondAttribute="bottom" constant="4" id="Sr6-sa-x2N"/>
+                        <constraint firstItem="C0A-vN-4kd" firstAttribute="leading" secondItem="MrL-Uz-svV" secondAttribute="leading" constant="12" id="W0q-AA-7rP"/>
+                        <constraint firstItem="Ro9-TP-YXI" firstAttribute="leading" secondItem="o2t-pR-EkY" secondAttribute="trailing" constant="8" id="ZRn-Rw-FWB"/>
+                        <constraint firstAttribute="bottom" secondItem="Ro9-TP-YXI" secondAttribute="bottom" id="aiy-Pm-EJQ"/>
+                        <constraint firstItem="Ro9-TP-YXI" firstAttribute="leading" secondItem="fkk-zk-GPb" secondAttribute="trailing" constant="8" id="pe3-Am-pFq"/>
+                        <constraint firstAttribute="trailing" secondItem="OfE-pH-rb4" secondAttribute="trailing" id="t6H-Yn-1Rf"/>
+                        <constraint firstAttribute="height" constant="49" id="v0z-BA-ElU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="MrL-Uz-svV" secondAttribute="trailing" id="HcJ-EF-TIu"/>
+                <constraint firstItem="CuM-VN-eZ4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Uh2-uD-GHa"/>
+                <constraint firstItem="CuM-VN-eZ4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xls-i8-s4K"/>
+                <constraint firstItem="MrL-Uz-svV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dW3-aO-V07"/>
+                <constraint firstAttribute="trailing" secondItem="CuM-VN-eZ4" secondAttribute="trailing" id="fv7-Ru-LA1"/>
+                <constraint firstAttribute="bottom" secondItem="MrL-Uz-svV" secondAttribute="bottom" id="lOL-ly-90S"/>
+                <constraint firstAttribute="bottom" secondItem="CuM-VN-eZ4" secondAttribute="bottom" id="rfd-XC-LJm"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="box" width="13" height="13"/>
+        <image name="box_choose" width="17" height="16"/>
+        <image name="line" width="1" height="1"/>
+    </resources>
 </document>

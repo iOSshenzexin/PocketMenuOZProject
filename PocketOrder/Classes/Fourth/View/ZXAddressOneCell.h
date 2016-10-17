@@ -10,4 +10,6 @@
 
 @interface ZXAddressOneCell : UITableViewCell
 
++(instancetype)cellWithTableView:(UITableView *)tableview;
+
 @end

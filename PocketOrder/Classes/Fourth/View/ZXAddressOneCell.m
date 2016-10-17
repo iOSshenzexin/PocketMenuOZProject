@@ -8,17 +8,40 @@
 
 #import "ZXAddressOneCell.h"
 
+
+@interface ZXAddressOneCell ()
+
+@property (nonatomic,weak) UIButton *previousBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *manBtn;
+@end
+
 @implementation ZXAddressOneCell
 
-- (void)awakeFromNib {
+-(void)awakeFromNib
+{
     [super awakeFromNib];
-    // Initialization code
+    self.previousBtn = self.manBtn;
+
+}
+- (IBAction)didClickSexBtn:(UIButton *)sender {
+    if (sender != self.previousBtn) {
+        sender.selected = self.previousBtn.selected;
+        self.previousBtn.selected = NO;
+        self.previousBtn = sender;
+    }
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+static NSString *addressOneCell = @"ZXAddressOneCell";
++(instancetype)cellWithTableView:(UITableView *)tableview
+{
+    ZXAddressOneCell *cell = [tableview dequeueReusableCellWithIdentifier:addressOneCell];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZXAddressOneCell class]) owner:nil options:nil] lastObject];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    return cell;
 }
+
 
 @end

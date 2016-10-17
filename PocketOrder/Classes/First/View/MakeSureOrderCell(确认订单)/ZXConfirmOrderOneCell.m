@@ -29,7 +29,6 @@
     [super awakeFromNib];
     self.previousButton = self.firstBtn;
 
-    
 }
 
 static NSString *confirmOrderOneCell = @"ConfirmOrderOneCell";

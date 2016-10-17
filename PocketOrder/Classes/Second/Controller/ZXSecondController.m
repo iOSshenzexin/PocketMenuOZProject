@@ -8,6 +8,7 @@
 
 #import "ZXSecondController.h"
 
+#import "ZXSearchController.h"
 @interface ZXSecondController ()
 
 @end
@@ -16,6 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:0 btnWidth:20 btnHeight:21 image:@"Search" highlightImage:@"Search-cilck" title:nil target:self action:@selector(didClickSearch:) leftEdgeInset:0 rightEdgeInset:-8];
+}
+
+- (void)didClickSearch:(UIButton *)btn{
+    ZXSearchController *vc = [[ZXSearchController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
