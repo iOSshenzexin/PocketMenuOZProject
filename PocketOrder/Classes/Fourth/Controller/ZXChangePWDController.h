@@ -1,5 +1,5 @@
 //
-//  ZXChangePersonInfoController.h
+//  ZXChangePWDController.h
 //  PocketOrder
 //
 //  Created by 青岛商通天下 on 2016/10/19.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZXChangePersonInfoController : UITableViewController
+@interface ZXChangePWDController : UITableViewController
 
 @end

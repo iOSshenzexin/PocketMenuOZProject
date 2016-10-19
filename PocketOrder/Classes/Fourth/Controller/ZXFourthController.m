@@ -9,8 +9,14 @@
 #import "ZXFourthController.h"
 
 #import "ZXHeaderView.h"
+#import "ZXUnLoginHeaderView.h"
 
 #import "ZXChangePersonInfoController.h"
+#import "ZXSettingController.h"
+#import "ZXChangePWDController.h"
+#import "ZXLoginController.h"
+
+#import "AppDelegate.h"
 @interface ZXFourthController ()
 
 @end
@@ -19,12 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   // self.automaticallyAdjustsScrollViewInsets = NO;
-    
     self.tableView.sectionFooterHeight = 0;
+    self.tableView.contentOffset = CGPointMake(0, -20);
     self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
-    
-    [self setupHeaderAndFooterView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -38,21 +41,6 @@
 }
 
 
--(void)setupHeaderAndFooterView{
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 200)];
-    UIButton *quitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    quitBtn.bounds = CGRectMake(0, 0, ScreenW - 30, 40);
-    quitBtn.layer.cornerRadius = 3;
-    [quitBtn setTitle:@"退出登录" forState:UIControlStateNormal];
-    quitBtn.backgroundColor = AppThemeColor;
-    quitBtn.center = footerView.center;
-    [footerView addSubview:quitBtn];
-    self.tableView.tableFooterView = footerView;
-  
-    ZXLog(@"%@",NSStringFromCGRect(self.tableView.tableHeaderView.frame));
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
@@ -63,19 +51,33 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    AppDelegate *app =  MyApplicationDelegate;
     if (section == 0) {
+        if (app.isLogin){
         ZXHeaderView *headerView = [ZXHeaderView awakFromNib];
         [headerView.jumpBtn addTarget:self action:@selector(jumpToPersomInfo:) forControlEvents:UIControlEventTouchUpInside];
         return headerView;
+        }else{
+        ZXUnLoginHeaderView *unLoginHeaderView = [ZXUnLoginHeaderView awakFromNib];
+        [unLoginHeaderView.loginBtn addTarget:self action:@selector(jumpToLoginPage:) forControlEvents:UIControlEventTouchUpInside];
+        return unLoginHeaderView;
+        }
     }
     return nil;
 }
 
-
+#pragma mark - 未登录跳到登录界面
+- (void)jumpToLoginPage:(UIButton *)btn
+{
+    ZXLoginController *vc = [[ZXLoginController alloc] init];
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
+}
+#pragma mark - 已登录跳到个人信息界面
 - (void)jumpToPersomInfo:(UIButton *)btn
 {
-    ZXChangePersonInfoController *vc = [[ZXChangePersonInfoController alloc] init];
-    vc.navigationController.navigationBarHidden = NO;
+    ZXChangePersonInfoController *vc = [[UIStoryboard storyboardWithName:@"ZXChangePersonInfoController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXChangePersonInfoController"];
     vc.title = @"账户信息";
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -99,58 +101,26 @@
     return 1;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 1) {
+        if (indexPath.row == 1) {
+            ZXChangePWDController *vc = [[UIStoryboard storyboardWithName:@"ZXChangePWDController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXChangePWDController"];
+            vc.title = @"修改密码";
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }
+    if (indexPath.section == 2) {
+         ZXSettingController *vc = [[UIStoryboard storyboardWithName:@"ZXSettingController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXSettingController"];
+        vc.title = @"设置";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    self.view = nil;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

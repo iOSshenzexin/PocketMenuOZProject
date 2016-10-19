@@ -1,5 +1,5 @@
 //
-//  ZXChangePersonInfoController.h
+//  ZXUnLoginHeaderView.h
 //  PocketOrder
 //
 //  Created by 青岛商通天下 on 2016/10/19.
@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZXChangePersonInfoController : UITableViewController
+@interface ZXUnLoginHeaderView : UIView
+
++ (instancetype)awakFromNib;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end

@@ -20,6 +20,9 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
+//用户设置
+@property (nonatomic,assign) BOOL isLogin;
+
 
 @end
 

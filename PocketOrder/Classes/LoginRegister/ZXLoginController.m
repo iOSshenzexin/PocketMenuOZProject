@@ -20,6 +20,14 @@
     [super viewDidLoad];
 }
 
+- (IBAction)didClickLogin:(id)sender {
+    AppDelegate *app =  MyApplicationDelegate;
+    app.isLogin = YES;
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
+}
+
+
 - (IBAction)didClickRememberPWD:(UIButton *)sender {
     sender.selected = !sender.selected;
 }
@@ -31,12 +39,6 @@
 }
 
 
-
-
-
-
-
-
 - (IBAction)back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -46,8 +48,6 @@
     vc.title = @"注册";
     [self.navigationController pushViewController:vc animated:YES];
 }
-
-
 
 
 
