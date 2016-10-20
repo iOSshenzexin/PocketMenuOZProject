@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXChangeEmailController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pty-ze-w5u">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="OHM-dS-AGW">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="n5b-6F-83L"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="mRs-ua-sYm">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="E5Q-GR-pKL"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="7Co-nb-0zo">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="lBc-Tm-P5O"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odM-VJ-tEx">
+                            <color key="backgroundColor" red="0.94901960780000005" green="0.3294117647" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="eBE-0j-nak"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Crb-ON-mMM">
+                            <color key="backgroundColor" red="0.94901960780000005" green="0.3294117647" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="n2v-UK-ENH"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="mRs-ua-sYm" firstAttribute="top" secondItem="OHM-dS-AGW" secondAttribute="bottom" constant="46" id="4sd-79-zPd"/>
+                        <constraint firstAttribute="trailing" secondItem="7Co-nb-0zo" secondAttribute="trailing" id="5EU-vy-wjx"/>
+                        <constraint firstAttribute="trailing" secondItem="Crb-ON-mMM" secondAttribute="trailing" constant="10" id="A9C-Ez-dMR"/>
+                        <constraint firstAttribute="trailing" secondItem="mRs-ua-sYm" secondAttribute="trailing" id="CDl-GD-mac"/>
+                        <constraint firstAttribute="trailing" secondItem="OHM-dS-AGW" secondAttribute="trailing" id="GWr-IV-4xO"/>
+                        <constraint firstItem="Crb-ON-mMM" firstAttribute="leading" secondItem="pty-ze-w5u" secondAttribute="leading" constant="10" id="HSi-fv-qiI"/>
+                        <constraint firstItem="odM-VJ-tEx" firstAttribute="leading" secondItem="pty-ze-w5u" secondAttribute="leading" constant="10" id="Lhd-gU-1CF"/>
+                        <constraint firstItem="OHM-dS-AGW" firstAttribute="top" secondItem="pty-ze-w5u" secondAttribute="top" id="Xa9-CI-gIF"/>
+                        <constraint firstItem="OHM-dS-AGW" firstAttribute="leading" secondItem="pty-ze-w5u" secondAttribute="leading" id="bd9-AY-Q1g"/>
+                        <constraint firstItem="7Co-nb-0zo" firstAttribute="leading" secondItem="pty-ze-w5u" secondAttribute="leading" id="cHe-Zd-jeX"/>
+                        <constraint firstItem="mRs-ua-sYm" firstAttribute="leading" secondItem="pty-ze-w5u" secondAttribute="leading" id="fSB-WF-LW3"/>
+                        <constraint firstAttribute="height" constant="93" id="h8m-Ke-Fet"/>
+                        <constraint firstItem="odM-VJ-tEx" firstAttribute="top" secondItem="OHM-dS-AGW" secondAttribute="bottom" id="iJK-OL-WSY"/>
+                        <constraint firstAttribute="trailing" secondItem="odM-VJ-tEx" secondAttribute="trailing" constant="10" id="q21-ua-9O7"/>
+                        <constraint firstAttribute="bottom" secondItem="Crb-ON-mMM" secondAttribute="bottom" constant="1" id="vQS-ag-gMo"/>
+                        <constraint firstAttribute="bottom" secondItem="7Co-nb-0zo" secondAttribute="bottom" id="yNg-ql-Utz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="pty-ze-w5u" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="M7O-3u-4Oc"/>
+                <constraint firstItem="pty-ze-w5u" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="aPX-zi-lgG"/>
+                <constraint firstAttribute="trailing" secondItem="pty-ze-w5u" secondAttribute="trailing" id="xrm-EZ-3Nf"/>
+            </constraints>
+            <point key="canvasLocation" x="38.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="line" width="1" height="1"/>
+    </resources>
+</document>

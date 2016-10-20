@@ -10,6 +10,10 @@
 
 @interface UIBarButtonItem (ZXItem)
 // 创建UIBarButtonItem分类
+
++ (UIBarButtonItem *)itemWithNomalTitle:(NSString *)normal SelectedTitle:(NSString *)selected target:(id)target action:(SEL)action;
+
+
 + (UIBarButtonItem *)itemWithimage:(UIImage *)image highImage:(UIImage *)highImage target:(id)target action:(SEL)action;
 
 + (UIBarButtonItem *)backItemWithimage:(UIImage *)image highImage:(UIImage *)highImage target:(id)target action:(SEL)action title:(NSString *)title;

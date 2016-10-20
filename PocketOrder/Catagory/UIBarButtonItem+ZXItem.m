@@ -10,6 +10,19 @@
 
 @implementation UIBarButtonItem (ZXItem)
 
++ (UIBarButtonItem *)itemWithNomalTitle:(NSString *)normal SelectedTitle:(NSString *)selected target:(id)target action:(SEL)action
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setTitle:normal forState:UIControlStateNormal];
+    [btn setTitle:selected forState:UIControlStateSelected];
+    [btn sizeToFit];
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    return  [[UIBarButtonItem alloc] initWithCustomView:btn];
+}
+
+
+
+
 + (UIBarButtonItem *)itemWithimage:(UIImage *)image highImage:(UIImage *)highImage target:(id)target action:(SEL)action
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -67,6 +80,7 @@
     btn.titleLabel.font = [UIFont systemFontOfSize:fontsize];
     [btn setTitle:title forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    //[btn sizeToFit];
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return [[UIBarButtonItem alloc] initWithCustomView:btn];
 }

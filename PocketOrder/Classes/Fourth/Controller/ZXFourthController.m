@@ -70,7 +70,8 @@
 - (void)jumpToLoginPage:(UIButton *)btn
 {
     ZXLoginController *vc = [[ZXLoginController alloc] init];
-    [self presentViewController:vc animated:YES completion:^{
+    ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:^{
         
     }];
 }
@@ -123,4 +124,6 @@
     [super viewDidDisappear:animated];
     self.view = nil;
 }
+
+
 @end

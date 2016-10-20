@@ -9,7 +9,7 @@
         <scene sceneID="0sh-D1-Tkc">
             <objects>
                 <tableViewController storyboardIdentifier="ZXChangePersonInfoController" id="3hk-uT-Nd9" customClass="ZXChangePersonInfoController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="56" sectionHeaderHeight="10" sectionFooterHeight="1" id="zb1-Du-y3I">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="1" id="zb1-Du-y3I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -17,10 +17,10 @@
                             <tableViewSection id="VQ3-rF-Yyl">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="4ze-7U-LGe">
-                                        <rect key="frame" x="0.0" y="35" width="375" height="56"/>
+                                        <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4ze-7U-LGe" id="Nyp-Os-VG8">
-                                            <frame key="frameInset" width="375" height="55"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0o8-eI-vGE">
@@ -30,13 +30,13 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cw4-R4-9c9">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="56" id="5sH-ZZ-pdD"/>
-                                                        <constraint firstAttribute="height" constant="56" id="UeT-Hx-YQF"/>
+                                                        <constraint firstAttribute="width" constant="44" id="5sH-ZZ-pdD"/>
+                                                        <constraint firstAttribute="height" constant="44" id="UeT-Hx-YQF"/>
                                                     </constraints>
                                                     <state key="normal" image="big_people"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="28"/>
+                                                            <integer key="value" value="22"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
@@ -52,10 +52,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Gck-qX-TiW">
-                                        <rect key="frame" x="0.0" y="91" width="375" height="56"/>
+                                        <rect key="frame" x="0.0" y="79" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gck-qX-TiW" id="Mg5-mN-8fs">
-                                            <frame key="frameInset" width="375" height="55"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2f-Id-8iI">
@@ -83,11 +83,11 @@
                             </tableViewSection>
                             <tableViewSection id="HEl-tD-m4i">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="b91-iK-pxs">
-                                        <rect key="frame" x="0.0" y="158" width="375" height="56"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="b91-iK-pxs">
+                                        <rect key="frame" x="0.0" y="134" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b91-iK-pxs" id="QqE-zp-WVm">
-                                            <frame key="frameInset" width="375" height="55"/>
+                                            <frame key="frameInset" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定手机号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbM-s3-YVV">
@@ -102,7 +102,7 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Ewt-Gm-mN6" secondAttribute="trailing" constant="20" id="Nze-lc-2da"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ewt-Gm-mN6" secondAttribute="trailing" constant="10" id="Nze-lc-2da"/>
                                                 <constraint firstItem="vbM-s3-YVV" firstAttribute="top" secondItem="QqE-zp-WVm" secondAttribute="top" id="dxj-gu-K8u"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ewt-Gm-mN6" secondAttribute="bottom" id="fOG-QJ-UlP"/>
                                                 <constraint firstItem="Ewt-Gm-mN6" firstAttribute="top" secondItem="QqE-zp-WVm" secondAttribute="top" id="lcC-MM-uLC"/>
@@ -111,11 +111,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="WMe-wg-u93">
-                                        <rect key="frame" x="0.0" y="214" width="375" height="56"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="WMe-wg-u93">
+                                        <rect key="frame" x="0.0" y="178" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WMe-wg-u93" id="LVB-yC-LV0">
-                                            <frame key="frameInset" width="375" height="55"/>
+                                            <frame key="frameInset" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定邮箱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpY-S7-eSc">
@@ -131,7 +131,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="rpY-S7-eSc" firstAttribute="top" secondItem="LVB-yC-LV0" secondAttribute="top" id="B93-Bg-HxZ"/>
-                                                <constraint firstAttribute="trailing" secondItem="Fi3-AL-ClF" secondAttribute="trailing" constant="20" id="BsI-q9-89L"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fi3-AL-ClF" secondAttribute="trailing" constant="10" id="BsI-q9-89L"/>
                                                 <constraint firstAttribute="bottom" secondItem="rpY-S7-eSc" secondAttribute="bottom" id="CcA-yn-fDk"/>
                                                 <constraint firstAttribute="bottom" secondItem="Fi3-AL-ClF" secondAttribute="bottom" id="eJd-4N-e23"/>
                                                 <constraint firstItem="rpY-S7-eSc" firstAttribute="leading" secondItem="LVB-yC-LV0" secondAttribute="leading" constant="20" id="ltg-le-faZ"/>

@@ -7,7 +7,7 @@
 //
 
 #import "ZXChangePersonInfoController.h"
-
+#import "ZXChangeEmailController.h"
 @interface ZXChangePersonInfoController ()
 
 @end
@@ -36,5 +36,17 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 0;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 1) {
+        if (indexPath.row == 1) {
+            ZXChangeEmailController *vc = [[ZXChangeEmailController alloc] init];
+            vc.title = @"换绑邮箱";
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }
 }
 @end

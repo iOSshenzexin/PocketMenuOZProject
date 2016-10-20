@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXThirdController">
             <connections>
+                <outlet property="tableView" destination="CuM-VN-eZ4" id="neh-QX-mRr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,10 +16,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CuM-VN-eZ4">
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="CuM-VN-eZ4">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="OaF-Iq-CDM"/>
+                        <outlet property="delegate" destination="-1" id="OYB-Mt-dbl"/>
+                    </connections>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrL-Uz-svV" userLabel="bottom">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrL-Uz-svV" userLabel="ZXBottomView" customClass="ZXBottomView">
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="OfE-pH-rb4">
                             <constraints>
@@ -34,7 +39,12 @@
                             <state key="normal" title="去结算"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0A-vN-4kd">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="6zD-KA-MJ1"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
                             <state key="normal" title="全选" image="box">
                                 <color key="titleColor" red="0.4823529412" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -60,11 +70,12 @@
                     <constraints>
                         <constraint firstItem="fkk-zk-GPb" firstAttribute="top" secondItem="MrL-Uz-svV" secondAttribute="top" constant="4" id="1tq-Fj-TeQ"/>
                         <constraint firstItem="Ro9-TP-YXI" firstAttribute="top" secondItem="MrL-Uz-svV" secondAttribute="top" id="4ix-xQ-q5J"/>
-                        <constraint firstItem="C0A-vN-4kd" firstAttribute="top" secondItem="MrL-Uz-svV" secondAttribute="top" constant="14" id="544-4L-hPV"/>
+                        <constraint firstItem="C0A-vN-4kd" firstAttribute="top" secondItem="MrL-Uz-svV" secondAttribute="top" id="544-4L-hPV"/>
                         <constraint firstAttribute="trailing" secondItem="Ro9-TP-YXI" secondAttribute="trailing" id="6nc-fg-uxq"/>
+                        <constraint firstAttribute="bottom" secondItem="C0A-vN-4kd" secondAttribute="bottom" id="756-LU-GBm"/>
                         <constraint firstItem="OfE-pH-rb4" firstAttribute="top" secondItem="MrL-Uz-svV" secondAttribute="top" id="JFv-fI-PlO"/>
                         <constraint firstAttribute="bottom" secondItem="o2t-pR-EkY" secondAttribute="bottom" constant="4" id="Sr6-sa-x2N"/>
-                        <constraint firstItem="C0A-vN-4kd" firstAttribute="leading" secondItem="MrL-Uz-svV" secondAttribute="leading" constant="12" id="W0q-AA-7rP"/>
+                        <constraint firstItem="C0A-vN-4kd" firstAttribute="leading" secondItem="MrL-Uz-svV" secondAttribute="leading" id="W0q-AA-7rP"/>
                         <constraint firstItem="Ro9-TP-YXI" firstAttribute="leading" secondItem="o2t-pR-EkY" secondAttribute="trailing" constant="8" id="ZRn-Rw-FWB"/>
                         <constraint firstAttribute="bottom" secondItem="Ro9-TP-YXI" secondAttribute="bottom" id="aiy-Pm-EJQ"/>
                         <constraint firstItem="Ro9-TP-YXI" firstAttribute="leading" secondItem="fkk-zk-GPb" secondAttribute="trailing" constant="8" id="pe3-Am-pFq"/>
@@ -73,7 +84,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="MrL-Uz-svV" secondAttribute="trailing" id="HcJ-EF-TIu"/>
                 <constraint firstItem="CuM-VN-eZ4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Uh2-uD-GHa"/>
