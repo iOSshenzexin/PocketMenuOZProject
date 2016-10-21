@@ -39,9 +39,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSz-eT-YJm">
-                        <color key="backgroundColor" red="0.92549019610000005" green="0.33725490200000002" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=" 订单备注: 口味偏好" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w65-PP-L4L">
                         <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -112,14 +109,11 @@
                     <constraint firstItem="cjn-9K-Lmn" firstAttribute="top" secondItem="J4I-oc-VhQ" secondAttribute="bottom" constant="5" id="94g-Uo-dau"/>
                     <constraint firstAttribute="bottom" secondItem="w65-PP-L4L" secondAttribute="bottom" constant="20" id="EDD-py-Xco"/>
                     <constraint firstAttribute="trailing" secondItem="yxG-W4-6UQ" secondAttribute="trailing" id="KL3-73-Zt8"/>
-                    <constraint firstItem="fSz-eT-YJm" firstAttribute="leading" secondItem="jnQ-Ei-5X0" secondAttribute="leading" id="OdR-aA-Alf"/>
                     <constraint firstAttribute="trailing" secondItem="T3c-eh-Fc6" secondAttribute="trailing" constant="10" id="OpG-sZ-10F"/>
                     <constraint firstAttribute="trailing" secondItem="J4I-oc-VhQ" secondAttribute="trailing" constant="10" id="QE9-D7-GV4"/>
                     <constraint firstItem="AOt-N9-HWY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="QpS-Ha-XwC"/>
-                    <constraint firstItem="fSz-eT-YJm" firstAttribute="top" secondItem="0ec-tm-Zws" secondAttribute="bottom" constant="2" id="SgX-5l-9pK"/>
                     <constraint firstItem="iOQ-Iw-N8p" firstAttribute="top" secondItem="cjn-9K-Lmn" secondAttribute="bottom" constant="5" id="Yw6-hA-aFH"/>
                     <constraint firstItem="w65-PP-L4L" firstAttribute="top" secondItem="iOQ-Iw-N8p" secondAttribute="bottom" constant="31" id="ZKH-wX-MnT"/>
-                    <constraint firstItem="fSz-eT-YJm" firstAttribute="trailing" secondItem="jnQ-Ei-5X0" secondAttribute="trailing" id="bbK-jS-0Of"/>
                     <constraint firstItem="e7y-bd-hc1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="cl7-YH-sWo"/>
                     <constraint firstItem="0ec-tm-Zws" firstAttribute="leading" secondItem="AOt-N9-HWY" secondAttribute="trailing" constant="10" id="efs-C2-9Ga"/>
                     <constraint firstItem="T3c-eh-Fc6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="gNu-1v-qom"/>
@@ -128,7 +122,6 @@
                     <constraint firstItem="VSp-tl-NfV" firstAttribute="top" secondItem="J4I-oc-VhQ" secondAttribute="bottom" constant="5" id="iHS-db-c6m"/>
                     <constraint firstAttribute="trailing" secondItem="4dy-qQ-Zy6" secondAttribute="trailing" constant="10" id="iZd-Rl-JS1"/>
                     <constraint firstAttribute="trailing" secondItem="VSp-tl-NfV" secondAttribute="trailing" constant="10" id="jWP-1b-g58"/>
-                    <constraint firstItem="iOQ-Iw-N8p" firstAttribute="top" secondItem="fSz-eT-YJm" secondAttribute="bottom" constant="81" id="kmT-dl-2ti"/>
                     <constraint firstItem="J4I-oc-VhQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="lli-gn-xIa"/>
                     <constraint firstItem="J4I-oc-VhQ" firstAttribute="top" secondItem="e7y-bd-hc1" secondAttribute="bottom" constant="5" id="muG-km-M5T"/>
                     <constraint firstItem="e7y-bd-hc1" firstAttribute="top" secondItem="T3c-eh-Fc6" secondAttribute="bottom" constant="5" id="oQ7-RR-ri3"/>

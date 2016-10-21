@@ -9,12 +9,14 @@
 #import "ZXMakeSureOrderController.h"
 
 
-#import "ZXUserAddressController.h"
+#import "ZXSelectAddressController.h"
 
 #import "ZXConfirmOrderOneCell.h"
 #import "ZXConfirmOrderTwoCell.h"
 #import "ZXConfirmOrderThreeCell.h"
 #import "ZXConfirmOrderFourCell.h"
+
+#import "ZXPaymentOrderController.h"
 @interface ZXMakeSureOrderController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -63,6 +65,7 @@
         }
         case 3:{
             ZXConfirmOrderFourCell *cell = [ZXConfirmOrderFourCell cellWithTableView:tableView ];
+            cell.foodsContent  = [ZXOrderFoodsModel mj_objectArrayWithKeyValuesArray: self.foodsArray[0]];
             return cell;
         }
 
@@ -79,7 +82,7 @@
         return 130;
     }
     if (indexPath.row == 3) {
-        return 350;
+        return 400;
     }
     return 55;
 }
@@ -87,8 +90,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 1) {
-        ZXUserAddressController *vc = [[ZXUserAddressController alloc] init];
-        vc.title = @"收货地址";
+        ZXSelectAddressController *vc = [[ZXSelectAddressController alloc] init];
+        vc.title = @"选择收货地址";
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
@@ -97,6 +100,15 @@
 {
     [self.view endEditing:YES];
 }
+
+#pragma mark - 提交订单
+- (IBAction)submitFoodOrder:(id)sender {
+    ZXPaymentOrderController *vc = [[UIStoryboard storyboardWithName:@"ZXPaymentOrderController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXPaymentOrderController"];
+    vc.title = @"支付订单";
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
 
 
 @end

@@ -69,17 +69,18 @@
 
 #pragma mark  设置NavigationBarButton
 - (void)setupNavigationBarBtn{
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:0 btnWidth:21 btnHeight:21 image:@"news" highlightImage:nil title:nil target:self action:@selector(didClickMessage) leftEdgeInset:0 rightEdgeInset:-8];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:0 btnWidth:21 btnHeight:21 image:@"news" highlightImage:nil title:nil target:self action:@selector(didClickMessage) leftEdgeInset:0 rightEdgeInset:0];
     
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    leftBtn.frame = CGRectMake(0, 0, 50, 21);
-    leftBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
+    leftBtn.frame = CGRectMake(0, 0, 40, 21);
+    //[leftBtn sizeToFit];
+    leftBtn.contentMode = UIViewContentModeLeft;
     [leftBtn setTitle:@"地点" forState:UIControlStateNormal];
-    leftBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+    leftBtn.titleLabel.font = [UIFont fontWithName:@".SFUIText-Light" size:17.f];;
     [leftBtn setImage:[UIImage imageNamed:@"arrows"] forState:UIControlStateNormal];
-    CGFloat labelWidth = [leftBtn.titleLabel.text sizeWithAttributes:@{NSFontAttributeName :[UIFont systemFontOfSize:17]}].width;
-    [leftBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -leftBtn.currentImage.size.width, 0, leftBtn.currentImage.size.width)];
-    [leftBtn setImageEdgeInsets:UIEdgeInsetsMake(0, labelWidth, 0, -labelWidth - 10)];
+//    CGFloat labelWidth = [leftBtn.titleLabel.text sizeWithAttributes:@{NSFontAttributeName :[UIFont fontWithName:@".SFUIText-Light" size:17.f]}].width;
+//    [leftBtn setTitleEdgeInsets:UIEdgeInsetsMake(0,-leftBtn.currentImage.size.width, 0, leftBtn.currentImage.size.width)];
+//    [leftBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -labelWidth, 0, labelWidth)];
     [leftBtn addTarget:self action:@selector(didClickAddress) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
     //搜索框

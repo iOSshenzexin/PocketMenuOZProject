@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ZXOrderFoodsModel.h"
 @interface ZXConfirmOrderFourCell : UITableViewCell
 
+@property (nonatomic,copy) NSArray *foodsContent;
 
 +(instancetype)cellWithTableView:(UITableView *)tableview;
+
+@property (nonatomic, assign) CGFloat cellHeight;
+
 
 @end

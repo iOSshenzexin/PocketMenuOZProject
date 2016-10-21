@@ -24,8 +24,6 @@
 		015A4FB41DAA2C670055B711 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 015A4FB31DAA2C670055B711 /* Info.plist */; };
 		01607A7D1DAF3D26002F692E /* ZXDishesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607A7B1DAF3D26002F692E /* ZXDishesCell.m */; };
 		01607A7E1DAF3D26002F692E /* ZXDishesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01607A7C1DAF3D26002F692E /* ZXDishesCell.xib */; };
-		01607A831DAF5DD4002F692E /* ZXMakeSureOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607A811DAF5DD4002F692E /* ZXMakeSureOrderController.m */; };
-		01607A841DAF5DD4002F692E /* ZXMakeSureOrderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01607A821DAF5DD4002F692E /* ZXMakeSureOrderController.xib */; };
 		01607A881DAF6856002F692E /* ZXConfirmOrderOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607A861DAF6856002F692E /* ZXConfirmOrderOneCell.m */; };
 		01607A891DAF6856002F692E /* ZXConfirmOrderOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01607A871DAF6856002F692E /* ZXConfirmOrderOneCell.xib */; };
 		01607A921DAF6C89002F692E /* ZXConfirmOrderTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607A901DAF6C89002F692E /* ZXConfirmOrderTwoCell.m */; };
@@ -35,6 +33,8 @@
 		016D60C31DB9A0EE0081BBF1 /* UITextField+ZXAddCheckCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D60C21DB9A0EE0081BBF1 /* UITextField+ZXAddCheckCode.m */; };
 		016D60C61DB9A4EC0081BBF1 /* UIView+ZXCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D60C51DB9A4EC0081BBF1 /* UIView+ZXCustomView.m */; };
 		016D60C91DB9C1C40081BBF1 /* ZXOrderFoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D60C81DB9C1C40081BBF1 /* ZXOrderFoodsModel.m */; };
+		016D60CC1DB9DEBF0081BBF1 /* ZXOrderContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D60CB1DB9DEBF0081BBF1 /* ZXOrderContentView.m */; };
+		016D60CE1DB9DECD0081BBF1 /* ZXOrderContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016D60CD1DB9DECD0081BBF1 /* ZXOrderContentView.xib */; };
 		017310001DB06C9600D373E6 /* ZXUserAddressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01730FFE1DB06C9600D373E6 /* ZXUserAddressController.m */; };
 		017310011DB06C9600D373E6 /* ZXUserAddressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01730FFF1DB06C9600D373E6 /* ZXUserAddressController.xib */; };
 		017310051DB06E9B00D373E6 /* ZXConfirmOrderFourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 017310031DB06E9B00D373E6 /* ZXConfirmOrderFourCell.m */; };
@@ -57,6 +57,12 @@
 		017310341DB0DD9400D373E6 /* ZXAddAdressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017310321DB0DD9400D373E6 /* ZXAddAdressController.xib */; };
 		017310381DB0DFF700D373E6 /* ZXAddressOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 017310361DB0DFF700D373E6 /* ZXAddressOneCell.m */; };
 		017310391DB0DFF700D373E6 /* ZXAddressOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017310371DB0DFF700D373E6 /* ZXAddressOneCell.xib */; };
+		01C03ADB1DB9F64C00264FF8 /* ZXMakeSureOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C03AD91DB9F64B00264FF8 /* ZXMakeSureOrderController.m */; };
+		01C03ADC1DB9F64C00264FF8 /* ZXMakeSureOrderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01C03ADA1DB9F64C00264FF8 /* ZXMakeSureOrderController.xib */; };
+		01C03ADF1DB9F68000264FF8 /* ZXPaymentOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C03ADE1DB9F68000264FF8 /* ZXPaymentOrderController.m */; };
+		01C03AE11DB9F69500264FF8 /* ZXPaymentOrderController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C03AE01DB9F69500264FF8 /* ZXPaymentOrderController.storyboard */; };
+		01C03AE51DBA09F200264FF8 /* ZXPayResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C03AE31DBA09F200264FF8 /* ZXPayResultController.m */; };
+		01C03AE81DBA0A0D00264FF8 /* ZXPayResultController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C03AE71DBA0A0D00264FF8 /* ZXPayResultController.storyboard */; };
 		01D0DCBE1DB8655D00A9A64A /* ZXShoppingCarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0DCBD1DB8655D00A9A64A /* ZXShoppingCarHeaderView.m */; };
 		01D0DCC01DB8657200A9A64A /* ZXShoppingCarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D0DCBF1DB8657200A9A64A /* ZXShoppingCarHeaderView.xib */; };
 		01D0DCC41DB871A000A9A64A /* ZXShoppingCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0DCC21DB871A000A9A64A /* ZXShoppingCarCell.m */; };
@@ -189,9 +195,6 @@
 		01607A7A1DAF3D26002F692E /* ZXDishesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXDishesCell.h; sourceTree = "<group>"; };
 		01607A7B1DAF3D26002F692E /* ZXDishesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXDishesCell.m; sourceTree = "<group>"; };
 		01607A7C1DAF3D26002F692E /* ZXDishesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXDishesCell.xib; sourceTree = "<group>"; };
-		01607A801DAF5DD4002F692E /* ZXMakeSureOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXMakeSureOrderController.h; sourceTree = "<group>"; };
-		01607A811DAF5DD4002F692E /* ZXMakeSureOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXMakeSureOrderController.m; sourceTree = "<group>"; };
-		01607A821DAF5DD4002F692E /* ZXMakeSureOrderController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXMakeSureOrderController.xib; sourceTree = "<group>"; };
 		01607A851DAF6856002F692E /* ZXConfirmOrderOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXConfirmOrderOneCell.h; sourceTree = "<group>"; };
 		01607A861DAF6856002F692E /* ZXConfirmOrderOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXConfirmOrderOneCell.m; sourceTree = "<group>"; };
 		01607A871DAF6856002F692E /* ZXConfirmOrderOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXConfirmOrderOneCell.xib; sourceTree = "<group>"; };
@@ -207,6 +210,9 @@
 		016D60C51DB9A4EC0081BBF1 /* UIView+ZXCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZXCustomView.m"; sourceTree = "<group>"; };
 		016D60C71DB9C1C40081BBF1 /* ZXOrderFoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXOrderFoodsModel.h; sourceTree = "<group>"; };
 		016D60C81DB9C1C40081BBF1 /* ZXOrderFoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXOrderFoodsModel.m; sourceTree = "<group>"; };
+		016D60CA1DB9DEBF0081BBF1 /* ZXOrderContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXOrderContentView.h; sourceTree = "<group>"; };
+		016D60CB1DB9DEBF0081BBF1 /* ZXOrderContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXOrderContentView.m; sourceTree = "<group>"; };
+		016D60CD1DB9DECD0081BBF1 /* ZXOrderContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXOrderContentView.xib; sourceTree = "<group>"; };
 		01730FFD1DB06C9600D373E6 /* ZXUserAddressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXUserAddressController.h; sourceTree = "<group>"; };
 		01730FFE1DB06C9600D373E6 /* ZXUserAddressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXUserAddressController.m; sourceTree = "<group>"; };
 		01730FFF1DB06C9600D373E6 /* ZXUserAddressController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXUserAddressController.xib; sourceTree = "<group>"; };
@@ -242,6 +248,15 @@
 		017310351DB0DFF700D373E6 /* ZXAddressOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAddressOneCell.h; sourceTree = "<group>"; };
 		017310361DB0DFF700D373E6 /* ZXAddressOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAddressOneCell.m; sourceTree = "<group>"; };
 		017310371DB0DFF700D373E6 /* ZXAddressOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXAddressOneCell.xib; sourceTree = "<group>"; };
+		01C03AD81DB9F64B00264FF8 /* ZXMakeSureOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXMakeSureOrderController.h; sourceTree = "<group>"; };
+		01C03AD91DB9F64B00264FF8 /* ZXMakeSureOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXMakeSureOrderController.m; sourceTree = "<group>"; };
+		01C03ADA1DB9F64C00264FF8 /* ZXMakeSureOrderController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXMakeSureOrderController.xib; sourceTree = "<group>"; };
+		01C03ADD1DB9F68000264FF8 /* ZXPaymentOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPaymentOrderController.h; sourceTree = "<group>"; };
+		01C03ADE1DB9F68000264FF8 /* ZXPaymentOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXPaymentOrderController.m; sourceTree = "<group>"; };
+		01C03AE01DB9F69500264FF8 /* ZXPaymentOrderController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZXPaymentOrderController.storyboard; sourceTree = "<group>"; };
+		01C03AE21DBA09F200264FF8 /* ZXPayResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPayResultController.h; sourceTree = "<group>"; };
+		01C03AE31DBA09F200264FF8 /* ZXPayResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXPayResultController.m; sourceTree = "<group>"; };
+		01C03AE71DBA0A0D00264FF8 /* ZXPayResultController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZXPayResultController.storyboard; sourceTree = "<group>"; };
 		01D0DCBC1DB8655D00A9A64A /* ZXShoppingCarHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXShoppingCarHeaderView.h; sourceTree = "<group>"; };
 		01D0DCBD1DB8655D00A9A64A /* ZXShoppingCarHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXShoppingCarHeaderView.m; sourceTree = "<group>"; };
 		01D0DCBF1DB8657200A9A64A /* ZXShoppingCarHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXShoppingCarHeaderView.xib; sourceTree = "<group>"; };
@@ -489,6 +504,9 @@
 				017310021DB06E9B00D373E6 /* ZXConfirmOrderFourCell.h */,
 				017310031DB06E9B00D373E6 /* ZXConfirmOrderFourCell.m */,
 				017310041DB06E9B00D373E6 /* ZXConfirmOrderFourCell.xib */,
+				016D60CA1DB9DEBF0081BBF1 /* ZXOrderContentView.h */,
+				016D60CB1DB9DEBF0081BBF1 /* ZXOrderContentView.m */,
+				016D60CD1DB9DECD0081BBF1 /* ZXOrderContentView.xib */,
 			);
 			path = "MakeSureOrderCell(确认订单)";
 			sourceTree = "<group>";
@@ -638,9 +656,15 @@
 				01D898691DAA2A2D0070FBDD /* ZXProductListController.h */,
 				01D8986A1DAA2A2D0070FBDD /* ZXProductListController.m */,
 				01D8986B1DAA2A2D0070FBDD /* ZXProductListController.xib */,
-				01607A801DAF5DD4002F692E /* ZXMakeSureOrderController.h */,
-				01607A811DAF5DD4002F692E /* ZXMakeSureOrderController.m */,
-				01607A821DAF5DD4002F692E /* ZXMakeSureOrderController.xib */,
+				01C03AD81DB9F64B00264FF8 /* ZXMakeSureOrderController.h */,
+				01C03AD91DB9F64B00264FF8 /* ZXMakeSureOrderController.m */,
+				01C03ADA1DB9F64C00264FF8 /* ZXMakeSureOrderController.xib */,
+				01C03ADD1DB9F68000264FF8 /* ZXPaymentOrderController.h */,
+				01C03ADE1DB9F68000264FF8 /* ZXPaymentOrderController.m */,
+				01C03AE01DB9F69500264FF8 /* ZXPaymentOrderController.storyboard */,
+				01C03AE21DBA09F200264FF8 /* ZXPayResultController.h */,
+				01C03AE31DBA09F200264FF8 /* ZXPayResultController.m */,
+				01C03AE71DBA0A0D00264FF8 /* ZXPayResultController.storyboard */,
 				01730FFD1DB06C9600D373E6 /* ZXUserAddressController.h */,
 				01730FFE1DB06C9600D373E6 /* ZXUserAddressController.m */,
 				01730FFF1DB06C9600D373E6 /* ZXUserAddressController.xib */,
@@ -1131,6 +1155,7 @@
 				01D898A71DAA2A2D0070FBDD /* ZXProductListController.xib in Resources */,
 				012BDBF61DB45D2A0040CB08 /* ZXAddressTwoCell.xib in Resources */,
 				015A4FB41DAA2C670055B711 /* Info.plist in Resources */,
+				01C03AE11DB9F69500264FF8 /* ZXPaymentOrderController.storyboard in Resources */,
 				01DCCDB61DB7709C0095B83B /* ZXChangePersonInfoController.storyboard in Resources */,
 				017310061DB06E9B00D373E6 /* ZXConfirmOrderFourCell.xib in Resources */,
 				01D0DCD51DB8CAAA00A9A64A /* ZXChangeEmailController.xib in Resources */,
@@ -1141,15 +1166,16 @@
 				01607A891DAF6856002F692E /* ZXConfirmOrderOneCell.xib in Resources */,
 				01607A931DAF6C89002F692E /* ZXConfirmOrderTwoCell.xib in Resources */,
 				01DE22841DAE229B00D2E5BA /* ShoppingCartCell.xib in Resources */,
+				01C03AE81DBA0A0D00264FF8 /* ZXPayResultController.storyboard in Resources */,
 				01D0DCC71DB8AE5F00A9A64A /* shopping.json in Resources */,
 				012BDC051DB477330040CB08 /* ZXSelectAddressTwoCell.xib in Resources */,
 				01D0DCC51DB871A000A9A64A /* ZXShoppingCarCell.xib in Resources */,
 				0173102F1DB0B12D00D373E6 /* ZXDisclaimerController.xib in Resources */,
 				017310101DB07F1800D373E6 /* ZXRegisterController.xib in Resources */,
+				016D60CE1DB9DECD0081BBF1 /* ZXOrderContentView.xib in Resources */,
 				012BDC071DB483200040CB08 /* ZXFourthController.storyboard in Resources */,
 				01D898B61DAA2A2D0070FBDD /* ZXTodayRecommendedCell.xib in Resources */,
 				017310011DB06C9600D373E6 /* ZXUserAddressController.xib in Resources */,
-				01607A841DAF5DD4002F692E /* ZXMakeSureOrderController.xib in Resources */,
 				01D898C01DAA2A2D0070FBDD /* ZXThirdController.xib in Resources */,
 				01EED8DC1DAB3A2100003A37 /* ZXHomePictureController.xib in Resources */,
 				01D898A51DAA2A2D0070FBDD /* ZXMessageController.xib in Resources */,
@@ -1158,6 +1184,7 @@
 				01DCCDAC1DB755930095B83B /* ZXSettingController.storyboard in Resources */,
 				01D898591DAA29DC0070FBDD /* LaunchScreen.storyboard in Resources */,
 				01607A981DAF6EBC002F692E /* ZXConfirmOrderThreeCell.xib in Resources */,
+				01C03ADC1DB9F64C00264FF8 /* ZXMakeSureOrderController.xib in Resources */,
 				012BDC001DB473BE0040CB08 /* ZXSelectAddressOneCell.xib in Resources */,
 				01D898B01DAA2A2D0070FBDD /* ZXSquareCell.xib in Resources */,
 				012BDBFB1DB471DB0040CB08 /* ZXSelectAddressController.xib in Resources */,
@@ -1238,8 +1265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				01D8993E1DAA2B550070FBDD /* CoolNavi.m in Sources */,
+				01C03ADB1DB9F64C00264FF8 /* ZXMakeSureOrderController.m in Sources */,
 				01D898B51DAA2A2D0070FBDD /* ZXTodayRecommendedCell.m in Sources */,
 				01DE22831DAE229B00D2E5BA /* ShoppingCartCell.m in Sources */,
+				01C03AE51DBA09F200264FF8 /* ZXPayResultController.m in Sources */,
 				01D8994E1DAA2B550070FBDD /* XFSegementView.m in Sources */,
 				012BDC0D1DB49D3E0040CB08 /* ZXHeaderView.m in Sources */,
 				0173102E1DB0B12D00D373E6 /* ZXDisclaimerController.m in Sources */,
@@ -1253,7 +1282,6 @@
 				01DC63211DACCA4000D26546 /* ZXSearchController.m in Sources */,
 				012BDC041DB477330040CB08 /* ZXSelectAddressTwoCell.m in Sources */,
 				01DCCDBE1DB77A940095B83B /* ZXChangePWDController.m in Sources */,
-				01607A831DAF5DD4002F692E /* ZXMakeSureOrderController.m in Sources */,
 				01DCCDB41DB7708E0095B83B /* ZXChangePersonInfoController.m in Sources */,
 				01D898A21DAA2A2D0070FBDD /* ZXFirstController.m in Sources */,
 				012BDBF51DB45D2A0040CB08 /* ZXAddressTwoCell.m in Sources */,
@@ -1261,6 +1289,7 @@
 				01D1BAD11D86401800971AF3 /* ZXConst.m in Sources */,
 				01D8993F1DAA2B550070FBDD /* KNBannerView.m in Sources */,
 				0173100A1DB0796D00D373E6 /* ZXLoginController.m in Sources */,
+				016D60CC1DB9DEBF0081BBF1 /* ZXOrderContentView.m in Sources */,
 				016D60C91DB9C1C40081BBF1 /* ZXOrderFoodsModel.m in Sources */,
 				01D898A61DAA2A2D0070FBDD /* ZXProductListController.m in Sources */,
 				01D8994A1DAA2B550070FBDD /* GetAdTool.m in Sources */,
@@ -1285,6 +1314,7 @@
 				017310331DB0DD9400D373E6 /* ZXAddAdressController.m in Sources */,
 				016D60C61DB9A4EC0081BBF1 /* UIView+ZXCustomView.m in Sources */,
 				01D899511DAA2B550070FBDD /* LSButton.m in Sources */,
+				01C03ADF1DB9F68000264FF8 /* ZXPaymentOrderController.m in Sources */,
 				01D0DCD41DB8CAAA00A9A64A /* ZXChangeEmailController.m in Sources */,
 				017310051DB06E9B00D373E6 /* ZXConfirmOrderFourCell.m in Sources */,
 				017310191DB08E2100D373E6 /* ZXGetCheckCode.m in Sources */,

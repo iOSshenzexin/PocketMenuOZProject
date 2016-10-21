@@ -1,18 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ZXSelectAddressTwoCell" id="KGk-i7-Jjw" customClass="ZXSelectAddressTwoCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="60"/>
+                <frame key="frameInset" width="320" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="address_img" translatesAutoresizingMaskIntoConstraints="NO" id="Pah-nQ-v5S">
@@ -23,8 +22,8 @@
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pamper" translatesAutoresizingMaskIntoConstraints="NO" id="I8H-iE-BgH">
                         <constraints>
-                            <constraint firstAttribute="height" constant="17" id="6xp-61-y4q"/>
-                            <constraint firstAttribute="width" constant="17" id="Ec2-SJ-Kk4"/>
+                            <constraint firstAttribute="height" constant="17" id="AU1-9H-XDV"/>
+                            <constraint firstAttribute="width" constant="17" id="UQI-a1-GGC"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="刘丽雅  女士  1513457890" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svw-Xm-oqs">
@@ -45,16 +44,14 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="I8H-iE-BgH" firstAttribute="leading" secondItem="svw-Xm-oqs" secondAttribute="trailing" constant="8" id="96h-mJ-GiS"/>
+                    <constraint firstItem="I8H-iE-BgH" firstAttribute="centerY" secondItem="Pah-nQ-v5S" secondAttribute="centerY" id="56r-ed-767"/>
                     <constraint firstItem="JYG-Mh-x6C" firstAttribute="leading" secondItem="Pah-nQ-v5S" secondAttribute="trailing" constant="15" id="For-yP-FBi"/>
-                    <constraint firstItem="I8H-iE-BgH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="14" id="IfI-xc-qPi"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="I8H-iE-BgH" secondAttribute="trailing" constant="8" id="Ld5-Cx-Wjs"/>
+                    <constraint firstAttribute="trailing" secondItem="I8H-iE-BgH" secondAttribute="trailing" constant="15" id="K3e-og-dd0"/>
                     <constraint firstItem="Pah-nQ-v5S" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Tgf-Jn-ufr"/>
-                    <constraint firstItem="I8H-iE-BgH" firstAttribute="leading" secondItem="JYG-Mh-x6C" secondAttribute="trailing" constant="8" id="Wer-dW-Gaf"/>
                     <constraint firstItem="svw-Xm-oqs" firstAttribute="leading" secondItem="Pah-nQ-v5S" secondAttribute="trailing" constant="15" id="aC6-qu-UbM"/>
                     <constraint firstItem="Pah-nQ-v5S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="hhy-77-QKb"/>
-                    <constraint firstItem="svw-Xm-oqs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ngP-cu-mra"/>
-                    <constraint firstAttribute="bottom" secondItem="JYG-Mh-x6C" secondAttribute="bottom" id="p61-aG-HEL"/>
+                    <constraint firstItem="svw-Xm-oqs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ngP-cu-mra"/>
+                    <constraint firstAttribute="bottom" secondItem="JYG-Mh-x6C" secondAttribute="bottom" constant="5" id="p61-aG-HEL"/>
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="34" y="53.5"/>
