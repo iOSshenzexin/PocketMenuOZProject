@@ -13,7 +13,7 @@
 
 @protocol ZXShoppingCarHeaderViewDelegate <NSObject>
 
-- (void)didClickShoppingCarHeaderViewSelectAllOfCellInSection:(ZXShoppingCarHeaderView *)headerView;
+- (void)didClickShoppingCarHeaderViewSelectAllOfCellInSection:(ZXShoppingCarHeaderView *)headerView mark:(NSString *)mark;
 
 @end
 
@@ -27,5 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *headerSelectBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *marketNameBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *editBtn;
 
 @end

@@ -17,7 +17,8 @@ static NSString *confirmOrderFourCell = @"ZXConfirmOrderFourCell";
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZXConfirmOrderFourCell class]) owner:nil options:nil] lastObject];
     }
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     return cell;
 }
 

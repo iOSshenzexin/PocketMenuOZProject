@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXChangeEmailController">
             <connections>
+                <outlet property="emailTxt" destination="odM-VJ-tEx" id="OAA-cY-kEB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,22 +33,20 @@
                                 <constraint firstAttribute="height" constant="1" id="lBc-Tm-P5O"/>
                             </constraints>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odM-VJ-tEx">
-                            <color key="backgroundColor" red="0.94901960780000005" green="0.3294117647" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="tomas_ed@hotmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odM-VJ-tEx">
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="eBE-0j-nak"/>
                             </constraints>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Crb-ON-mMM">
-                            <color key="backgroundColor" red="0.94901960780000005" green="0.3294117647" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Crb-ON-mMM">
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="n2v-UK-ENH"/>
                             </constraints>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
@@ -71,12 +70,28 @@
                         <constraint firstAttribute="bottom" secondItem="7Co-nb-0zo" secondAttribute="bottom" id="yNg-ql-Utz"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q27-Ix-Le4">
+                    <color key="backgroundColor" red="0.94901960780000005" green="0.3294117647" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="YbJ-l1-XFq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="确定"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="q27-Ix-Le4" firstAttribute="top" secondItem="pty-ze-w5u" secondAttribute="bottom" constant="68" id="CZt-gD-0fO"/>
+                <constraint firstAttribute="trailing" secondItem="q27-Ix-Le4" secondAttribute="trailing" constant="15" id="KeQ-0O-DvI"/>
                 <constraint firstItem="pty-ze-w5u" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="M7O-3u-4Oc"/>
                 <constraint firstItem="pty-ze-w5u" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="aPX-zi-lgG"/>
                 <constraint firstAttribute="trailing" secondItem="pty-ze-w5u" secondAttribute="trailing" id="xrm-EZ-3Nf"/>
+                <constraint firstItem="q27-Ix-Le4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="z7Q-ji-Bxa"/>
             </constraints>
             <point key="canvasLocation" x="38.5" y="54.5"/>
         </view>

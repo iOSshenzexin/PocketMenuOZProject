@@ -46,7 +46,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.parentView = parentView;
-//        self.objects = [NSMutableArray arrayWithArray:objects];
+        self.objects = [NSMutableArray arrayWithArray:objects];
         [self layoutUI];
     }
     return self;
@@ -213,16 +213,23 @@
 #pragma mark 去支付
 -(void)pay:(UIButton *)sender
 {
-    //ZXMakeSureOrderController *VC = [[ZXMakeSureOrderController alloc] init];
+    //AppDelegate *app = MyApplicationDelegate;
     for (UIView* next = [self superview]; next; next = next.superview) {
         UIResponder* nextResponder = [next nextResponder];
         if ([nextResponder isKindOfClass:[ZXProductListController class]]) {
-            ZXProductListController *vc = (ZXProductListController *)nextResponder;
-//            VC.title = @"确认订单";
-            ZXLoginController *loginVc = [[ZXLoginController alloc] init];
-            ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:loginVc];
-            [vc presentViewController:nav animated:YES completion:nil];
-           // [vc.navigationController pushViewController:VC animated:YES];
+             ZXProductListController *vc = (ZXProductListController *)nextResponder;
+//            if (app.isLogin) {
+               ZXMakeSureOrderController *VC = [[ZXMakeSureOrderController alloc] init];
+               VC.title = @"确认订单";
+                VC.foodsArray = self.OrderList.objects;
+               [vc.navigationController pushViewController:VC animated:YES];
+//            }else{
+//            ZXLoginController *loginVc = [[ZXLoginController alloc] init];
+//            ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:loginVc];
+//            [vc presentViewController:nav animated:YES completion:^{
+//            }];
+          
+        //}
         }
     }
 }

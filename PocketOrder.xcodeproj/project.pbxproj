@@ -32,6 +32,9 @@
 		01607A931DAF6C89002F692E /* ZXConfirmOrderTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01607A911DAF6C89002F692E /* ZXConfirmOrderTwoCell.xib */; };
 		01607A971DAF6EBC002F692E /* ZXConfirmOrderThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607A951DAF6EBC002F692E /* ZXConfirmOrderThreeCell.m */; };
 		01607A981DAF6EBC002F692E /* ZXConfirmOrderThreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01607A961DAF6EBC002F692E /* ZXConfirmOrderThreeCell.xib */; };
+		016D60C31DB9A0EE0081BBF1 /* UITextField+ZXAddCheckCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D60C21DB9A0EE0081BBF1 /* UITextField+ZXAddCheckCode.m */; };
+		016D60C61DB9A4EC0081BBF1 /* UIView+ZXCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D60C51DB9A4EC0081BBF1 /* UIView+ZXCustomView.m */; };
+		016D60C91DB9C1C40081BBF1 /* ZXOrderFoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D60C81DB9C1C40081BBF1 /* ZXOrderFoodsModel.m */; };
 		017310001DB06C9600D373E6 /* ZXUserAddressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01730FFE1DB06C9600D373E6 /* ZXUserAddressController.m */; };
 		017310011DB06C9600D373E6 /* ZXUserAddressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01730FFF1DB06C9600D373E6 /* ZXUserAddressController.xib */; };
 		017310051DB06E9B00D373E6 /* ZXConfirmOrderFourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 017310031DB06E9B00D373E6 /* ZXConfirmOrderFourCell.m */; };
@@ -198,6 +201,12 @@
 		01607A941DAF6EBC002F692E /* ZXConfirmOrderThreeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXConfirmOrderThreeCell.h; sourceTree = "<group>"; };
 		01607A951DAF6EBC002F692E /* ZXConfirmOrderThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXConfirmOrderThreeCell.m; sourceTree = "<group>"; };
 		01607A961DAF6EBC002F692E /* ZXConfirmOrderThreeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXConfirmOrderThreeCell.xib; sourceTree = "<group>"; };
+		016D60C11DB9A0EE0081BBF1 /* UITextField+ZXAddCheckCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+ZXAddCheckCode.h"; sourceTree = "<group>"; };
+		016D60C21DB9A0EE0081BBF1 /* UITextField+ZXAddCheckCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ZXAddCheckCode.m"; sourceTree = "<group>"; };
+		016D60C41DB9A4EC0081BBF1 /* UIView+ZXCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZXCustomView.h"; sourceTree = "<group>"; };
+		016D60C51DB9A4EC0081BBF1 /* UIView+ZXCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZXCustomView.m"; sourceTree = "<group>"; };
+		016D60C71DB9C1C40081BBF1 /* ZXOrderFoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXOrderFoodsModel.h; sourceTree = "<group>"; };
+		016D60C81DB9C1C40081BBF1 /* ZXOrderFoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXOrderFoodsModel.m; sourceTree = "<group>"; };
 		01730FFD1DB06C9600D373E6 /* ZXUserAddressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXUserAddressController.h; sourceTree = "<group>"; };
 		01730FFE1DB06C9600D373E6 /* ZXUserAddressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXUserAddressController.m; sourceTree = "<group>"; };
 		01730FFF1DB06C9600D373E6 /* ZXUserAddressController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXUserAddressController.xib; sourceTree = "<group>"; };
@@ -545,6 +554,10 @@
 			children = (
 				01D1BAE01D8685E300971AF3 /* UIBarButtonItem+ZXItem.h */,
 				01D1BAE11D8685E300971AF3 /* UIBarButtonItem+ZXItem.m */,
+				016D60C11DB9A0EE0081BBF1 /* UITextField+ZXAddCheckCode.h */,
+				016D60C21DB9A0EE0081BBF1 /* UITextField+ZXAddCheckCode.m */,
+				016D60C41DB9A4EC0081BBF1 /* UIView+ZXCustomView.h */,
+				016D60C51DB9A4EC0081BBF1 /* UIView+ZXCustomView.m */,
 			);
 			path = Catagory;
 			sourceTree = "<group>";
@@ -587,9 +600,9 @@
 		01D8985D1DAA2A2D0070FBDD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				01D8985E1DAA2A2D0070FBDD /* First(首页) */,
 				01EED8D71DAB21FB00003A37 /* LoginRegister */,
 				01D898881DAA2A2D0070FBDD /* Fourth(个人中心) */,
-				01D8985E1DAA2A2D0070FBDD /* First(首页) */,
 				01D8988F1DAA2A2D0070FBDD /* Second(收藏) */,
 				01D898961DAA2A2D0070FBDD /* Third(购物车) */,
 			);
@@ -641,6 +654,8 @@
 		01D8986C1DAA2A2D0070FBDD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				016D60C71DB9C1C40081BBF1 /* ZXOrderFoodsModel.h */,
+				016D60C81DB9C1C40081BBF1 /* ZXOrderFoodsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -682,9 +697,9 @@
 		01D898881DAA2A2D0070FBDD /* Fourth(个人中心) */ = {
 			isa = PBXGroup;
 			children = (
+				01D8988E1DAA2A2D0070FBDD /* View */,
 				01D898891DAA2A2D0070FBDD /* Controller */,
 				01D8988D1DAA2A2D0070FBDD /* Model */,
-				01D8988E1DAA2A2D0070FBDD /* View */,
 			);
 			name = "Fourth(个人中心)";
 			path = Fourth;
@@ -1246,6 +1261,7 @@
 				01D1BAD11D86401800971AF3 /* ZXConst.m in Sources */,
 				01D8993F1DAA2B550070FBDD /* KNBannerView.m in Sources */,
 				0173100A1DB0796D00D373E6 /* ZXLoginController.m in Sources */,
+				016D60C91DB9C1C40081BBF1 /* ZXOrderFoodsModel.m in Sources */,
 				01D898A61DAA2A2D0070FBDD /* ZXProductListController.m in Sources */,
 				01D8994A1DAA2B550070FBDD /* GetAdTool.m in Sources */,
 				01D0DCBE1DB8655D00A9A64A /* ZXShoppingCarHeaderView.m in Sources */,
@@ -1267,6 +1283,7 @@
 				01D8994F1DAA2B550070FBDD /* ZXMovie.m in Sources */,
 				01D898BF1DAA2A2D0070FBDD /* ZXThirdController.m in Sources */,
 				017310331DB0DD9400D373E6 /* ZXAddAdressController.m in Sources */,
+				016D60C61DB9A4EC0081BBF1 /* UIView+ZXCustomView.m in Sources */,
 				01D899511DAA2B550070FBDD /* LSButton.m in Sources */,
 				01D0DCD41DB8CAAA00A9A64A /* ZXChangeEmailController.m in Sources */,
 				017310051DB06E9B00D373E6 /* ZXConfirmOrderFourCell.m in Sources */,
@@ -1283,6 +1300,7 @@
 				01DCCDAA1DB755840095B83B /* ZXSettingController.m in Sources */,
 				01D899501DAA2B550070FBDD /* ZXMovieBrowser.m in Sources */,
 				012BDBFA1DB471DB0040CB08 /* ZXSelectAddressController.m in Sources */,
+				016D60C31DB9A0EE0081BBF1 /* UITextField+ZXAddCheckCode.m in Sources */,
 				01D8984D1DAA28900070FBDD /* ZXTabBarController.m in Sources */,
 				01D899491DAA2B550070FBDD /* AdvertiseViewController.m in Sources */,
 				01607A7D1DAF3D26002F692E /* ZXDishesCell.m in Sources */,

@@ -23,8 +23,8 @@
 - (IBAction)didClickLogin:(id)sender {
     AppDelegate *app =  MyApplicationDelegate;
     app.isLogin = YES;
-   // [self dismissViewControllerAnimated:YES completion:^{
-    //}];
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
 }
 
 

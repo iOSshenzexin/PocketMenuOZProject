@@ -23,6 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    ZXLog(@"self.foodsArray %@",self.foodsArray);
+    
     self.edgesForExtendedLayout = UIRectEdgeNone;
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 70)];
     footerView.backgroundColor = [UIColor whiteColor];
@@ -76,7 +79,7 @@
         return 130;
     }
     if (indexPath.row == 3) {
-        return 250;
+        return 350;
     }
     return 55;
 }
@@ -88,6 +91,11 @@
         vc.title = @"收货地址";
         [self.navigationController pushViewController:vc animated:YES];
     }
+}
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.view endEditing:YES];
 }
 
 

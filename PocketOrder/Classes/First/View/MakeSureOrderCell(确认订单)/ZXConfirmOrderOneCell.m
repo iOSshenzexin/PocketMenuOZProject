@@ -38,7 +38,7 @@ static NSString *confirmOrderOneCell = @"ConfirmOrderOneCell";
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZXConfirmOrderOneCell class]) owner:nil options:nil] lastObject];
            }
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

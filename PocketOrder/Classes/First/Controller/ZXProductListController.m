@@ -279,7 +279,6 @@ extern int btnH;
 {
     [self.ordersArray removeAllObjects];
     
-    
     _totalOrders = 0;
     _ShopCartView.badge.badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)_totalOrders];
     

@@ -59,7 +59,7 @@
         return headerView;
         }else{
         ZXUnLoginHeaderView *unLoginHeaderView = [ZXUnLoginHeaderView awakFromNib];
-        [unLoginHeaderView.loginBtn addTarget:self action:@selector(jumpToLoginPage:) forControlEvents:UIControlEventTouchUpInside];
+        [unLoginHeaderView.loginBtn addTarget:self action:@selector(jumpToLoginPage) forControlEvents:UIControlEventTouchUpInside];
         return unLoginHeaderView;
         }
     }
@@ -67,7 +67,7 @@
 }
 
 #pragma mark - 未登录跳到登录界面
-- (void)jumpToLoginPage:(UIButton *)btn
+- (void)jumpToLoginPage
 {
     ZXLoginController *vc = [[ZXLoginController alloc] init];
     ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:vc];
@@ -98,12 +98,16 @@
     if (section == 1) {
         return 2;
     }
-    
     return 1;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+     AppDelegate *app =  MyApplicationDelegate;
+    if (!app.isLogin) {
+        [self jumpToLoginPage];
+    }
+    else{
     if (indexPath.section == 1) {
         if (indexPath.row == 1) {
             ZXChangePWDController *vc = [[UIStoryboard storyboardWithName:@"ZXChangePWDController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXChangePWDController"];
@@ -116,8 +120,8 @@
         vc.title = @"设置";
         [self.navigationController pushViewController:vc animated:YES];
     }
+    }
 }
-
 
 - (void)viewDidDisappear:(BOOL)animated
 {

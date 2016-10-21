@@ -50,7 +50,8 @@ static NSString *confirmOrderThreeCell = @"ZXConfirmOrderThreeCell";
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZXConfirmOrderThreeCell class]) owner:nil options:nil] lastObject];
     }
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     return cell;
 }
 

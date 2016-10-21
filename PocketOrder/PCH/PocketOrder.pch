@@ -8,6 +8,8 @@
 #import "MJExtension.h"
 #import "ZXConst.h"
 #import "UIBarButtonItem+ZXItem.h"
+#import "UITextField+ZXAddCheckCode.h"
+#import "UIView+ZXCustomView.h"
 #import "ZXNavgaitonController.h"
 #import "AppDelegate.h"
 

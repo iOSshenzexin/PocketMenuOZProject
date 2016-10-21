@@ -143,29 +143,42 @@
 }
 
 #pragma mark -头部按钮代理方法
--(void)didClickShoppingCarHeaderViewSelectAllOfCellInSection:(ZXShoppingCarHeaderView *)headerView{
-
+-(void)didClickShoppingCarHeaderViewSelectAllOfCellInSection:(ZXShoppingCarHeaderView *)headerView mark:(NSString *)mark{
     NSInteger indexpath = headerView.tag - 1000;
     ZXHeaderMerchantModel *headModel = self.groupArrs[indexpath];
     NSArray *allSelectArr = self.modelArrs[indexpath];
-    if(headerView.headerSelectBtn.selected)
-    {
-        for (ZXGoodsModel * model in allSelectArr)
+    if ([mark isEqualToString:@"select"]) {
+        if(headerView.headerSelectBtn.selected)
         {
-            model.isSelect = YES;
-            headModel.isSelect = YES;
+            for (ZXGoodsModel * model in allSelectArr)
+            {
+                model.isSelect = YES;
+                headModel.isSelect = YES;
+            }
+        }else
+        {
+            for (ZXGoodsModel * model in allSelectArr)
+            {
+                model.isSelect = NO;
+                headModel.isSelect = NO;
+            }
         }
-    }else
-    {
-        for (ZXGoodsModel * model in allSelectArr)
-        {
-            model.isSelect = NO;
-            headModel.isSelect = NO;
+        //[self isallSelectAllPrice];
+    }else {
+        if (headerView.editBtn.selected) {
+            for (ZXGoodsModel * model in allSelectArr)
+            {
+                model.isSelect = YES;
+            }
+        }else{
+            for (ZXGoodsModel * model in allSelectArr)
+            {
+                model.isSelect = NO;
+            }
         }
     }
-    //[self isallSelectAllPrice];
+   
     [self.tableView reloadData];
-
 }
 
 - (IBAction)didClickAllChoosed:(UIButton *)sender {

@@ -11,4 +11,7 @@
 @interface ZXMakeSureOrderController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+
+@property (nonatomic,copy) NSMutableArray *foodsArray;
+
 @end

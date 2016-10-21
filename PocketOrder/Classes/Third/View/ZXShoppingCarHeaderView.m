@@ -14,11 +14,11 @@ static NSString *headerId = @"headerID";
 
 
 +(instancetype)headerViewWithTableView:(UITableView *)tableView{
-//    ZXShoppingCarHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerId];
-//  
-//    if (headerView == nil) {
-         ZXShoppingCarHeaderView *headerView = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
-    //}
+    ZXShoppingCarHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerId];
+// ZXShoppingCarHeaderView *
+    if (headerView == nil) {
+        headerView = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
+    }
     //设置headerView背景颜色 - important
     headerView.backgroundView = ({
         UIView * view = [[UIView alloc] initWithFrame:headerView.bounds];
@@ -39,8 +39,8 @@ static NSString *headerId = @"headerID";
 
 - (IBAction)select:(UIButton *)sender {
     sender.selected = !sender.selected;
-    if ([self.headerDelegate respondsToSelector:@selector(didClickShoppingCarHeaderViewSelectAllOfCellInSection:)]) {
-        [self.headerDelegate didClickShoppingCarHeaderViewSelectAllOfCellInSection:self];
+    if ([self.headerDelegate respondsToSelector:@selector(didClickShoppingCarHeaderViewSelectAllOfCellInSection:mark:)]) {
+        [self.headerDelegate didClickShoppingCarHeaderViewSelectAllOfCellInSection:self mark:@"select"];
     }
     
 }
@@ -52,6 +52,9 @@ static NSString *headerId = @"headerID";
 
 - (IBAction)edit:(UIButton *)sender {
     sender.selected = !sender.selected;
+//    if ([self.headerDelegate respondsToSelector:@selector(didClickShoppingCarHeaderViewSelectAllOfCellInSection:mark:)]) {
+//        [self.headerDelegate didClickShoppingCarHeaderViewSelectAllOfCellInSection:self mark:@"edit"];
+//    }
 }
 
 

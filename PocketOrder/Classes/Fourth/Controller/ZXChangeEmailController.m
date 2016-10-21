@@ -7,8 +7,9 @@
 //
 
 #import "ZXChangeEmailController.h"
-
+#import "ZXGetCheckCode.h"
 @interface ZXChangeEmailController ()
+@property (weak, nonatomic) IBOutlet UITextField *emailTxt;
 
 @end
 
@@ -16,9 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    [self.emailTxt textFieldWithCheckCode:self.emailTxt.frame.size.height target:self action:@selector(getSMSCode:)];
 }
 
-
-
+- (void)getSMSCode:(UIButton *)btn{
+    [ZXGetCheckCode getCheckCode:btn];
+}
 @end

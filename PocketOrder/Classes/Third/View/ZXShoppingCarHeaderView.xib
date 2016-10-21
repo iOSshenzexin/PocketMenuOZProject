@@ -73,6 +73,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="editBtn" destination="Tor-Kh-fFj" id="miS-8k-qTy"/>
                 <outlet property="headerSelectBtn" destination="BCB-x0-Y4n" id="Zzn-OX-9BO"/>
                 <outlet property="marketNameBtn" destination="nTe-QV-nPf" id="4nZ-6S-KmK"/>
             </connections>

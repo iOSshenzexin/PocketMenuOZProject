@@ -16,24 +16,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupHeaderAndFooterView];
+   [self setupTableFooterView];
 }
 
-
--(void)setupHeaderAndFooterView{
+- (void)setupTableFooterView
+{
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 200)];
-    UIButton *quitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    quitBtn.bounds = CGRectMake(0, 0, ScreenW - 30, 40);
-    quitBtn.layer.cornerRadius = 3;
-    [quitBtn setTitle:@"退出登录" forState:UIControlStateNormal];
-    quitBtn.backgroundColor = AppThemeColor;
-    quitBtn.center = footerView.center;
-    [footerView addSubview:quitBtn];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.bounds = CGRectMake(0, 0, ScreenW - 30, 40);
+    btn.layer.cornerRadius = 3;
+    [btn setTitle:@"退出登录" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
+    btn.backgroundColor = AppThemeColor;
+    btn.center = footerView.center;
+    [footerView addSubview:btn];
     self.tableView.tableFooterView = footerView;
-    
-    ZXLog(@"%@",NSStringFromCGRect(self.tableView.tableHeaderView.frame));
 }
+
+- (void)logout{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"您确定要退出吗?" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    [alertController addAction:cancleAction];
+    
+    UIAlertAction *determineAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        AppDelegate *app = MyApplicationDelegate;
+        app.isLogin = NO;
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    [alertController addAction:determineAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
