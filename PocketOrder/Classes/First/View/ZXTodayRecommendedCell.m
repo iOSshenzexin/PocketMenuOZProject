@@ -16,6 +16,7 @@
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"ZXTodayRecommendedCell" owner:nil options:nil] lastObject];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

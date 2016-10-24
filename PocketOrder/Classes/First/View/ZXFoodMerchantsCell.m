@@ -23,9 +23,7 @@ static NSString *foodMeuchantsCell = @"ZXFoodMerchantsCell";
         cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZXFoodMerchantsCell class]) owner:nil options:nil] lastObject];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    
     return cell;
-    
 }
 
 

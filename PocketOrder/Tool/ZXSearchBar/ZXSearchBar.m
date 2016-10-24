@@ -19,9 +19,11 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.size = CGSizeMake(200, 32);
-        self.font = [UIFont systemFontOfSize:12];
-        self.layer.cornerRadius = 16;
+       // self.size = CGSizeMake(ScreenW - 100, 32);
+        self.size = frame.size;
+
+        self.font = [UIFont systemFontOfSize:13];
+        self.layer.cornerRadius = 15;
         self.layer.masksToBounds = YES;
         self.adjustsFontSizeToFitWidth = YES;
         //拉伸图片防止变形的处理方法: 或者 提前在Xcode上设置图片中间拉伸

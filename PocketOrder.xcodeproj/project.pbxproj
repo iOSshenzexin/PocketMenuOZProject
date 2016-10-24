@@ -21,6 +21,10 @@
 		012BDC0A1DB483860040CB08 /* ZXFourthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012BDC091DB483860040CB08 /* ZXFourthController.m */; };
 		012BDC0D1DB49D3E0040CB08 /* ZXHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 012BDC0C1DB49D3E0040CB08 /* ZXHeaderView.m */; };
 		012BDC0F1DB49D4C0040CB08 /* ZXHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012BDC0E1DB49D4C0040CB08 /* ZXHeaderView.xib */; };
+		0142BC021DBDDB9500CF8F03 /* ZYTokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142BC011DBDDB9500CF8F03 /* ZYTokenManager.m */; };
+		0142BC061DBDE2E900CF8F03 /* ZXSearchHotRecommandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142BC041DBDE2E900CF8F03 /* ZXSearchHotRecommandCell.m */; };
+		0142BC071DBDE2E900CF8F03 /* ZXSearchHotRecommandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0142BC051DBDE2E900CF8F03 /* ZXSearchHotRecommandCell.xib */; };
+		0142BC0B1DBDF22F00CF8F03 /* ZXShawdowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142BC0A1DBDF22F00CF8F03 /* ZXShawdowView.m */; };
 		015A4FB41DAA2C670055B711 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 015A4FB31DAA2C670055B711 /* Info.plist */; };
 		01607A7D1DAF3D26002F692E /* ZXDishesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607A7B1DAF3D26002F692E /* ZXDishesCell.m */; };
 		01607A7E1DAF3D26002F692E /* ZXDishesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01607A7C1DAF3D26002F692E /* ZXDishesCell.xib */; };
@@ -191,6 +195,13 @@
 		012BDC0B1DB49D3E0040CB08 /* ZXHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXHeaderView.h; sourceTree = "<group>"; };
 		012BDC0C1DB49D3E0040CB08 /* ZXHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXHeaderView.m; sourceTree = "<group>"; };
 		012BDC0E1DB49D4C0040CB08 /* ZXHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXHeaderView.xib; sourceTree = "<group>"; };
+		0142BC001DBDDB9500CF8F03 /* ZYTokenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTokenManager.h; sourceTree = "<group>"; };
+		0142BC011DBDDB9500CF8F03 /* ZYTokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTokenManager.m; sourceTree = "<group>"; };
+		0142BC031DBDE2E900CF8F03 /* ZXSearchHotRecommandCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXSearchHotRecommandCell.h; sourceTree = "<group>"; };
+		0142BC041DBDE2E900CF8F03 /* ZXSearchHotRecommandCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSearchHotRecommandCell.m; sourceTree = "<group>"; };
+		0142BC051DBDE2E900CF8F03 /* ZXSearchHotRecommandCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXSearchHotRecommandCell.xib; sourceTree = "<group>"; };
+		0142BC091DBDF22F00CF8F03 /* ZXShawdowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXShawdowView.h; sourceTree = "<group>"; };
+		0142BC0A1DBDF22F00CF8F03 /* ZXShawdowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXShawdowView.m; sourceTree = "<group>"; };
 		015A4FB31DAA2C670055B711 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01607A7A1DAF3D26002F692E /* ZXDishesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXDishesCell.h; sourceTree = "<group>"; };
 		01607A7B1DAF3D26002F692E /* ZXDishesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXDishesCell.m; sourceTree = "<group>"; };
@@ -479,6 +490,24 @@
 			path = PocketOrderUITests;
 			sourceTree = "<group>";
 		};
+		0142BBFF1DBDDB9500CF8F03 /* TokenManager */ = {
+			isa = PBXGroup;
+			children = (
+				0142BC001DBDDB9500CF8F03 /* ZYTokenManager.h */,
+				0142BC011DBDDB9500CF8F03 /* ZYTokenManager.m */,
+			);
+			path = TokenManager;
+			sourceTree = "<group>";
+		};
+		0142BC081DBDF21200CF8F03 /* ZXShawdowView */ = {
+			isa = PBXGroup;
+			children = (
+				0142BC091DBDF22F00CF8F03 /* ZXShawdowView.h */,
+				0142BC0A1DBDF22F00CF8F03 /* ZXShawdowView.m */,
+			);
+			path = ZXShawdowView;
+			sourceTree = "<group>";
+		};
 		01607A791DAF3D26002F692E /* ZXDishesCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -687,6 +716,7 @@
 		01D8986D1DAA2A2D0070FBDD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0142BC081DBDF21200CF8F03 /* ZXShawdowView */,
 				01607A7F1DAF5DA2002F692E /* MakeSureOrderCell(确认订单) */,
 				01607A791DAF3D26002F692E /* ZXDishesCell */,
 				01DE227C1DAE221C00D2E5BA /* ZFReOrderTableView */,
@@ -714,6 +744,9 @@
 				01D898851DAA2A2D0070FBDD /* ZXYouLikeCell.h */,
 				01D898861DAA2A2D0070FBDD /* ZXYouLikeCell.m */,
 				01D898871DAA2A2D0070FBDD /* ZXYouLikeCell.xib */,
+				0142BC031DBDE2E900CF8F03 /* ZXSearchHotRecommandCell.h */,
+				0142BC041DBDE2E900CF8F03 /* ZXSearchHotRecommandCell.m */,
+				0142BC051DBDE2E900CF8F03 /* ZXSearchHotRecommandCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -874,6 +907,7 @@
 		01D8990B1DAA2B550070FBDD /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				0142BBFF1DBDDB9500CF8F03 /* TokenManager */,
 				01D8990C1DAA2B550070FBDD /* CoolNavi */,
 				01D8990F1DAA2B550070FBDD /* KNBannerView */,
 				01D899221DAA2B550070FBDD /* SetAdPage */,
@@ -1179,6 +1213,7 @@
 				01D898C01DAA2A2D0070FBDD /* ZXThirdController.xib in Resources */,
 				01EED8DC1DAB3A2100003A37 /* ZXHomePictureController.xib in Resources */,
 				01D898A51DAA2A2D0070FBDD /* ZXMessageController.xib in Resources */,
+				0142BC071DBDE2E900CF8F03 /* ZXSearchHotRecommandCell.xib in Resources */,
 				01D898AE1DAA2A2D0070FBDD /* ZXLikeCell.xib in Resources */,
 				01DC63221DACCA4000D26546 /* ZXSearchController.xib in Resources */,
 				01DCCDAC1DB755930095B83B /* ZXSettingController.storyboard in Resources */,
@@ -1268,6 +1303,7 @@
 				01C03ADB1DB9F64C00264FF8 /* ZXMakeSureOrderController.m in Sources */,
 				01D898B51DAA2A2D0070FBDD /* ZXTodayRecommendedCell.m in Sources */,
 				01DE22831DAE229B00D2E5BA /* ShoppingCartCell.m in Sources */,
+				0142BC0B1DBDF22F00CF8F03 /* ZXShawdowView.m in Sources */,
 				01C03AE51DBA09F200264FF8 /* ZXPayResultController.m in Sources */,
 				01D8994E1DAA2B550070FBDD /* XFSegementView.m in Sources */,
 				012BDC0D1DB49D3E0040CB08 /* ZXHeaderView.m in Sources */,
@@ -1314,6 +1350,7 @@
 				017310331DB0DD9400D373E6 /* ZXAddAdressController.m in Sources */,
 				016D60C61DB9A4EC0081BBF1 /* UIView+ZXCustomView.m in Sources */,
 				01D899511DAA2B550070FBDD /* LSButton.m in Sources */,
+				0142BC021DBDDB9500CF8F03 /* ZYTokenManager.m in Sources */,
 				01C03ADF1DB9F68000264FF8 /* ZXPaymentOrderController.m in Sources */,
 				01D0DCD41DB8CAAA00A9A64A /* ZXChangeEmailController.m in Sources */,
 				017310051DB06E9B00D373E6 /* ZXConfirmOrderFourCell.m in Sources */,
@@ -1334,6 +1371,7 @@
 				01D8984D1DAA28900070FBDD /* ZXTabBarController.m in Sources */,
 				01D899491DAA2B550070FBDD /* AdvertiseViewController.m in Sources */,
 				01607A7D1DAF3D26002F692E /* ZXDishesCell.m in Sources */,
+				0142BC061DBDE2E900CF8F03 /* ZXSearchHotRecommandCell.m in Sources */,
 				012BDC0A1DB483860040CB08 /* ZXFourthController.m in Sources */,
 				01DE227A1DAE20E300D2E5BA /* OverlayView.m in Sources */,
 				01D898B11DAA2A2D0070FBDD /* ZXThemeZoneCell.m in Sources */,

@@ -15,6 +15,8 @@
 #import "ZXSettingController.h"
 #import "ZXChangePWDController.h"
 #import "ZXLoginController.h"
+#import "ZXSelectAddressController.h"
+#import "ZXMessageController.h"
 
 #import "AppDelegate.h"
 @interface ZXFourthController ()
@@ -72,7 +74,6 @@
     ZXLoginController *vc = [[ZXLoginController alloc] init];
     ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:^{
-        
     }];
 }
 #pragma mark - 已登录跳到个人信息界面
@@ -86,7 +87,6 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
     return 3;
 }
 
@@ -108,10 +108,21 @@
         [self jumpToLoginPage];
     }
     else{
+    if (indexPath.section == 0) {
+        if(indexPath.row == 1) {
+            ZXMessageController *vc = [[ZXMessageController alloc] init];
+            vc.title = @"消息";
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        }
     if (indexPath.section == 1) {
         if (indexPath.row == 1) {
             ZXChangePWDController *vc = [[UIStoryboard storyboardWithName:@"ZXChangePWDController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXChangePWDController"];
             vc.title = @"修改密码";
+            [self.navigationController pushViewController:vc animated:YES];
+        }else{
+            ZXSelectAddressController *vc = [[ZXSelectAddressController alloc] init];
+            vc.title = @"我的收货地址";
             [self.navigationController pushViewController:vc animated:YES];
         }
     }

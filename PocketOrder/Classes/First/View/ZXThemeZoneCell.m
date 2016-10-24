@@ -23,6 +23,7 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:@"ZXThemeZoneCell" owner:nil options:nil] lastObject];
         // 注册cell
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

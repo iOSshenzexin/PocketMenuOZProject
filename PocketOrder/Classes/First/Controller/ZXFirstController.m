@@ -29,10 +29,10 @@
 
 #import "ZXMessageController.h"
 #import "ZXHomePictureController.h"
+#import "ZXSearchController.h"
 
-// 搭界面用
-#import "ZXSelectAddressController.h"
-@interface ZXFirstController ()<KNBannerViewDelegate,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+#import "ZXShawdowView.h"
+@interface ZXFirstController ()<KNBannerViewDelegate,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITextFieldDelegate>
 
 @property (nonatomic, strong, readwrite) UILabel *titileLabel;
 
@@ -45,6 +45,9 @@
 /* 猜你喜欢Collectionview */
 @property (nonatomic,weak) UICollectionView *youLikeCV;
 
+@property (nonatomic,weak) ZXShawdowView *shawdow;
+
+@property (nonatomic,weak) UITableView *cityTableView;
 
 @end
 
@@ -69,27 +72,44 @@
 
 #pragma mark  设置NavigationBarButton
 - (void)setupNavigationBarBtn{
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:0 btnWidth:21 btnHeight:21 image:@"news" highlightImage:nil title:nil target:self action:@selector(didClickMessage) leftEdgeInset:0 rightEdgeInset:0];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:0 btnWidth:21 btnHeight:21 image:@"news" highlightImage:nil title:nil target:self action:@selector(didClickMessage) leftEdgeInset:0 rightEdgeInset:-10];
     
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    leftBtn.frame = CGRectMake(0, 0, 40, 21);
-    //[leftBtn sizeToFit];
-    leftBtn.contentMode = UIViewContentModeLeft;
-    [leftBtn setTitle:@"地点" forState:UIControlStateNormal];
-    leftBtn.titleLabel.font = [UIFont fontWithName:@".SFUIText-Light" size:17.f];;
+    [leftBtn setTitle: @"珀斯" forState:UIControlStateNormal];
+    leftBtn.titleLabel.font = [UIFont systemFontOfSize:16];
     [leftBtn setImage:[UIImage imageNamed:@"arrows"] forState:UIControlStateNormal];
-//    CGFloat labelWidth = [leftBtn.titleLabel.text sizeWithAttributes:@{NSFontAttributeName :[UIFont fontWithName:@".SFUIText-Light" size:17.f]}].width;
-//    [leftBtn setTitleEdgeInsets:UIEdgeInsetsMake(0,-leftBtn.currentImage.size.width, 0, leftBtn.currentImage.size.width)];
-//    [leftBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -labelWidth, 0, labelWidth)];
-    [leftBtn addTarget:self action:@selector(didClickAddress) forControlEvents:UIControlEventTouchUpInside];
+    CGSize titleSize = [leftBtn.titleLabel.text sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]}];
+    
+    leftBtn.frame = CGRectMake(0, 0, titleSize.width + leftBtn.currentImage.size.width, 40);
+    leftBtn.contentMode = UIViewContentModeLeft & UIViewContentModeCenter;
+    [leftBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -leftBtn.currentImage.size.width - 15, 0, 0)];
+    [leftBtn setImageEdgeInsets:UIEdgeInsetsMake(0, titleSize.width, 0, 0)];
+    
+    leftBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -7, 0, 7);
+
+    [leftBtn addTarget:self action:@selector(didClickAddress:) forControlEvents:UIControlEventTouchUpInside];
+   
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
+  
     //搜索框
-    self.navigationItem.titleView = [ZXSearchBar searchBar];
+    ZXSearchBar *searchBar = [[ZXSearchBar alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 30)];
+    searchBar.placeholder = @"搜索商家,品类或商圈";
+    searchBar.delegate = self;
+    self.navigationItem.titleView = searchBar;
     
-    
-    
+
     self.homeTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewInfo)];
 }
+
+#pragma  mark UITextFieldDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    ZXSearchController *vc = [[ZXSearchController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    return NO;
+}
+
+
 
 -(void)loadNewInfo
 {
@@ -107,12 +127,34 @@
 }
 
    /*选择地点*/
-- (void)didClickAddress
+- (void)didClickAddress:(UIButton *)btn
 {
-    ZXSelectAddressController *vc = [[ZXSelectAddressController alloc] init];
-    vc.title = @"选择收货地址";
-    [self.navigationController pushViewController:vc animated:YES];
-    ZXFunction
+    if (self.shawdow) {
+        [self.shawdow szx_removeSubViews];
+        self.shawdow = nil;
+    }else{
+    ZXShawdowView *shawdow = [[ZXShawdowView alloc] initWithSubViewOfFrame:CGRectMake(0, 0, ScreenW, 300)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideShawdowView:)];
+        [shawdow.superview.superview addGestureRecognizer:tap];
+        
+    UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, shawdow.bounds.size.width, shawdow.bounds.size.height)];
+        table.delegate = self;
+        table.dataSource = self;
+        table.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+       [shawdow addSubview:table];
+    self.cityTableView = table;
+    self.shawdow = shawdow;
+    }
+}
+
+
+
+- (void)hideShawdowView:(UITapGestureRecognizer *)tap{
+    CGPoint point = [tap locationInView:tap.view];
+    if (point.y > self.shawdow.frame.size.height) {
+        [self.shawdow szx_removeSubViews];
+        self.shawdow = nil;
+    }
 }
 
 #pragma mark - 注册自定制cell
@@ -128,10 +170,21 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (tableView == self.cityTableView) {
+        return 5;
+    }
     return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView == self.cityTableView) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cityCell"];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cityCell"];
+        }
+        cell.textLabel.text = @"珀斯";
+        return cell;
+    }else{
     if (indexPath.row == 0) {
         ZXThemeZoneCell *cell = [ZXThemeZoneCell cellWithTableView:tableView];
         [cell.collectionView registerNib:[UINib nibWithNibName:@"ZXSquareCell" bundle:nil] forCellWithReuseIdentifier:squareCell];
@@ -156,7 +209,36 @@
     cell.youLikeCV.delegate = self;
     self.youLikeCV = cell.youLikeCV;
     return cell;
+    }
+    return nil;
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSArray *headerTitles = @[@"当前城市"];
+    UIView *header = [[UIView alloc] init];
+    header.backgroundColor = RGB(241, 241, 241);
+    UILabel *headerLbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, ScreenW, 40)];
+    headerLbl.textColor = RGB(163, 163, 163);
+    headerLbl.text = headerTitles[section];
+    [header addSubview:headerLbl];
+    return header;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (tableView == self.cityTableView) {
+        return 40;
+    }
+    return 0;
+}
+
 
 
 
@@ -225,26 +307,16 @@
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (tableView == self.cityTableView) {
+        return 44;
+    }else{
     if (indexPath.row == 0) {
         return 210;
     }else if (indexPath.row == 1){
         return 287;
     }
     return 270;
-}
-
-
--(void)setupRefreshView{
-    BGRefresh* refresh = [[BGRefresh alloc] init];
-    refresh.startBlock = ^{
-        NSLog(@"开始刷新....");
-    };
-    refresh.endBlock = ^{
-        NSLog(@"结束刷新....");
-    };
-    refresh.isAutoEnd = YES;//设为自动结束刷新 YES/NO 自动/手动
-    refresh.refreshTime = 3.0;//设置自动刷新时间(秒为单位) 手动结束刷新时不设置此项
-    refresh.scrollview = self.homeTableView;
+    }
 }
 
 -(void)dealloc{
@@ -263,6 +335,12 @@
 - (void)pushToAd{
     AdvertiseViewController *adVc = [[AdvertiseViewController alloc] init];
     [self.navigationController pushViewController:adVc animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.shawdow.superview.superview removeFromSuperview];
 }
 
 

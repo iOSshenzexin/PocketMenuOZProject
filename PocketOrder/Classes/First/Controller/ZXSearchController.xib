@@ -1,12 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXSearchController">
             <connections>
+                <outlet property="myTableView" destination="9gx-0w-dVo" id="cTE-yc-l3L"/>
+                <outlet property="navView" destination="Agu-kt-Pgl" id="EXN-tl-HHm"/>
+                <outlet property="searchText" destination="lIq-hW-axi" id="OHP-Xi-sup"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +18,83 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Dl-x0-i4L" userLabel="NavigationBarView">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7s-aa-8tj">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="48" id="ruw-XW-bus"/>
+                            </constraints>
+                            <state key="normal" image="back">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="back:" destination="-1" eventType="touchUpInside" id="b11-qD-iwF"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Agu-kt-Pgl">
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Search-search" translatesAutoresizingMaskIntoConstraints="NO" id="1xp-4h-vIr">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="16" id="bpV-7h-WvG"/>
+                                        <constraint firstAttribute="width" constant="16" id="chS-6v-rCV"/>
+                                    </constraints>
+                                </imageView>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入关键字词" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lIq-hW-axi">
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="1xp-4h-vIr" firstAttribute="top" secondItem="Agu-kt-Pgl" secondAttribute="topMargin" id="G9B-lG-geU"/>
+                                <constraint firstItem="1xp-4h-vIr" firstAttribute="leading" secondItem="Agu-kt-Pgl" secondAttribute="leading" constant="5" id="HPb-8o-tB9"/>
+                                <constraint firstItem="lIq-hW-axi" firstAttribute="top" secondItem="Agu-kt-Pgl" secondAttribute="top" id="Jfk-bK-FmH"/>
+                                <constraint firstAttribute="trailing" secondItem="lIq-hW-axi" secondAttribute="trailing" id="ORy-l5-kcV"/>
+                                <constraint firstItem="1xp-4h-vIr" firstAttribute="centerY" secondItem="lIq-hW-axi" secondAttribute="centerY" id="VnE-XG-3kB"/>
+                                <constraint firstAttribute="height" constant="30" id="XOQ-CI-ZOB"/>
+                                <constraint firstItem="lIq-hW-axi" firstAttribute="leading" secondItem="1xp-4h-vIr" secondAttribute="trailing" constant="10" id="cZY-QQ-uys"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="3"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94901960780000005" green="0.32941176470588235" blue="0.078431372549019607" alpha="0.90672189599999997" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Agu-kt-Pgl" firstAttribute="leading" secondItem="r7s-aa-8tj" secondAttribute="trailing" constant="-3" id="3VE-LM-EEZ"/>
+                        <constraint firstItem="r7s-aa-8tj" firstAttribute="leading" secondItem="5Dl-x0-i4L" secondAttribute="leading" id="3qk-Iz-V1N"/>
+                        <constraint firstItem="Agu-kt-Pgl" firstAttribute="top" secondItem="5Dl-x0-i4L" secondAttribute="top" constant="27" id="3tk-UB-HaQ"/>
+                        <constraint firstAttribute="height" constant="64" id="FbX-XE-FzR"/>
+                        <constraint firstAttribute="trailing" secondItem="Agu-kt-Pgl" secondAttribute="trailing" constant="20" id="UxT-4y-Ihl"/>
+                        <constraint firstItem="r7s-aa-8tj" firstAttribute="top" secondItem="5Dl-x0-i4L" secondAttribute="top" constant="20" id="f1W-5y-vwC"/>
+                        <constraint firstAttribute="bottom" secondItem="r7s-aa-8tj" secondAttribute="bottom" id="xIp-a8-FVy"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9gx-0w-dVo">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="2V2-rh-uVa"/>
+                        <outlet property="delegate" destination="-1" id="TID-T4-Q2t"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5Dl-x0-i4L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AXq-tp-xcP"/>
+                <constraint firstAttribute="bottom" secondItem="9gx-0w-dVo" secondAttribute="bottom" id="CUI-C3-Gxh"/>
+                <constraint firstItem="9gx-0w-dVo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CbT-Rh-QMT"/>
+                <constraint firstItem="5Dl-x0-i4L" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dW8-1Q-6m5"/>
+                <constraint firstItem="9gx-0w-dVo" firstAttribute="top" secondItem="5Dl-x0-i4L" secondAttribute="bottom" id="lyH-7h-Yey"/>
+                <constraint firstAttribute="trailing" secondItem="5Dl-x0-i4L" secondAttribute="trailing" id="uZW-7z-Vv2"/>
+                <constraint firstAttribute="trailing" secondItem="9gx-0w-dVo" secondAttribute="trailing" id="yvR-zJ-DOs"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="Search-search" width="15" height="15"/>
+        <image name="back" width="11" height="20"/>
+    </resources>
 </document>
