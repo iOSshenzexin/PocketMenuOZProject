@@ -12,3 +12,5 @@ UIKIT_EXTERN NSString * const squareCell;
 UIKIT_EXTERN NSString * const todayCell;
 
 UIKIT_EXTERN NSString * const likeCell;
+
+UIKIT_EXTERN NSString  * const SZXTitleButtonDidRepeatClickNotification;

@@ -8,6 +8,7 @@
 
 #import "ZXSearchController.h"
 
+#import "ZXSearchDetailController.h"
 #import "ZYTokenManager.h"
 #import "ZXSearchHotRecommandCell.h"
 @interface ZXSearchController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
@@ -58,10 +59,13 @@
     [self.navigationController  popViewControllerAnimated:YES];
 }
 
+
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{//搜索方法
     if (textField.text.length > 0) {
         [ZYTokenManager SearchText:textField.text];//缓存搜索记录
         [self readNSUserDefaults];
+        [self didClickSearchJumpController:textField.text];
     }else{
         NSLog(@"请输入查找内容");
     }
@@ -101,8 +105,6 @@
     return 40;
 }
 
-
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section== 1) {
          if (indexPath.row == _myArray.count){
@@ -124,6 +126,7 @@
         }
 }
 
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0 && indexPath.row == 1) {
         return 120;
@@ -135,6 +138,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.myTableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1) {
     if (indexPath.row == _myArray.count) {//清除所有历史记录
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"清除历史记录" message:@"" preferredStyle: UIAlertControllerStyleAlert];
         
@@ -150,10 +154,21 @@
         //[alertController addAction:archiveAction];
         [self presentViewController:alertController animated:YES completion:nil];
     }else{
-        
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        [self didClickSearchJumpController: cell.textLabel.text];
+    }
     }
 }
 
+/**
+ 跳转到搜索页面
+ */
+- (void)didClickSearchJumpController:(NSString *)text
+{
+    ZXSearchDetailController *vc = [[ZXSearchDetailController alloc] init];
+    vc.textFieldContent = text;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {

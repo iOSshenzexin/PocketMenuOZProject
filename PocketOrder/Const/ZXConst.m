@@ -11,3 +11,6 @@ NSString * const squareCell = @"ZXSquareCell";
 NSString * const todayCell = @"todayCell";
 
 NSString * const likeCell = @"likeCell";
+
+/** TitleButton被重复点击的通知 */
+NSString  * const SZXTitleButtonDidRepeatClickNotification = @"XMGTitleButtonDidRepeatClickNotification";

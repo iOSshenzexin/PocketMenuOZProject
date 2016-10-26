@@ -32,7 +32,12 @@
 #import "ZXSearchController.h"
 
 #import "ZXShawdowView.h"
+
+
 @interface ZXFirstController ()<KNBannerViewDelegate,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITextFieldDelegate>
+{
+    GMSPlacesClient *_placesClient;
+}
 
 @property (nonatomic, strong, readwrite) UILabel *titileLabel;
 
@@ -49,55 +54,79 @@
 
 @property (nonatomic,weak) UITableView *cityTableView;
 
+@property (nonatomic,weak) UIButton *leftButton;
+
 @end
 
 @implementation ZXFirstController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self startGoogleMap];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-
     /* 注册自定制cell */
     [self registerTableViewCell];
-    
     /* 点击广告跳转到广告页面 */
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushToAd) name:@"pushtoad" object:nil];
-    
     /* 设置NavigationBarButton */
     [self setupNavigationBarBtn];
-    
     [self.homeTableView.mj_header beginRefreshing];
 }
 
+- (void)startGoogleMap
+{
+    if ([CLLocationManager locationServicesEnabled]) {
+    self.locationManager = [[CLLocationManager alloc] init];
+    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager startUpdatingLocation];
+    _placesClient = [[GMSPlacesClient alloc] init];
+    [_placesClient currentPlaceWithCallback:^(GMSPlaceLikelihoodList *placeLikelihoodList, NSError *error){
+        if (error != nil) {
+            NSLog(@"Pick Place error %@", [error localizedDescription]);
+            return;
+        }
+        if (placeLikelihoodList != nil) {
+            GMSPlace *place = [[[placeLikelihoodList likelihoods] firstObject] place];
+           // GMSAddressComponent *a = [place.addressComponents firstObject];
+            if (place != nil) {
+                [self.leftButton setTitle:place.addressComponents[2].name forState:UIControlStateNormal];
+                [self.leftButton sizeToFit];
+//                for (GMSAddressComponent *sub in place.addressComponents) {
+//                     ZXLog(@"self.nameLabel.text %@",sub.name);
+//                }
+//            ZXLog(@"self.nameLabel.text %@",place.addressComponents);
+//            ZXLog(@"self.addressLabel.text = %@", [[place.formattedAddress componentsSeparatedByString:@", "]
+//        componentsJoinedByString:@"\n"]);
+        }
+        }
+        }];
+    }
+}
 
 #pragma mark  设置NavigationBarButton
 - (void)setupNavigationBarBtn{
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:0 btnWidth:21 btnHeight:21 image:@"news" highlightImage:nil title:nil target:self action:@selector(didClickMessage) leftEdgeInset:0 rightEdgeInset:-10];
-    
-    UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [leftBtn setTitle: @"珀斯" forState:UIControlStateNormal];
-    leftBtn.titleLabel.font = [UIFont systemFontOfSize:16];
-    [leftBtn setImage:[UIImage imageNamed:@"arrows"] forState:UIControlStateNormal];
-    CGSize titleSize = [leftBtn.titleLabel.text sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]}];
-    
-    leftBtn.frame = CGRectMake(0, 0, titleSize.width + leftBtn.currentImage.size.width, 40);
-    leftBtn.contentMode = UIViewContentModeLeft & UIViewContentModeCenter;
-    [leftBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -leftBtn.currentImage.size.width - 15, 0, 0)];
-    [leftBtn setImageEdgeInsets:UIEdgeInsetsMake(0, titleSize.width, 0, 0)];
-    
-    leftBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -7, 0, 7);
+//  左侧按钮
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setImage:[UIImage imageNamed:@"arrows"] forState:UIControlStateNormal];
+    [btn setTitle: @"定位中" forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:16];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn sizeToFit];
+    self.leftButton = btn;
+   [btn addTarget:self action:@selector(didClickAddress:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *btn_left = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]   initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace   target:nil action:nil];
+    negativeSpacer.width = -10;
+    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:negativeSpacer, btn_left, nil];
 
-    [leftBtn addTarget:self action:@selector(didClickAddress:) forControlEvents:UIControlEventTouchUpInside];
-   
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
-  
-    //搜索框
+//  搜索框
+    
     ZXSearchBar *searchBar = [[ZXSearchBar alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 30)];
     searchBar.placeholder = @"搜索商家,品类或商圈";
     searchBar.delegate = self;
     self.navigationItem.titleView = searchBar;
     
-
     self.homeTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewInfo)];
 }
 
@@ -221,7 +250,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    NSArray *headerTitles = @[@"当前城市"];
+    NSArray *headerTitles = @[[NSString stringWithFormat:@"当前城市: %@",self.leftButton.titleLabel.text]];
     UIView *header = [[UIView alloc] init];
     header.backgroundColor = RGB(241, 241, 241);
     UILabel *headerLbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, ScreenW, 40)];

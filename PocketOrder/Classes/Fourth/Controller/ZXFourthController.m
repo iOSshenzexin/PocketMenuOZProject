@@ -17,7 +17,7 @@
 #import "ZXLoginController.h"
 #import "ZXSelectAddressController.h"
 #import "ZXMessageController.h"
-
+#import "ZXOrderCenterController.h"
 #import "AppDelegate.h"
 @interface ZXFourthController ()
 
@@ -109,6 +109,11 @@
     }
     else{
     if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            ZXOrderCenterController *vc = [[ZXOrderCenterController alloc] init];
+            vc.title = @"订单中心";
+            [self.navigationController pushViewController:vc animated:YES];
+        }
         if(indexPath.row == 1) {
             ZXMessageController *vc = [[ZXMessageController alloc] init];
             vc.title = @"消息";

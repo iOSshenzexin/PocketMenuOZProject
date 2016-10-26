@@ -10,8 +10,7 @@
 #import "ZXTabBarController.h"
 #import "GetAdTool.h"
 
-#define GoogleMap_API_KEY @"AIzaSyBrS6HB-2dcQs8OKdzjaTiI9Rwfia3pCc8"
-
+#define GoogleMap_API_KEY @"AIzaSyAmfHn43uoavyoWCfiN_l_IfIbH5nG5qSE"
 @interface AppDelegate ()
 
 @end
@@ -20,7 +19,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //[GMSServices provideAPIKey:GoogleMap_API_KEY];
+    [GMSServices provideAPIKey:GoogleMap_API_KEY];
+    [GMSPlacesClient provideAPIKey:GoogleMap_API_KEY];
+    ZXLog(@"[GMSServices SDKVersion] %@", [GMSServices SDKVersion]);
     //更改状态栏的颜色
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 

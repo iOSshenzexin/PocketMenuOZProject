@@ -12,6 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *homeTableView;
 
-
+@property (nonatomic,strong) CLLocationManager *locationManager;
 
 @end
