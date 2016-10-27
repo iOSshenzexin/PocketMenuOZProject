@@ -13,8 +13,8 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        self.titleLabel.font = [UIFont systemFontOfSize:18];
-        [self setTitleColor:RGB(64, 64, 64) forState:UIControlStateNormal];
+        self.titleLabel.font = [UIFont systemFontOfSize:16];
+        [self setTitleColor:RGB(68, 68, 68) forState:UIControlStateNormal];
         [self setTitleColor:AppThemeColor forState:UIControlStateSelected];
     }
     return self;

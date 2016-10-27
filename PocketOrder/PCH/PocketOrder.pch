@@ -24,7 +24,7 @@
 //RGB设置随机颜色
 #define RandomRGBColor RGB(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
 
-#define AppThemeColor RGB(242, 84, 41)
+#define AppThemeColor RGB(247, 106, 33)
 
 //RGB(242, 84, 41)
 #define DefaultColor RGB(240,240,240)
