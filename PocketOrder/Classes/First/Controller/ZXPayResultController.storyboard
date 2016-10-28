@@ -9,109 +9,94 @@
         <scene sceneID="2vI-4f-bRx">
             <objects>
                 <tableViewController storyboardIdentifier="ZXPayResultController" id="waL-Ih-A8M" customClass="ZXPayResultController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="XBb-3j-HCy">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="XBb-3j-HCy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection id="8eD-Fb-u4J">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="160" id="RR7-BJ-V1J">
-                                        <rect key="frame" x="0.0" y="35" width="375" height="160"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RR7-BJ-V1J" id="uQ4-Fe-U5j">
-                                            <frame key="frameInset" width="375" height="159"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您已支付编号: 6516516516478 的订单" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umM-8A-7yB">
-                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$68.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEK-px-yAQ">
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                    <color key="textColor" red="0.94901960780000005" green="0.3294117647" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x8J-I1-mrR">
-                                                    <state key="normal">
-                                                        <attributedString key="attributedTitle">
-                                                            <fragment content="请您耐心等待">
-                                                                <attributes>
-                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <font key="NSFont" size="15" name="PingFangSC-Light"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                            <fragment content=",">
-                                                                <attributes>
-                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <font key="NSFont" size="15" name="Helvetica-Light"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                            <fragment content="或去">
-                                                                <attributes>
-                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <font key="NSFont" size="15" name="PingFangSC-Light"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                            <fragment content="超市">
-                                                                <attributes>
-                                                                    <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <color key="NSColor" red="0.94901960784313721" green="0.32941176470588235" blue="0.16078431372549018" alpha="0.90672189597315433" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" size="15" name="PingFangSC-Light"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                            <fragment content="逛逛">
-                                                                <attributes>
-                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <font key="NSFont" size="15" name="PingFangSC-Light"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                    </state>
-                                                </button>
-                                            </subviews>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="payResultStyleThree" rowHeight="160" id="RR7-BJ-V1J">
+                                <rect key="frame" x="0.0" y="56" width="375" height="160"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RR7-BJ-V1J" id="uQ4-Fe-U5j">
+                                    <frame key="frameInset" width="375" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您已支付编号: 6516516516478 的订单" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umM-8A-7yB">
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$68.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEK-px-yAQ">
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                            <color key="textColor" red="0.94901960780000005" green="0.3294117647" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x8J-I1-mrR">
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="请您耐心等待">
+                                                        <attributes>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="15" name="PingFangSC-Light"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=",">
+                                                        <attributes>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="15" name="Helvetica-Light"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="或去">
+                                                        <attributes>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="15" name="PingFangSC-Light"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="超市">
+                                                        <attributes>
+                                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="NSColor" red="0.94901960784313721" green="0.32941176470588235" blue="0.16078431372549018" alpha="0.90672189597315433" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="15" name="PingFangSC-Light"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="逛逛">
+                                                        <attributes>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="15" name="PingFangSC-Light"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="m9F-xX-cF2">
                                             <constraints>
-                                                <constraint firstItem="x8J-I1-mrR" firstAttribute="top" secondItem="EEK-px-yAQ" secondAttribute="bottom" constant="10" id="BdA-Vq-Riy"/>
-                                                <constraint firstItem="EEK-px-yAQ" firstAttribute="top" secondItem="umM-8A-7yB" secondAttribute="bottom" constant="10" id="c3O-LJ-2Kd"/>
-                                                <constraint firstItem="x8J-I1-mrR" firstAttribute="centerX" secondItem="uQ4-Fe-U5j" secondAttribute="centerX" id="e4F-yr-HYr"/>
-                                                <constraint firstItem="umM-8A-7yB" firstAttribute="centerX" secondItem="uQ4-Fe-U5j" secondAttribute="centerX" id="tej-Ws-0bl"/>
-                                                <constraint firstItem="umM-8A-7yB" firstAttribute="top" secondItem="uQ4-Fe-U5j" secondAttribute="top" constant="40" id="xnb-Ng-Bur"/>
-                                                <constraint firstItem="EEK-px-yAQ" firstAttribute="centerX" secondItem="uQ4-Fe-U5j" secondAttribute="centerX" id="z9W-yI-Obr"/>
+                                                <constraint firstAttribute="height" constant="1" id="fjv-71-TSB"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="6HD-se-fDv">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IMr-4a-KzG">
-                                        <rect key="frame" x="0.0" y="231" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IMr-4a-KzG" id="o17-5g-9H5">
-                                            <frame key="frameInset" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="y3v-br-An1">
-                                        <rect key="frame" x="0.0" y="275" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y3v-br-An1" id="fWL-8H-18i">
-                                            <frame key="frameInset" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0u6-u0-nZ3">
-                                        <rect key="frame" x="0.0" y="319" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0u6-u0-nZ3" id="jxH-Ju-Cvm">
-                                            <frame key="frameInset" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="AZT-hA-N4J">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="TbH-6z-RSj"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="AZT-hA-N4J" secondAttribute="trailing" id="1QJ-BU-fE5"/>
+                                        <constraint firstAttribute="trailing" secondItem="m9F-xX-cF2" secondAttribute="trailing" id="6Sm-Wd-WCi"/>
+                                        <constraint firstItem="x8J-I1-mrR" firstAttribute="top" secondItem="EEK-px-yAQ" secondAttribute="bottom" constant="10" id="BdA-Vq-Riy"/>
+                                        <constraint firstItem="m9F-xX-cF2" firstAttribute="leading" secondItem="uQ4-Fe-U5j" secondAttribute="leading" id="I4N-5t-XOv"/>
+                                        <constraint firstItem="AZT-hA-N4J" firstAttribute="leading" secondItem="uQ4-Fe-U5j" secondAttribute="leading" id="IDY-eM-Z39"/>
+                                        <constraint firstItem="m9F-xX-cF2" firstAttribute="top" secondItem="uQ4-Fe-U5j" secondAttribute="top" id="TrQ-hO-iCL"/>
+                                        <constraint firstAttribute="bottom" secondItem="AZT-hA-N4J" secondAttribute="bottom" id="b9h-qj-shR"/>
+                                        <constraint firstItem="EEK-px-yAQ" firstAttribute="top" secondItem="umM-8A-7yB" secondAttribute="bottom" constant="10" id="c3O-LJ-2Kd"/>
+                                        <constraint firstItem="x8J-I1-mrR" firstAttribute="centerX" secondItem="uQ4-Fe-U5j" secondAttribute="centerX" id="e4F-yr-HYr"/>
+                                        <constraint firstItem="umM-8A-7yB" firstAttribute="centerX" secondItem="uQ4-Fe-U5j" secondAttribute="centerX" id="tej-Ws-0bl"/>
+                                        <constraint firstItem="umM-8A-7yB" firstAttribute="top" secondItem="uQ4-Fe-U5j" secondAttribute="top" constant="40" id="xnb-Ng-Bur"/>
+                                        <constraint firstItem="EEK-px-yAQ" firstAttribute="centerX" secondItem="uQ4-Fe-U5j" secondAttribute="centerX" id="z9W-yI-Obr"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="waL-Ih-A8M" id="al1-2G-p3l"/>
                             <outlet property="delegate" destination="waL-Ih-A8M" id="Kuq-fE-r1G"/>
@@ -123,4 +108,7 @@
             <point key="canvasLocation" x="-199.19999999999999" y="53.523238380809602"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="line" width="1" height="1"/>
+    </resources>
 </document>

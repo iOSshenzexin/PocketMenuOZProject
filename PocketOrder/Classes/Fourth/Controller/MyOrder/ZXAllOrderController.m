@@ -8,11 +8,13 @@
 
 #import "ZXAllOrderController.h"
 
+#import "ZXSubmitEvaluatedController.h"
 #import "ZXWaitingPaidCell.h"
 #import "ZXWaitingEvaluatedCell.h"
 #import "ZXPaidCell.h"
 #import "ZXEvaluatedCell.h"
-@interface ZXAllOrderController ()
+
+@interface ZXAllOrderController ()<ZXWaitingEvaluatedCellDelegate>
 
 @end
 
@@ -33,6 +35,7 @@
 {
     if (indexPath.row == 0) {
         ZXWaitingEvaluatedCell*cell = [ZXWaitingEvaluatedCell cellWithTableView:tableView];
+        cell.delegate = self;
         return cell;
     }
     if (indexPath.row == 1) {
@@ -46,6 +49,16 @@
     ZXWaitingPaidCell *cell = [ZXWaitingPaidCell cellWithTableView:tableView];
     return cell;
 }
+
+
+-(void)waitingEvaluatedCellJumpToEvaluatedPage:(ZXWaitingEvaluatedCell *)cell
+{
+    ZXSubmitEvaluatedController *vc = [[ZXSubmitEvaluatedController alloc] init];
+    vc.title = @"评价";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

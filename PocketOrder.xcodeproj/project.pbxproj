@@ -32,6 +32,10 @@
 		0115E2511DC1D77F006B2D75 /* ZXPaidCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0115E24F1DC1D77E006B2D75 /* ZXPaidCell.xib */; };
 		0115E2551DC1E182006B2D75 /* ZXSubmitEvaluatedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0115E2531DC1E182006B2D75 /* ZXSubmitEvaluatedController.m */; };
 		0115E2561DC1E182006B2D75 /* ZXSubmitEvaluatedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0115E2541DC1E182006B2D75 /* ZXSubmitEvaluatedController.xib */; };
+		012BA4171DC2F50D0074824D /* ZXPayResultStyleOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 012BA4151DC2F50D0074824D /* ZXPayResultStyleOneCell.m */; };
+		012BA4181DC2F50D0074824D /* ZXPayResultStyleOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012BA4161DC2F50D0074824D /* ZXPayResultStyleOneCell.xib */; };
+		012BA41C1DC2FBAB0074824D /* ZXPayResultStyleLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 012BA41A1DC2FBAB0074824D /* ZXPayResultStyleLineCell.m */; };
+		012BA41D1DC2FBAB0074824D /* ZXPayResultStyleLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012BA41B1DC2FBAB0074824D /* ZXPayResultStyleLineCell.xib */; };
 		012BDBF51DB45D2A0040CB08 /* ZXAddressTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 012BDBF31DB45D2A0040CB08 /* ZXAddressTwoCell.m */; };
 		012BDBF61DB45D2A0040CB08 /* ZXAddressTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012BDBF41DB45D2A0040CB08 /* ZXAddressTwoCell.xib */; };
 		012BDBFA1DB471DB0040CB08 /* ZXSelectAddressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012BDBF81DB471DB0040CB08 /* ZXSelectAddressController.m */; };
@@ -84,6 +88,8 @@
 		017310341DB0DD9400D373E6 /* ZXAddAdressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017310321DB0DD9400D373E6 /* ZXAddAdressController.xib */; };
 		017310381DB0DFF700D373E6 /* ZXAddressOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 017310361DB0DFF700D373E6 /* ZXAddressOneCell.m */; };
 		017310391DB0DFF700D373E6 /* ZXAddressOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017310371DB0DFF700D373E6 /* ZXAddressOneCell.xib */; };
+		01A506411DC31C30009B071F /* ZXPayResultStyleTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A5063F1DC31C30009B071F /* ZXPayResultStyleTwoCell.m */; };
+		01A506421DC31C30009B071F /* ZXPayResultStyleTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A506401DC31C30009B071F /* ZXPayResultStyleTwoCell.xib */; };
 		01B86E621DC03B080071E97A /* ZXSearchDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B86E601DC03B080071E97A /* ZXSearchDetailController.m */; };
 		01B86E631DC03B080071E97A /* ZXSearchDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B86E611DC03B080071E97A /* ZXSearchDetailController.xib */; };
 		01B86E651DC0822A0071E97A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B86E641DC0822A0071E97A /* MapKit.framework */; };
@@ -239,6 +245,12 @@
 		0115E2521DC1E182006B2D75 /* ZXSubmitEvaluatedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXSubmitEvaluatedController.h; sourceTree = "<group>"; };
 		0115E2531DC1E182006B2D75 /* ZXSubmitEvaluatedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSubmitEvaluatedController.m; sourceTree = "<group>"; };
 		0115E2541DC1E182006B2D75 /* ZXSubmitEvaluatedController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXSubmitEvaluatedController.xib; sourceTree = "<group>"; };
+		012BA4141DC2F50D0074824D /* ZXPayResultStyleOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPayResultStyleOneCell.h; sourceTree = "<group>"; };
+		012BA4151DC2F50D0074824D /* ZXPayResultStyleOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXPayResultStyleOneCell.m; sourceTree = "<group>"; };
+		012BA4161DC2F50D0074824D /* ZXPayResultStyleOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXPayResultStyleOneCell.xib; sourceTree = "<group>"; };
+		012BA4191DC2FBAB0074824D /* ZXPayResultStyleLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPayResultStyleLineCell.h; sourceTree = "<group>"; };
+		012BA41A1DC2FBAB0074824D /* ZXPayResultStyleLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXPayResultStyleLineCell.m; sourceTree = "<group>"; };
+		012BA41B1DC2FBAB0074824D /* ZXPayResultStyleLineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXPayResultStyleLineCell.xib; sourceTree = "<group>"; };
 		012BDBF21DB45D2A0040CB08 /* ZXAddressTwoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAddressTwoCell.h; sourceTree = "<group>"; };
 		012BDBF31DB45D2A0040CB08 /* ZXAddressTwoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAddressTwoCell.m; sourceTree = "<group>"; };
 		012BDBF41DB45D2A0040CB08 /* ZXAddressTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXAddressTwoCell.xib; sourceTree = "<group>"; };
@@ -321,6 +333,9 @@
 		017310351DB0DFF700D373E6 /* ZXAddressOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAddressOneCell.h; sourceTree = "<group>"; };
 		017310361DB0DFF700D373E6 /* ZXAddressOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAddressOneCell.m; sourceTree = "<group>"; };
 		017310371DB0DFF700D373E6 /* ZXAddressOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXAddressOneCell.xib; sourceTree = "<group>"; };
+		01A5063E1DC31C30009B071F /* ZXPayResultStyleTwoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPayResultStyleTwoCell.h; sourceTree = "<group>"; };
+		01A5063F1DC31C30009B071F /* ZXPayResultStyleTwoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXPayResultStyleTwoCell.m; sourceTree = "<group>"; };
+		01A506401DC31C30009B071F /* ZXPayResultStyleTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXPayResultStyleTwoCell.xib; sourceTree = "<group>"; };
 		01B86E5F1DC03B080071E97A /* ZXSearchDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXSearchDetailController.h; sourceTree = "<group>"; };
 		01B86E601DC03B080071E97A /* ZXSearchDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSearchDetailController.m; sourceTree = "<group>"; };
 		01B86E611DC03B080071E97A /* ZXSearchDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXSearchDetailController.xib; sourceTree = "<group>"; };
@@ -605,6 +620,22 @@
 			path = MyOrderCell;
 			sourceTree = "<group>";
 		};
+		012BA4131DC2F3450074824D /* ZXPaymentResultCell */ = {
+			isa = PBXGroup;
+			children = (
+				012BA4141DC2F50D0074824D /* ZXPayResultStyleOneCell.h */,
+				012BA4151DC2F50D0074824D /* ZXPayResultStyleOneCell.m */,
+				012BA4161DC2F50D0074824D /* ZXPayResultStyleOneCell.xib */,
+				01A5063E1DC31C30009B071F /* ZXPayResultStyleTwoCell.h */,
+				01A5063F1DC31C30009B071F /* ZXPayResultStyleTwoCell.m */,
+				01A506401DC31C30009B071F /* ZXPayResultStyleTwoCell.xib */,
+				012BA4191DC2FBAB0074824D /* ZXPayResultStyleLineCell.h */,
+				012BA41A1DC2FBAB0074824D /* ZXPayResultStyleLineCell.m */,
+				012BA41B1DC2FBAB0074824D /* ZXPayResultStyleLineCell.xib */,
+			);
+			path = ZXPaymentResultCell;
+			sourceTree = "<group>";
+		};
 		0142BBFF1DBDDB9500CF8F03 /* TokenManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,6 +867,7 @@
 		01D8986D1DAA2A2D0070FBDD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				012BA4131DC2F3450074824D /* ZXPaymentResultCell */,
 				0142BC081DBDF21200CF8F03 /* ZXShawdowView */,
 				01607A7F1DAF5DA2002F692E /* MakeSureOrderCell(确认订单) */,
 				01607A791DAF3D26002F692E /* ZXDishesCell */,
@@ -1322,6 +1354,7 @@
 				0173100B1DB0796D00D373E6 /* ZXLoginController.xib in Resources */,
 				0115E2251DC19F83006B2D75 /* ZXAllOrderController.xib in Resources */,
 				01607A7E1DAF3D26002F692E /* ZXDishesCell.xib in Resources */,
+				01A506421DC31C30009B071F /* ZXPayResultStyleTwoCell.xib in Resources */,
 				01D898A11DAA2A2D0070FBDD /* DeliciousFoodController.xib in Resources */,
 				0115E2201DC19D85006B2D75 /* ZXOrderCenterController.xib in Resources */,
 				01DCCDC01DB77AAA0095B83B /* ZXChangePWDController.storyboard in Resources */,
@@ -1333,6 +1366,7 @@
 				015A4FB41DAA2C670055B711 /* Info.plist in Resources */,
 				0115E2391DC1A579006B2D75 /* ZXEvaluatedController.xib in Resources */,
 				01C03AE11DB9F69500264FF8 /* ZXPaymentOrderController.storyboard in Resources */,
+				012BA4181DC2F50D0074824D /* ZXPayResultStyleOneCell.xib in Resources */,
 				01DCCDB61DB7709C0095B83B /* ZXChangePersonInfoController.storyboard in Resources */,
 				017310061DB06E9B00D373E6 /* ZXConfirmOrderFourCell.xib in Resources */,
 				01D0DCD51DB8CAAA00A9A64A /* ZXChangeEmailController.xib in Resources */,
@@ -1342,6 +1376,7 @@
 				0115E24C1DC1D40F006B2D75 /* ZXWaitingEvaluatedCell.xib in Resources */,
 				0115E2511DC1D77F006B2D75 /* ZXPaidCell.xib in Resources */,
 				017310151DB08A6500D373E6 /* ZXResetPWDController.xib in Resources */,
+				012BA41D1DC2FBAB0074824D /* ZXPayResultStyleLineCell.xib in Resources */,
 				01607A891DAF6856002F692E /* ZXConfirmOrderOneCell.xib in Resources */,
 				01607A931DAF6C89002F692E /* ZXConfirmOrderTwoCell.xib in Resources */,
 				01DE22841DAE229B00D2E5BA /* ShoppingCartCell.xib in Resources */,
@@ -1467,6 +1502,7 @@
 				0173100F1DB07F1800D373E6 /* ZXRegisterController.m in Sources */,
 				01D898AB1DAA2A2D0070FBDD /* ZXFoodMerchantsCell.m in Sources */,
 				01D8994D1DAA2B550070FBDD /* BGRefresh.m in Sources */,
+				012BA41C1DC2FBAB0074824D /* ZXPayResultStyleLineCell.m in Sources */,
 				01DC63211DACCA4000D26546 /* ZXSearchController.m in Sources */,
 				012BDC041DB477330040CB08 /* ZXSelectAddressTwoCell.m in Sources */,
 				0115E24B1DC1D40F006B2D75 /* ZXWaitingEvaluatedCell.m in Sources */,
@@ -1493,6 +1529,7 @@
 				01D0DCBE1DB8655D00A9A64A /* ZXShoppingCarHeaderView.m in Sources */,
 				01D898BB1DAA2A2D0070FBDD /* ZXSecondController.m in Sources */,
 				01B86E701DC0A97C0071E97A /* ZXTitleButton.m in Sources */,
+				012BA4171DC2F50D0074824D /* ZXPayResultStyleOneCell.m in Sources */,
 				017310291DB0911B00D373E6 /* ZXSetUpPWDController.m in Sources */,
 				01D898B31DAA2A2D0070FBDD /* ZXTodayCell.m in Sources */,
 				01D8985B1DAA29DC0070FBDD /* main.m in Sources */,
@@ -1501,6 +1538,7 @@
 				01DE227F1DAE221C00D2E5BA /* ZFReOrderTableView.m in Sources */,
 				01D898A41DAA2A2D0070FBDD /* ZXMessageController.m in Sources */,
 				01D8994B1DAA2B550070FBDD /* BGHeaderView.m in Sources */,
+				01A506411DC31C30009B071F /* ZXPayResultStyleTwoCell.m in Sources */,
 				01D0DCD01DB8C35800A9A64A /* ZXBottomView.m in Sources */,
 				017310231DB08E6800D373E6 /* TopBannerTool.m in Sources */,
 				01D0DCCA1DB8AEA900A9A64A /* ZXGoodsModel.m in Sources */,

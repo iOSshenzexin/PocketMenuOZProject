@@ -26,4 +26,12 @@ static NSString *waitingEvaluatedCell = @"ZXWaitingEvaluatedCell";
     }
     return cell;
 }
+
+- (IBAction)didClickGoToEvaluatedPage:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(waitingEvaluatedCellJumpToEvaluatedPage:)]) {
+        [self.delegate waitingEvaluatedCellJumpToEvaluatedPage:self];
+    }
+}
+
+
 @end

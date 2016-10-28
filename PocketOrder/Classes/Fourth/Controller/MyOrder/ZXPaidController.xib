@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXPaidController">
+            <connections>
+                <outlet property="tableView" destination="Ib1-rn-jDo" id="4CO-ZU-qEK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ib1-rn-jDo">
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="zbN-Gz-rSf"/>
+                        <outlet property="delegate" destination="-1" id="UXE-hw-d3s"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ib1-rn-jDo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YB8-vh-Bzc"/>
+                <constraint firstAttribute="bottom" secondItem="Ib1-rn-jDo" secondAttribute="bottom" id="axO-NK-CKz"/>
+                <constraint firstItem="Ib1-rn-jDo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wGr-xp-G1m"/>
+                <constraint firstAttribute="trailing" secondItem="Ib1-rn-jDo" secondAttribute="trailing" id="y4B-zb-gvC"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

@@ -17,7 +17,7 @@
                     <state key="normal" title="未登录" image="unload_headImage"/>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.94901960784313721" green="0.32941176470588235" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.94901960784313721" green="0.32941176470588235" blue="0.16078431372549018" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Kl2-jF-v9i" secondAttribute="bottom" constant="20" id="gOj-6O-uQB"/>
                 <constraint firstItem="Kl2-jF-v9i" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mr2-Da-FCp"/>

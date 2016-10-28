@@ -21,17 +21,19 @@
 #define  SZXMarin  10
 @interface ZXOrderCenterController ()<UIScrollViewDelegate>
 /** 用来存放所有子控制器view的scrollView */
-@property (nonatomic, weak) UIScrollView *scrollView;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 /** 标题栏 */
-@property (nonatomic, weak) UIView *titlesView;
-
+@property (nonatomic, strong) UIView *titlesView;
 
 /** 标题下划线 */
-@property (nonatomic, weak) UIView *titleUnderline;
+@property (nonatomic, strong) UIView *titleUnderline;
 /** 上一次点击的标题按钮 */
-@property (nonatomic, weak) ZXTitleButton *previousClickedTitleButton;
+@property (nonatomic, strong) ZXTitleButton *previousClickedTitleButton;
 
+@property (nonatomic,strong) ZXTitleButton *saveTitleButton;
+
+@property (nonatomic,assign) NSInteger titlesCount;
 
 @end
 
@@ -46,6 +48,13 @@
     // 添加第0个子控制器的view
     [self addChildVcViewIntoScrollView:0];
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:NO];
+    self.scrollView.contentOffset = CGPointMake(self.saveTitleButton.tag *ScreenW, self.scrollView.contentOffset.y);
+}
+
 
 - (void)setupAllChildVcs
 {
@@ -101,6 +110,7 @@
     // 文字
     NSArray *titles = @[@"全部", @"待付款",@"已支付",@"待评价",@"已评价"];
     NSUInteger count = titles.count;
+    self.titlesCount = count;
     
     // 标题按钮的尺寸
     CGFloat titleButtonW = self.titlesView.frame.size.width / count;
@@ -129,7 +139,7 @@
     
     // 下划线
     UIView *titleUnderline = [[UIView alloc] init];
-    titleUnderline.height = 2;
+    titleUnderline.height = 3;
     titleUnderline.y = self.titlesView.height - titleUnderline.height;
     titleUnderline.backgroundColor = [firstTitleButton titleColorForState:UIControlStateSelected];
     [self.titlesView addSubview:titleUnderline];
@@ -138,11 +148,9 @@
     // 切换按钮状态
     firstTitleButton.selected = YES;
     self.previousClickedTitleButton = firstTitleButton;
-    
-   //[firstTitleButton.titleLabel sizeToFit]; // 让label根据文字内容计算尺寸
-   // self.titleUnderline.width = firstTitleButton.titleLabel.width + SZXMarin;
-    self.titleUnderline.width = ScreenW / (self.titlesView.subviews.count);
-    self.titleUnderline.x = firstTitleButton.x + SZXMarin;
+    self.titleUnderline.width = ScreenW / self.titlesCount;
+    self.titleUnderline.x = firstTitleButton.x;
+    //self.titleUnderline.x = firstTitleButton.x + SZXMarin;
 }
 
 /**
@@ -157,6 +165,7 @@
     
     // 处理标题按钮点击
     [self dealTitleButtonClick:titleButton];
+    self.saveTitleButton = titleButton;
 }
 
 /**
@@ -170,19 +179,17 @@
     self.previousClickedTitleButton = titleButton;
     
     NSUInteger index = titleButton.tag;
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:0.35 animations:^{
         // 处理下划线
-//        self.titleUnderline.width = titleButton.titleLabel.width + SZXMarin;
-        self.titleUnderline.width = ScreenW / self.titlesView.subviews.count;
-        self.titleUnderline.centerX = titleButton.centerX;
-        
+        self.titleUnderline.width = ScreenW / self.titlesCount;
+        self.titleUnderline.x = index * self.titleUnderline.width ;
         // 滚动scrollView
         CGFloat offsetX = self.scrollView.width * index;
         self.scrollView.contentOffset = CGPointMake(offsetX, self.scrollView.contentOffset.y);
-    } completion:^(BOOL finished) {
+        } completion:^(BOOL finished) {
         // 添加子控制器的view
         [self addChildVcViewIntoScrollView:index];
-    }];
+        }];
     
     // 设置index位置对应的tableView.scrollsToTop = YES， 其他都设置为NO
     for (NSUInteger i = 0; i < self.childViewControllers.count; i++) {
@@ -202,7 +209,8 @@
     UIViewController *childVc = self.childViewControllers[index];
     
     // 如果view已经被加载过，就直接返回
-    if (childVc.isViewLoaded) return;
+    
+   if (childVc.isViewLoaded) return;
     
     // 取出index位置对应的子控制器view
     UIView *childVcView = childVc.view;

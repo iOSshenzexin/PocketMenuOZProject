@@ -71,6 +71,9 @@
                                 <integer key="value" value="3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="didClickGoToEvaluatedPage:" destination="EbU-KA-cj6" eventType="touchUpInside" id="0hd-4i-I4a"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHI-rN-kRB">
                         <constraints>

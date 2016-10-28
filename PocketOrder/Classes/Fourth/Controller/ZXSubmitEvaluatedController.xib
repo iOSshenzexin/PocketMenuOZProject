@@ -105,7 +105,7 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="综合评分:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOA-T4-Bzs">
-                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -116,18 +116,79 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorWithUIColor">
+                                            <color key="value" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </textView>
+                                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mx-PI-Hm0">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="6vk-X3-tNf"/>
+                                        <constraint firstAttribute="width" constant="30" id="Ra3-yj-WQi"/>
+                                    </constraints>
+                                    <state key="normal" image="star_evaluated_unselected"/>
+                                    <state key="selected" image="star_evaluated_selected"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FT5-Jk-n6f">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="Hl4-mE-rOd"/>
+                                        <constraint firstAttribute="height" constant="30" id="Kfi-JH-yKL"/>
+                                    </constraints>
+                                    <state key="normal" image="star_evaluated_unselected"/>
+                                    <state key="selected" image="star_evaluated_selected"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TmY-6c-5Tb">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="6i8-4B-a5q"/>
+                                        <constraint firstAttribute="width" constant="30" id="cUA-c7-Wne"/>
+                                    </constraints>
+                                    <state key="normal" image="star_evaluated_unselected"/>
+                                    <state key="selected" image="star_evaluated_selected"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3io-NG-tCh">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="4Uk-Ba-cvA"/>
+                                        <constraint firstAttribute="height" constant="30" id="FnV-kL-1eu"/>
+                                    </constraints>
+                                    <state key="normal" image="star_evaluated_unselected"/>
+                                    <state key="selected" image="star_evaluated_selected"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61b-5o-q5Q">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="Ihe-Yn-asK"/>
+                                        <constraint firstAttribute="width" constant="30" id="W6w-VP-c3V"/>
+                                    </constraints>
+                                    <state key="normal" image="star_evaluated_unselected"/>
+                                    <state key="selected" image="star_evaluated_selected"/>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
+                                <constraint firstItem="61b-5o-q5Q" firstAttribute="leading" secondItem="TmY-6c-5Tb" secondAttribute="trailing" id="5mP-Pv-XJU"/>
+                                <constraint firstItem="8mx-PI-Hm0" firstAttribute="centerY" secondItem="VOA-T4-Bzs" secondAttribute="centerY" id="8dP-z6-9gQ"/>
+                                <constraint firstItem="TmY-6c-5Tb" firstAttribute="centerY" secondItem="VOA-T4-Bzs" secondAttribute="centerY" id="BwN-ew-Gak"/>
                                 <constraint firstItem="Lja-ID-ita" firstAttribute="top" secondItem="VOA-T4-Bzs" secondAttribute="bottom" constant="17.5" id="Cqp-zj-kTk"/>
                                 <constraint firstItem="VOA-T4-Bzs" firstAttribute="leading" secondItem="sdE-ju-hnC" secondAttribute="leading" constant="17" id="MA3-1k-ycj"/>
+                                <constraint firstItem="3io-NG-tCh" firstAttribute="centerY" secondItem="VOA-T4-Bzs" secondAttribute="centerY" id="Mky-I6-sp6"/>
+                                <constraint firstItem="FT5-Jk-n6f" firstAttribute="centerY" secondItem="VOA-T4-Bzs" secondAttribute="centerY" id="SwD-zw-ZIG"/>
                                 <constraint firstAttribute="trailing" secondItem="Lja-ID-ita" secondAttribute="trailing" constant="12.5" id="VvK-ZZ-zWw"/>
                                 <constraint firstItem="Lja-ID-ita" firstAttribute="leading" secondItem="sdE-ju-hnC" secondAttribute="leading" constant="12.5" id="YLH-y3-mQy"/>
                                 <constraint firstItem="VOA-T4-Bzs" firstAttribute="top" secondItem="ddh-zg-GH9" secondAttribute="bottom" constant="25" id="YaP-DF-6N5"/>
                                 <constraint firstItem="ddh-zg-GH9" firstAttribute="top" secondItem="sdE-ju-hnC" secondAttribute="top" constant="10" id="bAT-lM-oiv"/>
+                                <constraint firstItem="TmY-6c-5Tb" firstAttribute="leading" secondItem="FT5-Jk-n6f" secondAttribute="trailing" id="bGe-o2-LXf"/>
+                                <constraint firstItem="FT5-Jk-n6f" firstAttribute="leading" secondItem="8mx-PI-Hm0" secondAttribute="trailing" id="ep7-vL-vMr"/>
+                                <constraint firstItem="61b-5o-q5Q" firstAttribute="centerY" secondItem="VOA-T4-Bzs" secondAttribute="centerY" id="fNc-5p-Dqi"/>
                                 <constraint firstAttribute="height" constant="667" id="imK-S8-zsv"/>
+                                <constraint firstItem="3io-NG-tCh" firstAttribute="leading" secondItem="61b-5o-q5Q" secondAttribute="trailing" id="ut2-Pe-qKG"/>
                                 <constraint firstItem="ddh-zg-GH9" firstAttribute="leading" secondItem="sdE-ju-hnC" secondAttribute="leading" id="wFD-1a-8Kq"/>
+                                <constraint firstItem="8mx-PI-Hm0" firstAttribute="leading" secondItem="VOA-T4-Bzs" secondAttribute="trailing" constant="8" id="xio-V3-h97"/>
                                 <constraint firstAttribute="trailing" secondItem="ddh-zg-GH9" secondAttribute="trailing" id="yKb-ZI-9fj"/>
                             </constraints>
                         </view>
@@ -165,5 +226,7 @@
     <resources>
         <image name="line" width="1" height="1"/>
         <image name="module01-img02" width="103" height="73"/>
+        <image name="star_evaluated_selected" width="15" height="13"/>
+        <image name="star_evaluated_unselected" width="14" height="13"/>
     </resources>
 </document>

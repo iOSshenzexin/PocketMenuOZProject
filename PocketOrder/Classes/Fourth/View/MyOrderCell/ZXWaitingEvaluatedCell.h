@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@class ZXWaitingEvaluatedCell;
+@protocol ZXWaitingEvaluatedCellDelegate <NSObject>
+
+@optional
+
+- (void)waitingEvaluatedCellJumpToEvaluatedPage:(ZXWaitingEvaluatedCell *)cell;
+
+@end
+
+
 @interface ZXWaitingEvaluatedCell : UITableViewCell
 
 +(instancetype)cellWithTableView:(UITableView *)tableview;
+
+@property (nonatomic,weak) id<ZXWaitingEvaluatedCellDelegate> delegate;
 
 @end

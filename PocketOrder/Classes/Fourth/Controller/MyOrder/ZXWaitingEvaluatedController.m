@@ -8,8 +8,9 @@
 
 #import "ZXWaitingEvaluatedController.h"
 
+#import "ZXSubmitEvaluatedController.h"
 #import "ZXWaitingEvaluatedCell.h"
-@interface ZXWaitingEvaluatedController ()
+@interface ZXWaitingEvaluatedController ()<ZXWaitingEvaluatedCellDelegate>
 
 @end
 
@@ -29,8 +30,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZXWaitingEvaluatedCell *cell = [ZXWaitingEvaluatedCell cellWithTableView:tableView];
+    cell.delegate = self;
     return cell;
 }
+
+-(void)waitingEvaluatedCellJumpToEvaluatedPage:(ZXWaitingEvaluatedCell *)cell
+{
+    ZXSubmitEvaluatedController *vc = [[ZXSubmitEvaluatedController alloc] init];
+    vc.title = @"评价";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
