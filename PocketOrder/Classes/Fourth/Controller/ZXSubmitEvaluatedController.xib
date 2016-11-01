@@ -67,7 +67,7 @@
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="phu-31-xVS">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="iVc-mN-t1d"/>
+                                                <constraint firstAttribute="height" constant="1" id="97d-Du-etS"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Rd7-Xt-esv">
@@ -85,23 +85,23 @@
                                         <constraint firstItem="NgJ-hO-AWD" firstAttribute="top" secondItem="ddh-zg-GH9" secondAttribute="top" constant="8" id="9kM-eY-tqo"/>
                                         <constraint firstItem="gbJ-BB-Gr3" firstAttribute="top" secondItem="LXs-de-97t" secondAttribute="bottom" constant="8" id="AoS-nA-XXs"/>
                                         <constraint firstItem="bkJ-Bz-mf4" firstAttribute="leading" secondItem="vfi-3G-x9v" secondAttribute="trailing" constant="8" id="Cmc-3i-mc4"/>
-                                        <constraint firstItem="NgJ-hO-AWD" firstAttribute="leading" secondItem="phu-31-xVS" secondAttribute="trailing" id="FjU-8l-fcN"/>
                                         <constraint firstItem="vfi-3G-x9v" firstAttribute="top" secondItem="ddh-zg-GH9" secondAttribute="top" constant="8" id="FrB-pc-Nnl"/>
                                         <constraint firstItem="LXs-de-97t" firstAttribute="top" secondItem="vfi-3G-x9v" secondAttribute="bottom" constant="8" id="KjR-LK-GxL"/>
                                         <constraint firstAttribute="trailing" secondItem="YPg-sO-nXh" secondAttribute="trailing" constant="20" id="N8e-ic-Nr8"/>
                                         <constraint firstItem="NgJ-hO-AWD" firstAttribute="leading" secondItem="bkJ-Bz-mf4" secondAttribute="trailing" constant="10" id="PfG-8e-rzu"/>
-                                        <constraint firstItem="phu-31-xVS" firstAttribute="leading" secondItem="ddh-zg-GH9" secondAttribute="leading" id="Vc0-lr-p5E"/>
                                         <constraint firstAttribute="height" constant="122" id="WnS-gb-ZLc"/>
                                         <constraint firstItem="LXs-de-97t" firstAttribute="leading" secondItem="ddh-zg-GH9" secondAttribute="leading" constant="8" id="Xi6-nq-oEU"/>
                                         <constraint firstAttribute="bottom" secondItem="YPg-sO-nXh" secondAttribute="bottom" constant="15" id="Y8Y-aB-tbp"/>
                                         <constraint firstAttribute="bottom" secondItem="Rd7-Xt-esv" secondAttribute="bottom" id="YRG-SC-bBx"/>
+                                        <constraint firstItem="phu-31-xVS" firstAttribute="top" secondItem="ddh-zg-GH9" secondAttribute="top" id="a0R-mL-vhn"/>
                                         <constraint firstItem="Saa-4B-8dL" firstAttribute="centerY" secondItem="gbJ-BB-Gr3" secondAttribute="centerY" id="awC-0p-qDc"/>
+                                        <constraint firstAttribute="trailing" secondItem="phu-31-xVS" secondAttribute="trailing" id="bAL-pe-wZy"/>
                                         <constraint firstItem="bkJ-Bz-mf4" firstAttribute="top" secondItem="ddh-zg-GH9" secondAttribute="top" constant="8" id="e31-7a-0LT"/>
                                         <constraint firstAttribute="trailing" secondItem="NgJ-hO-AWD" secondAttribute="trailing" constant="20" id="gSE-LO-mWr"/>
                                         <constraint firstItem="ysc-cj-cEI" firstAttribute="leading" secondItem="LXs-de-97t" secondAttribute="trailing" constant="8" id="lfC-jY-iL0"/>
-                                        <constraint firstItem="phu-31-xVS" firstAttribute="top" secondItem="ddh-zg-GH9" secondAttribute="top" id="qSi-Lk-Uov"/>
                                         <constraint firstItem="gbJ-BB-Gr3" firstAttribute="leading" secondItem="ddh-zg-GH9" secondAttribute="leading" constant="8" id="qdx-PR-bJ4"/>
                                         <constraint firstItem="vfi-3G-x9v" firstAttribute="leading" secondItem="ddh-zg-GH9" secondAttribute="leading" constant="8" id="uTD-9r-5oM"/>
+                                        <constraint firstItem="phu-31-xVS" firstAttribute="leading" secondItem="ddh-zg-GH9" secondAttribute="leading" id="z5p-17-xOC"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="综合评分:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOA-T4-Bzs">
@@ -135,6 +135,9 @@
                                     </constraints>
                                     <state key="normal" image="star_evaluated_unselected"/>
                                     <state key="selected" image="star_evaluated_selected"/>
+                                    <connections>
+                                        <action selector="didClickStar:" destination="-1" eventType="touchUpInside" id="0et-uJ-MPt"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FT5-Jk-n6f">
                                     <constraints>
@@ -143,6 +146,9 @@
                                     </constraints>
                                     <state key="normal" image="star_evaluated_unselected"/>
                                     <state key="selected" image="star_evaluated_selected"/>
+                                    <connections>
+                                        <action selector="didClickStar:" destination="-1" eventType="touchUpInside" id="Jpy-j9-Am1"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TmY-6c-5Tb">
                                     <constraints>
@@ -151,6 +157,9 @@
                                     </constraints>
                                     <state key="normal" image="star_evaluated_unselected"/>
                                     <state key="selected" image="star_evaluated_selected"/>
+                                    <connections>
+                                        <action selector="didClickStar:" destination="-1" eventType="touchUpInside" id="uQC-6W-s5t"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3io-NG-tCh">
                                     <constraints>
@@ -159,6 +168,9 @@
                                     </constraints>
                                     <state key="normal" image="star_evaluated_unselected"/>
                                     <state key="selected" image="star_evaluated_selected"/>
+                                    <connections>
+                                        <action selector="didClickStar:" destination="-1" eventType="touchUpInside" id="668-TM-49C"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61b-5o-q5Q">
                                     <constraints>
@@ -167,6 +179,9 @@
                                     </constraints>
                                     <state key="normal" image="star_evaluated_unselected"/>
                                     <state key="selected" image="star_evaluated_selected"/>
+                                    <connections>
+                                        <action selector="didClickStar:" destination="-1" eventType="touchUpInside" id="4hK-Pv-IBU"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -59,11 +59,11 @@ static NSString *dishCell = @"ZXDishesCell";
     }
 }
 
--(void)setFrame:(CGRect)frame
-{
-    frame.size.height -= 1;
-    [super setFrame:frame];
-}
+//-(void)setFrame:(CGRect)frame
+//{
+//    frame.size.height -= 1;
+//    [super setFrame:frame];
+//}
 
 
 +(instancetype)cellWithTableView:(UITableView *)tableview

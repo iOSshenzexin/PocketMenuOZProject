@@ -19,6 +19,11 @@
     
 }
 
+- (IBAction)didClickStar:(UIButton *)sender {
+    sender.selected = !sender.selected;
+}
+
+
 
 
 @end

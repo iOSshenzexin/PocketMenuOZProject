@@ -106,6 +106,7 @@
                 <outlet property="minus" destination="hoo-Wi-AaM" id="v8j-q7-Gu3"/>
                 <outlet property="name" destination="NG3-TB-zIE" id="Vcd-or-daV"/>
                 <outlet property="orderCount" destination="muh-YZ-rVr" id="SkR-lN-pVH"/>
+                <outlet property="originalPriceLabel" destination="MPz-UE-H62" id="xD2-Sj-bYD"/>
                 <outlet property="plus" destination="8Sc-6j-48i" id="Rva-Kb-nAo"/>
                 <outlet property="price" destination="UL6-7r-dST" id="cH3-q2-TGs"/>
             </connections>

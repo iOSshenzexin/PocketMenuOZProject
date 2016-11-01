@@ -8,7 +8,7 @@
 
 #import "LeftSelectScroll.h"
 
-int const btnH = 40.0;
+int const btnH = 80.0;
 
 @implementation LeftSelectScroll{
     UIButton *tempSelectButton;
@@ -31,6 +31,7 @@ int const btnH = 40.0;
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(0, btnH * i, kScreenWidth * 0.25, btnH);
         [button setTitle:_leftSelectArray[i] forState:UIControlStateNormal];
+        button.titleLabel.numberOfLines = 0;
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageNamed:@"shop_choose"] forState:UIControlStateSelected];
       
@@ -53,9 +54,7 @@ int const btnH = 40.0;
 -(void)clickLeftSelectButton:(UIButton*)button{
     [tempSelectButton setSelected:NO];
     [button setSelected:YES];
-    
     tempSelectButton = button;
-    
     NSInteger tag = button.tag - 11;
     if (self.leftSelectDelegate && [self.leftSelectDelegate respondsToSelector:@selector(clickLeftSelectScrollButton:)]) {
         [self.leftSelectDelegate clickLeftSelectScrollButton:tag];

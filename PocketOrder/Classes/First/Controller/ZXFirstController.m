@@ -13,6 +13,9 @@
 
 #import "AdvertiseViewController.h"
 #import "DeliciousFoodController.h"
+#import "ZXDessertAndDrinksController.h"
+
+
 
 #import "BGRefresh.h"
 #import "ZXSearchBar.h"
@@ -327,10 +330,17 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 2) {
+        ZXDessertAndDrinksController *vc = [[ZXDessertAndDrinksController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        vc.title = @"甜品饮料";
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
     DeliciousFoodController *vc = [[DeliciousFoodController alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     vc.title = @"美食";
     [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 #pragma mark - UITableViewDelegate

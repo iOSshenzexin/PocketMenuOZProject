@@ -21,6 +21,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *plus;
 
+@property (weak, nonatomic) IBOutlet UILabel *originalPriceLabel;
+
+
 @property (assign, nonatomic) NSInteger foodId;
 
 @property (assign, nonatomic) NSUInteger amount;
