@@ -7,11 +7,10 @@
 //
 
 #import "ZXDessertDrinksListController.h"
-
+//尺寸定义
 #define leftScrollY 123
 #define ShopCarViewHeight 46
-
-
+#define SECTION_HEIGHT 30.0
 #import "LeftSelectScroll.h"
 #import "ZXDishesCell.h"
 
@@ -176,19 +175,19 @@ extern int btnH;
 }
 
 -(void)createTableView{
-    _tableViewList = [[UITableView alloc]initWithFrame:CGRectMake(kScreenWidth * 0.25, leftScrollY+1, kScreenWidth * 0.75, ScreenH - leftScrollY - 64 - ShopCarViewHeight)];
+    _tableViewList = [[UITableView alloc]initWithFrame:CGRectMake(kScreenWidth * 0.25, leftScrollY + 1, kScreenWidth * 0.75, ScreenH - leftScrollY - ShopCarViewHeight - 64) style:UITableViewStylePlain];
     _tableViewList.delegate = self;
     _tableViewList.dataSource = self;
+    _tableViewList.sectionFooterHeight = 0;
     _tableViewList.rowHeight = 105;
     _tableViewList.backgroundColor = RGB(242, 242, 242);
-    _tableViewList.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableViewList.tag = 21;//标识tableView
+    _tableViewList.tag = 21; //标识tableView
     [self.view addSubview:_tableViewList];
-    _tableViewList.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 
 #pragma mark - setter and getter
+
 -(NSMutableArray *)ordersArray
 {
     if (!_ordersArray) {
@@ -197,15 +196,15 @@ extern int btnH;
     return _ordersArray;
 }
 
-// 甜品左侧ScrollView列表
+//左侧列表
 -(void)creatLeftScrollView{
-    leftScrollView = [[LeftSelectScroll alloc]initWithFrame:CGRectMake(0, leftScrollY+ 1, kScreenWidth * 0.25,ScreenH - leftScrollY - ShopCarViewHeight - 64)];
+    leftScrollView = [[LeftSelectScroll alloc]initWithFrame:CGRectMake(0, leftScrollY + 1, kScreenWidth * 0.25,ScreenH - leftScrollY - ShopCarViewHeight - 64)];
     NSInteger count = leftDataSource.count;
     leftScrollView.pagingEnabled = YES;
     leftScrollView.bounces = YES;
     
     leftScrollView.contentSize = CGSizeMake(0, btnH * count);
-    leftScrollView.autoresizesSubviews = YES;
+    leftScrollView.autoresizesSubviews = NO;
     [leftScrollView setLeftSelectArray:leftDataSource];
     
     leftScrollView.leftSelectDelegate = self;
@@ -215,20 +214,34 @@ extern int btnH;
     [self.view addSubview:leftScrollView];
 }
 
-#pragma mark 点击左侧切换右侧的代理方法
+#pragma mark -点击左侧ScrollView切换右侧TableView的代理方法
 -(void)clickLeftSelectScrollButton:(NSInteger)indexPath{
-    [leftScrollView setContentOffset:CGPointMake(0, indexPath * btnH) animated:YES];
+    CGFloat offsetX = btnH * indexPath - leftScrollView.frame.size.height * 0.5;
+    if (offsetX < 0) {
+        offsetX = 0;
+    }
+    [leftScrollView setContentOffset:CGPointMake(0, offsetX) animated:YES];
+    CGFloat maxOffsetX = leftScrollView.contentSize.height - leftScrollView.frame.size.height;
+    if (offsetX > maxOffsetX) {
+        offsetX = maxOffsetX;
+    }
+    [leftScrollView setContentOffset:CGPointMake(0, offsetX) animated:YES];
     isScrollSetSelect = NO;
     [_tableViewList scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
+- (void)tableView:(UITableView *)tableView didEndDisplayingHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    
+}
 
-//// 设置section的高度
-#define SECTION_HEIGHT 30.0
-
+// 设置section的高度
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (tableView.tag == 21) {
-        return [self viewForHeaderView:section];
+        UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth * 0.75, 32)];
+        header.backgroundColor = RGB(239, 239, 239);
+        [header addSubview:[self viewForHeaderView:section]];
+        return header;
     }else{
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, SECTION_HEIGHT)];
         UILabel *leftLine = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 3, SECTION_HEIGHT)];
@@ -240,7 +253,6 @@ extern int btnH;
         [view addSubview:headerTitle];
         
         if (section == 0) {
-            
             leftLine.backgroundColor = [UIColor greenColor];
             UIButton *clear = [UIButton buttonWithType:UIButtonTypeCustom];
             clear.frame= CGRectMake(self.view.bounds.size.width - 100, 0, 100, SECTION_HEIGHT);
@@ -253,6 +265,7 @@ extern int btnH;
             [view addSubview:clear];
         }
         else{
+            
             if (section % 3 == 0) {
                 leftLine.backgroundColor = [UIColor orangeColor];
             }
@@ -266,8 +279,6 @@ extern int btnH;
             }
             
         }
-        
-        //  view.backgroundColor = kUIColorFromRGB(0x9BCB3D);
         view.backgroundColor = [UIColor whiteColor];
         return view;
     }
@@ -280,51 +291,55 @@ extern int btnH;
     _totalOrders = 0;
     _ShopCartView.badge.badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)_totalOrders];
     
-    
     [self setTotalMoney];
     [self setCartImage];
     [self.ShopCartView dismissAnimated:YES];
     
     for (NSMutableDictionary *dic in self.dataArray) {
-        
         [dic setObject:@"0" forKey:@"orderCount"];
-        
     }
     [_tableViewList reloadData];
 }
 
-
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if ([tableView isEqual:self.ShopCartView.OrderList.tableView])
-    {
+    if ([tableView isEqual:self.ShopCartView.OrderList.tableView]){
         return SECTION_HEIGHT;
     }
-    else
-        return 32;
+    else  return 32;
 }
 
-
-//实际需要会修改
+//实际需要会修改 - 设置sectionHeaderView
 -(UIView*)viewForHeaderView:(NSInteger)parama{
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(10, 0,kScreenWidth * 0.75-20, 32)];
-    label.backgroundColor = RGB(239, 239, 239);
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(10, 0,kScreenWidth * 0.75 - 20, 32)];
     if (leftDataSource.count != 0) {
         label.text = leftDataSource[parama];
         label.font = [UIFont systemFontOfSize:14];
         ZXLog(@"%@",[NSString stringWithFormat:@"第%ld组",(long)parama]);
     }
     if (isScrollSetSelect == YES) {
-        if (parama == 0) {
-            [leftScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
-        }else{
-            [leftScrollView setContentOffset:CGPointMake(0, (parama) * btnH) animated:YES];
+        CGFloat offsetX = btnH * parama - leftScrollView.frame.size.height * 0.5;
+        if (offsetX < 0) {
+            offsetX = 0;
         }
+        [leftScrollView setContentOffset:CGPointMake(0, offsetX) animated:YES];
+        CGFloat maxOffsetX = leftScrollView.contentSize.height - leftScrollView.frame.size.height;
+        if (offsetX > maxOffsetX) {
+            offsetX = maxOffsetX;
+        }
+        [leftScrollView setContentOffset:CGPointMake(0, offsetX) animated:YES];
         [leftScrollView setSelectButtonWithIndexPathSection:parama];
     }
     return label;
 }
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    ZXLog(@"%f",scrollView.contentOffset.y);
+}
+
+
 
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -346,8 +361,6 @@ extern int btnH;
     }
     return count;
 }
-
-
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([tableView isEqual:_tableViewList]) {
@@ -439,8 +452,6 @@ extern int btnH;
             [dict setObject:[NSNumber numberWithInteger:nTotal] forKey:@"orderCount"];
             
             [self storeOrders:dict isAdded:plus withSectionIndex:indexPath.section withRowIndex:indexPath.row];
-            
-            
             _totalOrders = plus ? ++_totalOrders : --_totalOrders;
             
             _ShopCartView.badge.badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)_totalOrders];
@@ -460,11 +471,8 @@ extern int btnH;
 }
 
 
-
-
 -(void)storeOrders:(NSMutableDictionary *)dictionary isAdded:(BOOL)added withSectionIndex:(NSInteger)sectionID withRowIndex:(NSInteger)rowID
 {
-    
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:dictionary];
     
     if (added) {
@@ -587,7 +595,6 @@ extern int btnH;
                             [self.ShopCartView.OrderList.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:row inSection:i],nil] withRowAnimation:UITableViewRowAnimationNone];
                             
                             self.ShopCartView.OrderList.objects = self.ordersArray;
-                            
                         }
                         row ++;
                     }
@@ -618,7 +625,6 @@ extern int btnH;
             }
         }
     }
-    
     return count;
 }
 
@@ -659,9 +665,7 @@ extern int btnH;
             nTotal += [dic[@"orderCount"] integerValue] * [dic[@"min_price"] integerValue];
         }
     }
-    
     [_ShopCartView setTotalMoney:nTotal];
-    
 }
 
 
@@ -725,18 +729,9 @@ extern int btnH;
     
 }
 - (void)removeFromLayer:(CALayer *)layerAnimation{
-    
     [layerAnimation removeFromSuperlayer];
 }
 
-
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //    ZXAddAdressController *vc = [[ZXAddAdressController alloc] init];
-    //    vc.title = @"新增地址";
-    //    [self.navigationController pushViewController:vc animated:YES];
-}
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     isScrollSetSelect = YES ;

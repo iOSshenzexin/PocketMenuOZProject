@@ -12,7 +12,7 @@
 
 #import "ZXMakeSureOrderController.h"
 #import "ZXProductListController.h"
-
+#import "ZXDessertDrinksListController.h"
 #import "ZXLoginController.h"
 #define SECTION_HEIGHT 30.0
 #define ROW_HEIGHT 50.0
@@ -213,24 +213,39 @@
 #pragma mark 去支付
 -(void)pay:(UIButton *)sender
 {
-    //AppDelegate *app = MyApplicationDelegate;
+    AppDelegate *app = MyApplicationDelegate;
     for (UIView* next = [self superview]; next; next = next.superview) {
         UIResponder* nextResponder = [next nextResponder];
         if ([nextResponder isKindOfClass:[ZXProductListController class]]) {
-             ZXProductListController *vc = (ZXProductListController *)nextResponder;
-//            if (app.isLogin) {
-               ZXMakeSureOrderController *VC = [[ZXMakeSureOrderController alloc] init];
-               VC.title = @"确认订单";
-                VC.foodsArray = self.OrderList.objects;
-               [vc.navigationController pushViewController:VC animated:YES];
-//            }else{
-//            ZXLoginController *loginVc = [[ZXLoginController alloc] init];
-//            ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:loginVc];
-//            [vc presentViewController:nav animated:YES completion:^{
-//            }];
-          
-        //}
+                ZXProductListController *vc = (ZXProductListController *)nextResponder;
+                if (app.isLogin) {
+                    ZXMakeSureOrderController *VC = [[ZXMakeSureOrderController alloc] init];
+                    VC.title = @"确认订单";
+                    VC.foodsArray = self.OrderList.objects;
+                    [vc.navigationController pushViewController:VC animated:YES];
+                }
+                else{
+                    ZXLoginController *loginVc = [[ZXLoginController alloc] init];
+                    ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:loginVc];
+                    [vc presentViewController:nav animated:YES completion:^{
+                    }];
+            }
         }
+        else if ([nextResponder isKindOfClass:[ZXDessertDrinksListController class]]) {
+                ZXDessertDrinksListController *vc = (ZXDessertDrinksListController *)nextResponder;
+                if (app.isLogin) {
+                    ZXMakeSureOrderController *VC = [[ZXMakeSureOrderController alloc] init];
+                    VC.title = @"确认订单";
+                    VC.foodsArray = self.OrderList.objects;
+                    [vc.navigationController pushViewController:VC animated:YES];
+                }
+                else{
+                    ZXLoginController *loginVc = [[ZXLoginController alloc] init];
+                    ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:loginVc];
+                    [vc presentViewController:nav animated:YES completion:^{
+                    }];
+                }
+            }
     }
 }
 

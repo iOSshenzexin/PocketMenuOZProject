@@ -12,15 +12,12 @@
 
 
 //尺寸定义
-
 #define leftScrollY 123
 #define ShopCarViewHeight 46
 #define SECTION_HEIGHT 30.0
 
 #import "LeftSelectScroll.h"
 #import "ZXDishesCell.h"
-
-
 #import "ZXAddAdressController.h"
 
 #import "OverlayView.h"
@@ -295,7 +292,6 @@ extern int btnH;
     _totalOrders = 0;
     _ShopCartView.badge.badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)_totalOrders];
     
-    
     [self setTotalMoney];
     [self setCartImage];
     [self.ShopCartView dismissAnimated:YES];
@@ -306,8 +302,6 @@ extern int btnH;
     [_tableViewList reloadData];
 }
 
-
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if ([tableView isEqual:self.ShopCartView.OrderList.tableView]){
@@ -315,7 +309,6 @@ extern int btnH;
         }
     else  return 32;
 }
-
 
 //实际需要会修改 - 设置sectionHeaderView
 -(UIView*)viewForHeaderView:(NSInteger)parama{

@@ -8,13 +8,12 @@
 
 #import "ZXFirstController.h"
 
-#import "KNBannerView.h"
 #import "TopBannerTool.h"
 
 #import "AdvertiseViewController.h"
 #import "DeliciousFoodController.h"
 #import "ZXDessertAndDrinksController.h"
-
+#import "ZXGroupBuyController.h"
 
 
 #import "BGRefresh.h"
@@ -335,7 +334,13 @@
         vc.hidesBottomBarWhenPushed = YES;
         vc.title = @"甜品饮料";
         [self.navigationController pushViewController:vc animated:YES];
-    }else{
+    }else if (indexPath.row == 1){
+        ZXGroupBuyController *vc = [[ZXGroupBuyController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        vc.title = @"团购";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else{
     DeliciousFoodController *vc = [[DeliciousFoodController alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     vc.title = @"美食";

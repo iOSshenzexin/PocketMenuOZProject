@@ -22,9 +22,6 @@
     [GMSServices provideAPIKey:GoogleMap_API_KEY];
     [GMSPlacesClient provideAPIKey:GoogleMap_API_KEY];
     ZXLog(@"[GMSServices SDKVersion] %@", [GMSServices SDKVersion]);
-    //更改状态栏的颜色
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
     //设置tabBar的背景颜色
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     ZXTabBarController *tabbarVc = [[ZXTabBarController alloc] init];
@@ -51,9 +48,16 @@
 //    [[UINavigationBar appearance]  setBackgroundImage:[UIImage imageNamed:@"navigationbar_background"] forBarMetrics:UIBarMetricsDefault];
 //    [UINavigationBar appearance].translucent = NO;
 //    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [self fixTextViewInitSlowly];
     return YES;
 }
 
+
+- (void)fixTextViewInitSlowly{
+    UITextView *textView = [[UITextView alloc] init];
+    [self.window addSubview:textView];
+    [textView removeFromSuperview];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
