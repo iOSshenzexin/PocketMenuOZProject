@@ -59,8 +59,6 @@
     [self.navigationController  popViewControllerAnimated:YES];
 }
 
-
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{//搜索方法
     if (textField.text.length > 0) {
         [ZYTokenManager SearchText:textField.text];//缓存搜索记录

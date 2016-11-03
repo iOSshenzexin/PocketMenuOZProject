@@ -10,6 +10,7 @@
 #import "TopBannerTool.h"
 #import "ZXGroupBuyDetailOneCell.h"
 #import "ZXGroupBuyDetailTwoCell.h"
+#import "ZXGroupBuyDetailThreeCell.h"
 @interface ZXGroupBuyDetailController ()<KNBannerViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -70,8 +71,11 @@
     if (indexPath.section == 0) {
         ZXGroupBuyDetailOneCell *cell = [ZXGroupBuyDetailOneCell cellWithTableView:tableView];
         return cell;
+    }else if (indexPath.section == 1){
+          ZXGroupBuyDetailTwoCell *cell = [ZXGroupBuyDetailTwoCell cellWithTableView:tableView];
+          return cell;
     }
-      ZXGroupBuyDetailTwoCell *cell = [ZXGroupBuyDetailTwoCell cellWithTableView:tableView];
+    ZXGroupBuyDetailThreeCell *cell = [ZXGroupBuyDetailThreeCell cellWithTableView:tableView];
     return cell;
 }
 
@@ -79,10 +83,13 @@
 {
     if (indexPath.section == 0) {
         return 70;
-    }else
+    }else if(indexPath.section == 1)
     {
-        return 145;
+        return 150;
+    }else if(indexPath.section == 2){
+        return 400;
     }
+    return 400;
 }
 
 @end

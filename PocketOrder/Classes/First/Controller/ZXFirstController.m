@@ -14,7 +14,7 @@
 #import "DeliciousFoodController.h"
 #import "ZXDessertAndDrinksController.h"
 #import "ZXGroupBuyController.h"
-
+#import "ZXSupermarketController.h"
 
 #import "BGRefresh.h"
 #import "ZXSearchBar.h"
@@ -340,11 +340,15 @@
         vc.title = @"团购";
         [self.navigationController pushViewController:vc animated:YES];
     }
-    else{
+    else if (indexPath.row == 2){
     DeliciousFoodController *vc = [[DeliciousFoodController alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     vc.title = @"美食";
     [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        ZXSupermarketController *vc = [[ZXSupermarketController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
@@ -391,7 +395,7 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    self.view = nil;
+    //self.view = nil;
 }
 
 
