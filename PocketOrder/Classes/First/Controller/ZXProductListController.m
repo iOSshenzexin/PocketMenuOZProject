@@ -231,10 +231,6 @@ extern int btnH;
     [_tableViewList scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
-- (void)tableView:(UITableView *)tableView didEndDisplayingHeaderView:(UIView *)view forSection:(NSInteger)section
-{
-    
-}
 
 // 设置section的高度
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{

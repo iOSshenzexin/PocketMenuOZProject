@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ZXSupermarketListCell" id="KGk-i7-Jjw" customClass="ZXSupermarketListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop_box" translatesAutoresizingMaskIntoConstraints="NO" id="u26-wM-Tom"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big-carrefour" translatesAutoresizingMaskIntoConstraints="NO" id="MVx-fJ-jw8">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="UOm-oi-jJA"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="家乐福 (Carrefour) 官方网上商城。全正品门店直送,129元包邮到家,门店无忧退换货,福日独享折上折。从今起,你在哪儿,家乐福就在哪儿,在家坐着逛家乐福。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYu-hM-kgn">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="gIO-1G-1OS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="u26-wM-Tom" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="905-WR-keM"/>
+                    <constraint firstAttribute="trailing" secondItem="u26-wM-Tom" secondAttribute="trailing" constant="10" id="NjR-ZV-C6Z"/>
+                    <constraint firstItem="u26-wM-Tom" firstAttribute="leading" secondItem="MVx-fJ-jw8" secondAttribute="trailing" constant="-160" id="NwF-VS-S7I"/>
+                    <constraint firstItem="MVx-fJ-jw8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ree-je-GHA"/>
+                    <constraint firstAttribute="trailing" secondItem="nYu-hM-kgn" secondAttribute="trailing" constant="10" id="ogb-7R-ooY"/>
+                    <constraint firstAttribute="bottom" secondItem="MVx-fJ-jw8" secondAttribute="bottom" id="pr4-Qb-mbp"/>
+                    <constraint firstItem="u26-wM-Tom" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="raG-SR-RJh"/>
+                    <constraint firstAttribute="bottom" secondItem="u26-wM-Tom" secondAttribute="bottom" id="sVx-zL-txQ"/>
+                    <constraint firstItem="nYu-hM-kgn" firstAttribute="leading" secondItem="MVx-fJ-jw8" secondAttribute="trailing" constant="8" id="syy-hJ-EU4"/>
+                    <constraint firstItem="nYu-hM-kgn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xij-1h-cPi"/>
+                </constraints>
+            </tableViewCellContentView>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="big-carrefour" width="140" height="82"/>
+        <image name="shop_box" width="340" height="95"/>
+    </resources>
+</document>

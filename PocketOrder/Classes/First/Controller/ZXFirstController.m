@@ -329,7 +329,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 2) {
+    if (indexPath.row == 0) {
         ZXDessertAndDrinksController *vc = [[ZXDessertAndDrinksController alloc] init];
         vc.hidesBottomBarWhenPushed = YES;
         vc.title = @"甜品饮料";
@@ -341,11 +341,11 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row == 2){
-    DeliciousFoodController *vc = [[DeliciousFoodController alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
-    vc.title = @"美食";
-    [self.navigationController pushViewController:vc animated:YES];
-    }else{
+        DeliciousFoodController *vc = [[DeliciousFoodController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        vc.title = @"美食";
+        [self.navigationController pushViewController:vc animated:YES];
+        }else{
         ZXSupermarketController *vc = [[ZXSupermarketController alloc] init];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
