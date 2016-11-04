@@ -5,8 +5,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXSupermarketListController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXCollectStoreController">
             <connections>
+                <outlet property="tableView" destination="b6L-xe-Etk" id="GgF-aP-2EH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,20 +16,20 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Afg-cg-Xfl">
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b6L-xe-Etk">
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="Eyz-5H-oIp"/>
-                        <outlet property="delegate" destination="-1" id="Lw8-gY-aG5"/>
+                        <outlet property="dataSource" destination="-1" id="lrU-Ga-3QM"/>
+                        <outlet property="delegate" destination="-1" id="Oi7-Bn-avq"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Afg-cg-Xfl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6Pg-Fx-4MI"/>
-                <constraint firstItem="Afg-cg-Xfl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fnx-mf-HIN"/>
-                <constraint firstAttribute="trailing" secondItem="Afg-cg-Xfl" secondAttribute="trailing" id="iNJ-yf-knP"/>
-                <constraint firstAttribute="bottom" secondItem="Afg-cg-Xfl" secondAttribute="bottom" id="jbB-d2-Atb"/>
+                <constraint firstAttribute="bottom" secondItem="b6L-xe-Etk" secondAttribute="bottom" id="1qK-Vt-wrm"/>
+                <constraint firstItem="b6L-xe-Etk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Qrz-ZC-nFN"/>
+                <constraint firstItem="b6L-xe-Etk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rzG-gT-x1f"/>
+                <constraint firstAttribute="trailing" secondItem="b6L-xe-Etk" secondAttribute="trailing" id="wSZ-5M-CsP"/>
             </constraints>
         </view>
     </objects>

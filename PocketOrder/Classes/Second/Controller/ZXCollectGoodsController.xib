@@ -5,7 +5,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXSupermarketListController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXCollectGoodsController">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -15,20 +15,20 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Afg-cg-Xfl">
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="veO-6C-ylb">
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="Eyz-5H-oIp"/>
-                        <outlet property="delegate" destination="-1" id="Lw8-gY-aG5"/>
+                        <outlet property="dataSource" destination="-1" id="ltz-Zz-if1"/>
+                        <outlet property="delegate" destination="-1" id="zyA-gr-kgH"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Afg-cg-Xfl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6Pg-Fx-4MI"/>
-                <constraint firstItem="Afg-cg-Xfl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fnx-mf-HIN"/>
-                <constraint firstAttribute="trailing" secondItem="Afg-cg-Xfl" secondAttribute="trailing" id="iNJ-yf-knP"/>
-                <constraint firstAttribute="bottom" secondItem="Afg-cg-Xfl" secondAttribute="bottom" id="jbB-d2-Atb"/>
+                <constraint firstItem="veO-6C-ylb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BBJ-RQ-F1n"/>
+                <constraint firstAttribute="bottom" secondItem="veO-6C-ylb" secondAttribute="bottom" id="Tli-E3-ueW"/>
+                <constraint firstItem="veO-6C-ylb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="i9T-cz-rP2"/>
+                <constraint firstAttribute="trailing" secondItem="veO-6C-ylb" secondAttribute="trailing" id="xKC-g8-YI4"/>
             </constraints>
         </view>
     </objects>
