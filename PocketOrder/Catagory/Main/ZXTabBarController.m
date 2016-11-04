@@ -18,6 +18,17 @@
 
 @implementation ZXTabBarController
 
++ (ZXTabBarController *)sharedTabBarController
+{
+    static ZXTabBarController *vc = nil;
+    if (!vc) {
+        vc = [[ZXTabBarController alloc] init];
+    }
+    return vc;
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpAllChildViewController];

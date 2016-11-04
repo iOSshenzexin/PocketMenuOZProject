@@ -7,7 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ZXSupermarketListController;
+
+@protocol ZXSupermarketListControllerDelegate <NSObject>
+
+@optional
+
+- (void)didClickGetsupermarketName:(ZXSupermarketListController *)vc;
+
+@end
+
 
 @interface ZXSupermarketListController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic,weak) id <ZXSupermarketListControllerDelegate> delegate;
+
+@property (nonatomic,copy) NSString *name;
 
 @end

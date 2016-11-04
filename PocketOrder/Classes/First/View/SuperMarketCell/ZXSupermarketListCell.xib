@@ -14,7 +14,14 @@
                 <frame key="frameInset" width="320" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop_box" translatesAutoresizingMaskIntoConstraints="NO" id="u26-wM-Tom"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop_box" translatesAutoresizingMaskIntoConstraints="NO" id="u26-wM-Tom">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big-carrefour" translatesAutoresizingMaskIntoConstraints="NO" id="MVx-fJ-jw8">
                         <constraints>
                             <constraint firstAttribute="width" constant="150" id="UOm-oi-jJA"/>
@@ -43,6 +50,7 @@
                     <constraint firstItem="nYu-hM-kgn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xij-1h-cPi"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
         </tableViewCell>
     </objects>
     <resources>

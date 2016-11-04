@@ -11,9 +11,14 @@
 #import "ZXSupermarketListController.h"
 #import "LeftSelectScroll.h"
 #import "ZXSupmarketCollectionCell.h"
+#import "ZXSupermarketListController.h"
+
+#import "ZXTabBarController.h"
+
+#import "ZXCollectionHeaderView.h"
 extern int btnH;
 
-@interface ZXSupermarketController ()<LeftSelectScrollDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
+@interface ZXSupermarketController ()<LeftSelectScrollDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ZXSupermarketListControllerDelegate,UITextFieldDelegate>
 {
     LeftSelectScroll *leftScrollView;
     NSMutableArray *leftDataSource;
@@ -25,6 +30,7 @@ extern int btnH;
 
 @property (weak, nonatomic) IBOutlet UIView *bottom;
 
+@property (weak, nonatomic) IBOutlet UIButton *marketBtn;
 
 @end
 
@@ -40,11 +46,24 @@ extern int btnH;
     [super viewWillDisappear:animated];
 }
 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+   
+    return NO;
+}
+
+
 - (IBAction)didClickJumpToSupmarketList:(id)sender {
     ZXSupermarketListController *vc = [[ZXSupermarketListController alloc] init];
+    vc.delegate = self;
     vc.title = @"选择超市";
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+- (void)didClickGetsupermarketName:(ZXSupermarketListController *)vc
+{
+    [self.marketBtn setTitle:vc.name forState:UIControlStateNormal];
+}
+
 
 
 - (IBAction)didClickBack:(id)sender {
@@ -52,6 +71,10 @@ extern int btnH;
 }
 
 - (IBAction)didClickShoppingCar:(id)sender {
+    UIApplication *app = [UIApplication sharedApplication];
+    ZXTabBarController *tabVc = [ZXTabBarController sharedTabBarController];
+    tabVc.selectedIndex = 2;
+    app.keyWindow.rootViewController = tabVc;
 }
 
 
@@ -70,17 +93,21 @@ extern int btnH;
 -(void)createCollectionView{
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-//    layout.minimumLineSpacing = 5;
-//    
-//    layout.minimumInteritemSpacing = 5;
+    layout.minimumLineSpacing = 5;
+    layout.minimumInteritemSpacing = 5;
+    layout.headerReferenceSize = CGSizeMake(ScreenW * 0.75 - 10,44);
     
-    _collectionViewList = [[UICollectionView alloc] initWithFrame:CGRectMake(ScreenW * 0.25, 0, ScreenW * 0.75,ScreenH - 113) collectionViewLayout:layout];
+    _collectionViewList = [[UICollectionView alloc] initWithFrame:CGRectMake(ScreenW * 0.25 + 5, 0, ScreenW * 0.75 - 10,ScreenH - 113) collectionViewLayout:layout];
     // ScreenH - 113
     [_collectionViewList registerNib:[UINib nibWithNibName:@"ZXSupmarketCollectionCell"bundle:nil]forCellWithReuseIdentifier:supmarketCollectionCell];
-
+    
+    //设置头视图
+    [_collectionViewList registerClass:[ZXCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:collectionHeaderView];
+   
+    
     _collectionViewList.delegate = self;
     _collectionViewList.dataSource = self;
-    _collectionViewList.backgroundColor = RGB(242, 242, 242);
+    _collectionViewList.backgroundColor = RGB(236, 236, 236);
     _collectionViewList.tag = 21; //标识tableView
     [self.bottom addSubview:_collectionViewList];
 }
@@ -91,19 +118,53 @@ extern int btnH;
     return 10;
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return leftDataSource.count;
 }
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+
+{
+    UICollectionReusableView *reusableview;
+    if (kind == UICollectionElementKindSectionHeader){
+        ZXCollectionHeaderView *headerView = [ZXCollectionHeaderView headerViewWith:collectionView indexPath:indexPath];
+        headerView.titleLabel.text = [self viewForHeaderView:indexPath.section];
+         reusableview = headerView;
+    }
+     return reusableview;
+}
+
+//实际需要会修改 - 设置sectionHeaderView
+-(NSString *)viewForHeaderView:(NSInteger)parama{
+    NSString *title;
+    if (leftDataSource.count != 0) {
+        title = leftDataSource[parama];
+        ZXLog(@"%@",[NSString stringWithFormat:@"第%ld组",(long)parama]);
+    }
+    if (isScrollSetSelect == YES) {
+        CGFloat offsetX = btnH * parama - leftScrollView.frame.size.height * 0.5;
+        if (offsetX < 0) {
+            offsetX = 0;
+        }
+        [leftScrollView setContentOffset:CGPointMake(0, offsetX) animated:YES];
+        CGFloat maxOffsetX = leftScrollView.contentSize.height - leftScrollView.frame.size.height;
+        if (offsetX > maxOffsetX) {
+            offsetX = maxOffsetX;
+        }
+        [leftScrollView setContentOffset:CGPointMake(0, offsetX) animated:YES];
+        [leftScrollView setSelectButtonWithIndexPathSection:parama];
+    }
+    return title;
+}
+
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(80, 100);
+    return CGSizeMake((ScreenW * 0.75 - 20)/3, (ScreenW * 0.75 - 20)/3 + 20);
 }
 
--(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake(0, 5, 0, 0);
-}
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -143,7 +204,11 @@ extern int btnH;
     }
     [leftScrollView setContentOffset:CGPointMake(0, offsetX) animated:YES];
     isScrollSetSelect = NO;
-  //  [_collectionViewList scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    [_collectionViewList scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath] atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
+    
+//  - (void)scrollToItemAtIndexPath:(NSIndexPath *)indexPath atScrollPosition:(UICollectionViewScrollPosition)scrollPosition animated:(BOOL)animated;
+//    
+//    [_collectionViewList scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{

@@ -10,4 +10,6 @@
 
 @interface ZXTabBarController : UITabBarController
 
++ (ZXTabBarController *)sharedTabBarController;
+
 @end

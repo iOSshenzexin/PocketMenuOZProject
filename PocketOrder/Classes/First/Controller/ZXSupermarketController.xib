@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXSupermarketController">
             <connections>
                 <outlet property="bottom" destination="VdI-ww-9lr" id="XcH-in-2dx"/>
+                <outlet property="marketBtn" destination="lAR-Wt-IGG" id="hfx-UC-hrt"/>
                 <outlet property="view" destination="fpl-BW-keP" id="uWy-fN-KHL"/>
             </connections>
         </placeholder>
@@ -92,6 +93,9 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="rab-I0-MWj"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -118,7 +122,9 @@
                         <constraint firstAttribute="trailing" secondItem="nBB-9K-kcr" secondAttribute="trailing" constant="30" id="u6V-8B-aUm"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdI-ww-9lr"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdI-ww-9lr">
+                    <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
