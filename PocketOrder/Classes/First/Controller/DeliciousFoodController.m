@@ -57,7 +57,7 @@
     
    // _mytableview.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewInfo)];
     
-    UIView* showView = [[UIView alloc] initWithFrame:CGRectMake(0, menuView.frame.origin.y+menuView.frame.size.height, self.view.bounds.size.width, self.view.bounds.size.height-64-44)];
+    UIView* showView = [[UIView alloc] initWithFrame:CGRectMake(0, menuView.frame.origin.y + menuView.frame.size.height, self.view.bounds.size.width, self.view.bounds.size.height-64-44)];
     showView.backgroundColor = [UIColor colorWithRed:0.145 green:0.145 blue:0.145 alpha:0.65];
     [self.view addSubview:showView];
     menuView.showView = showView;

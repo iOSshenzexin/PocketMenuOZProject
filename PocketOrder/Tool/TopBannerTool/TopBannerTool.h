@@ -11,7 +11,8 @@
 
 @interface TopBannerTool : NSObject
 
-+ (UIView *)setupNetWorkBannerViewAtViewController:(UIViewController<KNBannerViewDelegate> *)vc;
 
-+ (UIView *)setupLocatioBannerViewAtViewController:(UIViewController<KNBannerViewDelegate> *)vc;
++ (KNBannerView *)setupNetWorkBannerViewAtViewController:(UIViewController<KNBannerViewDelegate> *)vc;
+
++ (KNBannerView *)setupLocatioBannerViewAtViewController:(UIViewController<KNBannerViewDelegate> *)vc;
 @end

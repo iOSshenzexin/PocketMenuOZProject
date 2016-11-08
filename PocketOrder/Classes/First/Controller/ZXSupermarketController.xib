@@ -8,7 +8,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXSupermarketController">
             <connections>
                 <outlet property="bottom" destination="VdI-ww-9lr" id="XcH-in-2dx"/>
+                <outlet property="cancleBtn" destination="WHB-ej-hMS" id="zHy-av-ReN"/>
+                <outlet property="centerY" destination="nyc-3i-xit" id="ozq-gz-DrJ"/>
+                <outlet property="constraint" destination="zO8-EU-Iyd" id="89g-7a-DqE"/>
+                <outlet property="height" destination="2El-5p-Qdk" id="eB2-SZ-8ev"/>
                 <outlet property="marketBtn" destination="lAR-Wt-IGG" id="hfx-UC-hrt"/>
+                <outlet property="navigationBar" destination="t5l-N9-uxE" id="qj0-wb-gGE"/>
+                <outlet property="searchBottomView" destination="CuX-dq-fdh" id="sh4-q8-csN"/>
+                <outlet property="searchViewConstraint" destination="ghM-lH-FMV" id="2dK-TW-Aq7"/>
+                <outlet property="searchViewRightConstraint" destination="u6V-8B-aUm" id="vKK-0u-qdJ"/>
+                <outlet property="topConstraint" destination="DuD-5U-VbL" id="Wpq-ws-24f"/>
                 <outlet property="view" destination="fpl-BW-keP" id="uWy-fN-KHL"/>
             </connections>
         </placeholder>
@@ -63,7 +72,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.94901960780000005" green="0.3294117647" blue="0.078431372550000003" alpha="0.90672189599999997" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.94901960780000005" green="0.3294117647" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="kPj-R1-Vp9" secondAttribute="bottom" id="0TM-3A-YGc"/>
                         <constraint firstItem="kPj-R1-Vp9" firstAttribute="leading" secondItem="t5l-N9-uxE" secondAttribute="leading" id="A3O-o6-Gf5"/>
@@ -113,17 +122,43 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHB-ej-hMS">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="E5R-sR-YZH"/>
+                                <constraint firstAttribute="height" constant="30" id="aIY-fq-VOE"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="取消"/>
+                            <connections>
+                                <action selector="didClickCancle:" destination="-1" eventType="touchUpInside" id="ngF-Re-n13"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fk9-yx-U1m">
+                            <color key="backgroundColor" red="0.70588235290000001" green="0.70588235290000001" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="0Hg-8H-mO0"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="49" id="2El-5p-Qdk"/>
-                        <constraint firstItem="nBB-9K-kcr" firstAttribute="leading" secondItem="CuX-dq-fdh" secondAttribute="leading" constant="30" id="ghM-lH-FMV"/>
+                        <constraint firstAttribute="height" constant="44" id="2El-5p-Qdk"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="6gK-oL-yYj"/>
+                        <constraint firstItem="fk9-yx-U1m" firstAttribute="leading" secondItem="CuX-dq-fdh" secondAttribute="leading" id="9QH-jl-gLs"/>
+                        <constraint firstAttribute="trailing" secondItem="fk9-yx-U1m" secondAttribute="trailing" id="N9b-Uv-svc"/>
+                        <constraint firstItem="WHB-ej-hMS" firstAttribute="centerY" secondItem="nBB-9K-kcr" secondAttribute="centerY" id="NGu-iE-bZi"/>
+                        <constraint firstItem="nBB-9K-kcr" firstAttribute="leading" secondItem="CuX-dq-fdh" secondAttribute="leading" constant="20" id="ghM-lH-FMV"/>
+                        <constraint firstAttribute="bottom" secondItem="fk9-yx-U1m" secondAttribute="bottom" id="nEO-Qe-Vkc"/>
                         <constraint firstItem="nBB-9K-kcr" firstAttribute="centerY" secondItem="CuX-dq-fdh" secondAttribute="centerY" id="nyc-3i-xit"/>
-                        <constraint firstAttribute="trailing" secondItem="nBB-9K-kcr" secondAttribute="trailing" constant="30" id="u6V-8B-aUm"/>
+                        <constraint firstItem="WHB-ej-hMS" firstAttribute="leading" secondItem="nBB-9K-kcr" secondAttribute="trailing" constant="10" id="qZC-TZ-nsp"/>
+                        <constraint firstAttribute="trailing" secondItem="nBB-9K-kcr" secondAttribute="trailing" constant="20" id="u6V-8B-aUm"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdI-ww-9lr">
-                    <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -132,14 +167,17 @@
                 <constraint firstItem="t5l-N9-uxE" firstAttribute="top" secondItem="fpl-BW-keP" secondAttribute="top" id="DuD-5U-VbL"/>
                 <constraint firstItem="t5l-N9-uxE" firstAttribute="leading" secondItem="fpl-BW-keP" secondAttribute="leading" id="Hb9-Rl-nmX"/>
                 <constraint firstItem="VdI-ww-9lr" firstAttribute="leading" secondItem="fpl-BW-keP" secondAttribute="leading" id="HwM-pP-rod"/>
+                <constraint firstItem="CuX-dq-fdh" firstAttribute="leading" secondItem="fpl-BW-keP" secondAttribute="leading" id="JuG-XB-251"/>
+                <constraint firstAttribute="trailing" secondItem="CuX-dq-fdh" secondAttribute="trailing" id="W0y-W5-FJe"/>
                 <constraint firstItem="CuX-dq-fdh" firstAttribute="leading" secondItem="fpl-BW-keP" secondAttribute="leading" id="mO6-zp-YS0"/>
                 <constraint firstAttribute="trailing" secondItem="CuX-dq-fdh" secondAttribute="trailing" id="pv0-sN-VsZ"/>
+                <constraint firstItem="VdI-ww-9lr" firstAttribute="top" secondItem="CuX-dq-fdh" secondAttribute="bottom" id="rnX-af-tq2"/>
                 <constraint firstAttribute="bottom" secondItem="VdI-ww-9lr" secondAttribute="bottom" id="s3o-ts-xuM"/>
                 <constraint firstItem="VdI-ww-9lr" firstAttribute="top" secondItem="CuX-dq-fdh" secondAttribute="bottom" id="uOy-rT-ObR"/>
                 <constraint firstAttribute="trailing" secondItem="t5l-N9-uxE" secondAttribute="trailing" id="yQn-va-bTB"/>
                 <constraint firstItem="CuX-dq-fdh" firstAttribute="top" secondItem="t5l-N9-uxE" secondAttribute="bottom" id="zO8-EU-Iyd"/>
             </constraints>
-            <point key="canvasLocation" x="35.5" y="53.5"/>
+            <point key="canvasLocation" x="-15.5" y="50.5"/>
         </view>
     </objects>
     <resources>

@@ -12,7 +12,7 @@
 @end
 @implementation TopBannerTool
 
-+ (UIView *)setupNetWorkBannerViewAtViewController:(UIViewController<KNBannerViewDelegate> *)vc{
++ (KNBannerView *)setupNetWorkBannerViewAtViewController:(UIViewController<KNBannerViewDelegate> *)vc{
     NSMutableArray *imgArr = [NSMutableArray array];
     NSString *img1 = @"http://i3.download.fd.pchome.net/t_960x600/g1/M00/07/09/oYYBAFMv8q2IQHunACi90oB0OHIAABbUQAAXO4AKL3q706.jpg";
     NSString *img2 = @"http://images.weiphone.net/attachments/photo/Day_120308/118871_91f6133116504086ed1b82e0eb951.jpg";
@@ -27,6 +27,7 @@
     
     // 设置 网络 轮播图
     KNBannerView *bannerView = [KNBannerView bannerViewWithNetWorkImagesArr:imgArr frame:CGRectMake(0, 0, ScreenW, 180)];
+    
     bannerView.delegate = vc;
     
     /****************************** == 描述文字 == ********************************/
@@ -42,13 +43,14 @@
     [IntroduceArr addObject:string4];
     [IntroduceArr addObject:string5];
     bannerView.IntroduceStringArr = IntroduceArr;
+//    bannerView.IntroduceStringArr = nil;
     /****************************** == 占位图 == ********************************/
     bannerView.placeHolder = @"3";
     bannerView.tag = 100;
     return bannerView;
 }
 
-+ (UIView *)setupLocatioBannerViewAtViewController:(UIViewController<KNBannerViewDelegate> *)vc{
++ (KNBannerView *)setupLocatioBannerViewAtViewController:(UIViewController<KNBannerViewDelegate> *)vc{
     NSString *img1 = @"1";
     NSString *img2 = @"2.jpg";
     NSString *img3 = @"3.jpg";

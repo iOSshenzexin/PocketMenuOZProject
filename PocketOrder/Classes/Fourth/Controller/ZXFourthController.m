@@ -73,8 +73,13 @@
 {
     ZXLoginController *vc = [[ZXLoginController alloc] init];
     ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:vc];
+    
     [self presentViewController:nav animated:YES completion:^{
     }];
+    vc.block = ^(BOOL login){
+        NSLog(@"%d",login);
+        
+    };
 }
 #pragma mark - 已登录跳到个人信息界面
 - (void)jumpToPersomInfo:(UIButton *)btn
@@ -105,9 +110,20 @@
 {
      AppDelegate *app =  MyApplicationDelegate;
     if (!app.isLogin) {
-        [self jumpToLoginPage];
+        ZXLoginController *vc = [[ZXLoginController alloc] init];
+        ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:vc];
+        [self presentViewController:nav animated:YES completion:nil];
+        vc.block = ^(BOOL login){
+            [self didClickSelectCellNSIndexPath:indexPath];
+        };
     }
     else{
+        [self didClickSelectCellNSIndexPath:indexPath];
+    }
+}
+
+- (void)didClickSelectCellNSIndexPath:(NSIndexPath *)indexPath
+{
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             ZXOrderCenterController *vc = [[ZXOrderCenterController alloc] init];
@@ -119,7 +135,7 @@
             vc.title = @"消息";
             [self.navigationController pushViewController:vc animated:YES];
         }
-        }
+    }
     if (indexPath.section == 1) {
         if (indexPath.row == 1) {
             ZXChangePWDController *vc = [[UIStoryboard storyboardWithName:@"ZXChangePWDController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXChangePWDController"];
@@ -132,10 +148,9 @@
         }
     }
     if (indexPath.section == 2) {
-         ZXSettingController *vc = [[UIStoryboard storyboardWithName:@"ZXSettingController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXSettingController"];
+        ZXSettingController *vc = [[UIStoryboard storyboardWithName:@"ZXSettingController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXSettingController"];
         vc.title = @"设置";
         [self.navigationController pushViewController:vc animated:YES];
-    }
     }
 }
 

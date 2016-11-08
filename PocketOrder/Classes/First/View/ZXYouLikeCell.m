@@ -26,4 +26,12 @@
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     self.youLikeCV.collectionViewLayout = layout;
 }
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self.youLikeCV registerNib:[UINib nibWithNibName:@"ZXLikeCell"bundle:nil]forCellWithReuseIdentifier:likeCell];
+}
+
+
 @end

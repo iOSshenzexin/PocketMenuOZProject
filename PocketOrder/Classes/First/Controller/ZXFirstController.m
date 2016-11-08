@@ -66,14 +66,22 @@
     [super viewDidLoad];
     [self startGoogleMap];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    /* 注册自定制cell */
-    [self registerTableViewCell];
+    [self setupTableViewHeader];
     /* 点击广告跳转到广告页面 */
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushToAd) name:@"pushtoad" object:nil];
     /* 设置NavigationBarButton */
     [self setupNavigationBarBtn];
     [self.homeTableView.mj_header beginRefreshing];
 }
+
+#pragma mark - 设置表格头部
+- (void)setupTableViewHeader{
+    /* 设置主页的头部轮播图 */
+    self.homeTableView.tableHeaderView = [TopBannerTool setupNetWorkBannerViewAtViewController:self];
+    //去掉tableView的分割线
+    self.homeTableView.separatorStyle = UITableViewCellSelectionStyleNone;
+}
+
 
 - (void)startGoogleMap
 {
@@ -140,8 +148,6 @@
     return NO;
 }
 
-
-
 -(void)loadNewInfo
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -179,7 +185,6 @@
 }
 
 
-
 - (void)hideShawdowView:(UITapGestureRecognizer *)tap{
     CGPoint point = [tap locationInView:tap.view];
     if (point.y > self.shawdow.frame.size.height) {
@@ -188,16 +193,6 @@
     }
 }
 
-#pragma mark - 注册自定制cell
-- (void)registerTableViewCell{
-    /* 设置主页的头部轮播图 */
-    self.homeTableView.tableHeaderView = [TopBannerTool setupNetWorkBannerViewAtViewController:self];
-    [self.homeTableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZXThemeZoneCell class]) bundle:nil] forCellReuseIdentifier:themeZoneCell];
-    [self.homeTableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZXTodayRecommendedCell class]) bundle:nil] forCellReuseIdentifier:todayRecommendedCell];
-    [self.homeTableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZXYouLikeCell class]) bundle:nil] forCellReuseIdentifier:youLikeCell];
-    //去掉tableView的分割线
-    self.homeTableView.separatorStyle = UITableViewCellSelectionStyleNone;
-}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -218,7 +213,6 @@
     }else{
     if (indexPath.row == 0) {
         ZXThemeZoneCell *cell = [ZXThemeZoneCell cellWithTableView:tableView];
-        [cell.collectionView registerNib:[UINib nibWithNibName:@"ZXSquareCell" bundle:nil] forCellWithReuseIdentifier:squareCell];
         cell.collectionView.dataSource = self;
         cell.collectionView.delegate = self;
         self.themeCV = cell.collectionView;
@@ -226,16 +220,12 @@
     }
     if (indexPath.row == 1) {
         ZXTodayRecommendedCell *cell = [ZXTodayRecommendedCell cellWithTableView:tableView];
-        // 注册cell
-        [cell.todayCV registerNib:[UINib nibWithNibName:@"ZXTodayCell"bundle:nil]forCellWithReuseIdentifier:todayCell];
-        cell.todayCV.scrollEnabled = NO;
         cell.todayCV.dataSource = self;
         cell.todayCV.delegate = self;
         self.todayCV = cell.todayCV;
         return cell;
     }
     ZXYouLikeCell *cell = [ZXYouLikeCell cellWithTableView:tableView];
-    [cell.youLikeCV registerNib:[UINib nibWithNibName:@"ZXLikeCell"bundle:nil]forCellWithReuseIdentifier:likeCell];
     cell.youLikeCV.dataSource = self;
     cell.youLikeCV.delegate = self;
     self.youLikeCV = cell.youLikeCV;
@@ -270,9 +260,6 @@
     return 0;
 }
 
-
-
-
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -284,7 +271,6 @@
     }else{
         return 3;
     }
-   
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -329,18 +315,18 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
+    if (indexPath.row == 1) {
         ZXDessertAndDrinksController *vc = [[ZXDessertAndDrinksController alloc] init];
         vc.hidesBottomBarWhenPushed = YES;
         vc.title = @"甜品饮料";
         [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.row == 1){
+    }else if (indexPath.row == 2){
         ZXGroupBuyController *vc = [[ZXGroupBuyController alloc] init];
         vc.hidesBottomBarWhenPushed = YES;
         vc.title = @"团购";
         [self.navigationController pushViewController:vc animated:YES];
     }
-    else if (indexPath.row == 2){
+    else if (indexPath.row == 0){
         DeliciousFoodController *vc = [[DeliciousFoodController alloc] init];
         vc.hidesBottomBarWhenPushed = YES;
         vc.title = @"美食";

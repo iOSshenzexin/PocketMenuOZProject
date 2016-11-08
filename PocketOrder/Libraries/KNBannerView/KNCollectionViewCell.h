@@ -47,4 +47,7 @@ typedef enum {
 /* IntroduceLabel is set or not */
 @property (nonatomic, assign) BOOL isSet;
 
+
+@property (nonatomic, weak) UILabel *IntroduceLabel;
+
 @end

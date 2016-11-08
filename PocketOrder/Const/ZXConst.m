@@ -19,3 +19,5 @@ NSString * const collectionHeaderView = @"collectionHeaderView";
 
 /** TitleButton被重复点击的通知 */
 NSString  * const SZXTitleButtonDidRepeatClickNotification = @"XMGTitleButtonDidRepeatClickNotification";
+
+NSString * const messagePaddingCell = @"ZXMessagePaddingCell";

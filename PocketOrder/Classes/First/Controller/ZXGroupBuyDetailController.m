@@ -23,7 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavigationBarBtn];
-    self.tableView.tableHeaderView = [TopBannerTool setupNetWorkBannerViewAtViewController:self];
+    KNBannerView *banner = [TopBannerTool setupNetWorkBannerViewAtViewController:self];
+    banner.pageControlStyle = KNPageControlStyleMiddle;
+    self.tableView.tableHeaderView = banner;
 }
 
 

@@ -22,12 +22,18 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-//    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-//    self.todayCV.contentInset = UIEdgeInsetsMake(0, 10, 0, 10);
-//    self.todayCV.collectionViewLayout = layout;
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     self.todayCV.collectionViewLayout = layout;
 }
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self.todayCV registerNib:[UINib nibWithNibName:@"ZXTodayCell"bundle:nil]forCellWithReuseIdentifier:todayCell];
+    self.todayCV.scrollEnabled = NO;
+}
+
+
 @end

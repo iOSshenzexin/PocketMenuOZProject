@@ -10,4 +10,6 @@
 
 @interface ZXSupermarketController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *searchBottomView;
+
 @end

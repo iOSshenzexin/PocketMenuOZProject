@@ -16,7 +16,7 @@
                         <sections>
                             <tableViewSection id="QJ8-ns-Xab">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Lhg-1E-DFh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Lhg-1E-DFh">
                                         <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lhg-1E-DFh" id="9cl-sn-u5c">
@@ -29,11 +29,10 @@
                                                         <constraint firstAttribute="width" constant="19" id="rva-e5-8uG"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgN-9P-92x">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgN-9P-92x">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="210" id="pJx-85-Vgk"/>
                                                     </constraints>
-                                                    <inset key="titleEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" title="400-888-6688">
                                                         <color key="titleColor" red="0.94901960780000005" green="0.3294117647" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
@@ -55,7 +54,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KEp-79-PZV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KEp-79-PZV">
                                         <rect key="frame" x="0.0" y="79" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KEp-79-PZV" id="46r-UZ-h9C">
@@ -68,11 +67,10 @@
                                                         <constraint firstAttribute="height" constant="19" id="yEM-3d-okZ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZX-HY-74g">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZX-HY-74g">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="210" id="GVB-iO-MdC"/>
+                                                        <constraint firstAttribute="width" constant="60" id="GVB-iO-MdC"/>
                                                     </constraints>
-                                                    <inset key="titleEdgeInsets" minX="170" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" title="2.5M">
                                                         <color key="titleColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -82,19 +80,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="6In-bU-gyW">
+                                                    <color key="color" red="0.96862745100000003" green="0.41568627450000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="8xH-25-3B4" firstAttribute="centerY" secondItem="46r-UZ-h9C" secondAttribute="centerY" id="2QE-xa-cX3"/>
                                                 <constraint firstItem="8xH-25-3B4" firstAttribute="leading" secondItem="46r-UZ-h9C" secondAttribute="leading" constant="20" id="4lG-Z5-e6N"/>
+                                                <constraint firstItem="FZX-HY-74g" firstAttribute="leading" secondItem="6In-bU-gyW" secondAttribute="trailing" constant="21" id="Jqk-53-GG9"/>
                                                 <constraint firstAttribute="trailing" secondItem="FZX-HY-74g" secondAttribute="trailing" constant="15" id="RkN-T8-n4k"/>
                                                 <constraint firstItem="ycf-s5-5zT" firstAttribute="leading" secondItem="8xH-25-3B4" secondAttribute="trailing" constant="8" id="VqV-Nx-ErN"/>
                                                 <constraint firstItem="ycf-s5-5zT" firstAttribute="centerY" secondItem="8xH-25-3B4" secondAttribute="centerY" id="WnL-cL-xuh"/>
                                                 <constraint firstItem="FZX-HY-74g" firstAttribute="top" secondItem="46r-UZ-h9C" secondAttribute="top" id="XJ2-Wj-N5r"/>
                                                 <constraint firstAttribute="bottom" secondItem="FZX-HY-74g" secondAttribute="bottom" id="aKP-hm-hFB"/>
+                                                <constraint firstItem="6In-bU-gyW" firstAttribute="centerY" secondItem="ycf-s5-5zT" secondAttribute="centerY" id="oUy-zz-tiv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vcT-Dw-Oue">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="vcT-Dw-Oue">
                                         <rect key="frame" x="0.0" y="123" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vcT-Dw-Oue" id="N76-05-oVW">
@@ -107,11 +110,10 @@
                                                         <constraint firstAttribute="height" constant="19" id="c4L-oi-qr0"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCg-jN-xjs">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCg-jN-xjs">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="210" id="iHW-rp-Wro"/>
                                                     </constraints>
-                                                    <inset key="titleEdgeInsets" minX="170" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" title="1.0.0">
                                                         <color key="titleColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -141,6 +143,10 @@
                             <outlet property="delegate" destination="RNk-xJ-bIS" id="JA3-fo-DBc"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="activityIndicator" destination="6In-bU-gyW" id="hkM-0E-3ny"/>
+                        <outlet property="casheButton" destination="FZX-HY-74g" id="OM1-ZU-xiS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mp8-UI-7Mh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

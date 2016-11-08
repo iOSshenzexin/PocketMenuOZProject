@@ -15,8 +15,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.navigationBar.translucent = NO;
 //    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbar_background"] forBarMetrics:UIBarMetricsDefault];
+    self.navigationBar.translucent = NO;
+
     [self.navigationBar setBarTintColor:AppThemeColor];
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:18]}];
     

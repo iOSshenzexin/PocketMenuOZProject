@@ -14,11 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book1" translatesAutoresizingMaskIntoConstraints="NO" id="vGG-MX-dCe">
-                        <constraints>
-                            <constraint firstAttribute="height" constant="80" id="UGp-rJ-M0H"/>
-                        </constraints>
-                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book1" translatesAutoresizingMaskIntoConstraints="NO" id="vGG-MX-dCe"/>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="纯牛奶" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGj-tI-HeV">
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -32,6 +28,7 @@
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="qGj-tI-HeV" secondAttribute="bottom" id="5lA-F7-GpK"/>
+                <constraint firstItem="qGj-tI-HeV" firstAttribute="top" secondItem="vGG-MX-dCe" secondAttribute="bottom" id="BRz-rD-srA"/>
                 <constraint firstAttribute="trailing" secondItem="vGG-MX-dCe" secondAttribute="trailing" id="GHE-Or-cH3"/>
                 <constraint firstItem="qGj-tI-HeV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MCa-zf-8nT"/>
                 <constraint firstItem="vGG-MX-dCe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="agR-EH-yWE"/>

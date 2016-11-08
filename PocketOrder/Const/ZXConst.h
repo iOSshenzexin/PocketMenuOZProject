@@ -19,3 +19,5 @@ UIKIT_EXTERN NSString  * const SZXTitleButtonDidRepeatClickNotification;
 UIKIT_EXTERN NSString * const supmarketCollectionCell;
 
 UIKIT_EXTERN NSString * const collectionHeaderView;
+
+UIKIT_EXTERN NSString * const messagePaddingCell;

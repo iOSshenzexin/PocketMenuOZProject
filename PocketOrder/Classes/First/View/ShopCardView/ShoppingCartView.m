@@ -219,35 +219,42 @@
         if ([nextResponder isKindOfClass:[ZXProductListController class]]) {
                 ZXProductListController *vc = (ZXProductListController *)nextResponder;
                 if (app.isLogin) {
-                    ZXMakeSureOrderController *VC = [[ZXMakeSureOrderController alloc] init];
-                    VC.title = @"确认订单";
-                    VC.foodsArray = self.OrderList.objects;
-                    [vc.navigationController pushViewController:VC animated:YES];
+                    [self didLoginJumpToNextPageBy:vc];
                 }
                 else{
                     ZXLoginController *loginVc = [[ZXLoginController alloc] init];
                     ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:loginVc];
-                    [vc presentViewController:nav animated:YES completion:^{
-                    }];
+                    [vc presentViewController:nav animated:YES completion:nil];
+                    loginVc.block = ^(BOOL login){
+                        [self didLoginJumpToNextPageBy:vc];
+                    };
             }
         }
         else if ([nextResponder isKindOfClass:[ZXDessertDrinksListController class]]) {
                 ZXDessertDrinksListController *vc = (ZXDessertDrinksListController *)nextResponder;
                 if (app.isLogin) {
-                    ZXMakeSureOrderController *VC = [[ZXMakeSureOrderController alloc] init];
-                    VC.title = @"确认订单";
-                    VC.foodsArray = self.OrderList.objects;
-                    [vc.navigationController pushViewController:VC animated:YES];
+                   [self didLoginJumpToNextPageBy:vc];
                 }
                 else{
                     ZXLoginController *loginVc = [[ZXLoginController alloc] init];
                     ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:loginVc];
-                    [vc presentViewController:nav animated:YES completion:^{
-                    }];
+                    [vc presentViewController:nav animated:YES completion:nil];
+                    loginVc.block = ^(BOOL login){
+                        [self didLoginJumpToNextPageBy:vc];
+                    };
                 }
             }
     }
 }
+
+- (void)didLoginJumpToNextPageBy:(UIViewController *)vc{
+    ZXMakeSureOrderController *VC = [[ZXMakeSureOrderController alloc] init];
+    VC.title = @"确认订单";
+    VC.foodsArray = self.OrderList.objects;
+    [vc.navigationController pushViewController:VC animated:YES];
+}
+
+
 
 -(void)setTotalMoney:(NSInteger)nTotal
 {
@@ -268,7 +275,6 @@
         _money.text = [NSString stringWithFormat:@"共$%@",amount];
         NSInteger value = _minFreeMoney - nTotal;
         if (value > 0) {
-            
             _accountBtn.enabled = NO;
             [_accountBtn setTitle:[NSString stringWithFormat:@"还差$%ld",(long)value] forState:UIControlStateNormal];
             [_accountBtn setBackgroundColor:[UIColor grayColor]];
@@ -279,7 +285,6 @@
             [_accountBtn setTitle:@"去结算" forState:UIControlStateNormal];
             [_accountBtn setBackgroundColor:RGB(237, 87, 27)];
         }
-        
         [_shoppingCartBtn setUserInteractionEnabled:YES];
     }
     else

@@ -98,7 +98,6 @@ static NSString *ID = @"KNCollectionView";
 }
 
 - (void)initDefaultData{
-    
     _pageControlStyle = KNPageControlStyleRight;
     _CurrentPageIndicatorTintColor = [UIColor whiteColor];
     _PageIndicatorTintColor = [UIColor grayColor];

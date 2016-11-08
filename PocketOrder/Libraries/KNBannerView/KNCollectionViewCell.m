@@ -12,7 +12,6 @@
 
 @property (nonatomic, weak) UIView *bgView;
 
-@property (nonatomic, weak) UILabel *IntroduceLabel;
 
 @end
 

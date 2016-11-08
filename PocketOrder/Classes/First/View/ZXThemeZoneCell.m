@@ -22,6 +22,7 @@
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"ZXThemeZoneCell" owner:nil options:nil] lastObject];
         // 注册cell
+        [cell.collectionView registerNib:[UINib nibWithNibName:@"ZXSquareCell" bundle:nil] forCellWithReuseIdentifier:squareCell];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -31,20 +32,11 @@
     [super layoutSubviews];
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 5;
-    
     layout.minimumInteritemSpacing = 5;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     self.collectionView.collectionViewLayout = layout;
-    
-    
-    
-//    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-//    // 设置cell尺寸
-//    layout.minimumInteritemSpacing = margin;
-//    layout.minimumLineSpacing = margin;
-//    self.collectionView.contentInset = UIEdgeInsetsMake(0, 10, 0, 10);
-//    self.collectionView.scrollEnabled = NO;
-//    self.collectionView.collectionViewLayout = layout;
 }
+
+
 
 @end

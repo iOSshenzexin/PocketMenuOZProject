@@ -12,6 +12,7 @@
 #import "LeftSelectScroll.h"
 #import "ZXSupmarketCollectionCell.h"
 #import "ZXSupermarketListController.h"
+#import "ZXSupermarketProductController.h"
 
 #import "ZXTabBarController.h"
 
@@ -28,9 +29,26 @@ extern int btnH;
 
 }
 
+@property (weak, nonatomic) IBOutlet UIView *navigationBar;
+
+
+
 @property (weak, nonatomic) IBOutlet UIView *bottom;
 
 @property (weak, nonatomic) IBOutlet UIButton *marketBtn;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchViewConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchViewRightConstraint;
+
+@property (weak, nonatomic) IBOutlet UIButton *cancleBtn;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *height;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerY;
 
 @end
 
@@ -46,10 +64,58 @@ extern int btnH;
     [super viewWillDisappear:animated];
 }
 
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-   
-    return NO;
+- (IBAction)didClickCancle:(id)sender {
+    self.searchBottomView.backgroundColor = RGB(239, 239, 239);
+    [UIView animateWithDuration:0.3 animations:^{
+        self.topConstraint.constant = 0;
+        [self.view endEditing:YES];
+    }];
+    [UIView animateWithDuration:1.5 animations:^{
+        self.searchViewConstraint.constant = 30;
+        self.searchViewRightConstraint.constant = 30;
+        self.height.constant = 44;
+        self.centerY.constant = 0;
+        self.cancleBtn.hidden = YES;
+    }];
+    [self.bottom.subviews[2] removeFromSuperview];
 }
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    self.searchBottomView.backgroundColor = self.navigationBar.backgroundColor;
+    [UIView animateWithDuration:10 animations:^{
+        self.topConstraint.constant = -64;
+        self.height.constant = 64;
+        self.centerY.constant = 6;
+       
+        [self.bottom addSubview:[[UITableView alloc] initWithFrame:self.view.bounds]];
+    }];
+    [UIView animateWithDuration:5 animations:^{
+        self.searchViewConstraint.constant = 10;
+        self.searchViewRightConstraint.constant = 60;
+        self.cancleBtn.hidden = NO;
+    }];
+    
+    return YES;
+}
+
+
+//CGFloat yfloat = self.seePeersTableView.contentOffset.y;
+//
+//if (yfloat < 22.00f && yfloat >= 0.00f) {
+//    [UIView animateWithDuration:0.3 animations:^{
+//        
+//        self.seePeersTableView.contentOffset = CGPointMake(0, 0);
+//    }];
+//    
+//}else if (yfloat >= 22.00f && yfloat <= 44.00f){
+//    [UIView animateWithDuration:0.3 animations:^{
+//        
+//        self.seePeersTableView.contentOffset = CGPointMake(0, 44);
+//    }];
+//    
+//}
+
+
 
 
 - (IBAction)didClickJumpToSupmarketList:(id)sender {
@@ -173,7 +239,9 @@ extern int btnH;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    ZXSupermarketProductController *vc = [[ZXSupermarketProductController alloc] init];
+    vc.title = @"乳制品";
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 //左侧列表
@@ -204,7 +272,7 @@ extern int btnH;
     }
     [leftScrollView setContentOffset:CGPointMake(0, offsetX) animated:YES];
     isScrollSetSelect = NO;
-    [_collectionViewList scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath] atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
+    [_collectionViewList scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath] atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:YES];
     
 //  - (void)scrollToItemAtIndexPath:(NSIndexPath *)indexPath atScrollPosition:(UICollectionViewScrollPosition)scrollPosition animated:(BOOL)animated;
 //    
