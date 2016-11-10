@@ -24,7 +24,7 @@
                     </connections>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="biS-ys-Kxz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AIl-yd-60g"/>
                 <constraint firstItem="biS-ys-Kxz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OtO-qr-ljy"/>

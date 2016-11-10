@@ -63,6 +63,16 @@
     return 4;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *footer = [[UIView alloc] init];
+    footer.backgroundColor = [UIColor clearColor];
+    return footer;
+}
+
+
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 1;

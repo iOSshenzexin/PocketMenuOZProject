@@ -10,6 +10,7 @@
 
 #import "ZXMessageCell.h"
 #import "ZXMessagePaddingCell.h"
+#import "ZXMessageDetailController.h"
 @interface ZXMessageController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -77,10 +78,12 @@
     return size;
 }
 
-//-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-//{
-//    return UIEdgeInsetsMake(0, 5, 0, 5);
-//}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    ZXMessageDetailController *vc = [[ZXMessageDetailController alloc] init];
+    vc.title = @"消息内容";
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {

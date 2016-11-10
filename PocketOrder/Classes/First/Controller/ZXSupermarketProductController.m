@@ -11,6 +11,7 @@
 #import "LSSelectMenuView.h"
 
 #import "ZXSupermarketProductCell.h"
+#import "ZXSupermarketProductDetailController.h"
 #define topTitleHeight 44
 @interface ZXSupermarketProductController ()<LSSelectMenuViewDelegate,LSSelectMenuViewDataSource,UITableViewDelegate,UITableViewDataSource>{
     LSSelectMenuView *menuView;
@@ -171,6 +172,10 @@
         
     }else{
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        ZXSupermarketProductDetailController *vc = [[ZXSupermarketProductDetailController alloc] init];
+        vc.title = @"伊利官方直营味可滋香蕉牛奶";
+        [self.navigationController pushViewController:vc animated:YES];
+        
     }
 }
 
