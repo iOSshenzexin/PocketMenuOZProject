@@ -11,8 +11,14 @@
 
 #import "ZXSupermarketDetailOneCell.h"
 #import "ZXSupermarketDetailTwoCell.h"
+#import "ZXSupermarketDetailThreeCell.h"
 
 #import "ZXChoseView.h"
+
+#import "UIImage+Extension.h"
+
+
+
 @interface ZXSupermarketProductDetailController ()<KNBannerViewDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,ZXTypeSeleteDelegete>
 {
     ZXChoseView *choseView;
@@ -26,27 +32,77 @@
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *bgView;
+
+
+
+
+/** 导航条View */
+@property (nonatomic, weak) UIView *navBarView;
 
 @end
 
 @implementation ZXSupermarketProductDetailController
 
+- (IBAction)didClickJoinInShoppingCar:(id)sender {
+     [self didClickSelectGoods];
+}
+
+
+- (IBAction)didClickRightNowToBuy:(id)sender {
+      [self didClickSelectGoods];
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupNavigationBarBtn];
-    KNBannerView *banner = [TopBannerTool setupNetWorkBannerViewAtViewController:self];
-    banner.pageControlStyle = KNPageControlStyleMiddle;
-    self.tableView.tableHeaderView = banner;
     
+    [self setupNavigationBarBtn];
+  
     sizearr = [[NSArray alloc] initWithObjects:@"S",@"M",@"L",nil];
     colorarr = [[NSArray alloc] initWithObjects:@"蓝色",@"红色",@"湖蓝色",@"咖啡色",nil];
     NSString *str = [[NSBundle mainBundle] pathForResource: @"stock" ofType:@"plist"];
     stockarr = [[NSDictionary alloc] initWithContentsOfURL:[NSURL fileURLWithPath:str]];
-    bgview = self.navigationController.view;
+    bgview = self.bgView;
+    
     [self initChoseView];
+
+    KNBannerView *banner = [TopBannerTool setupNetWorkBannerViewAtViewController:self height:ScreenW];
+    banner.pageControlStyle = KNPageControlStyleMiddle;
+
+    self.tableView.tableHeaderView = banner;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 44, 0);
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[self getImageWithAlpha:1] forBarMetrics:UIBarMetricsDefault];
+    [self scrollViewDidScroll:self.tableView];
 }
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(scrollView.contentOffset.y < 0) {
+      //  [self.navigationController setNavigationBarHidden:YES animated:NO];
+    }else{
+       // [self.navigationController setNavigationBarHidden:NO animated:NO];
+        CGFloat alpha= scrollView.contentOffset.y/80 >  1.0f ? 1:scrollView.contentOffset.y/80;
+        [self.navigationController.navigationBar setBackgroundImage:[self getImageWithAlpha:alpha] forBarMetrics:UIBarMetricsDefault];
+    }
+}
 
+#pragma handle image -mark
+-(UIImage *)getImageWithAlpha:(CGFloat)alpha{
+    UIColor *color= RGBA(247, 106, 33, alpha);
+    CGSize colorSize=CGSizeMake(1, 1);
+    UIGraphicsBeginImageContext(colorSize);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, CGRectMake(0, 0, 1, 1));
+    UIImage *img=UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return img;
+}
 
 /**
  *  初始化弹出视图
@@ -54,7 +110,7 @@
 -(void)initChoseView
 {
     //选择尺码颜色的视图
-    choseView = [[ZXChoseView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
+    choseView = [[ZXChoseView alloc] initWithFrame:CGRectMake(0, ScreenH, ScreenW, ScreenH)];
     [self.view addSubview:choseView];
     
     //尺码
@@ -71,7 +127,7 @@
     choseView.countView.frame = CGRectMake(0, choseView.colorView.frame.size.height+choseView.colorView.frame.origin.y, choseView.frame.size.width, 50);
     choseView.mainscrollview.contentSize = CGSizeMake(self.view.frame.size.width, choseView.countView.frame.size.height+choseView.countView.frame.origin.y);
     
-    choseView.lb_price.text = @"¥100";
+    choseView.lb_price.text = @"$100";
     choseView.lb_stock.text = @"库存100000件";
     choseView.lb_detail.text = @"请选择 尺码 颜色分类";
     [choseView.bt_cancle addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
@@ -101,14 +157,13 @@
     center.y = center.y+self.view.frame.size.height;
     [UIView animateWithDuration: 0.35 animations: ^{
         choseView.frame =CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
-        
         bgview.transform = CGAffineTransformScale(CGAffineTransformIdentity,1.0,1.0);
         bgview.center = self.view.center;
     } completion: nil];
-    
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
-#pragma mark- ZXTypedelegete
+#pragma mark-typedelegete
 -(void)btnindex:(int)tag
 {
     //通过seletIndex是否>=0来判断尺码和颜色是否被选择，－1则是未选择状态
@@ -127,7 +182,7 @@
     }else if (choseView.sizeView.seletIndex ==-1&&choseView.colorView.seletIndex == -1)
     {
         //尺码和颜色都没选的时候
-        choseView.lb_price.text = @"¥100";
+        choseView.lb_price.text = @"$100";
         choseView.lb_stock.text = @"库存100000件";
         choseView.lb_detail.text = @"请选择 尺码 颜色分类";
         choseView.stock = 100000;
@@ -183,7 +238,7 @@
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         if (view.seletIndex == i) {
             btn.selected = YES;
-            [btn setBackgroundColor:[UIColor redColor]];
+            [btn setBackgroundColor:AppThemeColor];
         }
     }
 }
@@ -207,12 +262,10 @@
         //根据seletIndex 确定用户当前点了那个按钮
         if (view.seletIndex == i) {
             btn.selected = YES;
-            [btn setBackgroundColor:[UIColor redColor]];
+            [btn setBackgroundColor:AppThemeColor];
         }
     }
 }
-
-
 
 
 #pragma mark  点击首页轮播图进入展示页
@@ -233,10 +286,19 @@
     return 5;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *footer = [[UIView alloc] init];
+    footer.backgroundColor = RGB(239, 239, 239);
+    return footer;
+}
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 0;
 }
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -253,8 +315,10 @@
 {
     if (indexPath.section == 0) {
         return 140;
+    }else if (indexPath.section == 1){
+        return 44;
     }
-    return 44;
+    return 200;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -262,20 +326,35 @@
     if (indexPath.section == 0) {
         ZXSupermarketDetailOneCell *cell = [ZXSupermarketDetailOneCell cellWithTableView:tableView];
         return cell;
-    }
+    }else if (indexPath.section == 1){
     ZXSupermarketDetailTwoCell *cell = [ZXSupermarketDetailTwoCell cellWithTableView:tableView];
-    return cell;
+     return cell;
+    }else
+    {
+     ZXSupermarketDetailThreeCell *cell = [ZXSupermarketDetailThreeCell cellWithTableView:tableView];
+     return cell;
+    }
+    return nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1) {
-        [UIView animateWithDuration: 0.35 animations: ^{
-            bgview.transform = CGAffineTransformScale(CGAffineTransformIdentity,0.8,0.8);
-            bgview.center = CGPointMake(self.view.center.x, self.view.center.y-50);
-            choseView.center = self.view.center;
-            choseView.frame =CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-        } completion: nil];
-    }}
+        [self didClickSelectGoods];
+    }
+    
+}
+
+- (void)didClickSelectGoods
+{
+    [UIView animateWithDuration: 0.35 animations: ^{
+        bgview.transform = CGAffineTransformScale(CGAffineTransformIdentity,0.8,0.8);
+        bgview.center = CGPointMake(self.view.center.x, self.view.center.y-50);
+        choseView.center = self.view.center;
+        choseView.frame =CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    } completion: nil];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
 
 @end

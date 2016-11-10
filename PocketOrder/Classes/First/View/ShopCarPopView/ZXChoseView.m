@@ -9,7 +9,8 @@
 #import "ZXChoseView.h"
 
 @implementation ZXChoseView
-@synthesize alphaiView,whiteView,img,lb_detail,lb_price,lb_stock,mainscrollview,sizeView,colorView,countView,bt_sure,bt_cancle,lb_line;
+@synthesize alphaiView,whiteView,img,lb_detail,lb_price,lb_stock,mainscrollview,sizeView,colorView,countView,bt_sure,bt_cancle,lb_line,bt_shopCar;
+
 -(instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -18,7 +19,7 @@
         //半透明视图
         alphaiView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         alphaiView.backgroundColor = [UIColor blackColor];
-        alphaiView.alpha = 0.2;
+        alphaiView.alpha = 0.6;
         [self addSubview:alphaiView];
         //装载商品信息的视图
         whiteView = [[UIView alloc] initWithFrame:CGRectMake(0, 200, self.frame.size.width, self.frame.size.height-200)];
@@ -38,13 +39,13 @@
         [whiteView addSubview:img];
         
         bt_cancle= [UIButton buttonWithType:UIButtonTypeCustom];
-        bt_cancle.frame = CGRectMake(whiteView.frame.size.width-40, 10,30, 30);
+        bt_cancle.frame = CGRectMake(whiteView.frame.size.width - 40, 10,30, 30);
         [bt_cancle setBackgroundImage:[UIImage imageNamed:@"close@3x"] forState:0];
         [whiteView addSubview:bt_cancle];
         
         //商品价格
         lb_price = [[UILabel alloc] initWithFrame:CGRectMake(img.frame.origin.x+img.frame.size.width+20, 10, whiteView.frame.size.width-(img.frame.origin.x+img.frame.size.width+40+40), 20)];
-        lb_price.textColor = [UIColor redColor];
+        lb_price.textColor = AppThemeColor;
         lb_price.font = [UIFont systemFontOfSize:14];
         [whiteView addSubview:lb_price];
         //商品库存
@@ -64,13 +65,29 @@
         [whiteView addSubview:lb_line];
         
         //确定按钮
-        bt_sure= [UIButton buttonWithType:UIButtonTypeCustom];
-        bt_sure.frame = CGRectMake(0, whiteView.frame.size.height-50,whiteView.frame.size.width, 50);
-        [bt_sure setBackgroundColor:[UIColor redColor]];
+        CGFloat btW = whiteView.frame.size.width * 0.5;
+        CGFloat btY = whiteView.frame.size.height - 44;
+        CGFloat btH = 44;
+        
+        CGFloat fontSize = 18;
+        
+        bt_sure = [UIButton buttonWithType:UIButtonTypeCustom];
+        bt_sure.frame = CGRectMake(btW, btY,btW, btH);
+        [bt_sure setBackgroundColor:AppThemeColor];
         [bt_sure setTitleColor:[UIColor whiteColor] forState:0];
-        bt_sure.titleLabel.font = [UIFont systemFontOfSize:20];
-        [bt_sure setTitle:@"确定" forState:0];
+        bt_sure.titleLabel.font = [UIFont systemFontOfSize:fontSize];
+        [bt_sure setTitle:@"立即购买" forState:0];
         [whiteView addSubview:bt_sure];
+        
+        bt_shopCar = [UIButton buttonWithType:UIButtonTypeCustom];
+        bt_shopCar.frame = CGRectMake(0, btY,btW, btH);
+        [bt_shopCar setBackgroundColor:RGB(236, 188, 47)];
+        [bt_shopCar setTitleColor:[UIColor whiteColor] forState:0];
+         bt_shopCar.titleLabel.font = [UIFont systemFontOfSize:fontSize];
+        [bt_shopCar setTitle:@"加入购物车" forState:0];
+        [whiteView addSubview:bt_shopCar];
+        
+        
         //有的商品尺码和颜色分类特别多 所以用UIScrollView 分类过多显示不全的时候可滑动查看
         mainscrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, lb_line.frame.origin.y+lb_line.frame.size.height, whiteView.frame.size.width, bt_sure.frame.origin.y-(lb_line.frame.origin.y+lb_line.frame.size.height))];
         mainscrollview.showsHorizontalScrollIndicator = NO;
@@ -85,6 +102,7 @@
     }
     return self;
 }
+
 -(void)add
 {
     int count =[countView.tf_count.text intValue];

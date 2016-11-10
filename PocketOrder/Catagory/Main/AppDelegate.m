@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 #import "ZXTabBarController.h"
 #import "GetAdTool.h"
-
+#import <IQKeyboardManager.h>
+#import <IQKeyboardReturnKeyHandler.h>
 #define GoogleMap_API_KEY @"AIzaSyAmfHn43uoavyoWCfiN_l_IfIbH5nG5qSE"
 @interface AppDelegate ()
 
@@ -59,9 +60,21 @@
     [textView removeFromSuperview];
 }
 
+- (void)useIQKeyboardManager{
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.enableAutoToolbar = YES;
+    manager.toolbarManageBehaviour =IQAutoToolbarByTag;
+}
+
+
+
+
+
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {

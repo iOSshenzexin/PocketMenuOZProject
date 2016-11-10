@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>IQKeyboardManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>LECropPictureViewController-LECropPictureViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,17 +57,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>056DBB1936B104500C9E0B3FABD3DE30</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>0A94A923B828F030066EFA4544E76884</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>13856030808F4034C0C4B245F6979662</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>738E06CDFC95946C60659031F21F8520</key>
+		<key>928353533005A4198EBDA5B700D37B64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>928353533005A4198EBDA5B700D37B64</key>
+		<key>9719B1FED32E1D7D785C36F7BF5DF42E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A39A660B5C7716402370B0225F14D17</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F97422B9BC7323387847055E48B95E8B</key>
+		<key>C2F974B2B324A8FB0D9D7F4FF685CD6F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D0CB5882621F3523EC9B6F84664AA2F0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D0D0C9D20C43FA94D4C88FBFE2601B8E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

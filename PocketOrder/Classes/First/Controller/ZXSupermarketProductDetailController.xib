@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXSupermarketProductDetailController">
             <connections>
-                <outlet property="tableView" destination="QVS-NM-6le" id="DUd-fn-gmE"/>
+                <outlet property="bgView" destination="kVf-2M-oWQ" id="d5a-a3-psO"/>
+                <outlet property="tableView" destination="egM-Ul-SII" id="cYF-DP-byP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,47 +18,65 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QVS-NM-6le">
-                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="02j-qr-ix5"/>
-                        <outlet property="delegate" destination="-1" id="r8R-Qv-EOh"/>
-                    </connections>
-                </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HNP-tN-cAm">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVf-2M-oWQ">
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbO-SK-bxv">
-                            <color key="backgroundColor" red="0.92549019607843142" green="0.73725490196078436" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <state key="normal" title="加入购物车"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbp-qO-EWR">
-                            <color key="backgroundColor" red="0.96862745100000003" green="0.41568627450000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="立即购买"/>
-                        </button>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="egM-Ul-SII">
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="mGR-O3-5Mh"/>
+                                <outlet property="delegate" destination="-1" id="iAL-VJ-sYE"/>
+                            </connections>
+                        </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKw-sX-W4c" userLabel="background">
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOg-JQ-dgd">
+                                    <color key="backgroundColor" red="0.96862745100000003" green="0.41568627450000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" title="立即购买"/>
+                                    <connections>
+                                        <action selector="didClickRightNowToBuy:" destination="-1" eventType="touchUpInside" id="9NQ-Cq-Eve"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWC-vd-pUA">
+                                    <color key="backgroundColor" red="0.92549019610000005" green="0.73725490199999999" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="加入购物车"/>
+                                    <connections>
+                                        <action selector="didClickJoinInShoppingCar:" destination="-1" eventType="touchUpInside" id="HLX-V3-Xvt"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="EOg-JQ-dgd" secondAttribute="trailing" id="6JE-9T-c8u"/>
+                                <constraint firstItem="EOg-JQ-dgd" firstAttribute="width" secondItem="eWC-vd-pUA" secondAttribute="width" id="ACy-Qk-eln"/>
+                                <constraint firstAttribute="bottom" secondItem="eWC-vd-pUA" secondAttribute="bottom" id="Bmj-ca-IEZ"/>
+                                <constraint firstItem="EOg-JQ-dgd" firstAttribute="height" secondItem="eWC-vd-pUA" secondAttribute="height" id="NQQ-qJ-htC"/>
+                                <constraint firstItem="eWC-vd-pUA" firstAttribute="leading" secondItem="SKw-sX-W4c" secondAttribute="leading" id="ZKp-YL-gII"/>
+                                <constraint firstItem="EOg-JQ-dgd" firstAttribute="leading" secondItem="eWC-vd-pUA" secondAttribute="trailing" id="ctF-Pf-M06"/>
+                                <constraint firstAttribute="height" constant="44" id="nf9-dR-9XN"/>
+                                <constraint firstItem="EOg-JQ-dgd" firstAttribute="top" secondItem="SKw-sX-W4c" secondAttribute="top" id="o5g-Qc-Cic"/>
+                                <constraint firstItem="eWC-vd-pUA" firstAttribute="top" secondItem="SKw-sX-W4c" secondAttribute="top" id="qhQ-El-gge"/>
+                            </constraints>
+                        </view>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="dbO-SK-bxv" firstAttribute="width" secondItem="Gbp-qO-EWR" secondAttribute="width" id="3nW-j1-Uvz"/>
-                        <constraint firstItem="Gbp-qO-EWR" firstAttribute="leading" secondItem="dbO-SK-bxv" secondAttribute="trailing" id="4FY-H3-19s"/>
-                        <constraint firstItem="dbO-SK-bxv" firstAttribute="top" secondItem="HNP-tN-cAm" secondAttribute="top" id="5Uq-ym-Ket"/>
-                        <constraint firstItem="Gbp-qO-EWR" firstAttribute="top" secondItem="HNP-tN-cAm" secondAttribute="top" id="8VS-pG-2xk"/>
-                        <constraint firstItem="dbO-SK-bxv" firstAttribute="leading" secondItem="HNP-tN-cAm" secondAttribute="leading" id="Fpk-Ol-GVN"/>
-                        <constraint firstAttribute="trailing" secondItem="Gbp-qO-EWR" secondAttribute="trailing" id="J6x-ii-Tel"/>
-                        <constraint firstAttribute="bottom" secondItem="dbO-SK-bxv" secondAttribute="bottom" id="dgl-IS-Bl9"/>
-                        <constraint firstAttribute="height" constant="44" id="uhp-16-oCQ"/>
-                        <constraint firstItem="dbO-SK-bxv" firstAttribute="height" secondItem="Gbp-qO-EWR" secondAttribute="height" id="x15-pk-o7z"/>
+                        <constraint firstItem="egM-Ul-SII" firstAttribute="leading" secondItem="kVf-2M-oWQ" secondAttribute="leading" id="96B-F6-jlb"/>
+                        <constraint firstItem="egM-Ul-SII" firstAttribute="top" secondItem="kVf-2M-oWQ" secondAttribute="top" id="Ho3-hE-GHW"/>
+                        <constraint firstItem="SKw-sX-W4c" firstAttribute="leading" secondItem="kVf-2M-oWQ" secondAttribute="leading" id="J0t-xu-LgX"/>
+                        <constraint firstAttribute="trailing" secondItem="SKw-sX-W4c" secondAttribute="trailing" id="QlX-Qh-RPQ"/>
+                        <constraint firstAttribute="bottom" secondItem="SKw-sX-W4c" secondAttribute="bottom" id="cZp-mR-dkm"/>
+                        <constraint firstAttribute="trailing" secondItem="egM-Ul-SII" secondAttribute="trailing" id="d9g-Nu-tA6"/>
+                        <constraint firstAttribute="bottom" secondItem="egM-Ul-SII" secondAttribute="bottom" id="t77-Bm-ou5"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="QVS-NM-6le" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0zo-rl-qSM"/>
-                <constraint firstAttribute="bottom" secondItem="QVS-NM-6le" secondAttribute="bottom" id="2lu-v7-5oi"/>
-                <constraint firstAttribute="bottom" secondItem="HNP-tN-cAm" secondAttribute="bottom" id="4Ih-Po-6ol"/>
-                <constraint firstAttribute="trailing" secondItem="QVS-NM-6le" secondAttribute="trailing" id="TUV-Kr-4Ih"/>
-                <constraint firstItem="HNP-tN-cAm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ohm-G1-YaH"/>
-                <constraint firstAttribute="trailing" secondItem="HNP-tN-cAm" secondAttribute="trailing" id="vCD-L5-K2j"/>
-                <constraint firstItem="QVS-NM-6le" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ze6-Dh-b8y"/>
+                <constraint firstAttribute="trailing" secondItem="kVf-2M-oWQ" secondAttribute="trailing" id="6Wj-3a-jKp"/>
+                <constraint firstAttribute="bottom" secondItem="kVf-2M-oWQ" secondAttribute="bottom" id="CzC-Tz-BoN"/>
+                <constraint firstItem="kVf-2M-oWQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fLd-fY-ibG"/>
+                <constraint firstItem="kVf-2M-oWQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uHn-iU-EMF"/>
             </constraints>
+            <point key="canvasLocation" x="35.5" y="59.5"/>
         </view>
     </objects>
 </document>

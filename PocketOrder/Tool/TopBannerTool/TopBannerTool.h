@@ -14,5 +14,10 @@
 
 + (KNBannerView *)setupNetWorkBannerViewAtViewController:(UIViewController<KNBannerViewDelegate> *)vc;
 
+
++ (KNBannerView *)setupNetWorkBannerViewAtViewController:(UIViewController<KNBannerViewDelegate> *)vc height:(CGFloat)height;
+
+
+
 + (KNBannerView *)setupLocatioBannerViewAtViewController:(UIViewController<KNBannerViewDelegate> *)vc;
 @end

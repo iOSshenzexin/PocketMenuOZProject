@@ -27,6 +27,14 @@
 
 @implementation ZXSupermarketProductController
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBar.translucent = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupMenuView];

@@ -10,6 +10,7 @@
 
 @implementation ZXHeaderView
 
+
 + (instancetype)awakFromNib{
     return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
 }

@@ -28,7 +28,10 @@
 @property(nonatomic, retain) ZXBuyCountView *countView;
 
 @property(nonatomic, retain)UIButton *bt_sure;
+
 @property(nonatomic, retain)UIButton *bt_cancle;
+
+@property(nonatomic, retain)UIButton *bt_shopCar;
 
 @property(nonatomic) int stock;
 

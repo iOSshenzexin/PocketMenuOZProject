@@ -19,7 +19,9 @@
 #import "ZXMessageController.h"
 #import "ZXOrderCenterController.h"
 #import "AppDelegate.h"
-@interface ZXFourthController ()
+@interface ZXFourthController ()<ZXPassHeadImageDelegate>
+
+@property (nonatomic,strong) UIImage *headImage;
 
 @end
 
@@ -27,9 +29,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   // self.headImage = [UIImage imageNamed:@"big_people"];
+
     self.tableView.sectionFooterHeight = 0;
     self.tableView.contentOffset = CGPointMake(0, -20);
     self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
+    
+    ZXChangePersonInfoController *vc = [ZXChangePersonInfoController sharedController];
+    vc.delegate = self;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -57,6 +65,9 @@
     if (section == 0) {
         if (app.isLogin){
         ZXHeaderView *headerView = [ZXHeaderView awakFromNib];
+        if (self.headImage) {
+            headerView.headerImage.image = self.headImage;
+        }
         [headerView.jumpBtn addTarget:self action:@selector(jumpToPersomInfo:) forControlEvents:UIControlEventTouchUpInside];
         return headerView;
         }else{
@@ -84,10 +95,16 @@
 #pragma mark - 已登录跳到个人信息界面
 - (void)jumpToPersomInfo:(UIButton *)btn
 {
-    ZXChangePersonInfoController *vc = [[UIStoryboard storyboardWithName:@"ZXChangePersonInfoController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXChangePersonInfoController"];
+    ZXChangePersonInfoController *vc = [ZXChangePersonInfoController sharedController];
     vc.title = @"账户信息";
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+-(void)passHeaderImage:(ZXChangePersonInfoController *)vc
+{
+    self.headImage = vc.headImage.currentImage;
+}
+
 
 #pragma mark - Table view data source
 

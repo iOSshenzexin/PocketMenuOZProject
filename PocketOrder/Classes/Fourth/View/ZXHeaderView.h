@@ -12,6 +12,7 @@
 
 + (instancetype)awakFromNib;
 
+@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 
 @property (weak, nonatomic) IBOutlet UIButton *jumpBtn;
 

@@ -8,6 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+@class ZXChangePersonInfoController;
+@protocol ZXPassHeadImageDelegate <NSObject>
+
+@optional
+
+- (void)passHeaderImage:(ZXChangePersonInfoController *)vc;
+
+@end
+
+
 @interface ZXChangePersonInfoController : UITableViewController
+
+@property (weak, nonatomic) IBOutlet UIButton *headImage;
+
+@property (nonatomic,weak) id <ZXPassHeadImageDelegate> delegate;
+
+
++ (ZXChangePersonInfoController *)sharedController;
 
 @end
