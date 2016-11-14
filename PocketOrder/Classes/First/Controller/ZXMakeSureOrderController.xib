@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +41,7 @@
                                 <action selector="submitFoodOrder:" destination="-1" eventType="touchUpInside" id="irN-Qf-cPX"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$6550" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EO8-UX-wvd">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$65" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EO8-UX-wvd">
                             <constraints>
                                 <constraint firstAttribute="width" constant="55" id="VUx-vD-f1T"/>
                             </constraints>
@@ -48,10 +49,8 @@
                             <color key="textColor" red="0.92549019607843142" green="0.33725490196078434" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(已优惠$15)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elV-hY-sut">
-                            <frame key="frameInset" minX="78" width="100" height="49"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(已优惠$15)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elV-hY-sut">
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                             <color key="textColor" red="0.52941176470588236" green="0.52941176470588236" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -62,6 +61,8 @@
                         <constraint firstItem="EO8-UX-wvd" firstAttribute="top" secondItem="ujk-59-xG9" secondAttribute="top" id="D9G-h0-zY0"/>
                         <constraint firstItem="gNA-30-h4Z" firstAttribute="top" secondItem="ujk-59-xG9" secondAttribute="top" id="DAd-N1-Lwd"/>
                         <constraint firstItem="HBg-gY-XF7" firstAttribute="top" secondItem="ujk-59-xG9" secondAttribute="top" id="F8U-vN-LcB"/>
+                        <constraint firstItem="elV-hY-sut" firstAttribute="leading" secondItem="EO8-UX-wvd" secondAttribute="trailing" constant="8" id="F92-rd-IQi"/>
+                        <constraint firstItem="elV-hY-sut" firstAttribute="centerY" secondItem="EO8-UX-wvd" secondAttribute="centerY" id="Fnc-kA-WGv"/>
                         <constraint firstItem="EO8-UX-wvd" firstAttribute="leading" secondItem="ujk-59-xG9" secondAttribute="leading" constant="15" id="TEg-pU-s9u"/>
                         <constraint firstAttribute="trailing" secondItem="gNA-30-h4Z" secondAttribute="trailing" id="VXE-HC-Boi"/>
                         <constraint firstAttribute="bottom" secondItem="gNA-30-h4Z" secondAttribute="bottom" id="afK-BM-OC0"/>

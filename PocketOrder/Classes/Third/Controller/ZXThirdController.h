@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ZXThirdController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

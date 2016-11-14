@@ -8,8 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@class ZXEvaluatedCell;
+@protocol ZXEvaluatedCellDelegate <NSObject>
+
+@optional
+
+- (void)didClickButtonToGetMoceOrder:(ZXEvaluatedCell *)cell;
+
+@end
+
+
 @interface ZXEvaluatedCell : UITableViewCell
 
 +(instancetype)cellWithTableView:(UITableView *)tableview;
+
+
+@property (nonatomic,weak) id <ZXEvaluatedCellDelegate> delegate;
 
 @end

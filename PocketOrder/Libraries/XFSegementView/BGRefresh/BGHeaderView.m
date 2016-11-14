@@ -14,9 +14,6 @@
 
 @implementation BGHeaderView
 
--(void)awakeFromNib{
-    
-}
 
 +(instancetype)view{
     return [[[NSBundle mainBundle] loadNibNamed:@"BGHeaderView" owner:nil options:nil] firstObject];

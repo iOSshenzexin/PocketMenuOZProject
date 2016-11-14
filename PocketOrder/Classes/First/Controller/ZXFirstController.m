@@ -77,7 +77,7 @@
 #pragma mark - 设置表格头部
 - (void)setupTableViewHeader{
     /* 设置主页的头部轮播图 */
-    self.homeTableView.tableHeaderView = [TopBannerTool setupNetWorkBannerViewAtViewController:self];
+    self.homeTableView.tableHeaderView = [TopBannerTool setupNetWorkBannerViewAtViewController:self height:200];
     //去掉tableView的分割线
     self.homeTableView.separatorStyle = UITableViewCellSelectionStyleNone;
 }

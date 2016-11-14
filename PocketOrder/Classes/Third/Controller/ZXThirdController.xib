@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,7 +28,7 @@
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="OfE-pH-rb4">
                             <constraints>
-                                <constraint firstAttribute="height" constant="1" id="Vjx-nF-Ryh"/>
+                                <constraint firstAttribute="height" constant="1" id="XFp-jU-Gc2"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ro9-TP-YXI">
@@ -73,13 +74,13 @@
                         <constraint firstItem="C0A-vN-4kd" firstAttribute="top" secondItem="MrL-Uz-svV" secondAttribute="top" id="544-4L-hPV"/>
                         <constraint firstAttribute="trailing" secondItem="Ro9-TP-YXI" secondAttribute="trailing" id="6nc-fg-uxq"/>
                         <constraint firstAttribute="bottom" secondItem="C0A-vN-4kd" secondAttribute="bottom" id="756-LU-GBm"/>
-                        <constraint firstItem="OfE-pH-rb4" firstAttribute="top" secondItem="MrL-Uz-svV" secondAttribute="top" id="JFv-fI-PlO"/>
+                        <constraint firstAttribute="trailing" secondItem="OfE-pH-rb4" secondAttribute="trailing" id="Pof-Iz-5mT"/>
                         <constraint firstAttribute="bottom" secondItem="o2t-pR-EkY" secondAttribute="bottom" constant="4" id="Sr6-sa-x2N"/>
                         <constraint firstItem="C0A-vN-4kd" firstAttribute="leading" secondItem="MrL-Uz-svV" secondAttribute="leading" id="W0q-AA-7rP"/>
                         <constraint firstItem="Ro9-TP-YXI" firstAttribute="leading" secondItem="o2t-pR-EkY" secondAttribute="trailing" constant="8" id="ZRn-Rw-FWB"/>
                         <constraint firstAttribute="bottom" secondItem="Ro9-TP-YXI" secondAttribute="bottom" id="aiy-Pm-EJQ"/>
                         <constraint firstItem="Ro9-TP-YXI" firstAttribute="leading" secondItem="fkk-zk-GPb" secondAttribute="trailing" constant="8" id="pe3-Am-pFq"/>
-                        <constraint firstAttribute="trailing" secondItem="OfE-pH-rb4" secondAttribute="trailing" id="t6H-Yn-1Rf"/>
+                        <constraint firstItem="OfE-pH-rb4" firstAttribute="top" secondItem="MrL-Uz-svV" secondAttribute="top" id="r9Z-U8-ppb"/>
                         <constraint firstAttribute="height" constant="49" id="v0z-BA-ElU"/>
                     </constraints>
                 </view>
@@ -89,6 +90,7 @@
                 <constraint firstAttribute="trailing" secondItem="MrL-Uz-svV" secondAttribute="trailing" id="HcJ-EF-TIu"/>
                 <constraint firstItem="CuM-VN-eZ4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Uh2-uD-GHa"/>
                 <constraint firstItem="CuM-VN-eZ4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xls-i8-s4K"/>
+                <constraint firstItem="OfE-pH-rb4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bMi-na-qyN"/>
                 <constraint firstItem="MrL-Uz-svV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dW3-aO-V07"/>
                 <constraint firstAttribute="trailing" secondItem="CuM-VN-eZ4" secondAttribute="trailing" id="fv7-Ru-LA1"/>
                 <constraint firstAttribute="bottom" secondItem="MrL-Uz-svV" secondAttribute="bottom" id="lOL-ly-90S"/>

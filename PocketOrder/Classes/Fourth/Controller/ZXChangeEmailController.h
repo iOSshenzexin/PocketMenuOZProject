@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZXChangeEmailController : UIViewController
+
+@interface ZXChangeEmailController :UIViewController
 
 @end

@@ -7,12 +7,14 @@
 //
 
 #import "ZXThirdController.h"
+#import "ZXSupermarketController.h"
 
 #import "ZXShoppingCarHeaderView.h"
 #import "ZXShoppingCarCell.h"
 
 #import "ZXGoodsModel.h"
 #import "ZXHeaderMerchantModel.h"
+#import "ZXShoppingCarBottomModel.h"
 @interface ZXThirdController ()<UITableViewDelegate,UITableViewDataSource,ZXShoppingCarHeaderViewDelegate>
 
 @property (nonatomic,strong) NSMutableArray *carLists;
@@ -21,7 +23,7 @@
 /** 组数据模型 */
 @property(nonatomic,strong) NSMutableArray * groupArrs;
 
-
+@property(nonatomic,strong) ZXShoppingCarBottomModel * bottomModel;
 
 @end
 
@@ -56,20 +58,19 @@
 }
 
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithNomalTitle:@"编辑" SelectedTitle:@"删除" target:self action:@selector(didClickEdit:)];
     [self setupTable];
-    [self.tableView.mj_header beginRefreshing];
+    self.tableView.allowsMultipleSelectionDuringEditing = YES;
+
+   // [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)setupTable
 {
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 49, 0);
-    [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor redColor]];
 
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 10)];
     // 给表格视图添加下拉刷新
@@ -114,14 +115,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 40;
+    return 50;
 }
-
-
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 20)];
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 10)];
     footerView.backgroundColor = [UIColor clearColor];
    // RGB(236, 236, 236);
     return footerView;
@@ -129,12 +128,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 25;
+    return 10;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    ZXShoppingCarHeaderView *headerView = [ZXShoppingCarHeaderView headerViewWithTableView:tableView];
+    ZXShoppingCarHeaderView *headerView = [ZXShoppingCarHeaderView sharedHeaderView:tableView];
     ZXHeaderMerchantModel * headModel = self.groupArrs[section];
     headerView.model = headModel;
     headerView.headerDelegate = self;
@@ -164,26 +163,105 @@
             }
         }
         //[self isallSelectAllPrice];
-    }else {
-        if (headerView.editBtn.selected) {
+    }
+    NSIndexSet *indexSet= [[NSIndexSet alloc]initWithIndex:indexpath];
+    [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+//点击编辑按钮进行数量改变和删除
+- (void)didClickShoppingCarHeaderViewEditButton:(ZXShoppingCarHeaderView *)header
+{
+    NSInteger indexpath = header.tag - 1000;
+    NSArray *allSelectArr = self.modelArrs[indexpath];
+    ZXHeaderMerchantModel *headModel = self.groupArrs[indexpath];
+    if (header.editBtn.selected) {
+        for (NSInteger i = 0; i < allSelectArr.count; i ++) {
+            ZXShoppingCarCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:indexpath]];
+            cell.leading.constant = -60;
+            ZXGoodsModel *model = allSelectArr[i];
+            model.isSelect = YES;
+            headModel.isSelect = YES;
+        }
+    }else{
+        for (NSInteger i = 0; i < allSelectArr.count; i ++) {
+            ZXShoppingCarCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:indexpath]];
+            [UIView animateWithDuration:0.5 animations:^{
+                cell.leading.constant = 0;
+            }];
+            ZXGoodsModel *model = allSelectArr[i];
+            model.isSelect = NO;
+            headModel.isSelect = NO;
+        }
+    }
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.tableView layoutIfNeeded];
+    }];
+//    NSIndexSet *indexSet= [[NSIndexSet alloc] initWithIndex:indexpath];
+//    [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationLeft];
+}
+
+/**
+  点击按钮跳转到超市
+ */
+-(void)didClickShoppingCarHeaderViewSelectStore:(ZXShoppingCarHeaderView *)headerView
+{
+    ZXSupermarketController *vc = [[ZXSupermarketController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+/**
+ 全选按钮
+ */
+- (IBAction)didClickAllChoosed:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        for (NSInteger i = 0; i < self.groupArrs.count; i ++) {
+            ZXHeaderMerchantModel *headModel = self.groupArrs[i];
+            NSArray *allSelectArr = self.modelArrs[i];
             for (ZXGoodsModel * model in allSelectArr)
             {
                 model.isSelect = YES;
+                headModel.isSelect = YES;
             }
-        }else{
+             [self isallSelectAllPrice];
+        }
+    }else{
+        for (NSInteger i = 0; i < self.groupArrs.count; i ++) {
+            ZXHeaderMerchantModel *headModel = self.groupArrs[i];
+            NSArray *allSelectArr = self.modelArrs[i];
             for (ZXGoodsModel * model in allSelectArr)
             {
                 model.isSelect = NO;
+                headModel.isSelect = NO;
+            }
+             [self isallSelectAllPrice];
+        }
+    }
+     [self.tableView reloadData];
+    
+}
+
+- (void)isallSelectAllPrice
+{
+    for (NSArray * arr in self.modelArrs)
+    {
+        for (ZXGoodsModel * model in arr)
+        {
+            if (!model.isSelect)
+            {
+                self.bottomModel.isSelect = NO;
+                return;
+            }else
+            {
+                self.bottomModel.isSelect = YES;
             }
         }
     }
-   
-    [self.tableView reloadData];
 }
 
-- (IBAction)didClickAllChoosed:(UIButton *)sender {
-    sender.selected = !sender.selected;
-}
+
+
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -198,9 +276,35 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80;
+    return 100;
 }
 
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return YES;
+//}
+
+//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return UITableViewCellEditingStyleDelete;
+//}
+//
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//       // [dataArray removeObjectAtIndex:indexPath.row];
+//        // Delete the row from the data source.
+//        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//        
+//    }
+//    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+//    }
+//}
+
+/**
+ 导航栏按钮
+ */
 - (void)didClickEdit:(UIButton *)btn
 {
     btn.selected = !btn.selected;
@@ -211,7 +315,7 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    self.view = nil;
+   // self.view = nil;
 }
 
 @end

@@ -38,6 +38,11 @@
     [self setupTableFooterView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 // 获取缓存尺寸字符串
 - (NSString *)sizeStr
 {

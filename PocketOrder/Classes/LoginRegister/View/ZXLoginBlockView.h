@@ -28,6 +28,10 @@
 
 @property (nonatomic,weak) id<ZXLoginBlockViewDelegate> delegate;
 
+
+@property (strong, nonatomic) IBOutlet UITextField *fastLoginCodeTxt;
+
+
 + (instancetype)commonLoginView;
 
 + (instancetype)fastLoginView;

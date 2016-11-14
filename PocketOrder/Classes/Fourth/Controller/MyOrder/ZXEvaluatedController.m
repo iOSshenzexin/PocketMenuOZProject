@@ -9,7 +9,9 @@
 #import "ZXEvaluatedController.h"
 
 #import "ZXEvaluatedCell.h"
-@interface ZXEvaluatedController ()
+
+#import "ZXProductListController.h"
+@interface ZXEvaluatedController ()<ZXEvaluatedCellDelegate>
 
 @end
 
@@ -29,8 +31,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZXEvaluatedCell *cell = [ZXEvaluatedCell cellWithTableView:tableView];
+    cell.delegate = self;
     return cell;
 }
+
+-(void)didClickButtonToGetMoceOrder:(ZXEvaluatedCell *)cell
+{
+    ZXProductListController *vc = [[ZXProductListController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

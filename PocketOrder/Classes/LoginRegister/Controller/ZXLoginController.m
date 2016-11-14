@@ -15,6 +15,8 @@
 #import "XFSegementView.h"
 #import "ZXLoginBlockView.h"
 #import "UIView+Extension.h"
+
+#import "ZXGetCheckCode.h"
 @interface ZXLoginController ()<TouchLabelDelegate,ZXLoginBlockViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *middleView;
@@ -37,12 +39,18 @@
     
     ZXLoginBlockView *fastView = [ZXLoginBlockView fastLoginView];
     fastView.delegate = self;
+    UIButton *btn = [fastView.fastLoginCodeTxt addCheckCodeView];
+    [btn addTarget:self action:@selector(getSMSCode:) forControlEvents:UIControlEventTouchUpInside];
     [self.middleView addSubview:fastView];
     
     ZXLoginBlockView *commonView = [ZXLoginBlockView commonLoginView];
     commonView.delegate = self;
     
     [self.middleView addSubview:commonView];
+}
+
+- (void)getSMSCode:(UIButton *)btn{
+    [ZXGetCheckCode getCheckCode:btn];
 }
 
 

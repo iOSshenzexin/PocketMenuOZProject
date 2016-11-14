@@ -15,7 +15,6 @@ static NSString *headerId = @"headerID";
 
 +(instancetype)headerViewWithTableView:(UITableView *)tableView{
     ZXShoppingCarHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerId];
-// ZXShoppingCarHeaderView *
     if (headerView == nil) {
         headerView = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
     }
@@ -37,25 +36,38 @@ static NSString *headerId = @"headerID";
 
 
 
+/**
+ 点击选择section中的商品
+ */
 - (IBAction)select:(UIButton *)sender {
     sender.selected = !sender.selected;
     if ([self.headerDelegate respondsToSelector:@selector(didClickShoppingCarHeaderViewSelectAllOfCellInSection:mark:)]) {
         [self.headerDelegate didClickShoppingCarHeaderViewSelectAllOfCellInSection:self mark:@"select"];
     }
-    
 }
 
 
+/**
+ 点击跳转到具体超市
+ */
 - (IBAction)enterShop:(id)sender {
-    
+    if ([self.headerDelegate respondsToSelector:@selector(didClickShoppingCarHeaderViewSelectStore:)]) {
+        [self.headerDelegate didClickShoppingCarHeaderViewSelectStore:self];
+    }
 }
 
-- (IBAction)edit:(UIButton *)sender {
+/**
+ 点击编辑改变产品数量
+ */
+- (IBAction)didClickEditButton:(UIButton *)sender {
     sender.selected = !sender.selected;
-//    if ([self.headerDelegate respondsToSelector:@selector(didClickShoppingCarHeaderViewSelectAllOfCellInSection:mark:)]) {
-//        [self.headerDelegate didClickShoppingCarHeaderViewSelectAllOfCellInSection:self mark:@"edit"];
-//    }
+    if ([self.headerDelegate respondsToSelector:@selector(didClickShoppingCarHeaderViewEditButton:)]) {
+    [self.headerDelegate didClickShoppingCarHeaderViewEditButton:self];
 }
+}
+
+
+
 
 
 @end

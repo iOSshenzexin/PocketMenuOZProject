@@ -12,4 +12,6 @@
 
 - (void)textFieldWithCheckCode:(CGFloat)height target:(id)target action:(SEL)action;
 
+- (UIButton *)addCheckCodeView;
+
 @end

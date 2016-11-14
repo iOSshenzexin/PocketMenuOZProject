@@ -72,7 +72,7 @@
     //结账按钮
     _accountBtn = [UIButton buttonWithType:UIButtonTypeCustom];
    // _accountBtn.layer.cornerRadius = 5;
-    _accountBtn.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+    _accountBtn.titleLabel.font = [UIFont systemFontOfSize:18];
     _accountBtn.frame = CGRectMake(self.bounds.size.width - 120, 0, 120,ShopCarViewHeight);
     _accountBtn.backgroundColor = RGB(136, 136, 136);
    // [_accountBtn setTitle:[NSString stringWithFormat:@"还差￥%ld",_minFreeMoney] forState:UIControlStateNormal];

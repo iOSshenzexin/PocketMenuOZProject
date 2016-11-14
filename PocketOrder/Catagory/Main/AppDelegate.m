@@ -27,6 +27,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     ZXTabBarController *tabbarVc = [[ZXTabBarController alloc] init];
     UIImage *img = [UIImage imageNamed:@"tabbar_background"];
+    //tabbar_background navigation_bar_background
     img = [img stretchableImageWithLeftCapWidth:img.size.width * 0.5 topCapHeight:img.size.height * 0.5];
     tabbarVc.tabBar.backgroundImage = img;
     self.window.rootViewController = tabbarVc;

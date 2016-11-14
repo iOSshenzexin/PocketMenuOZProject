@@ -10,6 +10,11 @@
 
 @implementation ZXEvaluatedCell
 
+- (IBAction)didClickToGetMoreOrder:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(didClickButtonToGetMoceOrder:)]) {
+        [self.delegate didClickButtonToGetMoceOrder:self];
+    }
+}
 
 -(void)setFrame:(CGRect)frame
 {

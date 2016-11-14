@@ -46,7 +46,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:0 btnWidth:20 btnHeight:21 image:@"Search" highlightImage:@"Search-cilck" title:nil target:self action:@selector(didClickSearch:) leftEdgeInset:0 rightEdgeInset:-8];
-    
     // 初始化子控制器
     [self setupAllChildVcs];
     [self setupScrollView];
@@ -75,7 +74,7 @@
     
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.backgroundColor = RGB(239, 239, 239);
-    scrollView.frame = CGRectMake(0, SZXTitlesViewH, ScreenW, ScreenH - (SZXNavMaxY + SZXTitlesViewH + TabBarH));
+    scrollView.frame = CGRectMake(0, SZXNavMaxY + SZXTitlesViewH, ScreenW, ScreenH - (SZXTitlesViewH + TabBarH + SZXNavMaxY));
     scrollView.delegate = self;
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
@@ -94,7 +93,7 @@
 {
     UIView *titlesView = [[UIView alloc] init];
     titlesView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:1];
-    titlesView.frame = CGRectMake(0, 0, ScreenW, SZXTitlesViewH);
+    titlesView.frame = CGRectMake(0, SZXNavMaxY, ScreenW, SZXTitlesViewH);
     [self.view addSubview:titlesView];
     self.titlesView = titlesView;
     

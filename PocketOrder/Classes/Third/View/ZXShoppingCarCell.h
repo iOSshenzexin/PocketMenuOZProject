@@ -11,6 +11,11 @@
 #import "ZXGoodsModel.h"
 @interface ZXShoppingCarCell : UITableViewCell
 
+
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+
+
+
 @property (weak, nonatomic) IBOutlet UIButton *selectBtn;
 
 @property (weak, nonatomic) IBOutlet UIImageView *goodsImage;
@@ -33,6 +38,7 @@
 +(instancetype)cellWithTableView:(UITableView *)tableview;
 
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leading;
 
 
 @end

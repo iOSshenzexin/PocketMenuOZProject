@@ -15,13 +15,44 @@
 #import "ZXConfirmOrderTwoCell.h"
 #import "ZXConfirmOrderThreeCell.h"
 #import "ZXConfirmOrderFourCell.h"
+#import "ZXConfirmOrderTimeCell.h"
 
 #import "ZXPaymentOrderController.h"
-@interface ZXMakeSureOrderController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ZXMakeSureOrderController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+
+@property (nonatomic,strong) UIDatePicker *datePicker;
+
 
 @end
 
 @implementation ZXMakeSureOrderController
+
+-(UIDatePicker *)datePicker
+{
+    if (!_datePicker) {
+        _datePicker = [[UIDatePicker alloc] init];
+        _datePicker.datePickerMode = UIDatePickerModeTime;
+        _datePicker.tintColor = AppThemeColor;
+        [_datePicker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];
+    }
+    return _datePicker;
+    
+}
+
+- (void)dateChanged:(UIDatePicker *)datePicker
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"HH : mm";
+    NSLog(@"%@",[dateFormatter stringFromDate:datePicker.date]);
+    ZXConfirmOrderTimeCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    cell.timeTextField.text = [dateFormatter stringFromDate:datePicker.date];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    return YES;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,7 +75,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -60,15 +91,21 @@
             return cell;
         }
         case 2:{
+            ZXConfirmOrderTimeCell *cell = [ZXConfirmOrderTimeCell cellWithTableView:tableView ];
+            cell.timeTextField.inputView = self.datePicker;
+            cell.timeTextField.delegate = self;
+            return cell;
+        }
+  
+        case 3:{
             ZXConfirmOrderThreeCell *cell = [ZXConfirmOrderThreeCell cellWithTableView:tableView ];
             return cell;
         }
-        case 3:{
+        case 4:{
             ZXConfirmOrderFourCell *cell = [ZXConfirmOrderFourCell cellWithTableView:tableView ];
             cell.foodsContent  = [ZXOrderFoodsModel mj_objectArrayWithKeyValuesArray: self.foodsArray[0]];
             return cell;
         }
-
         default:
             break;
     }
@@ -78,10 +115,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 2) {
+    if (indexPath.row == 3) {
         return 130;
     }
-    if (indexPath.row == 3) {
+    if (indexPath.row == 4) {
         return 400;
     }
     return 55;
@@ -108,7 +145,6 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
-
 
 
 @end

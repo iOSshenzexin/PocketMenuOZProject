@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -94,7 +95,7 @@
                 <constraint firstAttribute="trailing" secondItem="JU9-GW-eQN" secondAttribute="trailing" constant="12.5" id="CdA-F8-mAW"/>
                 <constraint firstItem="JU9-GW-eQN" firstAttribute="top" secondItem="YKA-i3-OzC" secondAttribute="bottom" constant="68" id="QiN-ra-eDV"/>
                 <constraint firstItem="JU9-GW-eQN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12.5" id="YVK-y3-MgD"/>
-                <constraint firstItem="YKA-i3-OzC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="f6l-I6-URg"/>
+                <constraint firstItem="YKA-i3-OzC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="f6l-I6-URg"/>
                 <constraint firstItem="YKA-i3-OzC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iZ5-nT-dek"/>
             </constraints>
             <point key="canvasLocation" x="112.5" y="54.5"/>

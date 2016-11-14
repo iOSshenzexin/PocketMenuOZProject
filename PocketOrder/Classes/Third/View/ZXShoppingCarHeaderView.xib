@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -8,7 +9,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="headerID" id="iN0-l3-epB" customClass="ZXShoppingCarHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCB-x0-Y4n">
@@ -38,15 +39,18 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tor-Kh-fFj">
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="zFG-aM-9Vq"/>
+                        <constraint firstAttribute="width" constant="40" id="dpA-yW-pbm"/>
+                        <constraint firstAttribute="height" constant="50" id="qFY-tj-ZD6"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                     <state key="normal" title="编辑">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
-                    <state key="selected" title="完成"/>
+                    <state key="selected" title="完成">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
-                        <action selector="edit:" destination="iN0-l3-epB" eventType="touchUpInside" id="GbZ-FF-waj"/>
+                        <action selector="didClickEditButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="cr1-z6-blS"/>
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="9vc-sL-nID">
@@ -56,19 +60,17 @@
                 </imageView>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Tor-Kh-fFj" secondAttribute="bottom" id="27b-SH-3Uo"/>
+                <constraint firstItem="Tor-Kh-fFj" firstAttribute="centerY" secondItem="nTe-QV-nPf" secondAttribute="centerY" id="0cE-xY-Jvy"/>
                 <constraint firstItem="dmk-jz-siC" firstAttribute="leading" secondItem="BCB-x0-Y4n" secondAttribute="trailing" constant="10" id="3GU-3x-lYJ"/>
                 <constraint firstItem="BCB-x0-Y4n" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7j7-QF-4yu"/>
                 <constraint firstItem="9vc-sL-nID" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="G8V-qZ-C6T"/>
-                <constraint firstAttribute="trailing" secondItem="Tor-Kh-fFj" secondAttribute="trailing" constant="10" id="HgW-W9-CVT"/>
                 <constraint firstItem="dmk-jz-siC" firstAttribute="centerY" secondItem="BCB-x0-Y4n" secondAttribute="centerY" id="PEI-28-QY2"/>
                 <constraint firstItem="BCB-x0-Y4n" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="PhX-tH-8Zw"/>
                 <constraint firstItem="nTe-QV-nPf" firstAttribute="centerY" secondItem="dmk-jz-siC" secondAttribute="centerY" id="Poa-CR-a6U"/>
                 <constraint firstItem="nTe-QV-nPf" firstAttribute="leading" secondItem="dmk-jz-siC" secondAttribute="trailing" constant="5" id="Qe0-6h-jnG"/>
+                <constraint firstAttribute="trailing" secondItem="Tor-Kh-fFj" secondAttribute="trailing" constant="10" id="Vg8-WZ-2ln"/>
                 <constraint firstItem="9vc-sL-nID" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aU5-GK-zJs"/>
                 <constraint firstAttribute="trailing" secondItem="9vc-sL-nID" secondAttribute="trailing" id="bxS-RR-SYq"/>
-                <constraint firstItem="Tor-Kh-fFj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="n9x-bs-3Oq"/>
-                <constraint firstItem="Tor-Kh-fFj" firstAttribute="leading" secondItem="nTe-QV-nPf" secondAttribute="trailing" constant="10" id="rvK-yl-rh7"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

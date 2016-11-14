@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -93,7 +94,7 @@
                 <constraint firstItem="h72-UU-Dcm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12.5" id="4xA-VX-XL8"/>
                 <constraint firstAttribute="trailing" secondItem="h72-UU-Dcm" secondAttribute="trailing" constant="12.5" id="DEu-pn-T1n"/>
                 <constraint firstAttribute="trailing" secondItem="sQb-jy-HtT" secondAttribute="trailing" id="PbF-rZ-Mzu"/>
-                <constraint firstItem="sQb-jy-HtT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="Q2L-nF-gia"/>
+                <constraint firstItem="sQb-jy-HtT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="Q2L-nF-gia"/>
                 <constraint firstItem="sQb-jy-HtT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XoJ-8L-dz0"/>
                 <constraint firstItem="h72-UU-Dcm" firstAttribute="top" secondItem="sQb-jy-HtT" secondAttribute="bottom" constant="68" id="yaZ-QL-ZNu"/>
             </constraints>

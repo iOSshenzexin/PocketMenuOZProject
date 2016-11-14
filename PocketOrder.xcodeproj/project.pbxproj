@@ -14,6 +14,7 @@
 		0105260A1DC7386000514A84 /* ZXCollectStoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 010526081DC7386000514A84 /* ZXCollectStoreCell.m */; };
 		010956001D2B84DF00178ECD /* PocketOrderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 010955FF1D2B84DF00178ECD /* PocketOrderTests.m */; };
 		0109560B1D2B84DF00178ECD /* PocketOrderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109560A1D2B84DF00178ECD /* PocketOrderUITests.m */; };
+		01135E2A1DD959F300313709 /* ZXShoppingCarBottomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01135E291DD959F300313709 /* ZXShoppingCarBottomModel.m */; };
 		0115E21F1DC19D85006B2D75 /* ZXOrderCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0115E21D1DC19D85006B2D75 /* ZXOrderCenterController.m */; };
 		0115E2201DC19D85006B2D75 /* ZXOrderCenterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0115E21E1DC19D85006B2D75 /* ZXOrderCenterController.xib */; };
 		0115E2241DC19F83006B2D75 /* ZXAllOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0115E2221DC19F83006B2D75 /* ZXAllOrderController.m */; };
@@ -253,6 +254,9 @@
 		01EF3F221DD322A40094CA8D /* close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF3F1B1DD322A40094CA8D /* close@3x.png */; };
 		01EF3F231DD322A40094CA8D /* shangdaohang.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF3F1C1DD322A40094CA8D /* shangdaohang.png */; };
 		01EF3F241DD322A40094CA8D /* stock.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01EF3F1D1DD322A40094CA8D /* stock.plist */; };
+		01FDB1A91DD557920058BC36 /* ZXConfirmOrderTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FDB1A71DD557920058BC36 /* ZXConfirmOrderTimeCell.m */; };
+		01FDB1AA1DD557920058BC36 /* ZXConfirmOrderTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01FDB1A81DD557920058BC36 /* ZXConfirmOrderTimeCell.xib */; };
+		01FDB1AE1DD572B40058BC36 /* MHFacebookImageViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FDB1AD1DD572B40058BC36 /* MHFacebookImageViewer.m */; };
 		07B749F1D272B5A32752A9DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CEF7018824121FE816920C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -289,6 +293,8 @@
 		010956061D2B84DF00178ECD /* PocketOrderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketOrderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0109560A1D2B84DF00178ECD /* PocketOrderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PocketOrderUITests.m; sourceTree = "<group>"; };
 		0109560C1D2B84DF00178ECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01135E281DD959F300313709 /* ZXShoppingCarBottomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXShoppingCarBottomModel.h; sourceTree = "<group>"; };
+		01135E291DD959F300313709 /* ZXShoppingCarBottomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXShoppingCarBottomModel.m; sourceTree = "<group>"; };
 		0115E21C1DC19D85006B2D75 /* ZXOrderCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXOrderCenterController.h; sourceTree = "<group>"; };
 		0115E21D1DC19D85006B2D75 /* ZXOrderCenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXOrderCenterController.m; sourceTree = "<group>"; };
 		0115E21E1DC19D85006B2D75 /* ZXOrderCenterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXOrderCenterController.xib; sourceTree = "<group>"; };
@@ -664,6 +670,11 @@
 		01EF3F1B1DD322A40094CA8D /* close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@3x.png"; sourceTree = "<group>"; };
 		01EF3F1C1DD322A40094CA8D /* shangdaohang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shangdaohang.png; sourceTree = "<group>"; };
 		01EF3F1D1DD322A40094CA8D /* stock.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stock.plist; sourceTree = "<group>"; };
+		01FDB1A61DD557920058BC36 /* ZXConfirmOrderTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXConfirmOrderTimeCell.h; sourceTree = "<group>"; };
+		01FDB1A71DD557920058BC36 /* ZXConfirmOrderTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXConfirmOrderTimeCell.m; sourceTree = "<group>"; };
+		01FDB1A81DD557920058BC36 /* ZXConfirmOrderTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXConfirmOrderTimeCell.xib; sourceTree = "<group>"; };
+		01FDB1AC1DD572B40058BC36 /* MHFacebookImageViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFacebookImageViewer.h; sourceTree = "<group>"; };
+		01FDB1AD1DD572B40058BC36 /* MHFacebookImageViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFacebookImageViewer.m; sourceTree = "<group>"; };
 		52CEF7018824121FE816920C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		868B86CA1EB2A7AC87563B13 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CF3CDC526FC47F4E09FAD279 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -854,6 +865,9 @@
 				017310021DB06E9B00D373E6 /* ZXConfirmOrderFourCell.h */,
 				017310031DB06E9B00D373E6 /* ZXConfirmOrderFourCell.m */,
 				017310041DB06E9B00D373E6 /* ZXConfirmOrderFourCell.xib */,
+				01FDB1A61DD557920058BC36 /* ZXConfirmOrderTimeCell.h */,
+				01FDB1A71DD557920058BC36 /* ZXConfirmOrderTimeCell.m */,
+				01FDB1A81DD557920058BC36 /* ZXConfirmOrderTimeCell.xib */,
 				016D60CA1DB9DEBF0081BBF1 /* ZXOrderContentView.h */,
 				016D60CB1DB9DEBF0081BBF1 /* ZXOrderContentView.m */,
 				016D60CD1DB9DECD0081BBF1 /* ZXOrderContentView.xib */,
@@ -1390,6 +1404,8 @@
 				01D0DCC91DB8AEA900A9A64A /* ZXGoodsModel.m */,
 				01D0DCCB1DB8AF0500A9A64A /* ZXHeaderMerchantModel.h */,
 				01D0DCCC1DB8AF0500A9A64A /* ZXHeaderMerchantModel.m */,
+				01135E281DD959F300313709 /* ZXShoppingCarBottomModel.h */,
+				01135E291DD959F300313709 /* ZXShoppingCarBottomModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1412,6 +1428,7 @@
 		01D8990B1DAA2B550070FBDD /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				01FDB1AB1DD572B40058BC36 /* ShowBigPicture */,
 				0142BBFF1DBDDB9500CF8F03 /* TokenManager */,
 				01D8990C1DAA2B550070FBDD /* CoolNavi */,
 				01D8990F1DAA2B550070FBDD /* KNBannerView */,
@@ -1568,6 +1585,15 @@
 				01EF3F1D1DD322A40094CA8D /* stock.plist */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		01FDB1AB1DD572B40058BC36 /* ShowBigPicture */ = {
+			isa = PBXGroup;
+			children = (
+				01FDB1AC1DD572B40058BC36 /* MHFacebookImageViewer.h */,
+				01FDB1AD1DD572B40058BC36 /* MHFacebookImageViewer.m */,
+			);
+			path = ShowBigPicture;
 			sourceTree = "<group>";
 		};
 		84FA8BC4C3A5D550D17B124C /* Pods */ = {
@@ -1802,6 +1828,7 @@
 				012BDBFB1DB471DB0040CB08 /* ZXSelectAddressController.xib in Resources */,
 				018522D61DC981F800BD25F2 /* ZXGroupBuyController.xib in Resources */,
 				0115E2341DC1A543006B2D75 /* ZXWaitingEvaluatedController.xib in Resources */,
+				01FDB1AA1DD557920058BC36 /* ZXConfirmOrderTimeCell.xib in Resources */,
 				01B86E631DC03B080071E97A /* ZXSearchDetailController.xib in Resources */,
 				01BF77811DC86AB700DBFF31 /* ZXDessertDrinksListController.xib in Resources */,
 				01EF3F0B1DD31AD10094CA8D /* ZXSupermarketDetailTwoCell.xib in Resources */,
@@ -1892,6 +1919,7 @@
 				0115E2381DC1A579006B2D75 /* ZXEvaluatedController.m in Sources */,
 				01DE22831DAE229B00D2E5BA /* ShoppingCartCell.m in Sources */,
 				0142BC0B1DBDF22F00CF8F03 /* ZXShawdowView.m in Sources */,
+				01FDB1A91DD557920058BC36 /* ZXConfirmOrderTimeCell.m in Sources */,
 				01C03AE51DBA09F200264FF8 /* ZXPayResultController.m in Sources */,
 				01D8994E1DAA2B550070FBDD /* XFSegementView.m in Sources */,
 				012BDC0D1DB49D3E0040CB08 /* ZXHeaderView.m in Sources */,
@@ -1912,6 +1940,7 @@
 				012BDC041DB477330040CB08 /* ZXSelectAddressTwoCell.m in Sources */,
 				0115E24B1DC1D40F006B2D75 /* ZXWaitingEvaluatedCell.m in Sources */,
 				01DCCDBE1DB77A940095B83B /* ZXChangePWDController.m in Sources */,
+				01135E2A1DD959F300313709 /* ZXShoppingCarBottomModel.m in Sources */,
 				01DCCDB41DB7708E0095B83B /* ZXChangePersonInfoController.m in Sources */,
 				01D898A21DAA2A2D0070FBDD /* ZXFirstController.m in Sources */,
 				01EF3F051DD311F00094CA8D /* ZXSupermarketDetailOneCell.m in Sources */,
@@ -2022,6 +2051,7 @@
 				01BF776E1DC84A0D00DBFF31 /* ZXDessertAndDrinksController.m in Sources */,
 				01D899481DAA2B550070FBDD /* AdvertiseView.m in Sources */,
 				018522D51DC981F800BD25F2 /* ZXGroupBuyController.m in Sources */,
+				01FDB1AE1DD572B40058BC36 /* MHFacebookImageViewer.m in Sources */,
 				017310001DB06C9600D373E6 /* ZXUserAddressController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

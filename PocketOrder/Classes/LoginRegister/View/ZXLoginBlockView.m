@@ -33,7 +33,6 @@
 
 
 
-
 - (IBAction)didClickFastLogin:(UIButton *)sender {
     if ([self.delegate respondsToSelector:@selector(didClickNomalLoginButton:type:)]) {
         [self.delegate didClickNomalLoginButton:self type:sender];
@@ -45,11 +44,6 @@
         [self.delegate didClickNomalLoginButton:self type:sender];
     }
 }
-
-
-
-
-
 
 
 + (instancetype)commonLoginView{

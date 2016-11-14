@@ -15,11 +15,16 @@
 
 - (void)didClickShoppingCarHeaderViewSelectAllOfCellInSection:(ZXShoppingCarHeaderView *)headerView mark:(NSString *)mark;
 
+- (void)didClickShoppingCarHeaderViewSelectStore:(ZXShoppingCarHeaderView *)headerView ;
+- (void)didClickShoppingCarHeaderViewEditButton:(ZXShoppingCarHeaderView *)header;
+
 @end
+
 
 @interface ZXShoppingCarHeaderView : UITableViewHeaderFooterView
 
 +(instancetype)headerViewWithTableView:(UITableView *)tableView;
+
 
 @property (nonatomic,weak) id<ZXShoppingCarHeaderViewDelegate> headerDelegate;
 @property (nonatomic,strong) ZXHeaderMerchantModel *model;
@@ -28,6 +33,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *marketNameBtn;
 
-@property (weak, nonatomic) IBOutlet UIButton *editBtn;
+@property (strong, nonatomic) IBOutlet UIButton *editBtn;
+
 
 @end

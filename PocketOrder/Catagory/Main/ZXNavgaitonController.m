@@ -7,7 +7,7 @@
 //
 
 #import "ZXNavgaitonController.h"
-@interface ZXNavgaitonController ()<UIGestureRecognizerDelegate>
+@interface ZXNavgaitonController ()<UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 
 @end
 
@@ -15,9 +15,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbar_background"] forBarMetrics:UIBarMetricsDefault];
-    self.navigationBar.translucent = NO;
-
     [self.navigationBar setBarTintColor:AppThemeColor];
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:18]}];
     
@@ -58,6 +55,8 @@
     // 真正在跳转
     [super pushViewController:viewController animated:animated];
 }
+
+
 
 - (void)back
 {

@@ -19,9 +19,14 @@
 #import "ZXMessageController.h"
 #import "ZXOrderCenterController.h"
 #import "AppDelegate.h"
-@interface ZXFourthController ()<ZXPassHeadImageDelegate>
+
+
+#import "MHFacebookImageViewer.h"
+
+@interface ZXFourthController ()<ZXPassHeadImageDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic,strong) UIImage *headImage;
+
 
 @end
 
@@ -29,11 +34,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   // self.headImage = [UIImage imageNamed:@"big_people"];
-
     self.tableView.sectionFooterHeight = 0;
-    self.tableView.contentOffset = CGPointMake(0, -20);
-    self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
+    self.tableView.contentOffset = CGPointMake(0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 20, 0);
     
     ZXChangePersonInfoController *vc = [ZXChangePersonInfoController sharedController];
     vc.delegate = self;
@@ -41,13 +44,20 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
+    // 隐藏导航栏
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [super viewWillDisappear:animated];
+
+- (void) displayImage:(UIImageView*)imageView withImage:(UIImage*)image  {
+    [imageView setImage:image];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    //[imageView setupImageViewer];
+    [imageView setupImageViewerWithCompletionOnOpen:^{
+    } onClose:^{
+    }];
+    imageView.clipsToBounds = YES;
 }
 
 
@@ -65,6 +75,9 @@
     if (section == 0) {
         if (app.isLogin){
         ZXHeaderView *headerView = [ZXHeaderView awakFromNib];
+        
+        [self displayImage:headerView.headerImage withImage:headerView.headerImage.image];
+            
         if (self.headImage) {
             headerView.headerImage.image = self.headImage;
         }
@@ -84,12 +97,10 @@
 {
     ZXLoginController *vc = [[ZXLoginController alloc] init];
     ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:vc];
-    
     [self presentViewController:nav animated:YES completion:^{
     }];
     vc.block = ^(BOOL login){
         NSLog(@"%d",login);
-        
     };
 }
 #pragma mark - 已登录跳到个人信息界面
@@ -174,7 +185,9 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
+
     self.view = nil;
+
 }
 
 
