@@ -66,35 +66,35 @@ extern int btnH;
 
 - (IBAction)didClickCancle:(id)sender {
     self.searchBottomView.backgroundColor = RGB(239, 239, 239);
+    self.topConstraint.constant = 0;
+    [self.view endEditing:YES];
+    self.searchViewConstraint.constant = 30;
+    self.searchViewRightConstraint.constant = 30;
+    self.height.constant = 44;
+    self.centerY.constant = 0;
+    self.cancleBtn.hidden = YES;
     [UIView animateWithDuration:0.3 animations:^{
-        self.topConstraint.constant = 0;
-        [self.view endEditing:YES];
+        [self.view layoutIfNeeded];
     }];
-    [UIView animateWithDuration:1.5 animations:^{
-        self.searchViewConstraint.constant = 30;
-        self.searchViewRightConstraint.constant = 30;
-        self.height.constant = 44;
-        self.centerY.constant = 0;
-        self.cancleBtn.hidden = YES;
-    }];
-    [self.bottom.subviews[2] removeFromSuperview];
+    for (UIView *sub in self.bottom.subviews) {
+        if ([sub isKindOfClass:[UITableView class]]) {
+            [sub removeFromSuperview];
+        }
+    }
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     self.searchBottomView.backgroundColor = self.navigationBar.backgroundColor;
-    [UIView animateWithDuration:10 animations:^{
-        self.topConstraint.constant = -64;
-        self.height.constant = 64;
-        self.centerY.constant = 6;
-       
-        [self.bottom addSubview:[[UITableView alloc] initWithFrame:self.view.bounds]];
+    self.topConstraint.constant = -64;
+    self.height.constant = 64;
+    self.centerY.constant = 6;
+    [self.bottom addSubview:[[UITableView alloc] initWithFrame:self.view.bounds]];
+    self.searchViewConstraint.constant = 10;
+    self.searchViewRightConstraint.constant = 60;
+    self.cancleBtn.hidden = NO;
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view layoutIfNeeded];
     }];
-    [UIView animateWithDuration:5 animations:^{
-        self.searchViewConstraint.constant = 10;
-        self.searchViewRightConstraint.constant = 60;
-        self.cancleBtn.hidden = NO;
-    }];
-    
     return YES;
 }
 

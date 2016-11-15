@@ -9,7 +9,24 @@
 #import <UIKit/UIKit.h>
 
 #import "ZXGoodsModel.h"
+@class ZXShoppingCarCell;
+@protocol ZXShoppingCarCellDelegate <NSObject>
+
+@optional
+
+- (void)shoppingCellDelegate:(ZXShoppingCarCell *)cell WithSelectButton:(UIButton *)selectButton;
+
+- (void)didClickDeleteButtonDeleteCurrentCell:(ZXShoppingCarCell *)cell;
+
+
+@end
+
+
 @interface ZXShoppingCarCell : UITableViewCell
+
+
+@property(nonatomic,assign)id<ZXShoppingCarCellDelegate> delegate;
+
 
 
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
@@ -40,5 +57,6 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leading;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailing;
 
 @end

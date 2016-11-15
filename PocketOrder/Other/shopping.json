@@ -5,7 +5,7 @@
                     "goodsInfo": [
                                   {
                                   "goodsID": "001",
-                                  "goodsTitle": "井柏然同款香蕉大皮鞋,好看耐穿",
+                                  "goodsTitle": "井柏然同款香蕉大皮鞋,好看耐穿井柏然同款香蕉大皮鞋,好看耐穿",
                                   "goodsImageURL": "001",
                                   "goodsColor": "红色",
                                   "goodsSize": "42",
@@ -16,7 +16,7 @@
                                   },
                                   {
                                   "goodsID": "001",
-                                  "goodsTitle": "井柏然同款T恤,好看耐穿,耐脏",
+                                  "goodsTitle": "井柏然同款T恤,好看耐穿,耐脏井柏然同款香蕉大皮鞋,好看耐穿",
                                   "goodsImageURL": "001",
                                   "goodsColor": "白色",
                                   "goodsSize": "XXL",
@@ -27,11 +27,11 @@
                                   },
                                   {
                                   "goodsID": "001",
-                                  "goodsTitle": "井柏然同款墨镜,闪耀众生,洞察一切",
+                                  "goodsTitle": "井柏然同款墨镜,闪耀众生,洞察一切井柏然同款香蕉大皮鞋,好看耐穿",
                                   "goodsImageURL": "001",
                                   "goodsColor": "黑金",
                                   "goodsSize": "Single",
-                                  "goodsCount": "1",
+                                  "goodsCount": "2",
                                   "goodsPrice": "6000",
                                   "isSeleted": "0",
                                   "goodsImage": "jingboranyanjing"
@@ -47,7 +47,7 @@
                                   "goodsImageURL": "001",
                                   "goodsColor": "红色",
                                   "goodsSize": "Single",
-                                  "goodsCount": "1",
+                                  "goodsCount": "3",
                                   "goodsPrice": "6000",
                                   "isSeleted": "0",
                                   "goodsImage": "weijin"

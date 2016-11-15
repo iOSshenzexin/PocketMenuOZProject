@@ -37,10 +37,11 @@ static NSString *headerId = @"headerID";
 
 
 /**
- 点击选择section中的商品
+ 点击section头部左上角按钮对应事件
  */
 - (IBAction)select:(UIButton *)sender {
     sender.selected = !sender.selected;
+
     if ([self.headerDelegate respondsToSelector:@selector(didClickShoppingCarHeaderViewSelectAllOfCellInSection:mark:)]) {
         [self.headerDelegate didClickShoppingCarHeaderViewSelectAllOfCellInSection:self mark:@"select"];
     }

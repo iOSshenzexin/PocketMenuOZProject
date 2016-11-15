@@ -12,4 +12,14 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) IBOutlet UIView *bottom;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *allPrices;
+
+@property (weak, nonatomic) IBOutlet UIButton *payMoneyButton;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *allSelectButton;
+
 @end

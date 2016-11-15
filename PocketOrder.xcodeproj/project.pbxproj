@@ -153,7 +153,6 @@
 		01D0DCC71DB8AE5F00A9A64A /* shopping.json in Resources */ = {isa = PBXBuildFile; fileRef = 01D0DCC61DB8AE5F00A9A64A /* shopping.json */; };
 		01D0DCCA1DB8AEA900A9A64A /* ZXGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0DCC91DB8AEA900A9A64A /* ZXGoodsModel.m */; };
 		01D0DCCD1DB8AF0500A9A64A /* ZXHeaderMerchantModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0DCCC1DB8AF0500A9A64A /* ZXHeaderMerchantModel.m */; };
-		01D0DCD01DB8C35800A9A64A /* ZXBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0DCCF1DB8C35800A9A64A /* ZXBottomView.m */; };
 		01D0DCD41DB8CAAA00A9A64A /* ZXChangeEmailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0DCD21DB8CAAA00A9A64A /* ZXChangeEmailController.m */; };
 		01D0DCD51DB8CAAA00A9A64A /* ZXChangeEmailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D0DCD31DB8CAAA00A9A64A /* ZXChangeEmailController.xib */; };
 		01D1BAD11D86401800971AF3 /* ZXConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D1BAD01D86401800971AF3 /* ZXConst.m */; };
@@ -507,8 +506,6 @@
 		01D0DCC91DB8AEA900A9A64A /* ZXGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXGoodsModel.m; sourceTree = "<group>"; };
 		01D0DCCB1DB8AF0500A9A64A /* ZXHeaderMerchantModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXHeaderMerchantModel.h; sourceTree = "<group>"; };
 		01D0DCCC1DB8AF0500A9A64A /* ZXHeaderMerchantModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXHeaderMerchantModel.m; sourceTree = "<group>"; };
-		01D0DCCE1DB8C35800A9A64A /* ZXBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXBottomView.h; sourceTree = "<group>"; };
-		01D0DCCF1DB8C35800A9A64A /* ZXBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXBottomView.m; sourceTree = "<group>"; };
 		01D0DCD11DB8CAAA00A9A64A /* ZXChangeEmailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXChangeEmailController.h; sourceTree = "<group>"; };
 		01D0DCD21DB8CAAA00A9A64A /* ZXChangeEmailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXChangeEmailController.m; sourceTree = "<group>"; };
 		01D0DCD31DB8CAAA00A9A64A /* ZXChangeEmailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXChangeEmailController.xib; sourceTree = "<group>"; };
@@ -1419,8 +1416,6 @@
 				01D0DCC11DB871A000A9A64A /* ZXShoppingCarCell.h */,
 				01D0DCC21DB871A000A9A64A /* ZXShoppingCarCell.m */,
 				01D0DCC31DB871A000A9A64A /* ZXShoppingCarCell.xib */,
-				01D0DCCE1DB8C35800A9A64A /* ZXBottomView.h */,
-				01D0DCCF1DB8C35800A9A64A /* ZXBottomView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1978,7 +1973,6 @@
 				01D898A41DAA2A2D0070FBDD /* ZXMessageController.m in Sources */,
 				01D8994B1DAA2B550070FBDD /* BGHeaderView.m in Sources */,
 				01A506411DC31C30009B071F /* ZXPayResultStyleTwoCell.m in Sources */,
-				01D0DCD01DB8C35800A9A64A /* ZXBottomView.m in Sources */,
 				017310231DB08E6800D373E6 /* TopBannerTool.m in Sources */,
 				018522F51DC9E20F00BD25F2 /* ZXGroupBuyDetailTwoCell.m in Sources */,
 				01D0DCCA1DB8AEA900A9A64A /* ZXGoodsModel.m in Sources */,

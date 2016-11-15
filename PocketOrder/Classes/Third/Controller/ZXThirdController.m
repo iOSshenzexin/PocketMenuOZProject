@@ -15,7 +15,8 @@
 #import "ZXGoodsModel.h"
 #import "ZXHeaderMerchantModel.h"
 #import "ZXShoppingCarBottomModel.h"
-@interface ZXThirdController ()<UITableViewDelegate,UITableViewDataSource,ZXShoppingCarHeaderViewDelegate>
+
+@interface ZXThirdController ()<UITableViewDelegate,UITableViewDataSource,ZXShoppingCarHeaderViewDelegate,ZXShoppingCarCellDelegate>
 
 @property (nonatomic,strong) NSMutableArray *carLists;
 /** 数据模型数组 */
@@ -37,9 +38,7 @@
         NSData *jsonData = [NSData dataWithContentsOfFile:path];
         
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
-        
         _carLists = dict[@"shoppingCar"];
-        
         NSMutableArray * modelArrs = [NSMutableArray array];
         for (NSDictionary * dict in _carLists)
         {
@@ -52,7 +51,6 @@
         NSMutableArray * groupArrs = [ZXHeaderMerchantModel mj_objectArrayWithKeyValuesArray:_carLists];
         self.groupArrs = groupArrs;
         [self.tableView reloadData];
-        
     }
     return _carLists;
 }
@@ -60,13 +58,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithNomalTitle:@"编辑" SelectedTitle:@"删除" target:self action:@selector(didClickEdit:)];
+    
+    self.bottomModel = [[ZXShoppingCarBottomModel alloc]init];
+    self.allPrices.text = self.bottomModel.priceText;
+    [self.payMoneyButton setTitle:[NSString stringWithFormat:@"去结算(共%d件)",self.bottomModel.counts] forState:UIControlStateNormal];
+    
     [self setupTable];
-    self.tableView.allowsMultipleSelectionDuringEditing = YES;
 
    // [self.tableView.mj_header beginRefreshing];
 }
+
 
 - (void)setupTable
 {
@@ -133,7 +137,9 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    ZXShoppingCarHeaderView *headerView = [ZXShoppingCarHeaderView sharedHeaderView:tableView];
+    [self imputedAllPrice];
+
+    ZXShoppingCarHeaderView *headerView = [ZXShoppingCarHeaderView headerViewWithTableView:tableView];
     ZXHeaderMerchantModel * headModel = self.groupArrs[section];
     headerView.model = headModel;
     headerView.headerDelegate = self;
@@ -141,14 +147,13 @@
     return headerView;
 }
 
-#pragma mark -头部按钮代理方法
+#pragma mark - 点击section头部左上角按钮对应事件
 -(void)didClickShoppingCarHeaderViewSelectAllOfCellInSection:(ZXShoppingCarHeaderView *)headerView mark:(NSString *)mark{
     NSInteger indexpath = headerView.tag - 1000;
     ZXHeaderMerchantModel *headModel = self.groupArrs[indexpath];
     NSArray *allSelectArr = self.modelArrs[indexpath];
-    if ([mark isEqualToString:@"select"]) {
-        if(headerView.headerSelectBtn.selected)
-        {
+    
+    if ([mark isEqualToString:@"select"] && headerView.headerSelectBtn.selected) {
             for (ZXGoodsModel * model in allSelectArr)
             {
                 model.isSelect = YES;
@@ -161,11 +166,12 @@
                 model.isSelect = NO;
                 headModel.isSelect = NO;
             }
-        }
-        //[self isallSelectAllPrice];
     }
-    NSIndexSet *indexSet= [[NSIndexSet alloc]initWithIndex:indexpath];
-    [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+    //检测是否全部选中,如果全部选择,全选按钮✅号,否则不
+    
+    [self isallSelectAllPrice];
+
+    [self.tableView reloadData];
 }
 
 //点击编辑按钮进行数量改变和删除
@@ -173,32 +179,72 @@
 {
     NSInteger indexpath = header.tag - 1000;
     NSArray *allSelectArr = self.modelArrs[indexpath];
-    ZXHeaderMerchantModel *headModel = self.groupArrs[indexpath];
+   // ZXHeaderMerchantModel *headModel = self.groupArrs[indexpath];
     if (header.editBtn.selected) {
         for (NSInteger i = 0; i < allSelectArr.count; i ++) {
             ZXShoppingCarCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:indexpath]];
-            cell.leading.constant = -60;
-            ZXGoodsModel *model = allSelectArr[i];
-            model.isSelect = YES;
-            headModel.isSelect = YES;
+            cell.leading.constant = -78;
+            cell.trailing.constant = -8;
+//            ZXGoodsModel *model = allSelectArr[i];
+//            model.isSelect = NO;
+//            headModel.isSelect = NO;
+            cell.plus.hidden = NO;
+            cell.minus.hidden = NO;
         }
     }else{
         for (NSInteger i = 0; i < allSelectArr.count; i ++) {
             ZXShoppingCarCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:indexpath]];
-            [UIView animateWithDuration:0.5 animations:^{
-                cell.leading.constant = 0;
-            }];
-            ZXGoodsModel *model = allSelectArr[i];
-            model.isSelect = NO;
-            headModel.isSelect = NO;
+            cell.leading.constant = 0;
+            cell.trailing.constant = -78;
+//            ZXGoodsModel *model = allSelectArr[i];
+//            model.isSelect = NO;
+//            headModel.isSelect = NO;
+            cell.plus.hidden = YES;
+            cell.minus.hidden = YES;
         }
     }
     [UIView animateWithDuration:0.3 animations:^{
         [self.tableView layoutIfNeeded];
     }];
-//    NSIndexSet *indexSet= [[NSIndexSet alloc] initWithIndex:indexpath];
-//    [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationLeft];
+    [self imputedAllPrice];
 }
+
+//点击cell删除按钮删除cell
+-(void)didClickDeleteButtonDeleteCurrentCell:(ZXShoppingCarCell *)cell
+{
+    NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+//    NSMutableArray *array = self.modelArrs[indexPath.section];
+//    ZXGoodsModel *model = array[indexPath.row];
+//    [array removeObject:model];
+//    
+//    ZXLog(@"%@",self.modelArrs);
+    
+//    NSDictionary * dict = self.carLists[indexPath.section];
+//    NSMutableArray * datas = [ZXGoodsModel mj_objectArrayWithKeyValuesArray:dict[@"goodsInfo"]];
+//    
+//    [datas removeObjectAtIndex:indexPath.row];
+    
+    
+   // [self.tableView reloadData];
+    [self tableView:self.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    //    [tableView setEditing:YES animated:YES];
+    return UITableViewCellEditingStyleDelete;
+    
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //NSUInteger row = [indexPath row]; //获取当前行
+    NSDictionary * dict = self.carLists[indexPath.section];
+    NSMutableArray * datas = [ZXGoodsModel mj_objectArrayWithKeyValuesArray:dict[@"goodsInfo"]];
+    
+    [datas removeObjectAtIndex:indexPath.row]; //在数据中删除当前对象
+    [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];//数组执行删除操作
+}
+
 
 /**
   点击按钮跳转到超市
@@ -215,6 +261,7 @@
  */
 - (IBAction)didClickAllChoosed:(UIButton *)sender {
     sender.selected = !sender.selected;
+    self.bottomModel.isSelect = sender.selected;
     if (sender.selected) {
         for (NSInteger i = 0; i < self.groupArrs.count; i ++) {
             ZXHeaderMerchantModel *headModel = self.groupArrs[i];
@@ -258,20 +305,80 @@
             }
         }
     }
+    self.allSelectButton.selected = self.bottomModel.isSelect;
 }
-
-
-
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZXShoppingCarCell *cell = [ZXShoppingCarCell cellWithTableView:tableView];
     cell.model = self.modelArrs[indexPath.section][indexPath.row];
-
+    cell.delegate = self;
     return cell;
-
 }
+
+/**
+ *  cell的代理方法
+ *
+ *  @param cell     cell可以拿到indexpath
+ *  @param selectBt 选中按钮
+ */
+- (void)shoppingCellDelegate:(ZXShoppingCarCell *)cell WithSelectButton:(UIButton *)selectBt
+{
+    NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+    ZXGoodsModel * model = self.modelArrs[indexPath.section][indexPath.row];
+    NSArray * arr = self.modelArrs[indexPath.section];
+    model.isSelect = !selectBt.selected;
+    int counts = 0;
+    for (ZXGoodsModel * modelArr in arr)
+    {
+        if(modelArr.isSelect)
+        {
+            counts ++ ;
+        }
+    }
+    ZXHeaderMerchantModel * headerModel = self.groupArrs[indexPath.section];
+    if(counts == arr.count)
+    {
+        headerModel.isSelect = YES;
+       // self.allSelectButton.selected = YES;
+    }else
+    {
+        headerModel.isSelect = NO;
+        self.allSelectButton.selected = NO;
+    }
+    [self isallSelectAllPrice];
+    [self.tableView reloadData];
+}
+
+/**
+ *  计算总价
+ */
+- (void)imputedAllPrice
+{
+    int allprice = 0;
+    int allCount = 0;
+    for (NSArray * goodsArr in self.modelArrs)
+    {
+        for (ZXGoodsModel * goodsModel in goodsArr)
+        {
+            if(goodsModel.isSelect == YES)
+            {
+                int price = goodsModel.goodsCount.intValue * goodsModel.goodsPrice.intValue;
+                int count = goodsModel.goodsCount.intValue;
+                allCount = count + allCount;
+                allprice = price + allprice;
+            }
+        }
+    }
+    NSString * priceText = [NSString stringWithFormat:@"总计 : %.2f",allprice / 100.0];
+    self.bottomModel.priceText = priceText;
+    self.bottomModel.counts = allCount;
+
+    self.allPrices.text = self.bottomModel.priceText;
+    [self.payMoneyButton setTitle:[NSString stringWithFormat:@"去结算(共%d件)",self.bottomModel.counts] forState:UIControlStateNormal];
+}
+
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -279,28 +386,7 @@
     return 100;
 }
 
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return YES;
-//}
 
-//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return UITableViewCellEditingStyleDelete;
-//}
-//
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//       // [dataArray removeObjectAtIndex:indexPath.row];
-//        // Delete the row from the data source.
-//        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//        
-//    }
-//    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//    }
-//}
 
 /**
  导航栏按钮

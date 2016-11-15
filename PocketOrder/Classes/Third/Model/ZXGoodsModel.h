@@ -24,4 +24,7 @@
 @property(nonatomic,assign)BOOL isSelect;
 
 
+@property (nonatomic,assign) BOOL isHidden;
+
+
 @end
