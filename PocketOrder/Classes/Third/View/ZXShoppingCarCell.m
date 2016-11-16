@@ -22,6 +22,14 @@ static NSString *shoppingCarCell = @"ZXShoppingCarCell";
     return cell;
 }
 
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.goodsImage.layer.cornerRadius = 3.0f;
+    self.goodsImage.layer.masksToBounds = YES;
+    self.goodsImage.clipsToBounds = YES;
+}
+
 - (IBAction)didClickDeleteCell:(id)sender {
     if ([self.delegate respondsToSelector:@selector(didClickDeleteButtonDeleteCurrentCell:)]) {
         [self.delegate didClickDeleteButtonDeleteCurrentCell:self];

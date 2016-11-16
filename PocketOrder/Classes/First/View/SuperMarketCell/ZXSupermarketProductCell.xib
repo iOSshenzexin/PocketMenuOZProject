@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,66 +15,68 @@
                 <frame key="frameInset" width="320" height="94"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book1" translatesAutoresizingMaskIntoConstraints="NO" id="gAv-Dd-JTl">
-                        <constraints>
-                            <constraint firstAttribute="width" constant="95" id="hDy-BD-DW0"/>
-                            <constraint firstAttribute="height" constant="95" id="jK6-06-chA"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="伊利官方直营味可滋香蕉牛奶240ML * 12 盒" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihd-Sv-A0L">
                         <constraints>
-                            <constraint firstAttribute="height" constant="55" id="O8g-V1-0AB"/>
+                            <constraint firstAttribute="height" constant="40" id="xjC-OF-wQG"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVY-ig-lJs">
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="6A3-52-5cC"/>
-                            <constraint firstAttribute="width" constant="60" id="jBr-lJ-j42"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.96862745100000003" green="0.41568627450000001" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZC-N2-ocg">
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="7W8-4F-SXr"/>
-                            <constraint firstAttribute="width" constant="40" id="e8x-Lm-ReH"/>
+                            <constraint firstAttribute="height" constant="40" id="FG7-ma-AOC"/>
+                            <constraint firstAttribute="width" constant="40" id="PGM-75-4XS"/>
                         </constraints>
                         <state key="normal" image="buy"/>
+                        <connections>
+                            <action selector="didClickAddGoodsToShoppingCar:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OCf-OP-52r"/>
+                        </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="cTl-G2-N2A">
                         <constraints>
-                            <constraint firstAttribute="height" constant="1" id="gEi-oO-4YL"/>
+                            <constraint firstAttribute="height" constant="1" id="8K6-nm-vxe"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="iMx-8z-Z8j">
                         <constraints>
-                            <constraint firstAttribute="height" constant="1" id="oLK-xQ-dFr"/>
+                            <constraint firstAttribute="height" constant="1" id="CKd-hu-xtI"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book1" translatesAutoresizingMaskIntoConstraints="NO" id="gAv-Dd-JTl">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="KMH-GI-Ru0"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="2ZC-N2-ocg" secondAttribute="bottom" id="0zh-U1-VqQ"/>
-                    <constraint firstItem="gAv-Dd-JTl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ES2-Km-oBj"/>
-                    <constraint firstAttribute="trailing" secondItem="2ZC-N2-ocg" secondAttribute="trailing" constant="15" id="Exl-NU-cwf"/>
-                    <constraint firstItem="cTl-G2-N2A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Tkk-ek-Jn9"/>
-                    <constraint firstAttribute="bottom" secondItem="iMx-8z-Z8j" secondAttribute="bottom" id="WaB-K1-SWH"/>
-                    <constraint firstAttribute="trailing" secondItem="Ihd-Sv-A0L" secondAttribute="trailing" constant="8" id="YYe-7B-aUj"/>
-                    <constraint firstItem="iMx-8z-Z8j" firstAttribute="leading" secondItem="gAv-Dd-JTl" secondAttribute="trailing" constant="8" id="ZWq-RX-Wc8"/>
-                    <constraint firstItem="Ihd-Sv-A0L" firstAttribute="leading" secondItem="gAv-Dd-JTl" secondAttribute="trailing" constant="8" id="cGW-sr-kBq"/>
-                    <constraint firstAttribute="trailing" secondItem="cTl-G2-N2A" secondAttribute="trailing" id="eKh-fg-h2r"/>
-                    <constraint firstItem="uVY-ig-lJs" firstAttribute="leading" secondItem="gAv-Dd-JTl" secondAttribute="trailing" constant="8" id="haE-AT-8Dq"/>
-                    <constraint firstAttribute="trailing" secondItem="iMx-8z-Z8j" secondAttribute="trailing" id="igt-vH-ejc"/>
-                    <constraint firstItem="gAv-Dd-JTl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oUi-pS-tBM"/>
-                    <constraint firstItem="cTl-G2-N2A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pVM-1z-Gyz"/>
-                    <constraint firstAttribute="bottom" secondItem="uVY-ig-lJs" secondAttribute="bottom" constant="8" id="sCv-mS-7C0"/>
-                    <constraint firstAttribute="bottom" secondItem="gAv-Dd-JTl" secondAttribute="bottom" id="vFK-gn-qLs"/>
-                    <constraint firstItem="Ihd-Sv-A0L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vGV-VL-V63"/>
+                    <constraint firstItem="gAv-Dd-JTl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="BtI-rP-w0r"/>
+                    <constraint firstAttribute="trailing" secondItem="Ihd-Sv-A0L" secondAttribute="trailing" constant="5" id="Giu-ac-msk"/>
+                    <constraint firstItem="cTl-G2-N2A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Hsn-rX-kn2"/>
+                    <constraint firstItem="cTl-G2-N2A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Itw-1v-BKp"/>
+                    <constraint firstItem="uVY-ig-lJs" firstAttribute="leading" secondItem="gAv-Dd-JTl" secondAttribute="trailing" constant="5" id="Oxa-u8-XLB"/>
+                    <constraint firstItem="iMx-8z-Z8j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PCD-pE-pMV"/>
+                    <constraint firstAttribute="trailing" secondItem="cTl-G2-N2A" secondAttribute="trailing" id="X3F-Pb-Rih"/>
+                    <constraint firstItem="iMx-8z-Z8j" firstAttribute="top" secondItem="uVY-ig-lJs" secondAttribute="bottom" constant="10" id="aKU-9n-izO"/>
+                    <constraint firstAttribute="trailing" secondItem="2ZC-N2-ocg" secondAttribute="trailing" constant="15" id="bMk-Oz-awD"/>
+                    <constraint firstItem="Ihd-Sv-A0L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="eiW-Xf-7hP"/>
+                    <constraint firstItem="Ihd-Sv-A0L" firstAttribute="leading" secondItem="gAv-Dd-JTl" secondAttribute="trailing" constant="5" id="fMT-WT-C10"/>
+                    <constraint firstAttribute="bottom" secondItem="iMx-8z-Z8j" secondAttribute="bottom" id="iOu-Z6-dDE"/>
+                    <constraint firstAttribute="trailing" secondItem="iMx-8z-Z8j" secondAttribute="trailing" id="ldf-Gh-T8c"/>
+                    <constraint firstItem="gAv-Dd-JTl" firstAttribute="top" secondItem="cTl-G2-N2A" secondAttribute="bottom" id="rxZ-1D-GVj"/>
+                    <constraint firstItem="iMx-8z-Z8j" firstAttribute="top" secondItem="2ZC-N2-ocg" secondAttribute="bottom" constant="5" id="war-pe-zNY"/>
+                    <constraint firstItem="iMx-8z-Z8j" firstAttribute="top" secondItem="gAv-Dd-JTl" secondAttribute="bottom" id="x7P-ez-9pX"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="addGoodsButton" destination="2ZC-N2-ocg" id="gXg-R8-lk4"/>
+                <outlet property="imgView" destination="gAv-Dd-JTl" id="ckX-zr-Yb1"/>
+            </connections>
             <point key="canvasLocation" x="34" y="53.5"/>
         </tableViewCell>
     </objects>

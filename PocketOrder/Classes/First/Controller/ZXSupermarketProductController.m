@@ -12,6 +12,11 @@
 
 #import "ZXSupermarketProductCell.h"
 #import "ZXSupermarketProductDetailController.h"
+
+#import "WZLBadgeImport.h"
+
+
+
 #define topTitleHeight 44
 @interface ZXSupermarketProductController ()<LSSelectMenuViewDelegate,LSSelectMenuViewDataSource,UITableViewDelegate,UITableViewDataSource>{
     LSSelectMenuView *menuView;
@@ -21,8 +26,11 @@
     
     UITableView *_listView;
 }
-
+@property (nonatomic, assign) NSInteger row;
 @property (nonatomic,copy) NSMutableArray *listArray;
+
+@property (nonatomic, assign) NSInteger goodsCount;
+
 @end
 
 @implementation ZXSupermarketProductController
@@ -45,7 +53,19 @@
 }
 
 - (void)setupNavigationBarBtn{
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:0 btnWidth:20 btnHeight:21 image:@"shopping_car" highlightImage:@"shopping_car" title:nil target:self action:@selector(didClickShoppingCar:) leftEdgeInset:0 rightEdgeInset:-8];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:0 btnWidth:30 btnHeight:21 image:@"shopping_car" highlightImage:@"shopping_car" title:nil target:self action:@selector(didClickShoppingCar:) leftEdgeInset:-10 rightEdgeInset:10];
+    /*
+     */
+    self.navigationItem.rightBarButtonItem.badgeBgColor = [UIColor blueColor];
+    self.navigationItem.rightBarButtonItem.badgeTextColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem.badgeFont = [UIFont boldSystemFontOfSize:10];
+    self.navigationItem.rightBarButtonItem.badgeMaximumBadgeNumber = 99;
+    self.navigationItem.rightBarButtonItem.badgeCenterOffset = CGPointMake(-10, 0);
+    if (self.goodsCount == 0) {
+        
+    }else{
+    [self.navigationItem.rightBarButtonItem showBadgeWithStyle:WBadgeStyleNumber value:self.goodsCount animationType:2];
+    }
 }
 
 - (void)didClickShoppingCar:(UIButton *)sender {
@@ -92,7 +112,6 @@
     });
     
 }
-
 
 
 - (UIColor *)randomColor{
@@ -170,7 +189,49 @@
         return cell;
     }
     ZXSupermarketProductCell *cell = [ZXSupermarketProductCell cellWithTableView:tableView];
+    
+    [self addAnimationForSelectGoods:cell rowAtIndexPath:indexPath tableView:tableView];
+
     return cell;
+}
+
+/**
+ 给cell添加动画效果
+ */
+- (void)addAnimationForSelectGoods:(ZXSupermarketProductCell *)cell rowAtIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView
+{
+    __weak typeof(cell) weakCell = cell;
+    [cell setDidClickAddBtnHandle:^{
+        //计算每行行高
+        self.row = indexPath.row;
+        UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.image = weakCell.imgView.image;
+        CGRect cellRect = [tableView rectForRowAtIndexPath:indexPath];
+        cellRect.size.width = cellRect.size.height;
+        cellRect.origin.y -= tableView.contentOffset.y;
+        imageView.frame = cellRect;
+        [self.view addSubview:imageView];
+        
+        CABasicAnimation* rotationAnimation;
+        rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+        rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 11.0 ];
+        rotationAnimation.duration = 1.0;
+        rotationAnimation.cumulative = YES;
+        rotationAnimation.repeatCount = 0;
+        
+        // 这个是让旋转动画慢于缩放动画执行
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [imageView.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+        });
+        
+        [UIView animateWithDuration:1.0 animations:^{
+            imageView.frame = CGRectMake(self.view.bounds.size.width-10, -(self.view.bounds.size.height - CGRectGetHeight(self.view.frame)) - 30, 0, 0);
+        } completion:^(BOOL finished) {
+            [imageView removeFromSuperview];
+            self.goodsCount ++;
+           [self.navigationItem.rightBarButtonItem showBadgeWithStyle:WBadgeStyleNumber value:self.goodsCount animationType:2];
+        }];
+    }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

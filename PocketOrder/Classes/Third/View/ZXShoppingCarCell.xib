@@ -29,14 +29,15 @@
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="milk2" translatesAutoresizingMaskIntoConstraints="NO" id="BW8-iH-c56">
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="hbp-lG-Ent"/>
+                            <constraint firstAttribute="height" constant="90" id="dyK-6a-e4R"/>
+                            <constraint firstAttribute="width" constant="90" id="hbp-lG-Ent"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="伊利官方直营味可子香蕉牛奶240ML * 12 盒" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6O-F3-mi6">
                         <constraints>
                             <constraint firstAttribute="height" constant="36" id="Zth-m6-GVg"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -84,14 +85,13 @@
                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="o6O-F3-mi6" firstAttribute="leading" secondItem="BW8-iH-c56" secondAttribute="trailing" constant="5" id="1gk-kx-O45"/>
-                    <constraint firstAttribute="bottom" secondItem="BW8-iH-c56" secondAttribute="bottom" constant="5" id="2Ec-as-D2Z"/>
                     <constraint firstItem="BW8-iH-c56" firstAttribute="centerY" secondItem="daG-r5-t8r" secondAttribute="centerY" id="2pt-Xj-4gT"/>
                     <constraint firstAttribute="bottom" secondItem="jFM-pn-j1b" secondAttribute="bottom" constant="15" id="DAg-U9-VVG"/>
                     <constraint firstItem="6ED-Nx-tSy" firstAttribute="leading" secondItem="jFM-pn-j1b" secondAttribute="trailing" constant="60" id="ETU-AH-FI7"/>
                     <constraint firstItem="bdU-m2-wTt" firstAttribute="leading" secondItem="6ED-Nx-tSy" secondAttribute="trailing" constant="10" id="Hs7-wb-BJM"/>
                     <constraint firstItem="daG-r5-t8r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ReH-0F-dvU"/>
                     <constraint firstItem="bdU-m2-wTt" firstAttribute="centerY" secondItem="5rk-Cl-h2w" secondAttribute="centerY" id="SmV-AX-YUX"/>
-                    <constraint firstItem="o6O-F3-mi6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="ULZ-fS-G3l"/>
+                    <constraint firstItem="o6O-F3-mi6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="ULZ-fS-G3l"/>
                     <constraint firstItem="jFM-pn-j1b" firstAttribute="leading" secondItem="BW8-iH-c56" secondAttribute="trailing" constant="5" id="UOi-ED-3HU"/>
                     <constraint firstAttribute="bottom" secondItem="bdU-m2-wTt" secondAttribute="bottom" constant="10" id="WZv-Ib-HzS"/>
                     <constraint firstItem="6ED-Nx-tSy" firstAttribute="centerY" secondItem="bdU-m2-wTt" secondAttribute="centerY" id="X0d-Nv-ora"/>
@@ -99,7 +99,6 @@
                     <constraint firstItem="daG-r5-t8r" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ZxO-pq-iJL"/>
                     <constraint firstAttribute="bottom" secondItem="MSJ-MY-TD6" secondAttribute="bottom" id="coc-2m-OvV"/>
                     <constraint firstItem="bdU-m2-wTt" firstAttribute="centerY" secondItem="jFM-pn-j1b" secondAttribute="centerY" id="d4C-AE-8XQ"/>
-                    <constraint firstItem="BW8-iH-c56" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="fAh-XV-g3A"/>
                     <constraint firstItem="MSJ-MY-TD6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="mz3-Fr-cOF"/>
                     <constraint firstAttribute="trailingMargin" secondItem="MSJ-MY-TD6" secondAttribute="trailing" constant="-78" id="pmT-Fh-ngp"/>
                     <constraint firstItem="5rk-Cl-h2w" firstAttribute="leading" secondItem="bdU-m2-wTt" secondAttribute="trailing" constant="10" id="uLA-UY-q9a"/>

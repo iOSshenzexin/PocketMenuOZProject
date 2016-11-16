@@ -41,6 +41,10 @@
 		01179EC11DCC1DE70040C036 /* ZXCollectStoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01179EC01DCC1DE70040C036 /* ZXCollectStoreCell.xib */; };
 		01179EC31DCC21290040C036 /* ZXSecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01179EC21DCC21290040C036 /* ZXSecondController.m */; };
 		01179EC71DCC3BFE0040C036 /* ZXCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01179EC51DCC3BFE0040C036 /* ZXCollectionHeaderView.m */; };
+		012988B41DDBFDE4005E839D /* UIBarButtonItem+WZLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 012988A81DDBFDE4005E839D /* UIBarButtonItem+WZLBadge.m */; };
+		012988B51DDBFDE4005E839D /* UITabBarItem+WZLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 012988AA1DDBFDE4005E839D /* UITabBarItem+WZLBadge.m */; };
+		012988B61DDBFDE4005E839D /* CAAnimation+WAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 012988AD1DDBFDE4005E839D /* CAAnimation+WAnimation.m */; };
+		012988B71DDBFDE4005E839D /* UIView+WZLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 012988B21DDBFDE4005E839D /* UIView+WZLBadge.m */; };
 		012BA4171DC2F50D0074824D /* ZXPayResultStyleOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 012BA4151DC2F50D0074824D /* ZXPayResultStyleOneCell.m */; };
 		012BA4181DC2F50D0074824D /* ZXPayResultStyleOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012BA4161DC2F50D0074824D /* ZXPayResultStyleOneCell.xib */; };
 		012BA41C1DC2FBAB0074824D /* ZXPayResultStyleLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 012BA41A1DC2FBAB0074824D /* ZXPayResultStyleLineCell.m */; };
@@ -333,6 +337,16 @@
 		01179EC21DCC21290040C036 /* ZXSecondController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSecondController.m; sourceTree = "<group>"; };
 		01179EC41DCC3BFE0040C036 /* ZXCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXCollectionHeaderView.h; sourceTree = "<group>"; };
 		01179EC51DCC3BFE0040C036 /* ZXCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXCollectionHeaderView.m; sourceTree = "<group>"; };
+		012988A71DDBFDE4005E839D /* UIBarButtonItem+WZLBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WZLBadge.h"; sourceTree = "<group>"; };
+		012988A81DDBFDE4005E839D /* UIBarButtonItem+WZLBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WZLBadge.m"; sourceTree = "<group>"; };
+		012988A91DDBFDE4005E839D /* UITabBarItem+WZLBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+WZLBadge.h"; sourceTree = "<group>"; };
+		012988AA1DDBFDE4005E839D /* UITabBarItem+WZLBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+WZLBadge.m"; sourceTree = "<group>"; };
+		012988AC1DDBFDE4005E839D /* CAAnimation+WAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+WAnimation.h"; sourceTree = "<group>"; };
+		012988AD1DDBFDE4005E839D /* CAAnimation+WAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+WAnimation.m"; sourceTree = "<group>"; };
+		012988AF1DDBFDE4005E839D /* WZLBadgeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLBadgeProtocol.h; sourceTree = "<group>"; };
+		012988B11DDBFDE4005E839D /* UIView+WZLBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WZLBadge.h"; sourceTree = "<group>"; };
+		012988B21DDBFDE4005E839D /* UIView+WZLBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WZLBadge.m"; sourceTree = "<group>"; };
+		012988B31DDBFDE4005E839D /* WZLBadgeImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLBadgeImport.h; sourceTree = "<group>"; };
 		012BA4141DC2F50D0074824D /* ZXPayResultStyleOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPayResultStyleOneCell.h; sourceTree = "<group>"; };
 		012BA4151DC2F50D0074824D /* ZXPayResultStyleOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXPayResultStyleOneCell.m; sourceTree = "<group>"; };
 		012BA4161DC2F50D0074824D /* ZXPayResultStyleOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXPayResultStyleOneCell.xib; sourceTree = "<group>"; };
@@ -801,6 +815,55 @@
 				0115E2451DC1CDA0006B2D75 /* ZXEvaluatedCell.xib */,
 			);
 			path = MyOrderCell;
+			sourceTree = "<group>";
+		};
+		012988A51DDBFDE4005E839D /* WZLBadge */ = {
+			isa = PBXGroup;
+			children = (
+				012988A61DDBFDE4005E839D /* BarItem */,
+				012988AB1DDBFDE4005E839D /* CategorySupport */,
+				012988AE1DDBFDE4005E839D /* Protocol */,
+				012988B01DDBFDE4005E839D /* View */,
+				012988B31DDBFDE4005E839D /* WZLBadgeImport.h */,
+			);
+			path = WZLBadge;
+			sourceTree = "<group>";
+		};
+		012988A61DDBFDE4005E839D /* BarItem */ = {
+			isa = PBXGroup;
+			children = (
+				012988A71DDBFDE4005E839D /* UIBarButtonItem+WZLBadge.h */,
+				012988A81DDBFDE4005E839D /* UIBarButtonItem+WZLBadge.m */,
+				012988A91DDBFDE4005E839D /* UITabBarItem+WZLBadge.h */,
+				012988AA1DDBFDE4005E839D /* UITabBarItem+WZLBadge.m */,
+			);
+			path = BarItem;
+			sourceTree = "<group>";
+		};
+		012988AB1DDBFDE4005E839D /* CategorySupport */ = {
+			isa = PBXGroup;
+			children = (
+				012988AC1DDBFDE4005E839D /* CAAnimation+WAnimation.h */,
+				012988AD1DDBFDE4005E839D /* CAAnimation+WAnimation.m */,
+			);
+			path = CategorySupport;
+			sourceTree = "<group>";
+		};
+		012988AE1DDBFDE4005E839D /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				012988AF1DDBFDE4005E839D /* WZLBadgeProtocol.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		012988B01DDBFDE4005E839D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				012988B11DDBFDE4005E839D /* UIView+WZLBadge.h */,
+				012988B21DDBFDE4005E839D /* UIView+WZLBadge.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		012BA4131DC2F3450074824D /* ZXPaymentResultCell */ = {
@@ -1423,6 +1486,7 @@
 		01D8990B1DAA2B550070FBDD /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				012988A51DDBFDE4005E839D /* WZLBadge */,
 				01FDB1AB1DD572B40058BC36 /* ShowBigPicture */,
 				0142BBFF1DBDDB9500CF8F03 /* TokenManager */,
 				01D8990C1DAA2B550070FBDD /* CoolNavi */,
@@ -1911,6 +1975,7 @@
 				01C03ADB1DB9F64C00264FF8 /* ZXMakeSureOrderController.m in Sources */,
 				018522EB1DC9D95200BD25F2 /* LeftSelectScroll.m in Sources */,
 				01D898B51DAA2A2D0070FBDD /* ZXTodayRecommendedCell.m in Sources */,
+				012988B51DDBFDE4005E839D /* UITabBarItem+WZLBadge.m in Sources */,
 				0115E2381DC1A579006B2D75 /* ZXEvaluatedController.m in Sources */,
 				01DE22831DAE229B00D2E5BA /* ShoppingCartCell.m in Sources */,
 				0142BC0B1DBDF22F00CF8F03 /* ZXShawdowView.m in Sources */,
@@ -1944,8 +2009,10 @@
 				0115E2291DC1A40C006B2D75 /* ZXWaitingPaymentController.m in Sources */,
 				012BDBF51DB45D2A0040CB08 /* ZXAddressTwoCell.m in Sources */,
 				01DCCDAF1DB766490095B83B /* ZXUnLoginHeaderView.m in Sources */,
+				012988B71DDBFDE4005E839D /* UIView+WZLBadge.m in Sources */,
 				01D1BAD11D86401800971AF3 /* ZXConst.m in Sources */,
 				0115E23E1DC1A850006B2D75 /* ZXWaitingPaidCell.m in Sources */,
+				012988B41DDBFDE4005E839D /* UIBarButtonItem+WZLBadge.m in Sources */,
 				0115E2551DC1E182006B2D75 /* ZXSubmitEvaluatedController.m in Sources */,
 				01D8993F1DAA2B550070FBDD /* KNBannerView.m in Sources */,
 				0115E2421DC1C714006B2D75 /* CALayer+BorderWidth.m in Sources */,
@@ -1969,6 +2036,7 @@
 				0115E2461DC1CDA0006B2D75 /* ZXEvaluatedCell.m in Sources */,
 				010526001DC7364500514A84 /* ZXCollectStoreController.m in Sources */,
 				01DE227F1DAE221C00D2E5BA /* ZFReOrderTableView.m in Sources */,
+				012988B61DDBFDE4005E839D /* CAAnimation+WAnimation.m in Sources */,
 				010526051DC7367E00514A84 /* ZXCollectGoodsController.m in Sources */,
 				01D898A41DAA2A2D0070FBDD /* ZXMessageController.m in Sources */,
 				01D8994B1DAA2B550070FBDD /* BGHeaderView.m in Sources */,

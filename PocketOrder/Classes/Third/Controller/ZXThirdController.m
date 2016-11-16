@@ -126,7 +126,6 @@
 {
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 10)];
     footerView.backgroundColor = [UIColor clearColor];
-   // RGB(236, 236, 236);
     return footerView;
 }
 

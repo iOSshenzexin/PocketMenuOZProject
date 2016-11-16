@@ -30,4 +30,13 @@ static NSString *supermarketProductCell = @"ZXSupermarketProductCell";
     return cell;
 }
 
+
+- (IBAction)didClickAddGoodsToShoppingCar:(id)sender {
+    if (self.didClickAddBtnHandle) {
+        self.didClickAddBtnHandle();
+    }
+}
+
+
+
 @end

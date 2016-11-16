@@ -12,6 +12,13 @@
 
 +(instancetype)cellWithTableView:(UITableView *)tableView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+
+@property (weak, nonatomic) IBOutlet UIButton *addGoodsButton;
+
+@property (nonatomic, copy) void (^didClickAddBtnHandle)();
+
+@property (nonatomic,copy) void(^btnBlock)();
 
 
 @end

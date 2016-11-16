@@ -26,7 +26,6 @@ extern int btnH;
     //当点击的时候 不去调用滑动调节
     BOOL isScrollSetSelect;
     UICollectionView *_collectionViewList;
-
 }
 
 @property (weak, nonatomic) IBOutlet UIView *navigationBar;
@@ -97,24 +96,6 @@ extern int btnH;
     }];
     return YES;
 }
-
-
-//CGFloat yfloat = self.seePeersTableView.contentOffset.y;
-//
-//if (yfloat < 22.00f && yfloat >= 0.00f) {
-//    [UIView animateWithDuration:0.3 animations:^{
-//        
-//        self.seePeersTableView.contentOffset = CGPointMake(0, 0);
-//    }];
-//    
-//}else if (yfloat >= 22.00f && yfloat <= 44.00f){
-//    [UIView animateWithDuration:0.3 animations:^{
-//        
-//        self.seePeersTableView.contentOffset = CGPointMake(0, 44);
-//    }];
-//    
-//}
-
 
 
 
