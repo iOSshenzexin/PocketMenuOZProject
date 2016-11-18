@@ -20,7 +20,7 @@
 #define  SZXTitlesViewH 44
 #define  SZXMarin  10
 #define  TabBarH 49
-
+#define Margin 6
 
 @interface ZXSecondController ()<UIScrollViewDelegate>
 /** 用来存放所有子控制器view的scrollView */
@@ -115,20 +115,24 @@
     self.titlesCount = count;
     
     // 标题按钮的尺寸
-    CGFloat titleButtonW = self.titlesView.frame.size.width / count;
+    CGFloat titleButtonW = (self.titlesView.frame.size.width - Margin) / count ;
     CGFloat titleButtonH = self.titlesView.frame.size.height;
     
-    // 创建5个标题按钮
+    // 创建标题按钮
     for (NSUInteger i = 0; i < count; i++) {
         ZXTitleButton *titleButton = [[ZXTitleButton alloc] init];
         titleButton.tag = i;
         [titleButton addTarget:self action:@selector(titleButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.titlesView addSubview:titleButton];
         // frame
-        titleButton.frame = CGRectMake(i * titleButtonW, 0, titleButtonW, titleButtonH);
+        titleButton.frame = CGRectMake(i * (titleButtonW + Margin), 0, titleButtonW, titleButtonH);
         // 文字
         [titleButton setTitle:titles[i] forState:UIControlStateNormal];
     }
+    
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(titleButtonW + (Margin-1) * 0.5, Margin * 0.5, 1, titleButtonH - Margin)];
+    line.backgroundColor = RGB(219, 219, 219);
+    [self.titlesView addSubview:line];
 }
 
 /**
@@ -141,7 +145,7 @@
     
     // 下划线
     UIView *titleUnderline = [[UIView alloc] init];
-    titleUnderline.height = 3;
+    titleUnderline.height = Margin * 0.5;
     titleUnderline.y = self.titlesView.height - titleUnderline.height;
     titleUnderline.backgroundColor = [firstTitleButton titleColorForState:UIControlStateSelected];
     [self.titlesView addSubview:titleUnderline];
@@ -150,8 +154,8 @@
     // 切换按钮状态
     firstTitleButton.selected = YES;
     self.previousClickedTitleButton = firstTitleButton;
-    self.titleUnderline.width = ScreenW / self.titlesCount;
-    self.titleUnderline.x = firstTitleButton.x;
+    self.titleUnderline.width = (ScreenW - Margin) / self.titlesCount;
+    self.titleUnderline.x = firstTitleButton.x;;
     //self.titleUnderline.x = firstTitleButton.x + SZXMarin;
 }
 
@@ -181,10 +185,10 @@
     self.previousClickedTitleButton = titleButton;
     
     NSUInteger index = titleButton.tag;
-    [UIView animateWithDuration:0.35 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         // 处理下划线
-        self.titleUnderline.width = ScreenW / self.titlesCount;
-        self.titleUnderline.x = index * self.titleUnderline.width ;
+     //   self.titleUnderline.width = (ScreenW - Margin) / self.titlesCount;
+        self.titleUnderline.x = index * (self.titleUnderline.width + Margin) ;
         // 滚动scrollView
         CGFloat offsetX = self.scrollView.width * index;
         self.scrollView.contentOffset = CGPointMake(offsetX, self.scrollView.contentOffset.y);

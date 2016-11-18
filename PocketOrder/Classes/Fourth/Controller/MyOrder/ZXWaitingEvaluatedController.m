@@ -8,7 +8,7 @@
 
 #import "ZXWaitingEvaluatedController.h"
 #import "ZXProductListController.h"
-
+#import "ZXWaitingPayDetailController.h"
 
 #import "ZXSubmitEvaluatedController.h"
 #import "ZXWaitingEvaluatedCell.h"
@@ -56,6 +56,11 @@
     return 168;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ZXWaitingPayDetailController *vc = [[ZXWaitingPayDetailController alloc] init];
+    vc.title = @"待评价";
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 @end

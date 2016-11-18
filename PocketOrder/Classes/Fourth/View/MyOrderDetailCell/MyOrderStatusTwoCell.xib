@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyOrderStatusTwoCell" id="zKO-o1-h74" customClass="MyOrderStatusTwoCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zKO-o1-h74" id="CBw-kV-r4h">
+                <frame key="frameInset" width="320" height="54"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="03icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ud1-J5-oLi">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="sz0-xe-E9g"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待付款" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chZ-od-Kex">
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.94901960780000005" green="0.36862745099999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付剩余时间: 14分25秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zml-10-XYI">
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                        <color key="textColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHg-55-W4U">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="T1p-Ek-JRv">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="LhU-ds-0Fj"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="chZ-od-Kex" firstAttribute="top" secondItem="CBw-kV-r4h" secondAttribute="top" constant="8" id="3Ou-IU-Opr"/>
+                    <constraint firstAttribute="trailing" secondItem="chZ-od-Kex" secondAttribute="trailing" constant="10" id="9jE-1O-clk"/>
+                    <constraint firstItem="chZ-od-Kex" firstAttribute="leading" secondItem="CBw-kV-r4h" secondAttribute="leading" constant="60" id="Fwt-Kq-y6q"/>
+                    <constraint firstItem="T1p-Ek-JRv" firstAttribute="leading" secondItem="chZ-od-Kex" secondAttribute="leading" id="Nn2-iB-RtH"/>
+                    <constraint firstItem="Ud1-J5-oLi" firstAttribute="top" secondItem="CBw-kV-r4h" secondAttribute="top" id="Oqs-of-MBs"/>
+                    <constraint firstItem="bHg-55-W4U" firstAttribute="centerY" secondItem="CBw-kV-r4h" secondAttribute="centerY" id="QJI-gs-Wp3"/>
+                    <constraint firstAttribute="trailing" secondItem="T1p-Ek-JRv" secondAttribute="trailing" constant="10" id="YYp-Ta-Jua"/>
+                    <constraint firstItem="Zml-10-XYI" firstAttribute="leading" secondItem="chZ-od-Kex" secondAttribute="leading" id="gam-QY-KWf"/>
+                    <constraint firstAttribute="bottom" secondItem="T1p-Ek-JRv" secondAttribute="bottom" id="i1S-CQ-bRF"/>
+                    <constraint firstAttribute="trailing" secondItem="bHg-55-W4U" secondAttribute="trailing" constant="10" id="mki-np-1zg"/>
+                    <constraint firstAttribute="bottom" secondItem="Ud1-J5-oLi" secondAttribute="bottom" constant="13" id="q83-il-rg1"/>
+                    <constraint firstAttribute="bottom" secondItem="Zml-10-XYI" secondAttribute="bottom" constant="5" id="tUJ-iA-UfJ"/>
+                    <constraint firstItem="Ud1-J5-oLi" firstAttribute="leading" secondItem="CBw-kV-r4h" secondAttribute="leading" constant="12.199999999999999" id="zF2-fd-iWw"/>
+                    <constraint firstAttribute="trailing" secondItem="Zml-10-XYI" secondAttribute="trailing" constant="10" id="zWp-6Q-9Kq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="03icon" width="35" height="42"/>
+        <image name="line" width="1" height="1"/>
+    </resources>
+</document>

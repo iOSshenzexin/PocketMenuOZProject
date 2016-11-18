@@ -8,6 +8,7 @@
 
 #import "ZXWaitingPaymentController.h"
 
+#import "ZXWaitingPayDetailController.h"
 #import "ZXWaitingPaidCell.h"
 @interface ZXWaitingPaymentController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -36,5 +37,13 @@
 {
     return 168;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ZXWaitingPayDetailController *vc = [[ZXWaitingPayDetailController alloc] init];
+    vc.title = @"待付款";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 @end

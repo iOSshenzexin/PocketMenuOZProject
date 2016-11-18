@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXWaitEvaluatedOrderStatusController">
+            <connections>
+                <outlet property="tableView" destination="UCs-cN-rOW" id="wHy-dk-sfT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UCs-cN-rOW">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="GY4-zR-gg3"/>
+                        <outlet property="delegate" destination="-1" id="Q3O-Yp-LJc"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJN-mG-wbp">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAx-LM-ieT">
+                            <color key="backgroundColor" red="0.94901960780000005" green="0.36862745099999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                            <state key="normal" title="去评价"/>
+                            <connections>
+                                <action selector="didClickGoToEvaluated:" destination="-1" eventType="touchUpInside" id="eH0-sv-F7L"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKD-Gu-YEl">
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                            <state key="normal" title="再来一单" backgroundImage="btn_bottom_white">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="didClickGoToOrderOncePill:" destination="-1" eventType="touchUpInside" id="WMX-dk-5PN"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="AAx-LM-ieT" firstAttribute="top" secondItem="bJN-mG-wbp" secondAttribute="top" id="4OR-JS-rVk"/>
+                        <constraint firstItem="AAx-LM-ieT" firstAttribute="width" secondItem="gKD-Gu-YEl" secondAttribute="width" id="HSQ-2i-589"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="Hw0-XY-soj"/>
+                        <constraint firstItem="AAx-LM-ieT" firstAttribute="leading" secondItem="gKD-Gu-YEl" secondAttribute="trailing" id="N62-Tf-B8A"/>
+                        <constraint firstItem="gKD-Gu-YEl" firstAttribute="leading" secondItem="bJN-mG-wbp" secondAttribute="leading" id="RJR-VS-M2v"/>
+                        <constraint firstItem="AAx-LM-ieT" firstAttribute="height" secondItem="gKD-Gu-YEl" secondAttribute="height" id="ZMA-mu-Wj8"/>
+                        <constraint firstAttribute="trailing" secondItem="AAx-LM-ieT" secondAttribute="trailing" id="ZMA-xC-m3G"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="csV-JH-iIa"/>
+                        <constraint firstAttribute="height" constant="44" id="dJ0-9C-mGa"/>
+                        <constraint firstItem="gKD-Gu-YEl" firstAttribute="top" secondItem="bJN-mG-wbp" secondAttribute="top" id="hj2-AA-lbJ"/>
+                        <constraint firstAttribute="bottom" secondItem="gKD-Gu-YEl" secondAttribute="bottom" id="vQx-HA-2l6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bJN-mG-wbp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6aS-b0-CpG"/>
+                <constraint firstItem="UCs-cN-rOW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Hff-Id-McS"/>
+                <constraint firstAttribute="trailing" secondItem="UCs-cN-rOW" secondAttribute="trailing" id="IaZ-4R-x2i"/>
+                <constraint firstAttribute="trailing" secondItem="bJN-mG-wbp" secondAttribute="trailing" id="gfq-1b-AiU"/>
+                <constraint firstAttribute="bottom" secondItem="UCs-cN-rOW" secondAttribute="bottom" id="scS-oK-euc"/>
+                <constraint firstAttribute="bottom" secondItem="bJN-mG-wbp" secondAttribute="bottom" id="wPP-tS-oxU"/>
+                <constraint firstItem="UCs-cN-rOW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zhQ-UC-pin"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_bottom_white" width="134" height="56"/>
+    </resources>
+</document>

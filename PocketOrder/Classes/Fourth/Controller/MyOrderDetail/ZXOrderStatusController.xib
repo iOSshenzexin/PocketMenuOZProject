@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXOrderStatusController">
+            <connections>
+                <outlet property="tableView" destination="tLA-Cd-kS9" id="h0O-9z-vdz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tLA-Cd-kS9">
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="FuX-as-pQU"/>
+                        <outlet property="delegate" destination="-1" id="bzq-o8-5zm"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wGB-Zq-F1d">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVy-33-p2k">
+                            <color key="backgroundColor" red="0.94901960780000005" green="0.36862745099999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                            <state key="normal" title="去支付"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRM-Oc-Iu0">
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                            <state key="normal" title="取消订单" backgroundImage="btn_bottom_white">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="didClickCancleOrder:" destination="-1" eventType="touchUpInside" id="3Gm-qn-qhb"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="RVy-33-p2k" firstAttribute="leading" secondItem="vRM-Oc-Iu0" secondAttribute="trailing" id="3Qp-7r-Icb"/>
+                        <constraint firstAttribute="height" constant="44" id="3ma-l1-bkR"/>
+                        <constraint firstAttribute="trailing" secondItem="RVy-33-p2k" secondAttribute="trailing" id="9CL-aF-EYJ"/>
+                        <constraint firstAttribute="bottom" secondItem="vRM-Oc-Iu0" secondAttribute="bottom" id="A7Q-kq-5PE"/>
+                        <constraint firstItem="RVy-33-p2k" firstAttribute="height" secondItem="vRM-Oc-Iu0" secondAttribute="height" id="AtG-Hk-bU4"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="b7q-5c-ahB"/>
+                        <constraint firstItem="vRM-Oc-Iu0" firstAttribute="leading" secondItem="wGB-Zq-F1d" secondAttribute="leading" id="f0K-Zu-YSv"/>
+                        <constraint firstItem="RVy-33-p2k" firstAttribute="top" secondItem="wGB-Zq-F1d" secondAttribute="top" id="l37-bw-YIR"/>
+                        <constraint firstItem="vRM-Oc-Iu0" firstAttribute="top" secondItem="wGB-Zq-F1d" secondAttribute="top" id="mfM-d0-cZa"/>
+                        <constraint firstItem="RVy-33-p2k" firstAttribute="width" secondItem="vRM-Oc-Iu0" secondAttribute="width" id="sYG-qb-OgT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="tLA-Cd-kS9" secondAttribute="trailing" id="J5v-W5-h8a"/>
+                <constraint firstAttribute="bottom" secondItem="tLA-Cd-kS9" secondAttribute="bottom" id="JkA-sS-ySZ"/>
+                <constraint firstItem="tLA-Cd-kS9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aDJ-i2-BPX"/>
+                <constraint firstAttribute="bottom" secondItem="wGB-Zq-F1d" secondAttribute="bottom" id="bvn-yp-d9I"/>
+                <constraint firstAttribute="trailing" secondItem="wGB-Zq-F1d" secondAttribute="trailing" id="j0M-uZ-x0N"/>
+                <constraint firstItem="tLA-Cd-kS9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yMg-1H-6Fa"/>
+                <constraint firstItem="wGB-Zq-F1d" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zgX-CE-9bQ"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_bottom_white" width="134" height="56"/>
+    </resources>
+</document>
