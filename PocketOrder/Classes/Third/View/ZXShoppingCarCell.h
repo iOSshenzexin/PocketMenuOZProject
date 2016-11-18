@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "ZXGoodsModel.h"
+#import "ZXHeaderMerchantModel.h"
 @class ZXShoppingCarCell;
 @protocol ZXShoppingCarCellDelegate <NSObject>
 
@@ -51,6 +52,7 @@
 
 @property (nonatomic,strong) ZXGoodsModel *model;
 
+@property (nonatomic,strong) ZXHeaderMerchantModel *headModel;
 
 +(instancetype)cellWithTableView:(UITableView *)tableview;
 

@@ -67,7 +67,8 @@
 		0142BC0B1DBDF22F00CF8F03 /* ZXShawdowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142BC0A1DBDF22F00CF8F03 /* ZXShawdowView.m */; };
 		014BC4EC1DD466ED00ACF71E /* ZXSupermarketDetailThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 014BC4EA1DD466ED00ACF71E /* ZXSupermarketDetailThreeCell.m */; };
 		014BC4ED1DD466ED00ACF71E /* ZXSupermarketDetailThreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014BC4EB1DD466ED00ACF71E /* ZXSupermarketDetailThreeCell.xib */; };
-		015A4FB41DAA2C670055B711 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 015A4FB31DAA2C670055B711 /* Info.plist */; };
+		014DB5701DDC354400245D08 /* ZXShopCarConfirmOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014DB56E1DDC354400245D08 /* ZXShopCarConfirmOrderController.m */; };
+		014DB5711DDC354400245D08 /* ZXShopCarConfirmOrderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014DB56F1DDC354400245D08 /* ZXShopCarConfirmOrderController.xib */; };
 		01607A7D1DAF3D26002F692E /* ZXDishesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607A7B1DAF3D26002F692E /* ZXDishesCell.m */; };
 		01607A7E1DAF3D26002F692E /* ZXDishesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01607A7C1DAF3D26002F692E /* ZXDishesCell.xib */; };
 		01607A881DAF6856002F692E /* ZXConfirmOrderOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607A861DAF6856002F692E /* ZXConfirmOrderOneCell.m */; };
@@ -261,6 +262,9 @@
 		01FDB1AA1DD557920058BC36 /* ZXConfirmOrderTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01FDB1A81DD557920058BC36 /* ZXConfirmOrderTimeCell.xib */; };
 		01FDB1AE1DD572B40058BC36 /* MHFacebookImageViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FDB1AD1DD572B40058BC36 /* MHFacebookImageViewer.m */; };
 		07B749F1D272B5A32752A9DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CEF7018824121FE816920C /* libPods.a */; };
+		75B650061DDD81970017B1ED /* ZXUserProtocolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B650041DDD81970017B1ED /* ZXUserProtocolController.m */; };
+		75B650071DDD81970017B1ED /* ZXUserProtocolController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B650051DDD81970017B1ED /* ZXUserProtocolController.xib */; };
+		75C161A91DDC51C70049C30F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75C161A81DDC51C70049C30F /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -381,7 +385,9 @@
 		014BC4E91DD466ED00ACF71E /* ZXSupermarketDetailThreeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXSupermarketDetailThreeCell.h; sourceTree = "<group>"; };
 		014BC4EA1DD466ED00ACF71E /* ZXSupermarketDetailThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSupermarketDetailThreeCell.m; sourceTree = "<group>"; };
 		014BC4EB1DD466ED00ACF71E /* ZXSupermarketDetailThreeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXSupermarketDetailThreeCell.xib; sourceTree = "<group>"; };
-		015A4FB31DAA2C670055B711 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		014DB56D1DDC354400245D08 /* ZXShopCarConfirmOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXShopCarConfirmOrderController.h; sourceTree = "<group>"; };
+		014DB56E1DDC354400245D08 /* ZXShopCarConfirmOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXShopCarConfirmOrderController.m; sourceTree = "<group>"; };
+		014DB56F1DDC354400245D08 /* ZXShopCarConfirmOrderController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXShopCarConfirmOrderController.xib; sourceTree = "<group>"; };
 		01607A7A1DAF3D26002F692E /* ZXDishesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXDishesCell.h; sourceTree = "<group>"; };
 		01607A7B1DAF3D26002F692E /* ZXDishesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXDishesCell.m; sourceTree = "<group>"; };
 		01607A7C1DAF3D26002F692E /* ZXDishesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXDishesCell.xib; sourceTree = "<group>"; };
@@ -687,6 +693,10 @@
 		01FDB1AC1DD572B40058BC36 /* MHFacebookImageViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFacebookImageViewer.h; sourceTree = "<group>"; };
 		01FDB1AD1DD572B40058BC36 /* MHFacebookImageViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFacebookImageViewer.m; sourceTree = "<group>"; };
 		52CEF7018824121FE816920C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		75B650031DDD81970017B1ED /* ZXUserProtocolController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXUserProtocolController.h; sourceTree = "<group>"; };
+		75B650041DDD81970017B1ED /* ZXUserProtocolController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXUserProtocolController.m; sourceTree = "<group>"; };
+		75B650051DDD81970017B1ED /* ZXUserProtocolController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXUserProtocolController.xib; sourceTree = "<group>"; };
+		75C161A81DDC51C70049C30F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		868B86CA1EB2A7AC87563B13 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CF3CDC526FC47F4E09FAD279 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1036,6 +1046,9 @@
 				018A68FE1DD16ABF00D832A4 /* ZXSetUpPWDController.h */,
 				018A68FF1DD16ABF00D832A4 /* ZXSetUpPWDController.m */,
 				018A69001DD16ABF00D832A4 /* ZXSetUpPWDController.xib */,
+				75B650031DDD81970017B1ED /* ZXUserProtocolController.h */,
+				75B650041DDD81970017B1ED /* ZXUserProtocolController.m */,
+				75B650051DDD81970017B1ED /* ZXUserProtocolController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1161,10 +1174,10 @@
 		01D898501DAA29DC0070FBDD /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				75C161A81DDC51C70049C30F /* Info.plist */,
 				01BF77701DC85E5200DBFF31 /* Icon.png */,
 				01D0DCC61DB8AE5F00A9A64A /* shopping.json */,
 				01D898511DAA29DC0070FBDD /* Assets.xcassets */,
-				015A4FB31DAA2C670055B711 /* Info.plist */,
 				01D898521DAA29DC0070FBDD /* LaunchScreen.storyboard */,
 				01D898551DAA29DC0070FBDD /* main.m */,
 				01D898561DAA29DC0070FBDD /* PocketOrder.xcdatamodeld */,
@@ -1453,6 +1466,9 @@
 				01D8989B1DAA2A2D0070FBDD /* ZXThirdController.h */,
 				01D8989C1DAA2A2D0070FBDD /* ZXThirdController.m */,
 				01D8989D1DAA2A2D0070FBDD /* ZXThirdController.xib */,
+				014DB56D1DDC354400245D08 /* ZXShopCarConfirmOrderController.h */,
+				014DB56E1DDC354400245D08 /* ZXShopCarConfirmOrderController.m */,
+				014DB56F1DDC354400245D08 /* ZXShopCarConfirmOrderController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1760,6 +1776,7 @@
 					};
 					010955FA1D2B84DF00178ECD = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = SY5LQ5UGTM;
 						TestTargetID = 010955DE1D2B84DE00178ECD;
 					};
 					010956051D2B84DF00178ECD = {
@@ -1809,6 +1826,7 @@
 				01D898A11DAA2A2D0070FBDD /* DeliciousFoodController.xib in Resources */,
 				01EF3F1F1DD322A40094CA8D /* 2.jpg in Resources */,
 				0115E2201DC19D85006B2D75 /* ZXOrderCenterController.xib in Resources */,
+				75B650071DDD81970017B1ED /* ZXUserProtocolController.xib in Resources */,
 				01BF777C1DC861C900DBFF31 /* ZXDessertDrinksCell.xib in Resources */,
 				01DCCDC01DB77AAA0095B83B /* ZXChangePWDController.storyboard in Resources */,
 				01D898B81DAA2A2D0070FBDD /* ZXYouLikeCell.xib in Resources */,
@@ -1817,7 +1835,6 @@
 				01D898A71DAA2A2D0070FBDD /* ZXProductListController.xib in Resources */,
 				0115E2471DC1CDA0006B2D75 /* ZXEvaluatedCell.xib in Resources */,
 				012BDBF61DB45D2A0040CB08 /* ZXAddressTwoCell.xib in Resources */,
-				015A4FB41DAA2C670055B711 /* Info.plist in Resources */,
 				0115E2391DC1A579006B2D75 /* ZXEvaluatedController.xib in Resources */,
 				01C03AE11DB9F69500264FF8 /* ZXPaymentOrderController.storyboard in Resources */,
 				01C338E51DCB401E0044E4C3 /* ZXSupmarketCollectionCell.xib in Resources */,
@@ -1862,6 +1879,7 @@
 				0115E22F1DC1A4A6006B2D75 /* ZXPaidController.xib in Resources */,
 				01D898A51DAA2A2D0070FBDD /* ZXMessageController.xib in Resources */,
 				0142BC071DBDE2E900CF8F03 /* ZXSearchHotRecommandCell.xib in Resources */,
+				014DB5711DDC354400245D08 /* ZXShopCarConfirmOrderController.xib in Resources */,
 				01D898AE1DAA2A2D0070FBDD /* ZXLikeCell.xib in Resources */,
 				01EF3F061DD311F00094CA8D /* ZXSupermarketDetailOneCell.xib in Resources */,
 				01EF3F241DD322A40094CA8D /* stock.plist in Resources */,
@@ -1880,6 +1898,7 @@
 				018A69051DD16ABF00D832A4 /* ZXLoginController.xib in Resources */,
 				0115E22A1DC1A40C006B2D75 /* ZXWaitingPaymentController.xib in Resources */,
 				0115E2561DC1E182006B2D75 /* ZXSubmitEvaluatedController.xib in Resources */,
+				75C161A91DDC51C70049C30F /* Info.plist in Resources */,
 				01C03ADC1DB9F64C00264FF8 /* ZXMakeSureOrderController.xib in Resources */,
 				01BF77771DC8618200DBFF31 /* ZXFoodMerchantsCell.xib in Resources */,
 				012BDC001DB473BE0040CB08 /* ZXSelectAddressOneCell.xib in Resources */,
@@ -1978,6 +1997,7 @@
 				012988B51DDBFDE4005E839D /* UITabBarItem+WZLBadge.m in Sources */,
 				0115E2381DC1A579006B2D75 /* ZXEvaluatedController.m in Sources */,
 				01DE22831DAE229B00D2E5BA /* ShoppingCartCell.m in Sources */,
+				014DB5701DDC354400245D08 /* ZXShopCarConfirmOrderController.m in Sources */,
 				0142BC0B1DBDF22F00CF8F03 /* ZXShawdowView.m in Sources */,
 				01FDB1A91DD557920058BC36 /* ZXConfirmOrderTimeCell.m in Sources */,
 				01C03AE51DBA09F200264FF8 /* ZXPayResultController.m in Sources */,
@@ -2040,6 +2060,7 @@
 				010526051DC7367E00514A84 /* ZXCollectGoodsController.m in Sources */,
 				01D898A41DAA2A2D0070FBDD /* ZXMessageController.m in Sources */,
 				01D8994B1DAA2B550070FBDD /* BGHeaderView.m in Sources */,
+				75B650061DDD81970017B1ED /* ZXUserProtocolController.m in Sources */,
 				01A506411DC31C30009B071F /* ZXPayResultStyleTwoCell.m in Sources */,
 				017310231DB08E6800D373E6 /* TopBannerTool.m in Sources */,
 				018522F51DC9E20F00BD25F2 /* ZXGroupBuyDetailTwoCell.m in Sources */,
@@ -2188,6 +2209,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PocketOrder/PCH/PocketOrder.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -2230,6 +2253,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PocketOrder/PCH/PocketOrder.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -2251,8 +2276,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = SY5LQ5UGTM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/yangxiaojing/Desktop/口袋食谱/PocketOrder/PocketOrder/PCH/PocketOrder.pch";
-				INFOPLIST_FILE = "/Users/yangxiaojing/Desktop/口袋食谱/PocketOrder/PocketOrder/Other/Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PocketOrder/PCH/PocketOrder.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/PocketOrder/Other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vshoutao.com.PocketOrder;
@@ -2269,8 +2294,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = SY5LQ5UGTM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/yangxiaojing/Desktop/口袋食谱/PocketOrder/PocketOrder/PCH/PocketOrder.pch";
-				INFOPLIST_FILE = "/Users/yangxiaojing/Desktop/口袋食谱/PocketOrder/PocketOrder/Other/Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PocketOrder/PCH/PocketOrder.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/PocketOrder/Other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vshoutao.com.PocketOrder;
@@ -2283,7 +2308,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "";
+				DEVELOPMENT_TEAM = SY5LQ5UGTM;
+				INFOPLIST_FILE = "$(SRCROOT)/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vshoutao.com.PocketOrderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2295,7 +2321,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "";
+				DEVELOPMENT_TEAM = SY5LQ5UGTM;
+				INFOPLIST_FILE = "$(SRCROOT)/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vshoutao.com.PocketOrderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

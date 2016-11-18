@@ -201,7 +201,6 @@ extern int btnH;
 -(void)creatLeftScrollView{
     leftScrollView = [[LeftSelectScroll alloc]initWithFrame:CGRectMake(0, leftScrollY + 1, kScreenWidth * 0.25,ScreenH - leftScrollY - ShopCarViewHeight - 64)];
     NSInteger count = leftDataSource.count;
-    leftScrollView.pagingEnabled = YES;
     leftScrollView.bounces = YES;
     
     leftScrollView.contentSize = CGSizeMake(0, btnH * count);
@@ -221,7 +220,6 @@ extern int btnH;
     if (offsetX < 0) {
         offsetX = 0;
     }
-    [leftScrollView setContentOffset:CGPointMake(0, offsetX) animated:YES];
     CGFloat maxOffsetX = leftScrollView.contentSize.height - leftScrollView.frame.size.height;
     if (offsetX > maxOffsetX) {
         offsetX = maxOffsetX;

@@ -16,4 +16,11 @@
 
 @property(nonatomic,strong) NSMutableArray * goodsInfo;
 
+@property (nonatomic,assign) BOOL isEdited;
+
+@property (nonatomic,assign) BOOL isShowMinus;
+
+@property (nonatomic,assign) BOOL isShowPlus;
+
+
 @end

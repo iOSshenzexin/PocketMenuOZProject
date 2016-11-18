@@ -16,7 +16,7 @@ static NSString *shoppingCarCell = @"ZXShoppingCarCell";
 {
     ZXShoppingCarCell *cell = [tableview dequeueReusableCellWithIdentifier:shoppingCarCell];
     if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+      cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -28,6 +28,8 @@ static NSString *shoppingCarCell = @"ZXShoppingCarCell";
     self.goodsImage.layer.cornerRadius = 3.0f;
     self.goodsImage.layer.masksToBounds = YES;
     self.goodsImage.clipsToBounds = YES;
+    self.minus.hidden = YES;
+    self.plus.hidden = YES;
 }
 
 - (IBAction)didClickDeleteCell:(id)sender {
@@ -81,8 +83,23 @@ static NSString *shoppingCarCell = @"ZXShoppingCarCell";
     self.amountTxt.text = [NSString stringWithFormat:@"%@",model.goodsCount];
     self.goodsPriceLbl.text = [NSString stringWithFormat:@"$%.2f",model.goodsPrice.intValue / 100.0];
     self.goodsNameLbl.text = model.goodsTitle;
-    self.minus.hidden = !model.isHidden;
-    self.plus.hidden = !model.isHidden;
+   
 }
+
+- (void)setHeadModel:(ZXHeaderMerchantModel *)headModel
+{
+    self.minus.hidden = !headModel.isShowMinus;
+    self.plus.hidden = !headModel.isShowPlus;
+    
+    if (headModel.isShowPlus) {
+        self.leading.constant = -78;
+        self.trailing.constant = -8;
+    }else{
+        self.leading.constant = 0;
+        self.trailing.constant = -78;
+    }
+}
+
+
 
 @end

@@ -49,6 +49,16 @@ extern int btnH;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerY;
 
+
+
+@property (nonatomic,strong) NSMutableArray *sectionsCount;
+
+@property (nonatomic,strong) NSMutableArray *rowsCount;
+
+@property (nonatomic,assign) NSInteger index;
+
+
+
 @end
 
 @implementation ZXSupermarketController
@@ -111,8 +121,6 @@ extern int btnH;
     [self.marketBtn setTitle:vc.name forState:UIControlStateNormal];
 }
 
-
-
 - (IBAction)didClickBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -127,6 +135,8 @@ extern int btnH;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.sectionsCount = [NSMutableArray arrayWithObjects:@"4",@"4",@"5",@"6",@"7",@"5",@"6", nil];
+     self.rowsCount = [NSMutableArray arrayWithObjects:@"4",@"4",@"5",@"6",@"7",@"5",@"6", nil];
     [self initObjects];
     [self creatLeftScrollView];
     [self createCollectionView];
@@ -134,7 +144,7 @@ extern int btnH;
 
 //初始化数据源
 -(void)initObjects{
-    leftDataSource = [[NSMutableArray alloc]initWithObjects:@"热门推荐",@"意大利面",@"饮料",@"水果",@"套餐",@"米线",@"小炒",nil];
+    leftDataSource = [[NSMutableArray alloc]initWithObjects:@"热门推荐",@"意大利面",@"饮料",@"水果",@"套餐",@"牛奶",@"生活用品",nil];
 }
 
 -(void)createCollectionView{
@@ -144,7 +154,7 @@ extern int btnH;
     layout.minimumInteritemSpacing = 5;
     layout.headerReferenceSize = CGSizeMake(ScreenW * 0.75 - 10,44);
     
-    _collectionViewList = [[UICollectionView alloc] initWithFrame:CGRectMake(ScreenW * 0.25 + 5, 0, ScreenW * 0.75 - 10,ScreenH - 113) collectionViewLayout:layout];
+    _collectionViewList = [[UICollectionView alloc] initWithFrame:CGRectMake(ScreenW * 0.25 + 3, 0, ScreenW * 0.75 - 6,ScreenH - 113) collectionViewLayout:layout];
     // ScreenH - 113
     [_collectionViewList registerNib:[UINib nibWithNibName:@"ZXSupmarketCollectionCell"bundle:nil]forCellWithReuseIdentifier:supmarketCollectionCell];
     
@@ -162,25 +172,25 @@ extern int btnH;
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return [self.sectionsCount[self.index] integerValue];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return leftDataSource.count;
+    return [self.rowsCount[self.index] integerValue];
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-
 {
     UICollectionReusableView *reusableview;
     if (kind == UICollectionElementKindSectionHeader){
         ZXCollectionHeaderView *headerView = [ZXCollectionHeaderView headerViewWith:collectionView indexPath:indexPath];
         headerView.titleLabel.text = [self viewForHeaderView:indexPath.section];
-         reusableview = headerView;
+        reusableview = headerView;
     }
      return reusableview;
 }
+
 
 //实际需要会修改 - 设置sectionHeaderView
 -(NSString *)viewForHeaderView:(NSInteger)parama{
@@ -189,19 +199,7 @@ extern int btnH;
         title = leftDataSource[parama];
         ZXLog(@"%@",[NSString stringWithFormat:@"第%ld组",(long)parama]);
     }
-    if (isScrollSetSelect == YES) {
-        CGFloat offsetX = btnH * parama - leftScrollView.frame.size.height * 0.5;
-        if (offsetX < 0) {
-            offsetX = 0;
-        }
-        [leftScrollView setContentOffset:CGPointMake(0, offsetX) animated:YES];
-        CGFloat maxOffsetX = leftScrollView.contentSize.height - leftScrollView.frame.size.height;
-        if (offsetX > maxOffsetX) {
-            offsetX = maxOffsetX;
-        }
-        [leftScrollView setContentOffset:CGPointMake(0, offsetX) animated:YES];
-        [leftScrollView setSelectButtonWithIndexPathSection:parama];
-    }
+   
     return title;
 }
 
@@ -229,8 +227,7 @@ extern int btnH;
 -(void)creatLeftScrollView{
     leftScrollView = [[LeftSelectScroll alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth * 0.25,ScreenH - 113)];
     NSInteger count = leftDataSource.count;
-    leftScrollView.pagingEnabled = YES;
-    leftScrollView.bounces = YES;
+  //  leftScrollView.bounces = YES;
     leftScrollView.contentSize = CGSizeMake(0, btnH * count);
     leftScrollView.autoresizesSubviews = NO;
     [leftScrollView setLeftSelectArray:leftDataSource];
@@ -240,28 +237,31 @@ extern int btnH;
 }
 
 
-#pragma mark -点击左侧ScrollView切换右侧TableView的代理方法
+#pragma mark -点击左侧ScrollView切换右侧CollectionView的代理方法
 -(void)clickLeftSelectScrollButton:(NSInteger)indexPath{
-    CGFloat offsetX = btnH * indexPath - leftScrollView.frame.size.height * 0.5;
-    if (offsetX < 0) {
+    CGFloat offsetX = btnH * (indexPath) - leftScrollView.bounds.size.height * 0.5;
+    if (offsetX < 0){
         offsetX = 0;
     }
-    [leftScrollView setContentOffset:CGPointMake(0, offsetX) animated:YES];
-    CGFloat maxOffsetX = leftScrollView.contentSize.height - leftScrollView.frame.size.height;
+    CGFloat maxOffsetX = leftScrollView.contentSize.height - leftScrollView.bounds.size.height;
     if (offsetX > maxOffsetX) {
         offsetX = maxOffsetX;
     }
+    self.index = indexPath;
+    [_collectionViewList reloadData];
+    [leftScrollView setSelectButtonWithIndexPathSection:indexPath];
     [leftScrollView setContentOffset:CGPointMake(0, offsetX) animated:YES];
     isScrollSetSelect = NO;
-    [_collectionViewList scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath] atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:YES];
-    
-//  - (void)scrollToItemAtIndexPath:(NSIndexPath *)indexPath atScrollPosition:(UICollectionViewScrollPosition)scrollPosition animated:(BOOL)animated;
-//    
-//    [_collectionViewList scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    _collectionViewList.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     isScrollSetSelect = YES ;
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+}
+
 
 @end

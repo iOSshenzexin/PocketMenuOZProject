@@ -10,7 +10,7 @@
 
 #import "ZXRegisterController.h"
 #import "ZXResetPWDController.h"
-
+#import "ZXUserProtocolController.h"
 
 #import "XFSegementView.h"
 #import "ZXLoginBlockView.h"
@@ -103,6 +103,14 @@
     vc.title = @"注册";
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+
+- (IBAction)didClickPushToUserProtocol:(id)sender {
+    ZXUserProtocolController *vc = [[ZXUserProtocolController alloc] init];
+    vc.title = @"PocketMenuOZ-用户协议";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 
 

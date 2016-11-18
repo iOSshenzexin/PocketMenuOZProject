@@ -11,8 +11,6 @@
 @implementation ZXShoppingCarHeaderView
 
 static NSString *headerId = @"headerID";
-
-
 +(instancetype)headerViewWithTableView:(UITableView *)tableView{
     ZXShoppingCarHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerId];
     if (headerView == nil) {
@@ -31,9 +29,9 @@ static NSString *headerId = @"headerID";
 {
     _model = model;
     self.headerSelectBtn.selected = model.isSelect;
+    self.editBtn.selected = model.isEdited;
     [self.marketNameBtn setTitle:model.homeID forState:UIControlStateNormal];
 }
-
 
 
 /**
@@ -41,12 +39,10 @@ static NSString *headerId = @"headerID";
  */
 - (IBAction)select:(UIButton *)sender {
     sender.selected = !sender.selected;
-
     if ([self.headerDelegate respondsToSelector:@selector(didClickShoppingCarHeaderViewSelectAllOfCellInSection:mark:)]) {
         [self.headerDelegate didClickShoppingCarHeaderViewSelectAllOfCellInSection:self mark:@"select"];
     }
 }
-
 
 /**
  点击跳转到具体超市
@@ -61,7 +57,6 @@ static NSString *headerId = @"headerID";
  点击编辑改变产品数量
  */
 - (IBAction)didClickEditButton:(UIButton *)sender {
-    sender.selected = !sender.selected;
     if ([self.headerDelegate respondsToSelector:@selector(didClickShoppingCarHeaderViewEditButton:)]) {
     [self.headerDelegate didClickShoppingCarHeaderViewEditButton:self];
 }

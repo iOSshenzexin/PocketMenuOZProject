@@ -200,9 +200,7 @@ extern int btnH;
 -(void)creatLeftScrollView{
     leftScrollView = [[LeftSelectScroll alloc]initWithFrame:CGRectMake(0, leftScrollY + 1, kScreenWidth * 0.25,ScreenH - leftScrollY - ShopCarViewHeight - 64)];
     NSInteger count = leftDataSource.count;
-    leftScrollView.pagingEnabled = YES;
     leftScrollView.bounces = YES;
-    
     leftScrollView.contentSize = CGSizeMake(0, btnH * count);
     leftScrollView.autoresizesSubviews = NO;
     [leftScrollView setLeftSelectArray:leftDataSource];

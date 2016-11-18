@@ -7,6 +7,8 @@
 //
 
 #import "ZXWaitingEvaluatedController.h"
+#import "ZXProductListController.h"
+
 
 #import "ZXSubmitEvaluatedController.h"
 #import "ZXWaitingEvaluatedCell.h"
@@ -40,6 +42,13 @@
     vc.title = @"评价";
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+-(void)didClickButtonToGetMoceOrder:(ZXWaitingEvaluatedCell *)cell
+{
+    ZXProductListController *vc = [[ZXProductListController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

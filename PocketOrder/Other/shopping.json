@@ -75,6 +75,44 @@
                                   "goodsImage": "maozi"
                                   }
                                   ]
+                    },
+                    {
+                    "homeID": "逸景公馆",
+                    "goodsInfo": [
+                                  {
+                                  "goodsID": "001",
+                                  "goodsTitle": "井柏然同款香蕉大皮鞋,好看耐穿井柏然同款香蕉大皮鞋,好看耐穿",
+                                  "goodsImageURL": "001",
+                                  "goodsColor": "红色",
+                                  "goodsSize": "42",
+                                  "goodsCount": "1",
+                                  "goodsPrice": "10000",
+                                  "isSeleted": "0",
+                                  "goodsImage": "jingboranpixie"
+                                  },
+                                  {
+                                  "goodsID": "001",
+                                  "goodsTitle": "井柏然同款T恤,好看耐穿,耐脏井柏然同款香蕉大皮鞋,好看耐穿",
+                                  "goodsImageURL": "001",
+                                  "goodsColor": "白色",
+                                  "goodsSize": "XXL",
+                                  "goodsCount": "1",
+                                  "goodsPrice": "6000",
+                                  "isSeleted": "0",
+                                  "goodsImage": "jingborantxue"
+                                  },
+                                  {
+                                  "goodsID": "001",
+                                  "goodsTitle": "井柏然同款墨镜,闪耀众生,洞察一切井柏然同款香蕉大皮鞋,好看耐穿",
+                                  "goodsImageURL": "001",
+                                  "goodsColor": "黑金",
+                                  "goodsSize": "Single",
+                                  "goodsCount": "2",
+                                  "goodsPrice": "6000",
+                                  "isSeleted": "0",
+                                  "goodsImage": "jingboranyanjing"
+                                  }
+                                  ]
                     }
                     ]
 }

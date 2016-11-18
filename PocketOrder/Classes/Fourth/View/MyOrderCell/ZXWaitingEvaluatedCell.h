@@ -15,6 +15,9 @@
 
 - (void)waitingEvaluatedCellJumpToEvaluatedPage:(ZXWaitingEvaluatedCell *)cell;
 
+- (void)didClickButtonToGetMoceOrder:(ZXWaitingEvaluatedCell *)cell;
+
+
 @end
 
 

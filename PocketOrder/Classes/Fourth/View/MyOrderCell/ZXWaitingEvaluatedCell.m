@@ -34,4 +34,10 @@ static NSString *waitingEvaluatedCell = @"ZXWaitingEvaluatedCell";
 }
 
 
+- (IBAction)didClickGetOneMoreOrder:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(didClickButtonToGetMoceOrder:)]) {
+        [self.delegate didClickButtonToGetMoceOrder:self];
+    }
+}
+
 @end
