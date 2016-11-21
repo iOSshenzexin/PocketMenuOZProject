@@ -27,4 +27,19 @@ static NSString *paidCell = @"ZXPaidCell";
     return cell;
 }
 
+
+- (IBAction)didClickCancleOrder:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(didClickCancleOrder:)]) {
+        [self.delegate didClickCancleOrder:self];
+    }
+}
+
+
+- (IBAction)didClickMakeAPhoneCall:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(didClickMakeAPhoneCall:)]) {
+        [self.delegate didClickMakeAPhoneCall:self];
+    }
+}
+
+
 @end

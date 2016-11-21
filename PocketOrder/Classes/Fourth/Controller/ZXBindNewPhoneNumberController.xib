@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXBindNewPhoneNumberController">
+            <connections>
+                <outlet property="phoneText" destination="G2Q-Rp-SBu" id="BbV-ac-2in"/>
+                <outlet property="view" destination="ict-JY-hjO" id="8ED-VN-ybw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ict-JY-hjO">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTP-Ih-0IX">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Xtw-pB-YU5">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="hNs-qu-OVA"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="6AL-of-VhI">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="tgx-nk-d2t"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="5Ye-1n-JjU">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="2Gr-EC-YaW"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您要绑定的新手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2Q-Rp-SBu">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="R4b-aJ-FoQ"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X7B-5w-fOf">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="dGc-jq-501"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="X7B-5w-fOf" secondAttribute="bottom" constant="1" id="2ax-6J-XuS"/>
+                        <constraint firstItem="Xtw-pB-YU5" firstAttribute="top" secondItem="GTP-Ih-0IX" secondAttribute="top" id="2cU-0e-Zy1"/>
+                        <constraint firstItem="G2Q-Rp-SBu" firstAttribute="top" secondItem="Xtw-pB-YU5" secondAttribute="bottom" id="6t1-oz-BzV"/>
+                        <constraint firstAttribute="trailing" secondItem="X7B-5w-fOf" secondAttribute="trailing" constant="10" id="EMx-Cz-6Lg"/>
+                        <constraint firstItem="6AL-of-VhI" firstAttribute="top" secondItem="Xtw-pB-YU5" secondAttribute="bottom" constant="46" id="TAq-l0-ahA"/>
+                        <constraint firstItem="6AL-of-VhI" firstAttribute="leading" secondItem="GTP-Ih-0IX" secondAttribute="leading" id="XW7-Xh-xCT"/>
+                        <constraint firstAttribute="trailing" secondItem="G2Q-Rp-SBu" secondAttribute="trailing" constant="10" id="Yo2-31-r3W"/>
+                        <constraint firstAttribute="bottom" secondItem="5Ye-1n-JjU" secondAttribute="bottom" id="hnl-sc-dcm"/>
+                        <constraint firstItem="Xtw-pB-YU5" firstAttribute="leading" secondItem="GTP-Ih-0IX" secondAttribute="leading" id="j9M-Gu-iPb"/>
+                        <constraint firstAttribute="trailing" secondItem="6AL-of-VhI" secondAttribute="trailing" id="kNz-Ug-b3G"/>
+                        <constraint firstAttribute="trailing" secondItem="5Ye-1n-JjU" secondAttribute="trailing" id="pyN-aC-aHd"/>
+                        <constraint firstItem="5Ye-1n-JjU" firstAttribute="leading" secondItem="GTP-Ih-0IX" secondAttribute="leading" id="qGE-l5-moM"/>
+                        <constraint firstAttribute="height" constant="93" id="rDi-WY-hwI"/>
+                        <constraint firstItem="G2Q-Rp-SBu" firstAttribute="leading" secondItem="GTP-Ih-0IX" secondAttribute="leading" constant="10" id="sSM-sI-br3"/>
+                        <constraint firstItem="X7B-5w-fOf" firstAttribute="leading" secondItem="GTP-Ih-0IX" secondAttribute="leading" constant="10" id="sgU-4d-8cN"/>
+                        <constraint firstAttribute="trailing" secondItem="Xtw-pB-YU5" secondAttribute="trailing" id="trJ-hi-Inj"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfZ-S5-xAb">
+                    <color key="backgroundColor" red="0.94901960780000005" green="0.3294117647" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Gs0-Cb-a6h"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="绑定"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="didClickBindNewPhoneNumber:" destination="-1" eventType="touchUpInside" id="XVx-ka-FG1"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="重新绑定后,原手机号码将不能作为登录凭证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFe-FA-8mu">
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
+                    <color key="textColor" red="0.94901960780000005" green="0.36862745099999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="QfZ-S5-xAb" firstAttribute="top" secondItem="GTP-Ih-0IX" secondAttribute="bottom" constant="68" id="1fo-yG-PIc"/>
+                <constraint firstItem="QfZ-S5-xAb" firstAttribute="leading" secondItem="ict-JY-hjO" secondAttribute="leading" constant="15" id="4NB-Y4-xmN"/>
+                <constraint firstItem="GTP-Ih-0IX" firstAttribute="top" secondItem="ict-JY-hjO" secondAttribute="top" constant="74" id="OTS-5o-77b"/>
+                <constraint firstItem="FFe-FA-8mu" firstAttribute="leading" secondItem="ict-JY-hjO" secondAttribute="leading" constant="10" id="Qao-kU-RaW"/>
+                <constraint firstAttribute="trailing" secondItem="GTP-Ih-0IX" secondAttribute="trailing" id="aAK-5K-uzD"/>
+                <constraint firstAttribute="trailing" secondItem="QfZ-S5-xAb" secondAttribute="trailing" constant="15" id="gOT-MM-ieS"/>
+                <constraint firstItem="FFe-FA-8mu" firstAttribute="top" secondItem="GTP-Ih-0IX" secondAttribute="bottom" constant="10" id="hxG-nr-3dQ"/>
+                <constraint firstItem="GTP-Ih-0IX" firstAttribute="leading" secondItem="ict-JY-hjO" secondAttribute="leading" id="odd-Af-a70"/>
+            </constraints>
+            <point key="canvasLocation" x="38.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="line" width="1" height="1"/>
+    </resources>
+</document>

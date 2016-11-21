@@ -7,6 +7,9 @@
 //
 
 #import "ZXGroupBuyDetailController.h"
+#import "ZXSubmitGroupOrderController.h"
+
+
 #import "TopBannerTool.h"
 #import "ZXGroupBuyDetailOneCell.h"
 #import "ZXGroupBuyDetailTwoCell.h"
@@ -26,6 +29,7 @@
     KNBannerView *banner = [TopBannerTool setupNetWorkBannerViewAtViewController:self];
     banner.pageControlStyle = KNPageControlStyleMiddle;
     self.tableView.tableHeaderView = banner;
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 49, 0);
 }
 
 
@@ -71,8 +75,6 @@
 }
 
 
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 1;
@@ -102,6 +104,13 @@
         return 400;
     }
     return 400;
+}
+
+
+- (IBAction)didClickToOrderNow:(id)sender {
+     ZXSubmitGroupOrderController *vc = [[UIStoryboard storyboardWithName:@"ZXSubmitGroupOrderController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXSubmitGroupOrderController"];
+     vc.title = @"提交订单";
+     [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

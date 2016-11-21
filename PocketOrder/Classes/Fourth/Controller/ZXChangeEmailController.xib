@@ -77,7 +77,7 @@
                         <constraint firstAttribute="height" constant="40" id="YbJ-l1-XFq"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <state key="normal" title="确定"/>
+                    <state key="normal" title="绑定"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="3"/>

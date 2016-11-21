@@ -8,6 +8,7 @@
 
 #import "ZXChangePersonInfoController.h"
 #import "ZXChangeEmailController.h"
+#import "ZXVerifyPhoneNumberController.h"
 @interface ZXChangePersonInfoController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 
@@ -61,7 +62,12 @@
             ZXChangeEmailController *vc = [[ZXChangeEmailController alloc] init];
             vc.title = @"换绑邮箱";
             [self.navigationController pushViewController:vc animated:YES];
+        }else{
+            ZXVerifyPhoneNumberController *vc = [[ZXVerifyPhoneNumberController alloc] init];
+            vc.title = @"安全验证";
+            [self.navigationController pushViewController:vc animated:YES];
         }
+        
     }
 }
 

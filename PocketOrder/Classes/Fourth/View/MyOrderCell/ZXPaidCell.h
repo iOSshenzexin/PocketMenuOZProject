@@ -8,8 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@class ZXPaidCell;
+@protocol ZXPaidCellDelegate <NSObject>
+
+@optional
+
+- (void)didClickMakeAPhoneCall:(ZXPaidCell *)cell;
+
+- (void)didClickCancleOrder:(ZXPaidCell *)cell;
+
+
+@end
+
 @interface ZXPaidCell : UITableViewCell
 
 +(instancetype)cellWithTableView:(UITableView *)tableview;
+
+@property (nonatomic,weak) id <ZXPaidCellDelegate>delegate;
 
 @end

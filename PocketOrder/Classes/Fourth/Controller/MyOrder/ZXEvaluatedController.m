@@ -35,7 +35,7 @@
     return cell;
 }
 
--(void)didClickButtonToGetMoceOrder:(ZXEvaluatedCell *)cell
+-(void)didClickToGetMoceOrder:(ZXEvaluatedCell *)cell
 {
     ZXProductListController *vc = [[ZXProductListController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];

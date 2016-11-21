@@ -11,8 +11,8 @@
 @implementation ZXEvaluatedCell
 
 - (IBAction)didClickToGetMoreOrder:(id)sender {
-    if ([self.delegate respondsToSelector:@selector(didClickButtonToGetMoceOrder:)]) {
-        [self.delegate didClickButtonToGetMoceOrder:self];
+    if ([self.delegate respondsToSelector:@selector(didClickToGetMoceOrder:)]) {
+        [self.delegate didClickToGetMoceOrder:self];
     }
 }
 

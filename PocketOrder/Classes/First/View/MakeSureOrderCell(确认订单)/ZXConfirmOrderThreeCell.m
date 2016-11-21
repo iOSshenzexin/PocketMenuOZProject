@@ -29,8 +29,6 @@
 {
     [super awakeFromNib];
     self.previousButton = self.firstBtn;
-    
-    
 }
 
 - (IBAction)didClickSelectPayStyle:(UIButton *)sender {

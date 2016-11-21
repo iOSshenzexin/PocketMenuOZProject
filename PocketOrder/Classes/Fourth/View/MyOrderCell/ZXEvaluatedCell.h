@@ -13,7 +13,7 @@
 
 @optional
 
-- (void)didClickButtonToGetMoceOrder:(ZXEvaluatedCell *)cell;
+- (void)didClickToGetMoceOrder:(ZXEvaluatedCell *)cell;
 
 @end
 

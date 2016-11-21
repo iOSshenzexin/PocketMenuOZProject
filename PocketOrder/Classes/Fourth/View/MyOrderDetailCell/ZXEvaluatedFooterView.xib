@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZXEvaluatedFooterView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="noH-ls-eWJ">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="woD-Em-QbD"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="味道不错,希望下次配送可以快一点那就更完美了!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QD0-mN-3Nc">
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="QdV-cx-HF1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="QD0-mN-3Nc" secondAttribute="trailing" constant="10" id="Bbr-qh-WfY"/>
+                <constraint firstItem="QD0-mN-3Nc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="60" id="FW9-31-V7W"/>
+                <constraint firstAttribute="bottom" secondItem="QD0-mN-3Nc" secondAttribute="bottom" id="FdK-6K-yzC"/>
+                <constraint firstItem="noH-ls-eWJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="dGr-Ss-iUp"/>
+                <constraint firstItem="noH-ls-eWJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="60" id="usm-YZ-4oo"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="34.5" y="55"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="star" width="81" height="13"/>
+    </resources>
+</document>

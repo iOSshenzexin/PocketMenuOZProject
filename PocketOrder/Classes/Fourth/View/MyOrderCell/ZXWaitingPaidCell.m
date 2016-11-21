@@ -10,6 +10,20 @@
 
 @implementation ZXWaitingPaidCell
 
+- (IBAction)didClickCancleOrder:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(didClickCancleWaitingOrder:)]) {
+        [self.delegate didClickCancleWaitingOrder:self];
+    }
+}
+
+- (IBAction)didClickPayMoney:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(didClickPayMoney:)]) {
+        [self.delegate didClickPayMoney:self];
+    }
+}
+
+
+
 -(void)setFrame:(CGRect)frame
 {
     frame.size.height -= 5;
