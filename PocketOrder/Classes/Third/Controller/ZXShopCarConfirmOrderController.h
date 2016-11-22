@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ZXShopCarConfirmOrderController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+- (IBAction)didClickSubmitOrder:(id)sender;
 
 @end

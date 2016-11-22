@@ -15,7 +15,14 @@
                 <frame key="frameInset" width="320" height="95"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop1" translatesAutoresizingMaskIntoConstraints="NO" id="crw-YW-SQs"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop3" translatesAutoresizingMaskIntoConstraints="NO" id="crw-YW-SQs">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="意式肉酱面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itg-7o-sYI">
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="AiO-9N-Qeg"/>
@@ -85,6 +92,6 @@
     <resources>
         <image name="concern" width="17" height="15"/>
         <image name="line" width="1" height="1"/>
-        <image name="shop1" width="75" height="75"/>
+        <image name="shop3" width="75" height="75"/>
     </resources>
 </document>

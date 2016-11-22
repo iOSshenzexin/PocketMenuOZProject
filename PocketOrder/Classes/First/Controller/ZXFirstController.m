@@ -174,9 +174,11 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideShawdowView:)];
         [shawdow.superview.superview addGestureRecognizer:tap];
         
-    UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, shawdow.bounds.size.width, shawdow.bounds.size.height)];
+    UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, shawdow.bounds.size.width, shawdow.bounds.size.height) style:UITableViewStyleGrouped];
         table.delegate = self;
         table.dataSource = self;
+        table.sectionFooterHeight = 0;
+        table.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0,0,0,0.1)];
         table.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
        [shawdow addSubview:table];
     self.cityTableView = table;
@@ -197,7 +199,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (tableView == self.cityTableView) {
-        return 5;
+        return 3;
     }
     return 3;
 }
@@ -236,13 +238,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    if (tableView == self.cityTableView) {
+        return 2;
+    }else{
+        return 1;
+    }
 }
 
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    NSArray *headerTitles = @[[NSString stringWithFormat:@"当前城市: %@",self.leftButton.titleLabel.text]];
+    NSArray *headerTitles = @[[NSString stringWithFormat:@"当前城市: %@",self.leftButton.titleLabel.text],@"附近地址"];
     UIView *header = [[UIView alloc] init];
     header.backgroundColor = RGB(241, 241, 241);
     UILabel *headerLbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, ScreenW, 40)];
@@ -315,27 +321,23 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *vc;
     if (indexPath.row == 1) {
-        ZXDessertAndDrinksController *vc = [[ZXDessertAndDrinksController alloc] init];
-        vc.hidesBottomBarWhenPushed = YES;
+        vc = [[ZXDessertAndDrinksController alloc] init];
         vc.title = @"甜品饮料";
-        [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 2){
-        ZXGroupBuyController *vc = [[ZXGroupBuyController alloc] init];
-        vc.hidesBottomBarWhenPushed = YES;
+        vc = [[ZXGroupBuyController alloc] init];
         vc.title = @"团购";
-        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row == 0){
-        DeliciousFoodController *vc = [[DeliciousFoodController alloc] init];
-        vc.hidesBottomBarWhenPushed = YES;
+        vc = [[DeliciousFoodController alloc] init];
         vc.title = @"美食";
-        [self.navigationController pushViewController:vc animated:YES];
         }else{
-        ZXSupermarketController *vc = [[ZXSupermarketController alloc] init];
-        vc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+            vc = [[ZXSupermarketController alloc] init];
+           }
+     vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 #pragma mark - UITableViewDelegate

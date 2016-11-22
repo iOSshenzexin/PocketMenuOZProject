@@ -16,6 +16,8 @@
 #import "ZXHeaderMerchantModel.h"
 #import "ZXShoppingCarBottomModel.h"
 #import "ZXShopCarConfirmOrderController.h"
+
+#import "ZXBottomEditView.h"
 @interface ZXThirdController ()<UITableViewDelegate,UITableViewDataSource,ZXShoppingCarHeaderViewDelegate,ZXShoppingCarCellDelegate>
 
 @property (nonatomic,strong) NSMutableArray *carLists;
@@ -25,6 +27,8 @@
 @property(nonatomic,strong) NSMutableArray * groupArrs;
 
 @property(nonatomic,strong) ZXShoppingCarBottomModel * bottomModel;
+
+@property (nonatomic,strong) ZXBottomEditView *editView;
 
 @end
 
@@ -226,8 +230,7 @@
     NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
     NSDictionary *dic = self.carLists[indexPath.section];
     [dic[@"goodsInfo"] removeObjectAtIndex:indexPath.row];
-    if([[self.carLists objectAtIndex:indexPath.section][@"goodsInfo"] count]  > 0)
-    {
+    if([[self.carLists objectAtIndex:indexPath.section][@"goodsInfo"] count]  > 0){
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]withRowAnimation:UITableViewRowAnimationNone];
     }
     else{
@@ -239,7 +242,6 @@
     }
     ZXLog(@"self.modelArrs %@",self.modelArrs);
     [self imputedAllPrice];
-
 }
 
 /**
@@ -281,7 +283,6 @@
         }
     }
      [self.tableView reloadData];
-    
 }
 //全选
 - (void)isallSelectAllPrice
@@ -315,9 +316,6 @@
 
 /**
  *  cell的代理方法
- *
- *  @param cell     cell可以拿到indexpath
- *  @param selectBt 选中按钮
  */
 - (void)shoppingCellDelegate:(ZXShoppingCarCell *)cell WithSelectButton:(UIButton *)selectBt
 {
@@ -376,7 +374,6 @@
 }
 
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 100;
@@ -392,22 +389,58 @@
     }
 }
 
-
-
 /**
  导航栏按钮
  */
 - (void)didClickEdit:(UIButton *)btn
 {
     btn.selected = !btn.selected;
-    ZXFunction
+    if (btn.selected) {
+            ZXBottomEditView *editView = [ZXBottomEditView szx_viewFromXib];
+            editView.frame = CGRectMake(80, 0, ScreenW -80, 49);
+            [self.bottom addSubview:editView];
+        [editView.deleteBtn addTarget:self action:@selector(didDeleteShopCarGoods:) forControlEvents:UIControlEventTouchUpInside];
+            self.editView = editView;
+    }else{
+        [self.editView removeFromSuperview];
+    }
 }
 
+#warning 11.21 shoppingCar
+- (void)didDeleteShopCarGoods:(UIButton *)btn
+{
+    NSInteger sections = self.tableView.numberOfSections;
+    for (int section = 0; section < sections; section++) {
+        NSInteger rows =  [self.tableView numberOfRowsInSection:section];
+        for (int row = 0; row < rows; row++) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
+            ZXShoppingCarCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            if (cell.selectBtn.selected){
+                NSDictionary *dic = self.carLists[indexPath.section];
+                [dic[@"goodsInfo"] removeObjectAtIndex:indexPath.row];
+                if([[self.carLists objectAtIndex:indexPath.section][@"goodsInfo"] count]  > 0){
+                    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]withRowAnimation:UITableViewRowAnimationNone];
+                    [self.tableView reloadData];
+                }
+                else{
+                    [self.tableView beginUpdates];
+                    [self.carLists removeObjectAtIndex:indexPath.section];
+                    [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section]
+                                  withRowAnimation:UITableViewRowAnimationNone];
+                    [self.tableView endUpdates];
+                }
+        }
+    }
+    }
+    [self imputedAllPrice];
+
+    
+}
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-   // self.view = nil;
+    self.view = nil;
 }
 
 @end

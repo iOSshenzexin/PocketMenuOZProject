@@ -133,6 +133,8 @@
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(titleButtonW + (Margin-1) * 0.5, Margin * 0.5, 1, titleButtonH - Margin)];
     line.backgroundColor = RGB(219, 219, 219);
     [self.titlesView addSubview:line];
+    
+    
 }
 
 /**
@@ -146,10 +148,15 @@
     // 下划线
     UIView *titleUnderline = [[UIView alloc] init];
     titleUnderline.height = Margin * 0.5;
-    titleUnderline.y = self.titlesView.height - titleUnderline.height;
+    titleUnderline.y = self.titlesView.height - titleUnderline.height -1;
     titleUnderline.backgroundColor = [firstTitleButton titleColorForState:UIControlStateSelected];
     [self.titlesView addSubview:titleUnderline];
     self.titleUnderline = titleUnderline;
+    
+    //分割线
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, titleUnderline.y + 3, ScreenW, 1)];
+    lineView.backgroundColor = RGB(199, 199, 199);
+    [self.titlesView addSubview:lineView];
     
     // 切换按钮状态
     firstTitleButton.selected = YES;
