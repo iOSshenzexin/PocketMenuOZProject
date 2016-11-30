@@ -10,13 +10,6 @@
 
 @implementation ZXSelectAddressTwoCell
 
--(void)setFrame:(CGRect)frame
-{
-    frame.size.height -= 1;
-    [super setFrame:frame];
-}
-
-
 static NSString *selectAddressTwoCell = @"ZXSelectAddressTwoCell";
 +(instancetype)cellWithTableView:(UITableView *)tableview
 {
@@ -27,5 +20,18 @@ static NSString *selectAddressTwoCell = @"ZXSelectAddressTwoCell";
     }
     return cell;
 }
+
+-(void)setAddressModel:(ZXUserAddressListModel *)addressModel{
+    _addressModel = addressModel;
+    self.userInfo.text = [NSString stringWithFormat:@"%@ %@ %@",addressModel.true_name,addressModel.prefixes,@(addressModel.mob_phone)];
+    self.addressLabel.text = [NSString stringWithFormat:@"%@",addressModel.address];
+}
+
+- (IBAction)didClickUpdateAddress:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(didClickUpdateUserAddress:)]) {
+        [self.delegate didClickUpdateUserAddress:self];
+    }
+}
+
 
 @end

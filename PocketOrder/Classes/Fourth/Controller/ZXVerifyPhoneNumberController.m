@@ -24,4 +24,10 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.view endEditing:YES];
+}
 @end

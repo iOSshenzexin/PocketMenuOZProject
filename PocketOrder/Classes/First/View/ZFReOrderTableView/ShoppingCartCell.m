@@ -10,6 +10,23 @@
 
 @implementation ShoppingCartCell
 
+ static NSString *cellID = @"ShoppingCartCell";
++(instancetype)cellWithTableView:(UITableView *)tableView
+{
+    ShoppingCartCell *cell = (ShoppingCartCell *)[tableView dequeueReusableCellWithIdentifier:cellID];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:cellID owner:nil options:nil] lastObject];
+    }
+    cell.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:1];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+
+
+
+
+
 
 - (IBAction)minus:(id)sender {
     

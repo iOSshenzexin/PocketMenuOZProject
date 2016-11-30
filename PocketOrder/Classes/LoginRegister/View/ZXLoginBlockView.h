@@ -28,9 +28,16 @@
 
 @property (nonatomic,weak) id<ZXLoginBlockViewDelegate> delegate;
 
+@property (weak, nonatomic) IBOutlet UITextField *commonLoginTelTxt;
+
+@property (weak, nonatomic) IBOutlet UITextField *commonLoginPwdTxt;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *rememberPwd;
 
 @property (strong, nonatomic) IBOutlet UITextField *fastLoginCodeTxt;
 
+@property (weak, nonatomic) IBOutlet UITextField *fastLoginTelText;
 
 + (instancetype)commonLoginView;
 

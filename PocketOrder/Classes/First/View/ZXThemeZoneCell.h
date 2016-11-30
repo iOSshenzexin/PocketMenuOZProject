@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ZXThemeZoneCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 +(instancetype)cellWithTableView:(UITableView *)tableView;

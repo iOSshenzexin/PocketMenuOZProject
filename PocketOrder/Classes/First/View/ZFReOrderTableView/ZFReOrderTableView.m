@@ -4,24 +4,6 @@
 //  Created by WZF on 15/11/13.
 //  Copyright © 2015年 WZF. <wzhf366@163.com>
 //
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-//  THE SOFTWARE.
-
 
 #import "ZFReOrderTableView.h"
 #import "ShoppingCartCell.h"
@@ -67,9 +49,7 @@
 -(instancetype)initWithFrame:(CGRect)frame withObjects:(NSMutableArray *)objects canReorder:(BOOL)reOrder
 {
     self = [super initWithFrame:frame];
-    
     if (self) {
-        
         self.objects = [NSMutableArray arrayWithArray:objects];
         self.isReorder = reOrder;
         self.canMergeCell = YES;
@@ -85,26 +65,23 @@
 {
     self.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
     self.tableView = [[UITableView alloc] initWithFrame:self.bounds];
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 70, 0);
     self.tableView.bounces = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.showsVerticalScrollIndicator = NO;
-    self.tableView.backgroundColor = [UIColor clearColor];
+    //self.tableView.backgroundColor = [UIColor clearColor];
     [self addSubview:self.tableView];
-    
     if (self.isReorder) {
         _longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressGestureRecognized:)];
         [self.tableView addGestureRecognizer:_longPress];
     }
-    
-    
 }
 
 #pragma mark -手势操作
 - (void)longPressGestureRecognized:(id)sender {
-    
     UILongPressGestureRecognizer *longPress = (UILongPressGestureRecognizer *)sender;
     UIGestureRecognizerState state = longPress.state;
-    
     switch (state)
     {
         case UIGestureRecognizerStateBegan:
@@ -118,7 +95,6 @@
         default:
             break;
     }
-    
 }
 
 - (void)didBeginLongPressGestureRecognizer:(UILongPressGestureRecognizer*)gestureRecognizer
@@ -150,7 +126,7 @@
         NSMutableArray *sourceArray = [self.objects objectAtIndex:_initialSourceIndexPath.section];
         NSMutableDictionary *currentDictionary = sourceArray[_initialSourceIndexPath.row];
         
-        if ([currentDictionary[@"orderCount"] integerValue] ==1 ) {
+        if ([currentDictionary[@"orderCount"] integerValue] == 1 ) {
             self.identifier = nil;
             _canSplitCell = NO;
             NSLog(@"NO");
@@ -218,7 +194,6 @@
     BOOL isRollUp =  [self canRollUpTableView:self.tableView];
   
     [UIView animateWithDuration:0.5 animations:^{
-        
         CGPoint currentOffset = self.tableView.contentOffset;
         if (isRollUp) {
             currentOffset.y += 30;

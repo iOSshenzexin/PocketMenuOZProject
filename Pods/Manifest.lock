@@ -22,7 +22,9 @@ PODS:
   - GooglePlaces (2.1.0):
     - GoogleMaps/Base (= 2.1.0)
   - IQKeyboardManager (4.0.6)
+  - JTSImageViewController (1.5.1)
   - LECropPictureViewController (0.1.2)
+  - Masonry (1.0.2)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.9)
   - Reachability (3.2)
@@ -30,29 +32,36 @@ PODS:
     - SDWebImage/Core (= 3.8.0)
   - SDWebImage/Core (3.8.0)
   - SVProgressHUD (2.0.3)
+  - UITableView+FDTemplateLayoutCell (1.4)
 
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
   - GoogleMaps
   - GooglePlaces (~> 2.1.0)
   - IQKeyboardManager
+  - JTSImageViewController
   - LECropPictureViewController (= 0.1.2)
+  - Masonry
   - MJExtension (= 3.0.13)
   - MJRefresh (= 3.1.9)
   - Reachability (= 3.2)
   - SDWebImage (= 3.8.0)
   - SVProgressHUD (= 2.0.3)
+  - UITableView+FDTemplateLayoutCell
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   GoogleMaps: 06589b9a38097bce0cd6e90f0fd9b5e4b4a9344c
   GooglePlaces: 16e96266483b8010e9f275399403647978523c86
   IQKeyboardManager: c52debb1967799ae7addb98eab0cf328083a874f
+  JTSImageViewController: 1f8ce1cc93dab0d0af8e53badeea7528560cfec9
   LECropPictureViewController: d64cd991d94d7804c0971f97adae6d1bc216a7b8
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 7d9fe229266696de91eadf840c77ca15efd4bbd2
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
 COCOAPODS: 0.39.0

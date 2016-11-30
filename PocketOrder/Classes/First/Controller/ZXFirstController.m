@@ -33,10 +33,15 @@
 #import "ZXHomePictureController.h"
 #import "ZXSearchController.h"
 
+#import "ZXTodayRecommendedController.h"
+#import "ZXGuessYouLikeController.h"
+
 #import "ZXShawdowView.h"
 
 
-@interface ZXFirstController ()<KNBannerViewDelegate,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITextFieldDelegate>
+#import "ZXStoreTypeModel.h"
+
+@interface ZXFirstController ()<KNBannerViewDelegate,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITextFieldDelegate,ZXTodayRecommendedCellDelegate,ZXYouLikeCellDelegate>
 {
     GMSPlacesClient *_placesClient;
 }
@@ -58,6 +63,16 @@
 
 @property (nonatomic,weak) UIButton *leftButton;
 
+
+//假数据
+@property (nonatomic,strong) NSMutableArray *pics;
+@property (nonatomic,strong) NSMutableArray *colors;
+@property (nonatomic,strong) NSMutableArray *titles;
+@property (nonatomic,strong) NSMutableArray *btnPics;
+
+
+
+
 @end
 
 @implementation ZXFirstController
@@ -72,6 +87,27 @@
     /* 设置NavigationBarButton */
     [self setupNavigationBarBtn];
     [self.homeTableView.mj_header beginRefreshing];
+    [self setDatas];
+    [self loadDatas];
+}
+
+- (void)loadDatas
+{
+    [ZXNetworkTool byAFNPost: PocketMenuOZ_HomeStroeListAPI parameters:nil success:^(id responseObject) {
+        self.titles = [ZXStoreTypeModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+        [self.themeCV reloadData];
+    } failure:^(NSError *error) {
+        ZXLog(@"%@",error);
+    }];
+}
+
+
+- (void)setDatas{
+    self.pics = [NSMutableArray arrayWithObjects:@"module01-img01",@"module01-img02",@"module01-img03",@"module01-img04", nil];
+    //self.titles = [NSMutableArray arrayWithObjects:@"美食",@"超市",@"甜品饮料",@"团购", nil];
+    self.colors = [NSMutableArray arrayWithObjects:RGB(214, 108, 45),RGB(227, 197, 53),RGB(182, 198, 53),RGB(130, 190, 205), nil];
+    
+    self.btnPics = [NSMutableArray arrayWithObjects:@"module01-icon01",@"module01-icon02",@"module01-icon03",@"module01-icon04", nil];
 }
 
 #pragma mark - 设置表格头部
@@ -222,18 +258,36 @@
     }
     if (indexPath.row == 1) {
         ZXTodayRecommendedCell *cell = [ZXTodayRecommendedCell cellWithTableView:tableView];
+        cell.delegate = self;
         cell.todayCV.dataSource = self;
         cell.todayCV.delegate = self;
         self.todayCV = cell.todayCV;
         return cell;
     }
     ZXYouLikeCell *cell = [ZXYouLikeCell cellWithTableView:tableView];
+        cell.delegate = self;
     cell.youLikeCV.dataSource = self;
     cell.youLikeCV.delegate = self;
     self.youLikeCV = cell.youLikeCV;
     return cell;
     }
     return nil;
+}
+
+
+-(void)enterTodayRecommendController:(ZXTodayRecommendedCell *)cell
+{
+    ZXGuessYouLikeController *vc = [[ZXGuessYouLikeController alloc] init];
+    vc.title = @"今日推荐";
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
+- (void)enterZXGuessYouLikeCellController:(ZXYouLikeCell *)cell
+{
+    ZXTodayRecommendedController *vc = [[ZXTodayRecommendedController alloc] init];
+    vc.title = @"猜你喜欢";
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -270,7 +324,7 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     if (collectionView == self.themeCV | collectionView == self.todayCV) {
-        return 4;
+        return self.titles.count;
     }
     if (section == 0) {
         return 1;
@@ -310,6 +364,10 @@
 {
     if (collectionView == self.themeCV) {
         ZXSquareCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:squareCell forIndexPath:indexPath];
+        cell.picture.image = [UIImage imageNamed:self.pics[indexPath.row]];
+        cell.typeModel =  self.titles[indexPath.row];
+        cell.contentBtn.backgroundColor = self.colors[indexPath.row];
+        cell.icon.image = [UIImage imageNamed:self.btnPics[indexPath.row]];
         return cell;
     }else if (collectionView == self.todayCV){
         // 从缓存池取
@@ -325,19 +383,18 @@
     if (indexPath.row == 1) {
         vc = [[ZXDessertAndDrinksController alloc] init];
         vc.title = @"甜品饮料";
-    }else if (indexPath.row == 2){
+    }else if (indexPath.row == 3){
         vc = [[ZXGroupBuyController alloc] init];
         vc.title = @"团购";
     }
     else if (indexPath.row == 0){
         vc = [[DeliciousFoodController alloc] init];
         vc.title = @"美食";
-        }else{
-            vc = [[ZXSupermarketController alloc] init];
-           }
+    }else{
+        vc = [[ZXSupermarketController alloc] init];
+    }
      vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-
 }
 
 #pragma mark - UITableViewDelegate

@@ -8,10 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@class ZXYouLikeCell;
+@protocol ZXYouLikeCellDelegate <NSObject>
+
+@optional
+
+- (void)enterZXGuessYouLikeCellController:(ZXYouLikeCell *)cell;
+
+@end
+
+
 @interface ZXYouLikeCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UICollectionView *youLikeCV;
 
 +(instancetype)cellWithTableView:(UITableView *)tableView;
+
+@property (nonatomic,weak) id<ZXYouLikeCellDelegate>delegate;
 
 @end

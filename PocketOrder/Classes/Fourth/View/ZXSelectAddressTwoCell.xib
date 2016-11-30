@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,12 +21,6 @@
                             <constraint firstAttribute="width" constant="14" id="VPi-2p-4vz"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pamper" translatesAutoresizingMaskIntoConstraints="NO" id="I8H-iE-BgH">
-                        <constraints>
-                            <constraint firstAttribute="height" constant="17" id="AU1-9H-XDV"/>
-                            <constraint firstAttribute="width" constant="17" id="UQI-a1-GGC"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="刘丽雅  女士  1513457890" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svw-Xm-oqs">
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="AGR-fu-y90"/>
@@ -42,18 +37,44 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwX-Zg-MGm">
+                        <color key="backgroundColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="bTY-bq-dqM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Te-8g-ZXR">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="45" id="LHM-cY-hZW"/>
+                        </constraints>
+                        <state key="normal" image="pamper"/>
+                        <connections>
+                            <action selector="didClickUpdateAddress:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Bqf-pc-mdh"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="I8H-iE-BgH" firstAttribute="centerY" secondItem="Pah-nQ-v5S" secondAttribute="centerY" id="56r-ed-767"/>
+                    <constraint firstItem="kwX-Zg-MGm" firstAttribute="top" secondItem="5Te-8g-ZXR" secondAttribute="bottom" constant="8" id="6vR-ni-X21"/>
+                    <constraint firstItem="kwX-Zg-MGm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FcQ-xu-WNe"/>
                     <constraint firstItem="JYG-Mh-x6C" firstAttribute="leading" secondItem="Pah-nQ-v5S" secondAttribute="trailing" constant="15" id="For-yP-FBi"/>
-                    <constraint firstAttribute="trailing" secondItem="I8H-iE-BgH" secondAttribute="trailing" constant="15" id="K3e-og-dd0"/>
+                    <constraint firstAttribute="trailing" secondItem="5Te-8g-ZXR" secondAttribute="trailing" id="TJT-37-5Hq"/>
                     <constraint firstItem="Pah-nQ-v5S" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Tgf-Jn-ufr"/>
                     <constraint firstItem="svw-Xm-oqs" firstAttribute="leading" secondItem="Pah-nQ-v5S" secondAttribute="trailing" constant="15" id="aC6-qu-UbM"/>
+                    <constraint firstAttribute="trailing" secondItem="kwX-Zg-MGm" secondAttribute="trailing" id="b2U-G4-lmc"/>
                     <constraint firstItem="Pah-nQ-v5S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="hhy-77-QKb"/>
+                    <constraint firstAttribute="bottom" secondItem="kwX-Zg-MGm" secondAttribute="bottom" id="k0t-cY-Mxk"/>
                     <constraint firstItem="svw-Xm-oqs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ngP-cu-mra"/>
                     <constraint firstAttribute="bottom" secondItem="JYG-Mh-x6C" secondAttribute="bottom" constant="5" id="p61-aG-HEL"/>
+                    <constraint firstItem="5Te-8g-ZXR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="tg5-Vv-NrM"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="addressLabel" destination="JYG-Mh-x6C" id="2bX-w8-PNg"/>
+                <outlet property="userInfo" destination="svw-Xm-oqs" id="WhV-Xf-hOY"/>
+            </connections>
             <point key="canvasLocation" x="34" y="53.5"/>
         </tableViewCell>
     </objects>

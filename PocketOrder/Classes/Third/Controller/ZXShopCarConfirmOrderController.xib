@@ -27,7 +27,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rsf-uT-EEx">
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBl-gf-xVQ">
-                            <color key="backgroundColor" red="0.96862745098039216" green="0.41568627450980389" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.94901960784313721" green="0.32941176470588235" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="140" id="T8p-Sd-Gku"/>
                             </constraints>

@@ -36,16 +36,24 @@
                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                     <state key="normal" title="分享宝贝"/>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="nn5-az-40z">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="GkC-qC-FD2"/>
+                    </constraints>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="6f5-ec-mOh" firstAttribute="leading" secondItem="f31-zI-d9u" secondAttribute="trailing" constant="1" id="18A-q8-J0a"/>
                 <constraint firstAttribute="bottom" secondItem="f31-zI-d9u" secondAttribute="bottom" id="5oe-Bm-X77"/>
+                <constraint firstItem="6f5-ec-mOh" firstAttribute="leading" secondItem="nn5-az-40z" secondAttribute="trailing" id="Leh-c7-mLA"/>
                 <constraint firstAttribute="trailing" secondItem="6f5-ec-mOh" secondAttribute="trailing" id="Ukl-eT-KrK"/>
                 <constraint firstItem="33c-HD-uTp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YDm-8Y-0N3"/>
                 <constraint firstItem="f31-zI-d9u" firstAttribute="leading" secondItem="33c-HD-uTp" secondAttribute="trailing" constant="1" id="Yrp-kg-bzJ"/>
                 <constraint firstItem="f31-zI-d9u" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="i73-pT-Lca"/>
                 <constraint firstItem="6f5-ec-mOh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jwf-dx-XL6"/>
+                <constraint firstItem="nn5-az-40z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nRq-tb-fdU"/>
+                <constraint firstItem="nn5-az-40z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vBV-lF-r6W"/>
                 <constraint firstAttribute="bottom" secondItem="6f5-ec-mOh" secondAttribute="bottom" id="vzS-bb-lRy"/>
                 <constraint firstAttribute="bottom" secondItem="33c-HD-uTp" secondAttribute="bottom" id="xfp-mn-abs"/>
             </constraints>
@@ -54,6 +62,10 @@
             <connections>
                 <outlet property="deleteBtn" destination="6f5-ec-mOh" id="AYm-k9-DTF"/>
             </connections>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="line" width="1" height="1"/>
+    </resources>
 </document>

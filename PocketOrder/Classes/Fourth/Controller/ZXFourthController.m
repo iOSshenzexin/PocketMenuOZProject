@@ -18,6 +18,8 @@
 #import "ZXSelectAddressController.h"
 #import "ZXMessageController.h"
 #import "ZXOrderCenterController.h"
+#import "ZXCollectionViewController.h"
+
 #import "AppDelegate.h"
 
 
@@ -32,15 +34,15 @@
 
 @implementation ZXFourthController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.sectionFooterHeight = 0;
     self.tableView.contentOffset = CGPointMake(0, 0);
     self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 20, 0);
-    
     ZXChangePersonInfoController *vc = [ZXChangePersonInfoController sharedController];
     vc.delegate = self;
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -75,7 +77,7 @@
     if (section == 0) {
         if (app.isLogin){
         ZXHeaderView *headerView = [ZXHeaderView awakFromNib];
-        
+            [self loadUserMessage:headerView];
         [self displayImage:headerView.headerImage withImage:headerView.headerImage.image];
             
         if (self.headImage) {
@@ -92,15 +94,28 @@
     return nil;
 }
 
+- (void)loadUserMessage:(ZXHeaderView *)header{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    ZXLoginMessageModel *userModel = PocketMenuOzLoginModel;
+    params[@"member_id"] = @(userModel.member_id);
+    [ZXNetworkTool byAFNPost:PocketMenuOZ_GetUserMessageAPI parameters:params success:^(id responseObject) {
+        if ([responseObject[@"status"] intValue] == 200) {
+            header.userName.text = responseObject[@"data"][@"member_name"];
+            header.userTelephone.text = [responseObject[@"data"][@"member_mobile"] stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
+        }
+    } failure:^(NSError *error) {
+        ZXLog(@"%@",error);
+    }];
+}
+
 #pragma mark - 未登录跳到登录界面
 - (void)jumpToLoginPage
 {
     ZXLoginController *vc = [[ZXLoginController alloc] init];
     ZXNavgaitonController *nav = [[ZXNavgaitonController alloc] initWithRootViewController:vc];
-    [self presentViewController:nav animated:YES completion:^{
-    }];
+    [self presentViewController:nav animated:YES completion:nil];
     vc.block = ^(BOOL login){
-        NSLog(@"%d",login);
+        ZXLog(@"%d",login);
     };
 }
 #pragma mark - 已登录跳到个人信息界面
@@ -152,34 +167,35 @@
 
 - (void)didClickSelectCellNSIndexPath:(NSIndexPath *)indexPath
 {
+    UIViewController *vc;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            ZXOrderCenterController *vc = [[ZXOrderCenterController alloc] init];
+            vc = [[ZXOrderCenterController alloc] init];
             vc.title = @"订单中心";
-            [self.navigationController pushViewController:vc animated:YES];
         }
         if(indexPath.row == 1) {
-            ZXMessageController *vc = [[ZXMessageController alloc] init];
+            vc = [[ZXMessageController alloc] init];
             vc.title = @"消息";
-            [self.navigationController pushViewController:vc animated:YES];
         }
-    }
+        if(indexPath.row == 2) {
+            vc = [[ZXCollectionViewController alloc] init];
+            vc.title = @"我的收藏";
+        }
+        }
     if (indexPath.section == 1) {
         if (indexPath.row == 1) {
-            ZXChangePWDController *vc = [[UIStoryboard storyboardWithName:@"ZXChangePWDController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXChangePWDController"];
+            vc = [[UIStoryboard storyboardWithName:@"ZXChangePWDController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXChangePWDController"];
             vc.title = @"修改密码";
-            [self.navigationController pushViewController:vc animated:YES];
         }else{
-            ZXSelectAddressController *vc = [[ZXSelectAddressController alloc] init];
+            vc = [[ZXSelectAddressController alloc] init];
             vc.title = @"我的收货地址";
-            [self.navigationController pushViewController:vc animated:YES];
         }
     }
     if (indexPath.section == 2) {
-        ZXSettingController *vc = [[UIStoryboard storyboardWithName:@"ZXSettingController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXSettingController"];
+        vc = [[UIStoryboard storyboardWithName:@"ZXSettingController" bundle:nil]instantiateViewControllerWithIdentifier:@"ZXSettingController"];
         vc.title = @"设置";
-        [self.navigationController pushViewController:vc animated:YES];
     }
+     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)viewDidDisappear:(BOOL)animated

@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXResetPWDController">
             <connections>
+                <outlet property="codeTxt" destination="sKb-9t-Jfe" id="Rac-Xg-I7u"/>
                 <outlet property="telTxt" destination="87A-zS-Ue8" id="Zaa-uT-J3Z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

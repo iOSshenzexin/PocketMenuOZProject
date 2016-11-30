@@ -23,4 +23,10 @@ static NSString *groupBuyDetailOneCell = @"ZXGroupBuyDetailOneCell";
     return cell;
 }
 
+- (IBAction)didClickCollectGroup:(UIButton *)sender {
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    sender.selected = !sender.selected;
+    (sender.isSelected == YES) ? ([SVProgressHUD showSuccessWithStatus:@"收藏成功"]):([SVProgressHUD showErrorWithStatus:@"取消收藏成功"]);
+}
+
 @end

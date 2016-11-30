@@ -242,16 +242,10 @@ extern int btnH;
         return header;
     }else{
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, SECTION_HEIGHT)];
-        UILabel *leftLine = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 3, SECTION_HEIGHT)];
-        [view addSubview:leftLine];
-        
-        UILabel *headerTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, SECTION_HEIGHT)];
-        headerTitle.text = [NSString stringWithFormat:@"%ld号口袋",section +1];
-        headerTitle.font = [UIFont systemFontOfSize:12];
-        [view addSubview:headerTitle];
-        
+        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, SECTION_HEIGHT-0.5, self.view.bounds.size.width, 0.5)];
+        line.backgroundColor = RGB(195, 195, 195);
+        [view addSubview:line];
         if (section == 0) {
-            leftLine.backgroundColor = [UIColor greenColor];
             UIButton *clear = [UIButton buttonWithType:UIButtonTypeCustom];
             clear.frame= CGRectMake(self.view.bounds.size.width - 100, 0, 100, SECTION_HEIGHT);
             [clear setTitle:@"清空购物车" forState:UIControlStateNormal];
@@ -262,22 +256,7 @@ extern int btnH;
             [clear addTarget:self action:@selector(clearShoppingCart:) forControlEvents:UIControlEventTouchUpInside];
             [view addSubview:clear];
         }
-        else{
-            
-            if (section % 3 == 0) {
-                leftLine.backgroundColor = [UIColor orangeColor];
-            }
-            else if (section % 3 == 1)
-            {
-                leftLine.backgroundColor = [UIColor yellowColor];
-            }
-            else if (section % 3 == 2)
-            {
-                leftLine.backgroundColor = [UIColor redColor];
-            }
-            
-        }
-        view.backgroundColor = [UIColor whiteColor];
+        view.backgroundColor = RGB(245, 245, 245);;
         return view;
     }
 }
@@ -425,22 +404,10 @@ extern int btnH;
         
         cell.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        if (indexPath.section % 3 == 0) {
-            cell.dotLabel.textColor = [UIColor greenColor];
-        }
-        else if (indexPath.section % 3 == 1)
-        {
-            cell.dotLabel.textColor = [UIColor yellowColor];
-        }
-        else if (indexPath.section % 3 == 2)
-        {
-            cell.dotLabel.textColor = [UIColor redColor];
-        }
-        
+        cell.dotLabel.textColor = AppThemeColor;
         cell.operationBlock = ^(NSUInteger nCount,BOOL plus)
         {
             NSMutableDictionary * dic = sectionArray[indexPath.row];
-            
             //更新订单列表中的数量
             [dic setObject:[NSNumber numberWithInteger:nCount] forKey:@"orderCount"];
             NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:dic];
@@ -460,9 +427,7 @@ extern int btnH;
             if (_totalOrders <=0) {
                 [_ShopCartView dismissAnimated:YES];
             }
-            
         };
-        
         return cell;
     }
     return nil;
@@ -484,19 +449,14 @@ extern int btnH;
         
         for (NSMutableDictionary *dic in self.ordersArray[sectionID]) {
             if (dic[@"id"] == dict[@"id"]){
-                
                 NSInteger count = [self CountOthersWithoutSection:sectionID foodID:dictionary[@"id"]];
                 NSInteger nCount = [dict[@"orderCount"] integerValue] - count;
-                
                 [dic setObject:[NSString stringWithFormat:@"%ld",nCount] forKey:@"orderCount"];
-                
                 self.ShopCartView.OrderList.objects = self.ordersArray;
                 [self.ShopCartView.OrderList.tableView reloadData];
-                
                 return;
             }
         }
-        
         NSInteger count = [self CountOthersWithoutSection:sectionID foodID:dictionary[@"id"]];
         count = [dictionary[@"orderCount"] integerValue] - count;
         [dictionary setObject:[NSString stringWithFormat:@"%ld",count] forKey:@"orderCount"];

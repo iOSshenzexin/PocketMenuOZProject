@@ -19,17 +19,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (self.addressModel) {
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:17 btnWidth:60 btnHeight:30 image:nil highlightImage:nil title:@"修改" target:self action:@selector(didClickUpdateAddress) leftEdgeInset:0 rightEdgeInset:-20];
+    }else{
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:17 btnWidth:60 btnHeight:30 image:nil highlightImage:nil title:@"保存" target:self action:@selector(didClickSaveAddress) leftEdgeInset:0 rightEdgeInset:-20];
-    
+    }
     self.tableView.sectionFooterHeight = 0;
-//    self.tableView.sectionHeaderHeight = 40;
 }
 
+
+- (void)didClickUpdateAddress
+{
+    
+}
 
 
 - (void)didClickSaveAddress
 {
-   ZXFunction
+    ZXAddressOneCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    ZXAddressTwoCell *cellTwo = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    ZXLog(@"用户性别 :%@",cell.sex);
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    ZXLoginMessageModel *userModel = PocketMenuOzLoginModel;
+    params[@"member_id"] = @(userModel.member_id);
+    params[@"true_name"] = cell.userName.text;
+    params[@"mob_phone"] = cell.userTelephone.text;
+    params[@"prefixes"] = cell.sex;
+
+    params[@"area_id"] = cellTwo.areaName.text;
+    params[@"city_id"] = cellTwo.cityName.text;
+    params[@"area_info"] = cellTwo.postNumber.text;
+    params[@"address"] = [NSString stringWithFormat:@"%@ %@",cellTwo.streetName.text,cellTwo.doorNumber.text];
+    ZXLog(@"params %@",params);
+    [ZXNetworkTool byAFNPost:PocketMenuOZ_UserAddressAddAPI parameters:params success:^(id responseObject) {
+        if ([responseObject[@"status"] intValue] == 200) {
+            [SVProgressHUD showSuccessWithStatus:responseObject[@"message"]];
+        }else{
+            [SVProgressHUD showErrorWithStatus:responseObject[@"message"]];
+        }
+    } failure:^(NSError *error) {
+        ZXLog(@"%@",error);
+    }];
+
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -61,17 +92,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell;
     if (indexPath.section == 0) {
-        cell = [ZXAddressOneCell cellWithTableView:tableView];
-        
+        ZXAddressOneCell *cell = [ZXAddressOneCell cellWithTableView:tableView];
+        cell.userAddressModel = self.addressModel;
+        return cell;
     }
     else{
-        cell = [ZXAddressTwoCell cellWithTableView:tableView];
-
+        ZXAddressTwoCell *cell = [ZXAddressTwoCell cellWithTableView:tableView];
+        cell.userAddressModel = self.addressModel;
+        return cell;
     }
-    return cell;
-    
 }
 
 
@@ -87,6 +117,10 @@
 {
     [self.view endEditing:YES];
 }
+
+
+
+
 
 
 @end

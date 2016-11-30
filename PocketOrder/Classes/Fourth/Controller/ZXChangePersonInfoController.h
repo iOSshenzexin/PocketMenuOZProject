@@ -22,6 +22,12 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *headImage;
 
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+
+@property (weak, nonatomic) IBOutlet UITextField *telephone;
+
+@property (weak, nonatomic) IBOutlet UITextField *email;
+
 @property (nonatomic,weak) id <ZXPassHeadImageDelegate> delegate;
 
 

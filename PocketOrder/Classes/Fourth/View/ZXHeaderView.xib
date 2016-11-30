@@ -46,18 +46,20 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="jaY-sw-Ml0" secondAttribute="bottom" constant="30" id="04v-bh-wv2"/>
                 <constraint firstAttribute="trailing" secondItem="Xdp-Xf-X4Z" secondAttribute="trailing" id="3bF-qy-HmM"/>
-                <constraint firstAttribute="bottom" secondItem="gfY-vt-f3v" secondAttribute="bottom" constant="45" id="LBt-qR-JHu"/>
+                <constraint firstAttribute="bottom" secondItem="gfY-vt-f3v" secondAttribute="bottom" constant="40" id="LBt-qR-JHu"/>
                 <constraint firstItem="Xdp-Xf-X4Z" firstAttribute="centerY" secondItem="jaY-sw-Ml0" secondAttribute="centerY" id="PGG-Aq-wOm"/>
-                <constraint firstItem="gfY-vt-f3v" firstAttribute="top" secondItem="4MK-TE-oy0" secondAttribute="bottom" constant="23.5" id="V4H-6w-wbb"/>
+                <constraint firstItem="gfY-vt-f3v" firstAttribute="top" secondItem="4MK-TE-oy0" secondAttribute="bottom" constant="20" id="V4H-6w-wbb"/>
                 <constraint firstItem="jaY-sw-Ml0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Vjj-9b-hvh"/>
-                <constraint firstItem="gfY-vt-f3v" firstAttribute="leading" secondItem="jaY-sw-Ml0" secondAttribute="trailing" constant="8" id="iEo-1N-bie"/>
-                <constraint firstItem="4MK-TE-oy0" firstAttribute="leading" secondItem="jaY-sw-Ml0" secondAttribute="trailing" constant="8" id="ufe-iL-csT"/>
+                <constraint firstItem="gfY-vt-f3v" firstAttribute="leading" secondItem="4MK-TE-oy0" secondAttribute="leading" id="t6J-7X-kKl"/>
+                <constraint firstItem="4MK-TE-oy0" firstAttribute="leading" secondItem="jaY-sw-Ml0" secondAttribute="trailing" constant="10" id="ufe-iL-csT"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="headerImage" destination="jaY-sw-Ml0" id="7gd-6F-YEt"/>
                 <outlet property="jumpBtn" destination="Xdp-Xf-X4Z" id="8h2-r5-qNd"/>
+                <outlet property="userName" destination="4MK-TE-oy0" id="hDh-nG-ebQ"/>
+                <outlet property="userTelephone" destination="gfY-vt-f3v" id="dSp-sf-f3G"/>
             </connections>
             <point key="canvasLocation" x="88" y="-169.5"/>
         </view>

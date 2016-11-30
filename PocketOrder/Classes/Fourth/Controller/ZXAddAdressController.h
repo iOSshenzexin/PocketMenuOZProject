@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZXUserAddressListModel.h"
 
 @interface ZXAddAdressController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic,strong) ZXUserAddressListModel *addressModel;
+
+
 
 @end

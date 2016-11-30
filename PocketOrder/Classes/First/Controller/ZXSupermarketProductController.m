@@ -56,7 +56,7 @@
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithFont:0 btnWidth:30 btnHeight:21 image:@"shopping_car" highlightImage:@"shopping_car" title:nil target:self action:@selector(didClickShoppingCar:) leftEdgeInset:-10 rightEdgeInset:10];
     /*
      */
-    self.navigationItem.rightBarButtonItem.badgeBgColor = [UIColor blueColor];
+    self.navigationItem.rightBarButtonItem.badgeBgColor = [UIColor redColor];
     self.navigationItem.rightBarButtonItem.badgeTextColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem.badgeFont = [UIFont boldSystemFontOfSize:10];
     self.navigationItem.rightBarButtonItem.badgeMaximumBadgeNumber = 99;
@@ -240,10 +240,10 @@
         ZXLog(@"indexPath.row %ld",indexPath.row);
         
     }else{
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        ZXSupermarketProductDetailController *vc = [[ZXSupermarketProductDetailController alloc] init];
-        vc.title = @"伊利官方直营味可滋香蕉牛奶";
-        [self.navigationController pushViewController:vc animated:YES];
+//        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//        ZXSupermarketProductDetailController *vc = [[ZXSupermarketProductDetailController alloc] init];
+//        vc.title = @"伊利官方直营味可滋香蕉牛奶";
+//        [self.navigationController pushViewController:vc animated:YES];
         
     }
 }

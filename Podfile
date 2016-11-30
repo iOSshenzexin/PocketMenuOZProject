@@ -9,6 +9,10 @@ pod "MJExtension", “3.0.13”
 pod 'GooglePlaces', '~> 2.1.0'
 pod 'GoogleMaps'
 pod 'IQKeyboardManager'
+pod 'UITableView+FDTemplateLayoutCell'
+pod 'JTSImageViewController'
+pod 'Masonry'
+
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.1'
 

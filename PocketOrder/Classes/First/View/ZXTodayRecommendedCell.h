@@ -8,8 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@class ZXTodayRecommendedCell;
+@protocol ZXTodayRecommendedCellDelegate <NSObject>
+
+@optional
+
+- (void)enterTodayRecommendController:(ZXTodayRecommendedCell *)cell;
+
+@end
+
+
+
 @interface ZXTodayRecommendedCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UICollectionView *todayCV;
 
 +(instancetype)cellWithTableView:(UITableView *)tableView;
+
+@property (nonatomic,weak) id <ZXTodayRecommendedCellDelegate>delegate;
 @end

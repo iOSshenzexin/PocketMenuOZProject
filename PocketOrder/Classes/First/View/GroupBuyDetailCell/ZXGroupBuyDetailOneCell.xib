@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +35,11 @@
                             <constraint firstAttribute="height" constant="53" id="AT6-bN-k1F"/>
                             <constraint firstAttribute="width" constant="53" id="o59-Zd-kly"/>
                         </constraints>
-                        <state key="normal" image="bulk_buttun"/>
+                        <state key="normal" image="unconcern"/>
+                        <state key="selected" image="concern"/>
+                        <connections>
+                            <action selector="didClickCollectGroup:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iPi-tA-VsX"/>
+                        </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Yf5-pD-RBK">
                         <constraints>
@@ -53,13 +58,14 @@
                     <constraint firstItem="s8W-qh-HSA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12.5" id="mn5-s9-HiC"/>
                     <constraint firstItem="Yf5-pD-RBK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pCt-0n-fEZ"/>
                     <constraint firstItem="mKm-Hz-M74" firstAttribute="leading" secondItem="K05-4F-vFG" secondAttribute="trailing" constant="10" id="qMZ-WG-9oI"/>
-                    <constraint firstAttribute="trailing" secondItem="WBb-eZ-tJv" secondAttribute="trailing" constant="12" id="tep-Mg-P4f"/>
+                    <constraint firstAttribute="trailing" secondItem="WBb-eZ-tJv" secondAttribute="trailing" id="tep-Mg-P4f"/>
                 </constraints>
             </tableViewCellContentView>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="bulk_buttun" width="53" height="53"/>
+        <image name="concern" width="17" height="15"/>
         <image name="line" width="1" height="1"/>
+        <image name="unconcern" width="17" height="15"/>
     </resources>
 </document>

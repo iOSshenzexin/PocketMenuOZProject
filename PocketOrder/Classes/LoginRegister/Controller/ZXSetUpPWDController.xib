@@ -8,6 +8,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXSetUpPWDController">
             <connections>
+                <outlet property="pwd_newTxt" destination="7fL-uU-a7d" id="mtF-eM-QgN"/>
+                <outlet property="pwd_oldTxt" destination="aoS-h7-zAK" id="YWR-B4-inl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

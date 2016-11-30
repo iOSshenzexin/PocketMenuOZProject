@@ -14,6 +14,7 @@
 @property (nonatomic,weak) UIButton *previousBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *manBtn;
+
 @end
 
 @implementation ZXAddressOneCell
@@ -22,9 +23,11 @@
 {
     [super awakeFromNib];
     self.previousBtn = self.manBtn;
+    self.sex = self.manBtn.titleLabel.text;
 
 }
 - (IBAction)didClickSexBtn:(UIButton *)sender {
+    self.sex = sender.titleLabel.text;
     if (sender != self.previousBtn) {
         sender.selected = self.previousBtn.selected;
         self.previousBtn.selected = NO;
@@ -43,5 +46,11 @@ static NSString *addressOneCell = @"ZXAddressOneCell";
     return cell;
 }
 
-
+-(void)setUserAddressModel:(ZXUserAddressListModel *)userAddressModel
+{
+    _userAddressModel = userAddressModel;
+    self.userName.text = userAddressModel.true_name;
+    ZXLog(@"userAddressModel.tel_phone; %@",userAddressModel.tel_phone);
+    self.userTelephone.text = userAddressModel.tel_phone;
+}
 @end

@@ -1,6 +1,8 @@
 
 //PocketMenu PCH
 
+
+/************************** PocketMenuOZ 头文件 **********************************/
 #import "AFNetworking.h"
 #import "Reachability.h"
 #import "MJRefresh.h"
@@ -13,14 +15,18 @@
 #import "ZXNavgaitonController.h"
 #import "AppDelegate.h"
 
-
-
-
+#import "ZXNetworkTool.h"
+#import "NSString+ZXMD5Hashing.h"
+#import "ZXVerificationObject.h"
 
 #import <GoogleMaps/GoogleMaps.h>
 #import "GooglePlaces.h"
+#import "ZXLoginMessageModel.h"
+/******************************* PocketMenuOZ define ******************************************/
 
 
+
+/***************************************************************************************/
 //RGB设置颜色
 #define RGB(r,g,b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1]
 //RGBA设置颜色
@@ -40,10 +46,6 @@
 
 
 
-
-
-
-
 #ifdef DEBUG //调试
 #define ZXLog(...)  NSLog(__VA_ARGS__);
 
@@ -54,5 +56,40 @@
 #endif
 
 #define ZXFunction     ZXLog(@"%s",__func__);
+#define baseUrl @"http://192.168.1.106/koudai/interface/index.php"
+#define  URl(str)   [baseUrl stringByAppendingString:str]
+#define  ZXPrintResponseObject  ZXLog(@"%@",responseObject);
+#define ZXSaveUserMessagerManager [NSUserDefaults standardUserDefaults]
+ #define  PocketMenuOzLoginModel [NSKeyedUnarchiver unarchiveObjectWithData:[ZXSaveUserMessagerManager objectForKey:loginModel]]
+/******************************************************************************/
+
+
+
+
+/************************** PocketMenuOZ API **********************************/
+#define PocketMenuOZ_RegisterAPI URl(@"/auth/register")
+#define PocketMenuOZ_LoginAPI URl(@"/auth/login")
+#define PocketMenuOZ_ResetPwdAPI URl(@"/auth/reset_code")
+
+#define PocketMenuOZ_GetUserMessageAPI URl(@"/auth/member_detail")
+#define PocketMenuOZ_ChangeUserPasswordAPI URl(@"/auth/change_pw")
+
+//收货地址API
+#define PocketMenuOZ_UserAddressListAPI URl(@"/order/address_list")
+#define PocketMenuOZ_UserAddressAddAPI URl(@"/order/add_address")
+#define PocketMenuOZ_UserAddressDeleteAPI URl(@"/order/del_address")
+#define PocketMenuOZ_UserAddressUpdateAPI URl(@"/order/update_address")
+
+
+
+
+#define PocketMenuOZ_HomeStroeListAPI URl(@"/auth/store_type_list")
+
+
+/******************************************************************************/
+
+
+
+
 
 

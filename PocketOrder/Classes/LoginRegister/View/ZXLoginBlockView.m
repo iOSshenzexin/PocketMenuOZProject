@@ -14,15 +14,35 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *normalLogin;
 
-
-
 @end
 
 
 @implementation ZXLoginBlockView
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    if ([ZXSaveUserMessagerManager objectForKey:username]) {
+        UITextField *userName = (UITextField *)[self viewWithTag:14];
+        userName.text = [ZXSaveUserMessagerManager objectForKey:username];
+        UITextField *pwd = (UITextField *)[self viewWithTag:15];
+        pwd.text = [ZXSaveUserMessagerManager objectForKey:password];
+        ZXLog(@"%@",pwd.text);
+        self.rememberPwd.selected = YES;
+    }
+}
+
+
 - (IBAction)didClickRememberPWD:(UIButton *)sender {
     sender.selected = !sender.selected;
+    if (sender.selected) {
+        [ZXSaveUserMessagerManager setObject:[(UITextField *)[self viewWithTag:14] text] forKey:username];
+        [ZXSaveUserMessagerManager setObject:[(UITextField *)[self viewWithTag:15] text] forKey:password];
+    }else{
+        [ZXSaveUserMessagerManager removeObjectForKey:username];
+        [ZXSaveUserMessagerManager removeObjectForKey:password];
+    }
+    [ZXSaveUserMessagerManager synchronize];
 }
 
 - (IBAction)didClickResetPWD:(id)sender {

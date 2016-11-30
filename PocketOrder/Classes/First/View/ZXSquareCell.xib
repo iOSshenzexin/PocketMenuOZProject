@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,23 +18,47 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="module01-img01" translatesAutoresizingMaskIntoConstraints="NO" id="Vrx-3Q-vae"/>
                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftg-CO-aj5">
                         <color key="backgroundColor" red="0.96862745100000003" green="0.41960784309999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                        <inset key="titleEdgeInsets" minX="-25" minY="30" maxX="0.0" maxY="0.0"/>
-                        <inset key="imageEdgeInsets" minX="15" minY="-28" maxX="0.0" maxY="0.0"/>
-                        <state key="normal" title="美食" image="module01-icon01"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="FGY-Rd-prb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <inset key="titleEdgeInsets" minX="0.0" minY="30" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="-28" maxX="0.0" maxY="0.0"/>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="module01-icon01" translatesAutoresizingMaskIntoConstraints="NO" id="aVV-kK-pCL">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="27" id="dtz-yp-jOa"/>
+                            <constraint firstAttribute="width" constant="27" id="z6g-xu-494"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="甜品饮料" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Orz-qe-fu0">
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.98070004109999998" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ftg-CO-aj5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3TO-JG-5Eg"/>
-                <constraint firstItem="ftg-CO-aj5" firstAttribute="leading" secondItem="Vrx-3Q-vae" secondAttribute="trailing" constant="-1" id="9Rc-Z1-RWR"/>
-                <constraint firstAttribute="bottom" secondItem="ftg-CO-aj5" secondAttribute="bottom" id="Erq-lz-unS"/>
-                <constraint firstItem="Vrx-3Q-vae" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eW7-ei-HFh"/>
-                <constraint firstItem="Vrx-3Q-vae" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jLX-7o-MHv"/>
-                <constraint firstAttribute="bottom" secondItem="Vrx-3Q-vae" secondAttribute="bottom" id="onE-04-xvE"/>
-                <constraint firstAttribute="trailing" secondItem="ftg-CO-aj5" secondAttribute="trailing" id="tl7-Ab-kEi"/>
+                <constraint firstItem="aVV-kK-pCL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="0r4-Kt-z0P"/>
+                <constraint firstItem="Orz-qe-fu0" firstAttribute="top" secondItem="aVV-kK-pCL" secondAttribute="bottom" constant="5" id="2Zz-Zb-KN2"/>
+                <constraint firstAttribute="bottom" secondItem="ftg-CO-aj5" secondAttribute="bottom" id="5hw-6y-iPZ"/>
+                <constraint firstItem="ftg-CO-aj5" firstAttribute="leading" secondItem="Vrx-3Q-vae" secondAttribute="trailing" id="CNR-XZ-hhY"/>
+                <constraint firstItem="ftg-CO-aj5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ikm-8j-Tje"/>
+                <constraint firstItem="Orz-qe-fu0" firstAttribute="leading" secondItem="Vrx-3Q-vae" secondAttribute="trailing" constant="-1" id="Qkt-31-SSB"/>
+                <constraint firstItem="Vrx-3Q-vae" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fHE-6v-56e"/>
+                <constraint firstAttribute="bottom" secondItem="Vrx-3Q-vae" secondAttribute="bottom" id="hkT-1c-HhZ"/>
+                <constraint firstItem="Vrx-3Q-vae" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kcG-7B-x3Q"/>
+                <constraint firstAttribute="trailing" secondItem="Orz-qe-fu0" secondAttribute="trailing" constant="-1" id="llj-my-GOf"/>
+                <constraint firstAttribute="trailing" secondItem="ftg-CO-aj5" secondAttribute="trailing" id="nbw-Zc-FKj"/>
+                <constraint firstItem="aVV-kK-pCL" firstAttribute="centerX" secondItem="ftg-CO-aj5" secondAttribute="centerX" id="p25-YI-PY4"/>
             </constraints>
+            <connections>
+                <outlet property="contentBtn" destination="ftg-CO-aj5" id="TUe-gU-34N"/>
+                <outlet property="icon" destination="aVV-kK-pCL" id="b8u-Hr-Eas"/>
+                <outlet property="picture" destination="Vrx-3Q-vae" id="bzE-FV-aQL"/>
+                <outlet property="titleLabel" destination="Orz-qe-fu0" id="VzR-4L-gre"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
         </collectionViewCell>
     </objects>
     <resources>

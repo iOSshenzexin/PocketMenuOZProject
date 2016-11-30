@@ -31,7 +31,7 @@
                                         <constraint firstAttribute="height" constant="1" id="AOo-5t-Jhv"/>
                                     </constraints>
                                 </imageView>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ap1-8I-Ll3">
+                                <textField opaque="NO" clipsSubviews="YES" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ap1-8I-Ll3">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="dhn-BR-LO9"/>
                                     </constraints>
@@ -39,13 +39,13 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 </textField>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机验证码" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wn2-aC-Jp1">
+                                <textField opaque="NO" clipsSubviews="YES" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机验证码" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wn2-aC-Jp1">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="3uC-0R-6ML"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,7 +68,7 @@
                                 <constraint firstItem="0WE-DM-CnU" firstAttribute="leading" secondItem="7vX-0I-dA2" secondAttribute="leading" id="xsZ-te-xId"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMM-wx-vii">
+                        <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMM-wx-vii">
                             <color key="backgroundColor" red="0.94901960780000005" green="0.3294117647" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="300" id="K4c-Tr-DpL"/>
@@ -106,9 +106,13 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
             <connections>
+                <outlet property="commonLoginPwdTxt" destination="UyF-nc-K7r" id="7a6-vp-3ss"/>
+                <outlet property="commonLoginTelTxt" destination="j4f-Ff-jaz" id="bOr-Xr-PfU"/>
                 <outlet property="fastLogin" destination="CMM-wx-vii" id="MSK-F9-sB6"/>
                 <outlet property="fastLoginCodeTxt" destination="Wn2-aC-Jp1" id="hZE-Rz-ez8"/>
+                <outlet property="fastLoginTelText" destination="ap1-8I-Ll3" id="anK-YL-Hra"/>
                 <outlet property="normalLogin" destination="OxB-YC-PBf" id="3EB-lN-cL7"/>
+                <outlet property="rememberPwd" destination="phU-Us-GGo" id="KMR-cC-zLU"/>
             </connections>
             <point key="canvasLocation" x="78" y="-430"/>
         </view>
@@ -133,7 +137,7 @@
                                 <constraint firstAttribute="height" constant="1" id="0JS-2a-H6L"/>
                             </constraints>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="账号/手机号" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j4f-Ff-jaz">
+                        <textField opaque="NO" clipsSubviews="YES" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j4f-Ff-jaz">
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="Rra-Xy-UY8"/>
                             </constraints>
@@ -141,7 +145,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UyF-nc-K7r">
+                        <textField opaque="NO" clipsSubviews="YES" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UyF-nc-K7r">
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="xJQ-1W-oJR"/>
                             </constraints>
@@ -172,7 +176,7 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHD-af-cn3">
                     <state key="normal" title="忘记密码">
-                        <color key="titleColor" red="0.58431372550000005" green="0.58431372550000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="didClickResetPWD:" destination="iN0-l3-epB" eventType="touchUpInside" id="qx4-9A-liY"/>
@@ -190,7 +194,7 @@
                         <action selector="didClickRememberPWD:" destination="iN0-l3-epB" eventType="touchUpInside" id="yi4-gd-SiZ"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxB-YC-PBf">
+                <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxB-YC-PBf">
                     <color key="backgroundColor" red="0.94901960780000005" green="0.3294117647" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="7h1-AX-u4f"/>

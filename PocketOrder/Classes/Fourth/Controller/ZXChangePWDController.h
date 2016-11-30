@@ -10,4 +10,10 @@
 
 @interface ZXChangePWDController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *oldPassword;
+
+@property (weak, nonatomic) IBOutlet UITextField *passwordNew;
+
+@property (weak, nonatomic) IBOutlet UITextField *password_Confirm;
+
 @end

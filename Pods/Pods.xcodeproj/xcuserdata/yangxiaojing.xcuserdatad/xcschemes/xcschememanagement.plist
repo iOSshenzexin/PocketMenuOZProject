@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JTSImageViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>LECropPictureViewController-LECropPictureViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -30,6 +35,11 @@
 			<false/>
 		</dict>
 		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -54,10 +64,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0268B9694C6DBD833940ADD19F1BA912</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0A94A923B828F030066EFA4544E76884</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>18DC5A6FA156DC179326B23DCFD6157B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,7 +92,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3C8AA3200E736080CDB5CD373E87FF5D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47B86112794D9B6A1BF31AC249367315</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>70BC44266C6FFE30D2C57129458E070B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7EDBC06B3D447B9192D12E139BD4ACFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,27 +122,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9719B1FED32E1D7D785C36F7BF5DF42E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9A39A660B5C7716402370B0225F14D17</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>9EAB3E42EF957541E6C3C76D35FD008E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C2F974B2B324A8FB0D9D7F4FF685CD6F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D0CB5882621F3523EC9B6F84664AA2F0</key>
+		<key>A9BD2607EF315807A8FFC873B5B0E3CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

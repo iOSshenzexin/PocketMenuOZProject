@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ZXStoreTypeModel.h"
 @interface ZXSquareCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *picture;
+@property (weak, nonatomic) IBOutlet UIButton *contentBtn;
+
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+
+@property (nonatomic,copy) ZXStoreTypeModel *typeModel;
 @end

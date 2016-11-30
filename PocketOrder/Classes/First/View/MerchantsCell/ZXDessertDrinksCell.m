@@ -13,7 +13,7 @@
 static NSString *dessertDrinksCell = @"ZXDessertDrinksCell";
 
 -(void)setFrame:(CGRect)frame{
-    frame.size.height -= 10;
+    frame.size.height -= 5;
     [super setFrame:frame];
 }
 

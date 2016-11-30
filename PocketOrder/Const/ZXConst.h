@@ -21,3 +21,10 @@ UIKIT_EXTERN NSString * const supmarketCollectionCell;
 UIKIT_EXTERN NSString * const collectionHeaderView;
 
 UIKIT_EXTERN NSString * const messagePaddingCell;
+
+//用户 密码 key
+UIKIT_EXTERN NSString * const username;
+
+UIKIT_EXTERN NSString * const password;
+
+UIKIT_EXTERN NSString *const loginModel;

@@ -8,8 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+
+@class ZXGroupBuyDetailOneCell;
+@protocol ZXGroupBuyDetailOneCellDelegate <NSObject>
+
+@optional
+
+- (void)collectGroupAcitivity:(ZXGroupBuyDetailOneCell *)cell;
+
+@end
+
+
 @interface ZXGroupBuyDetailOneCell : UITableViewCell
 
 +(instancetype)cellWithTableView:(UITableView *)tableView;
+
+@property (nonatomic,weak) id <ZXGroupBuyDetailOneCellDelegate>delegate;
 
 @end

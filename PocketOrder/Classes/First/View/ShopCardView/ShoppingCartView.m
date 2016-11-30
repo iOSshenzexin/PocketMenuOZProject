@@ -121,7 +121,6 @@
 
 -(void)clickCartBtn:(UIButton *)sender
 {
-
     if (![_badge.badgeValue intValue]) {
         [_shoppingCartBtn setUserInteractionEnabled:NO];
         return;
@@ -150,15 +149,13 @@
 -(void)updateFrame:(UIView *)view
 {
     ZFReOrderTableView *orderListView = (ZFReOrderTableView *)view;
-    
     float height = 0;
     int nRow = 0;
-    NSInteger nSection = [orderListView.objects count];
+   // NSInteger nSection = [orderListView.objects count];
     for (NSMutableArray *array in orderListView.objects) {
         nRow += [array count];
     }
-    
-    height = nRow * ROW_HEIGHT + nSection * SECTION_HEIGHT;
+    height = nRow * ROW_HEIGHT + 1 * SECTION_HEIGHT;
     int maxHeight = self.parentView.frame.size.height - 250 - 30;
     if (height >= maxHeight) {
         height = maxHeight;
@@ -171,18 +168,12 @@
     float currentY = _OrderList.frame.origin.y;
     
     if (_up) {
-        
         [UIView animateWithDuration:0.5 animations:^{
             CGPoint point = _shoppingCartBtn.center;
-    
             point.y -= orignY - currentY;
             
             [_shoppingCartBtn setCenter:point];
-            
-            
         } completion:^(BOOL finished) {
-            
-            
         }];
     }
 
@@ -190,22 +181,17 @@
 #pragma mark - dismiss
 -(void)dismissAnimated:(BOOL)animated
 {
-
     [_shoppingCartBtn bringSubviewToFront:_OverlayView];
     [UIView animateWithDuration:0.5 animations:^{
         CGPoint point = _shoppingCartBtn.center;
         CGPoint labelPoint = _money.center;
-            
         point.y += (_OrderList.frame.size.height + 50);
         labelPoint.x += 60;
         _OverlayView.alpha = 0.0;
 
         [_shoppingCartBtn setCenter:point];
         [_money setCenter:labelPoint];
-        
-        
     } completion:^(BOOL finished) {
-        
         _up = NO;
     }];
 }

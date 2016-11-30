@@ -12,6 +12,7 @@
 #import "ZXGetCheckCode.h"
 @interface ZXResetPWDController ()
 @property (weak, nonatomic) IBOutlet UITextField *telTxt;
+@property (weak, nonatomic) IBOutlet UITextField *codeTxt;
 
 @end
 
@@ -24,9 +25,29 @@
 }
 
 - (IBAction)didClickConfirmTel:(id)sender {
-    ZXSetUpPWDController *vc = [[ZXSetUpPWDController alloc] init];
-    vc.title = @"设置密码";
-    [self.navigationController pushViewController:vc animated:YES];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    if (![ZXVerificationObject validateMobile:self.telTxt.text]) {
+        [SVProgressHUD showErrorWithStatus:@"手机号格式有误!"];
+    }else{
+        params[@"member_mobile"] = self.telTxt.text;
+    }
+    if ((![ZXVerificationObject validateNumber:self.codeTxt.text])) {
+        [SVProgressHUD showErrorWithStatus:@"验证码格式有误!"];
+    }else{
+        params[@"member_code"] = self.codeTxt.text;
+    }
+    [ZXNetworkTool byAFNPost:PocketMenuOZ_ResetPwdAPI parameters:params success:^(id responseObject) {
+        ZXPrintResponseObject
+        if ([responseObject[@"status"] intValue] == 200) {
+            
+           ZXSetUpPWDController *vc = [[ZXSetUpPWDController alloc] init];
+           vc.title = @"设置密码";
+           vc.telephone = self.telTxt.text;
+           [self.navigationController pushViewController:vc animated:YES];
+        }
+    } failure:^(NSError *error) {
+        ZXLog(@"%@",error);
+    }];
 }
 
 
@@ -47,8 +68,16 @@
     self.telTxt.rightViewMode = UITextFieldViewModeAlways;
 }
 
-
 - (void)getSMSCode:(UIButton *)btn{
     [ZXGetCheckCode getCheckCode:btn];
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.view endEditing:YES];
+}
+
+
+
 @end

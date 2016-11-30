@@ -10,9 +10,10 @@
 
 @implementation ZXSquareCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+-(void)setTypeModel:(ZXStoreTypeModel *)typeModel
+{
+    _typeModel = typeModel;
+    self.titleLabel.text = typeModel.s_type_name;
 }
 
 @end

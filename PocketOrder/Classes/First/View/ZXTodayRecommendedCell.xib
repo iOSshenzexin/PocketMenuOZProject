@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,17 +38,21 @@
                                 </constraints>
                                 <state key="normal" image="module02-banner"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai8-Db-SV7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai8-Db-SV7">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="17" id="VEr-Yc-W7v"/>
-                                    <constraint firstAttribute="height" constant="17" id="aG4-QC-cb7"/>
+                                    <constraint firstAttribute="width" constant="64" id="VEr-Yc-W7v"/>
+                                    <constraint firstAttribute="height" constant="34" id="aG4-QC-cb7"/>
                                 </constraints>
                                 <state key="normal" image="module02-right"/>
+                                <connections>
+                                    <action selector="didClickEnterTodayRecommend:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qFj-nA-Mbp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ai8-Db-SV7" secondAttribute="trailing" constant="17" id="5cT-Gm-VH7"/>
+                            <constraint firstAttribute="trailing" secondItem="ai8-Db-SV7" secondAttribute="trailing" constant="15" id="5cT-Gm-VH7"/>
+                            <constraint firstItem="ai8-Db-SV7" firstAttribute="centerY" secondItem="9dz-cc-fR2" secondAttribute="centerY" id="9oX-Df-RI1"/>
                             <constraint firstAttribute="bottom" secondItem="ZXh-Wy-nFo" secondAttribute="bottom" constant="4" id="AAg-KM-5Ge"/>
                             <constraint firstItem="ZXh-Wy-nFo" firstAttribute="leading" secondItem="P4h-lf-j8c" secondAttribute="leading" constant="5" id="OHg-Ve-02l"/>
                             <constraint firstItem="XWc-jA-Dkl" firstAttribute="leading" secondItem="P4h-lf-j8c" secondAttribute="leading" constant="5" id="P9H-gN-Jii"/>
@@ -57,7 +62,6 @@
                             <constraint firstAttribute="trailing" secondItem="XWc-jA-Dkl" secondAttribute="trailing" constant="5" id="evD-6c-Z2F"/>
                             <constraint firstItem="XWc-jA-Dkl" firstAttribute="top" secondItem="9dz-cc-fR2" secondAttribute="bottom" constant="5" id="kIQ-BV-oaP"/>
                             <constraint firstItem="9dz-cc-fR2" firstAttribute="top" secondItem="P4h-lf-j8c" secondAttribute="top" constant="8" id="rHR-74-1Vu"/>
-                            <constraint firstItem="ai8-Db-SV7" firstAttribute="top" secondItem="P4h-lf-j8c" secondAttribute="top" constant="7" id="tXY-dN-9m0"/>
                         </constraints>
                     </view>
                 </subviews>

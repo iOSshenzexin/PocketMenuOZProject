@@ -10,8 +10,6 @@
 
 @implementation ZXAddressTwoCell
 
-
-
 static NSString *addressTwoCell = @"ZXAddressTwoCell";
 +(instancetype)cellWithTableView:(UITableView *)tableview
 {
@@ -21,6 +19,13 @@ static NSString *addressTwoCell = @"ZXAddressTwoCell";
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
+}
+
+-(void)setUserAddressModel:(ZXUserAddressListModel *)userAddressModel
+{
+    _userAddressModel = userAddressModel;
+    self.streetName.text = userAddressModel.address;
+    
 }
 
 @end

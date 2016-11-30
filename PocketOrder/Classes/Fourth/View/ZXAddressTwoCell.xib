@@ -177,6 +177,13 @@
                     <constraint firstAttribute="trailing" secondItem="LKi-kr-zip" secondAttribute="trailing" constant="15" id="vOJ-Sb-i4j"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="areaName" destination="yV2-qG-A6l" id="o2r-YJ-zJY"/>
+                <outlet property="cityName" destination="69K-sr-Kn8" id="uIM-Z5-UNg"/>
+                <outlet property="doorNumber" destination="Fox-eH-zVr" id="lSq-dk-d55"/>
+                <outlet property="postNumber" destination="1bL-ug-tlv" id="51r-ze-anu"/>
+                <outlet property="streetName" destination="rjy-H6-ylF" id="ZOZ-um-Fgj"/>
+            </connections>
             <point key="canvasLocation" x="34" y="53.5"/>
         </tableViewCell>
     </objects>

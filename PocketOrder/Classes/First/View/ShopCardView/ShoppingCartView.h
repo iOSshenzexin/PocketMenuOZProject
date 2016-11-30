@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "ZFReOrderTableView.h"
 
 @class BadgeView;
@@ -32,5 +31,6 @@
 -(void)setCartImage:(NSString *)imageName;
 
 -(void)dismissAnimated:(BOOL) animated;
+
 @end
 

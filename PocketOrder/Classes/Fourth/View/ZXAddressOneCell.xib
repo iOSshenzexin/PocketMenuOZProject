@@ -157,6 +157,8 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="manBtn" destination="6QS-GU-HnJ" id="C7A-NQ-KwL"/>
+                <outlet property="userName" destination="qIg-gm-J0q" id="sQq-cb-RKQ"/>
+                <outlet property="userTelephone" destination="f08-ju-H6T" id="cll-PD-HSz"/>
             </connections>
             <point key="canvasLocation" x="34" y="53.5"/>
         </tableViewCell>

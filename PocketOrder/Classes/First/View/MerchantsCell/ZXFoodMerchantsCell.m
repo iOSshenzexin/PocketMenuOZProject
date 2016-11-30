@@ -13,7 +13,7 @@
 static NSString *foodMeuchantsCell = @"ZXFoodMerchantsCell";
 
 -(void)setFrame:(CGRect)frame{
-    frame.size.height -= 10;
+    frame.size.height -= 5;
     [super setFrame:frame];
 }
 

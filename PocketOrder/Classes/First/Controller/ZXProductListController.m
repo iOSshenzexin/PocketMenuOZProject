@@ -79,7 +79,6 @@ extern int btnH;
     
     [self createShopCarView];
 
-
 }
 
 - (void)createShopCarView
@@ -186,9 +185,7 @@ extern int btnH;
     [self.view addSubview:_tableViewList];
 }
 
-
 #pragma mark - setter and getter
-
 -(NSMutableArray *)ordersArray
 {
     if (!_ordersArray) {
@@ -197,20 +194,16 @@ extern int btnH;
     return _ordersArray;
 }
 
- //左侧列表
+// 左侧列表
 -(void)creatLeftScrollView{
     leftScrollView = [[LeftSelectScroll alloc]initWithFrame:CGRectMake(0, leftScrollY + 1, kScreenWidth * 0.25,ScreenH - leftScrollY - ShopCarViewHeight - 64)];
     NSInteger count = leftDataSource.count;
     leftScrollView.bounces = YES;
-    
     leftScrollView.contentSize = CGSizeMake(0, btnH * count);
     leftScrollView.autoresizesSubviews = NO;
     [leftScrollView setLeftSelectArray:leftDataSource];
-    
     leftScrollView.leftSelectDelegate = self;
-    
     leftScrollView.delegate = self;
-    
     [self.view addSubview:leftScrollView];
 }
 
@@ -238,17 +231,11 @@ extern int btnH;
         [header addSubview:[self viewForHeaderView:section]];
         return header;
     }else{
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, SECTION_HEIGHT)];
-        UILabel *leftLine = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 3, SECTION_HEIGHT)];
-        [view addSubview:leftLine];
-        
-        UILabel *headerTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, SECTION_HEIGHT)];
-        headerTitle.text = [NSString stringWithFormat:@"%ld号口袋",section +1];
-        headerTitle.font = [UIFont systemFontOfSize:12];
-        [view addSubview:headerTitle];
-        
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, SECTION_HEIGHT-0.5)];
+        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, SECTION_HEIGHT-0.5, self.view.bounds.size.width, 0.5)];
+        line.backgroundColor = RGB(195, 195, 195);
+        [view addSubview:line];
         if (section == 0) {
-            leftLine.backgroundColor = [UIColor greenColor];
             UIButton *clear = [UIButton buttonWithType:UIButtonTypeCustom];
             clear.frame= CGRectMake(self.view.bounds.size.width - 100, 0, 100, SECTION_HEIGHT);
             [clear setTitle:@"清空购物车" forState:UIControlStateNormal];
@@ -260,21 +247,8 @@ extern int btnH;
             [view addSubview:clear];
         }
         else{
-            
-            if (section % 3 == 0) {
-                leftLine.backgroundColor = [UIColor orangeColor];
-            }
-            else if (section % 3 == 1)
-            {
-                leftLine.backgroundColor = [UIColor yellowColor];
-            }
-            else if (section % 3 == 2)
-            {
-                leftLine.backgroundColor = [UIColor redColor];
-            }
-            
         }
-            view.backgroundColor = [UIColor whiteColor];
+        view.backgroundColor = RGB(245, 245, 245);
         return view;
     }
 }
@@ -333,8 +307,6 @@ extern int btnH;
 {
     ZXLog(@"%f",scrollView.contentOffset.y);
 }
-
-
 
  #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -398,13 +370,7 @@ extern int btnH;
           return cell;
     }
     else if([tableView isEqual:_ShopCartView.OrderList.tableView]){
-        static NSString *cellID = @"ShoppingCartCell";
-        
-        ShoppingCartCell *cell = (ShoppingCartCell *)[tableView dequeueReusableCellWithIdentifier:cellID];
-        
-        if (!cell) {
-            cell = [[[NSBundle mainBundle] loadNibNamed:cellID owner:nil options:nil] lastObject];
-        }
+        ShoppingCartCell *cell = [ShoppingCartCell cellWithTableView:tableView];
         NSMutableArray *sectionArray =[NSMutableArray array];
         sectionArray = [self.ordersArray objectAtIndex:indexPath.section];
         
@@ -419,19 +385,8 @@ extern int btnH;
         cell.number = count;
         cell.numberLabel.text = [NSString stringWithFormat:@"%ld",count];
         
-        cell.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        if (indexPath.section % 3 == 0) {
-            cell.dotLabel.textColor = [UIColor greenColor];
-        }
-        else if (indexPath.section % 3 == 1)
-        {
-            cell.dotLabel.textColor = [UIColor yellowColor];
-        }
-        else if (indexPath.section % 3 == 2)
-        {
-            cell.dotLabel.textColor = [UIColor redColor];
-        }
+        cell.dotLabel.textColor = AppThemeColor;
+       
         
         cell.operationBlock = ^(NSUInteger nCount,BOOL plus)
         {
@@ -458,9 +413,7 @@ extern int btnH;
             if (_totalOrders <=0) {
                 [_ShopCartView dismissAnimated:YES];
             }
-            
         };
-        
         return cell;
     }
     return nil;
@@ -509,36 +462,30 @@ extern int btnH;
         
         //block 代码段
         void(^block)(NSInteger,NSInteger) = ^(NSInteger section,NSInteger row){
+        NSDictionary *dic = self.ordersArray[section][row];
+        NSInteger count = [dic[@"orderCount"] integerValue];
+        if (count <= 0) {
+            [self.ordersArray[section] removeObjectAtIndex:row];
+            self.ShopCartView.OrderList.objects = self.ordersArray;
+            [self.ShopCartView.OrderList.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:section]]  withRowAnimation:UITableViewRowAnimationBottom];
+            //section
+            if ([self.ordersArray[section] count] <=0) {
+                [self.ordersArray removeObjectAtIndex:section];
+                [self.ShopCartView.OrderList.tableView deleteSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationBottom];
+            }
+            [self.ShopCartView.OrderList.tableView reloadData];
+            [self.ShopCartView updateFrame:self.ShopCartView.OrderList];
+        }
+        else{
             
-            NSDictionary *dic = self.ordersArray[section][row];
-            NSInteger count = [dic[@"orderCount"] integerValue];
-            if (count <= 0) {
-                
-                [self.ordersArray[section] removeObjectAtIndex:row];
-                self.ShopCartView.OrderList.objects = self.ordersArray;
-                [self.ShopCartView.OrderList.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:section]]  withRowAnimation:UITableViewRowAnimationBottom];
-                
-                //section
-                if ([self.ordersArray[section] count] <=0) {
-                    [self.ordersArray removeObjectAtIndex:section];
-                    [self.ShopCartView.OrderList.tableView deleteSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationBottom];
-                }
-                
-                [self.ShopCartView.OrderList.tableView reloadData];
-                [self.ShopCartView updateFrame:self.ShopCartView.OrderList];
-            }
-            else{
-                
-            }
+        }
         };
-        
-        
         if (!sectionID && !rowID) {
             NSMutableDictionary *dic = self.ordersArray[sectionID][rowID];
             
             if (dic[@"id"] == dict[@"id"]) {
                 NSInteger nCount = [dic[@"orderCount"] integerValue];
-                //                nCount -= 1;
+                //nCount -= 1;
                 [dic setObject:[NSString stringWithFormat:@"%ld",nCount] forKey:@"orderCount"];
                 block(sectionID,rowID);
                 
@@ -598,12 +545,9 @@ extern int btnH;
             }
         }
         else{
-            
             block(sectionID,rowID);
-            
         }
     }
-    
 }
 
 //计算在其他section中的指定fooid的个数
@@ -637,7 +581,6 @@ extern int btnH;
         }
     }
     NSMutableDictionary *dic = [self GetDictionaryFromID:[foodID integerValue]];
-    
     [dic setObject:[NSNumber numberWithInt:nCount] forKey:@"orderCount"];
     return nCount;
 }
@@ -673,13 +616,11 @@ extern int btnH;
     else{
         [_ShopCartView setCartImage:@"shopcar"];
     }
-    
 }
 
 #pragma mark -加入购物车动画
 -(void) JoinCartAnimationWithRect:(CGRect)rect
 {
-    
     CGFloat startX = rect.origin.x;
     CGFloat startY = rect.origin.y;
     
@@ -724,12 +665,13 @@ extern int btnH;
     [self performSelector:@selector(removeFromLayer:) withObject:_dotLayer afterDelay:0.8f];
     
 }
-- (void)removeFromLayer:(CALayer *)layerAnimation{
+- (void)removeFromLayer:(CALayer *)layerAnimation
+{
     [layerAnimation removeFromSuperlayer];
 }
 
-
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
     isScrollSetSelect = YES ;
 }
 

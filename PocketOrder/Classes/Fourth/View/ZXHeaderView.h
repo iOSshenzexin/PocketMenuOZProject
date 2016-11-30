@@ -16,5 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *jumpBtn;
 
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UILabel *userTelephone;
 
 @end

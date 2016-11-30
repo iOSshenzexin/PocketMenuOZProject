@@ -33,5 +33,10 @@
     [self.youLikeCV registerNib:[UINib nibWithNibName:@"ZXLikeCell"bundle:nil]forCellWithReuseIdentifier:likeCell];
 }
 
+- (IBAction)didEnterGuessYouLikeController:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(enterZXGuessYouLikeCellController:)]) {
+        [self.delegate enterZXGuessYouLikeCellController:self];
+    }
+}
 
 @end

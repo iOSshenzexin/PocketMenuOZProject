@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,12 +17,15 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QwJ-h3-y0m">
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDd-PJ-DFJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDd-PJ-DFJ">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="17" id="coA-Zg-zuj"/>
-                                    <constraint firstAttribute="height" constant="17" id="gJM-e0-RRM"/>
+                                    <constraint firstAttribute="width" constant="64" id="coA-Zg-zuj"/>
+                                    <constraint firstAttribute="height" constant="34" id="gJM-e0-RRM"/>
                                 </constraints>
                                 <state key="normal" image="module02-right"/>
+                                <connections>
+                                    <action selector="didEnterGuessYouLikeController:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ihf-3p-E2w"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mE6-H0-oNa">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,8 +54,8 @@
                             <constraint firstAttribute="trailing" secondItem="mE6-H0-oNa" secondAttribute="trailing" constant="5" id="7bU-Gd-DJI"/>
                             <constraint firstItem="rk0-lm-9Em" firstAttribute="centerX" secondItem="QwJ-h3-y0m" secondAttribute="centerX" id="BoG-Ig-mQ0"/>
                             <constraint firstItem="rk0-lm-9Em" firstAttribute="top" secondItem="QwJ-h3-y0m" secondAttribute="top" constant="7" id="JUC-5Y-2fP"/>
-                            <constraint firstItem="oDd-PJ-DFJ" firstAttribute="top" secondItem="QwJ-h3-y0m" secondAttribute="top" constant="8" id="LZe-IG-RV9"/>
-                            <constraint firstAttribute="trailing" secondItem="oDd-PJ-DFJ" secondAttribute="trailing" constant="8" id="tx4-O9-vOT"/>
+                            <constraint firstAttribute="trailing" secondItem="oDd-PJ-DFJ" secondAttribute="trailing" constant="15" id="tx4-O9-vOT"/>
+                            <constraint firstItem="oDd-PJ-DFJ" firstAttribute="centerY" secondItem="rk0-lm-9Em" secondAttribute="centerY" id="y7W-gi-CiS"/>
                         </constraints>
                     </view>
                 </subviews>

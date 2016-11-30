@@ -10,4 +10,5 @@
 
 @interface ZXSetUpPWDController : UIViewController
 
+@property (nonatomic,copy) NSString *telephone;
 @end

@@ -27,6 +27,10 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    ZXLoginMessageModel *userModel = PocketMenuOzLoginModel;
+    self.userName.text = userModel.member_name;
+    self.telephone.text = userModel.member_mobile;
+    self.email.text = userModel.member_email;
 }
 
 
@@ -34,8 +38,9 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
-#pragma mark - Table view data source
 
+
+#pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
@@ -67,7 +72,6 @@
             vc.title = @"安全验证";
             [self.navigationController pushViewController:vc animated:YES];
         }
-        
     }
 }
 
@@ -103,15 +107,22 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-    
     [picker dismissViewControllerAnimated:YES completion:^{
         [self.headImage setImage:image forState:UIControlStateNormal];
         if ([self.delegate respondsToSelector:@selector(passHeaderImage:)]) {
             [self.delegate passHeaderImage:self];
         }
     }];
-    
 }
+
+
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+
 
 
 @end

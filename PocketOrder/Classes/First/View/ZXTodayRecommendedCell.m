@@ -36,4 +36,12 @@
 }
 
 
+- (IBAction)didClickEnterTodayRecommend:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(enterTodayRecommendController:)]) {
+        [self.delegate enterTodayRecommendController:self];
+    }
+}
+
+
+
 @end

@@ -21,3 +21,11 @@ NSString * const collectionHeaderView = @"collectionHeaderView";
 NSString  * const SZXTitleButtonDidRepeatClickNotification = @"XMGTitleButtonDidRepeatClickNotification";
 
 NSString * const messagePaddingCell = @"ZXMessagePaddingCell";
+
+//用户  密码
+NSString * const username = @"username";
+
+NSString * const password = @"password";
+
+
+NSString *const loginModel = @"loginModel";
